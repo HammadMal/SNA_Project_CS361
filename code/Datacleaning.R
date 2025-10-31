@@ -199,15 +199,10 @@ elections_clean$Candidate_Name <- sapply(elections_clean$Candidate_Name_Raw, fun
   return(x)
 })
 
-# Step 4: Create unique candidate identifier
-cat("\n4. Creating unique candidate-constituency identifiers...\n")
+# Step 4: Create unique candidate identifiers
+cat("\n4. Creating unique candidate identifiers...\n")
 
-elections_clean$Candidate_ID <- paste(
-  elections_clean$Candidate_Name, 
-  elections_clean$NA_Code, 
-  sep = "_"
-)
-elections_clean$Candidate_ID <- gsub("[^A-Za-z0-9_-]", "_", elections_clean$Candidate_ID)
+elections_clean$Candidate_ID <- gsub("[^A-Za-z0-9_-]", "_", elections_clean$Candidate_Name)
 
 # Step 5: Handle duplicate entries
 cat("\n5. Checking for duplicate entries...\n")

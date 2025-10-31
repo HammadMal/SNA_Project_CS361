@@ -1,4 +1,5 @@
 # Data Cleaning Summary Report
+
 ## Pakistan National Assembly Elections (2013, 2018, 2024)
 
 **Project:** Social Network Analysis of Candidate-Party Affiliations  
@@ -28,9 +29,11 @@ This document summarizes the data cleaning and filtering process for the Pakista
 ## 3. Filtering Process
 
 ### 3.1 Year Selection
+
 We filtered the dataset to include only three target election years:
+
 - **2013:** Post-democratic transition period (4,454 records)
-- **2018:** Critical power transfer (3,353 records)  
+- **2018:** Critical power transfer (3,353 records)
 - **2024:** Most recent election (5,177 records)
 
 **Filtered Dataset:** 12,984 rows (52.8% of original data)
@@ -40,15 +43,18 @@ We filtered the dataset to include only three target election years:
 ## 4. Data Quality Issues Identified
 
 ### 4.1 Missing Values
+
 - **Votes:** 18 missing values across all years
 - **Candidate Names (2018 only):** All 3,353 records from 2018 had empty candidate names in the source data
 
 ### 4.2 Data Quality Decisions
-Since the 2018 election is critical for temporal analysis, we **retained** the 2018 records despite missing candidate names. We created placeholder names: `Unknown_Candidate_1`, `Unknown_Candidate_2`, etc.
+
+Since the 2018 election is critical for temporal analysis, we __retained__ the 2018 records despite missing candidate names. We created placeholder names: `Unknown_Candidate_1`, `Unknown_Candidate_2`, etc.
 
 **Note:** This limitation means that for 2018, our network analysis will focus on party-level patterns rather than individual candidate movements.
 
 ### 4.3 Empty Strings
+
 - **Party field:** 1 empty string (removed)
 - **Candidate Name:** 3,353 empty strings (2018 data - handled with placeholders)
 
@@ -57,17 +63,20 @@ Since the 2018 election is critical for temporal analysis, we **retained** the 2
 ## 5. Data Cleaning Steps
 
 ### 5.1 Column Standardization
+
 - Renamed columns to use underscores instead of spaces/dots
 - Changed `NA.` to `NA_Code` (to avoid conflict with R's NA keyword)
 - Renamed `Candidate.Name` to `Candidate_Name_Raw`
 
 ### 5.2 Party Name Standardization
+
 **Before:** 286 unique parties  
 **After:** 256 unique parties
 
 Key standardizations:
+
 - `PML-N`, `PMLN` → `PML-N`
-- `PML-Q`, `PMLQ` → `PML-Q`  
+- `PML-Q`, `PMLQ` → `PML-Q`
 - `PTI`, `Pakistan Tehreek` → `PTI`
 - `IND`, `Independent` → `IND`
 - `MQM` (all variations) → `MQM`
@@ -75,17 +84,23 @@ Key standardizations:
 - `PPP`, `Pakistan Peoples Party` → `PPP`
 
 ### 5.3 Candidate Name Standardization
+
 For 2013 and 2024 data:
+
 - Removed leading/trailing whitespace
 - Standardized capitalization (Title Case)
 - Replaced multiple spaces with single space
 - Standardized "Mohammed" → "Muhammad"
 
 ### 5.4 Unique Identifier Creation
-Created `Candidate_ID` field: `{Candidate_Name}_{NA_Code}`
-Example: `Alhaj_Ghulam_Ahmad_Bilour_NA-1`
+
+Created `Candidate_ID` field by sanitizing the standardized candidate name (replacing special characters with underscores)
+Example: `Muhammad_Ali_Khan`
+
+Note: Unlike previous version, constituency codes are not included in the identifier to allow tracking candidates across different constituencies.
 
 ### 5.5 Duplicate Removal
+
 - **Duplicates found:** 78 records
 - **Action:** Removed duplicate candidate-party-constituency-year combinations
 
@@ -100,6 +115,7 @@ Example: `Alhaj_Ghulam_Ahmad_Bilour_NA-1`
 | **Records Removed** | 79 (0.6%) |
 
 ### 6.1 Records by Year
+
 | Year | Records | Percentage |
 |------|---------|------------|
 | 2013 | 4,454 | 34.5% |
@@ -107,6 +123,7 @@ Example: `Alhaj_Ghulam_Ahmad_Bilour_NA-1`
 | 2024 | 5,098 | 39.5% |
 
 ### 6.2 Records by Province
+
 | Province | Records | Percentage |
 |----------|---------|------------|
 | Punjab | 6,597 | 51.1% |
@@ -117,6 +134,7 @@ Example: `Alhaj_Ghulam_Ahmad_Bilour_NA-1`
 | (Other) | 34 | 0.3% |
 
 ### 6.3 Top 10 Parties by Candidate Count
+
 | Rank | Party | Candidates | Percentage |
 |------|-------|------------|------------|
 | 1 | IND (Independents) | 6,961 | 53.9% |
@@ -137,35 +155,39 @@ Example: `Alhaj_Ghulam_Ahmad_Bilour_NA-1`
 ## 7. Data Quality Flags
 
 ### 7.1 New Fields Added
-1. **Has_Candidate_Name** (Boolean)
+
+1. __Has_Candidate_Name__ (Boolean)
+
    - TRUE: Original dataset contained candidate name (2013, 2024)
    - FALSE: Candidate name was missing and placeholder was used (2018)
 
-2. **Party_Original**: Preserved original party name before standardization
-
-3. **Candidate_Original**: Preserved original candidate name
-
-4. **Candidate_Name**: Cleaned and standardized candidate name
-
-5. **Candidate_ID**: Unique identifier for each candidate-constituency combination
+2. __Party_Original__: Preserved original party name before standardization
+3. __Candidate_Original__: Preserved original candidate name
+4. __Candidate_Name__: Cleaned and standardized candidate name
+5. __Candidate_ID__: Unique identifier for each candidate-constituency combination
 
 ---
 
 ## 8. Network Analysis Implications
 
 ### 8.1 Strengths
+
 - Complete coverage of all three target election years
 - High-quality data for 2013 and 2024
 - Standardized party names enable accurate affiliation tracking
-- Unique candidate IDs support longitudinal analysis
+- Unique candidate IDs support tracking candidates across constituencies
+- Simplified identifier system allows better mobility analysis
 
 ### 8.2 Limitations
+
 1. **2018 Candidate-Level Analysis:** Cannot track individual candidates in 2018 due to missing names
 2. **Party-Switching Detection:** Limited to 2013→2024 comparisons for individual candidates
 3. **2018 Network Contribution:** Will focus on party-level patterns and aggregate statistics
 
 ### 8.3 Recommended Approach
+
 For network construction:
+
 - **Bipartite Network (2013 + 2024):** Full candidate-party network with named individuals
 - **Party-Level Network (All years):** Aggregate analysis including 2018 for temporal trends
 - **Temporal Comparison:** Focus on 2013 vs 2024 for candidate loyalty/switching patterns
