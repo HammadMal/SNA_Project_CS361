@@ -4,7 +4,8 @@
 # ==============================================================================
 # Authors: Hammad Malik (hm08298) & Mehlab Kashani (mk07950)
 # Course: CS/SDP 361/352
-# Date: October 29, 2025
+# Date: October 31, 2025
+# Target Years: 2008, 2013, 2024
 # ==============================================================================
 
 # ==============================================================================
@@ -36,11 +37,11 @@ cat("\nFirst few rows:\n")
 print(head(elections_raw, 3))
 
 # ==============================================================================
-# 2. FILTER DATA FOR TARGET YEARS (2013, 2018, 2024)
+# 2. FILTER DATA FOR TARGET YEARS (2008, 2013, 2024)
 # ==============================================================================
 
 cat("\n", paste(rep("=", 80), collapse=""), "\n", sep = "")
-cat("FILTERING DATA FOR 2013, 2018, AND 2024\n")
+cat("FILTERING DATA FOR 2008, 2013, AND 2024\n")
 cat(paste(rep("=", 80), collapse=""), "\n", sep = "")
 
 # Fix column name (remove BOM if present)
@@ -54,7 +55,7 @@ colnames(elections_raw)[colnames(elections_raw) == "NA_"] <- "NA_Code"  # NA is 
 colnames(elections_raw)[colnames(elections_raw) == "Candidate_Name"] <- "Candidate_Name_Raw"
 
 # Filter for target election years
-elections_filtered <- elections_raw[elections_raw$Year %in% c(2013, 2018, 2024), ]
+elections_filtered <- elections_raw[elections_raw$Year %in% c(2008, 2013, 2024), ]
 
 # Display filtering results
 cat(sprintf("\nFiltered dataset: %d rows (%.1f%% of original)\n", 
@@ -91,6 +92,16 @@ cat("\nEmpty strings in critical text fields:\n")
 if("Candidate_Name_Raw" %in% colnames(elections_filtered)) {
   empty_candidates <- sum(elections_filtered$Candidate_Name_Raw == "", na.rm = TRUE)
   cat(sprintf("Candidate Name: %d empty strings\n", empty_candidates))
+  
+  # Show breakdown by year
+  cat("\nEmpty candidate names by year:\n")
+  for(year in c(2008, 2013, 2024)) {
+    year_data <- elections_filtered[elections_filtered$Year == year, ]
+    empty_count <- sum(year_data$Candidate_Name_Raw == "", na.rm = TRUE)
+    cat(sprintf("  %d: %d empty strings (%.1f%%)\n", 
+                year, empty_count, 
+                100 * empty_count / nrow(year_data)))
+  }
 }
 if("Party" %in% colnames(elections_filtered)) {
   empty_parties <- sum(elections_filtered$Party == "", na.rm = TRUE)
@@ -112,8 +123,7 @@ elections_clean <- elections_filtered
 cat("\n1. Removing records with missing critical fields...\n")
 before_rows <- nrow(elections_clean)
 
-# For 2018, candidate names are missing in the dataset, so we'll keep those records
-# but create a placeholder candidate name
+# Check if candidate names are present
 elections_clean$Has_Candidate_Name <- elections_clean$Candidate_Name_Raw != "" & 
                                       !is.na(elections_clean$Candidate_Name_Raw)
 
@@ -125,17 +135,22 @@ complete_filter <- !is.na(elections_clean$Year) &
 
 elections_clean <- elections_clean[complete_filter, ]
 
-# For records without candidate names, create a placeholder
-elections_clean$Candidate_Name_Raw[!elections_clean$Has_Candidate_Name] <- 
-  paste("Unknown_Candidate", seq_len(sum(!elections_clean$Has_Candidate_Name)), sep = "_")
+# For records without candidate names (if any), create a placeholder
+if(sum(!elections_clean$Has_Candidate_Name) > 0) {
+  elections_clean$Candidate_Name_Raw[!elections_clean$Has_Candidate_Name] <- 
+    paste("Unknown_Candidate", seq_len(sum(!elections_clean$Has_Candidate_Name)), sep = "_")
+  
+  cat(sprintf("   Records without candidate names: %d (%.1f%%)\n",
+              sum(!elections_clean$Has_Candidate_Name),
+              100 * sum(!elections_clean$Has_Candidate_Name) / nrow(elections_clean)))
+} else {
+  cat("   All records have candidate names - no placeholders needed.\n")
+}
 
 after_rows <- nrow(elections_clean)
 cat(sprintf("   Removed %d rows (%.1f%%)\n", 
             before_rows - after_rows, 
             100 * (before_rows - after_rows) / before_rows))
-cat(sprintf("   Records without candidate names: %d (%.1f%%)\n",
-            sum(!elections_clean$Has_Candidate_Name),
-            100 * sum(!elections_clean$Has_Candidate_Name) / after_rows))
 
 # Step 2: Standardize party names
 cat("\n2. Standardizing party names...\n")
@@ -264,7 +279,7 @@ cat("SAVING CLEANED DATA\n")
 cat(paste(rep("=", 80), collapse=""), "\n", sep = "")
 
 # Save cleaned dataset to same folder as 'datapath'
-output_file <- "cleaned_elections_2013_2018_2024.csv"
+output_file <- "cleaned_elections_2008_2013_2024.csv"
 output_dir <- dirname(datapath)                          # <- use datapath directory
 output_path <- file.path(output_dir, output_file)
 
