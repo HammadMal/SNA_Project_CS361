@@ -264,6 +264,29 @@ cat(sprintf("Median PageRank: %.6f\n", median(pr)))
 cat(sprintf("Max PageRank: %.6f (Party: %s)\n", max(pr), pr_df$Party[1]))
 cat(sprintf("Min PageRank: %.6f\n\n", min(pr)))
 
+# --- 5.6 ECCENTRICITY ---
+cat("--- ECCENTRICITY ---\n")
+cat("Maximum distance from each party to all other parties\n\n")
+
+ecc <- eccentricity(g_party)
+ecc_df <- data.frame(
+  Party = party_names,
+  Eccentricity = ecc,
+  stringsAsFactors = FALSE
+)
+ecc_df <- ecc_df[order(ecc_df$Eccentricity), ]  # Sort ascending (lower is better)
+
+cat("Top 10 Parties by Eccentricity (lowest values):\n")
+print(head(ecc_df, 10), row.names = FALSE)
+cat("\n")
+
+cat(sprintf("Mean Eccentricity: %.2f\n", mean(ecc)))
+cat(sprintf("Median Eccentricity: %.2f\n", median(ecc)))
+cat(sprintf("Max Eccentricity: %d (Most peripheral party: %s)\n", 
+            max(ecc), ecc_df$Party[nrow(ecc_df)]))
+cat(sprintf("Min Eccentricity: %d (Most central party: %s)\n\n", 
+            min(ecc), ecc_df$Party[1]))
+
 # ==============================================================================
 # 6. DEGREE DISTRIBUTION ANALYSIS
 # ==============================================================================
@@ -324,6 +347,7 @@ centrality_combined <- data.frame(
   Closeness = clos,
   Eigenvector = eigen,
   PageRank = pr,
+  Eccentricity = ecc,
   stringsAsFactors = FALSE
 )
 
@@ -338,6 +362,7 @@ write.csv(betw_df, file.path(output_dir, "betweenness_centrality.csv"), row.name
 write.csv(clos_df, file.path(output_dir, "closeness_centrality.csv"), row.names = FALSE)
 write.csv(eigen_df, file.path(output_dir, "eigenvector_centrality.csv"), row.names = FALSE)
 write.csv(pr_df, file.path(output_dir, "pagerank_centrality.csv"), row.names = FALSE)
+write.csv(ecc_df, file.path(output_dir, "eccentricity.csv"), row.names = FALSE)
 cat("✓ Saved individual centrality rankings\n")
 
 # Save degree distribution
@@ -374,7 +399,8 @@ cat(sprintf("  Degree: %s (%d connections)\n", deg_df$Party[1], deg_df$Degree[1]
 cat(sprintf("  Betweenness: %s (%.2f)\n", betw_df$Party[1], betw_df$Betweenness[1]))
 cat(sprintf("  Closeness: %s (%.6f)\n", clos_df$Party[1], clos_df$Closeness[1]))
 cat(sprintf("  Eigenvector: %s (%.6f)\n", eigen_df$Party[1], eigen_df$Eigenvector[1]))
-cat(sprintf("  PageRank: %s (%.6f)\n\n", pr_df$Party[1], pr_df$PageRank[1]))
+cat(sprintf("  PageRank: %s (%.6f)\n", pr_df$Party[1], pr_df$PageRank[1]))
+cat(sprintf("  Eccentricity: %s (%d steps)\n\n", ecc_df$Party[1], ecc_df$Eccentricity[1]))
 
 cat("FILES SAVED TO:", output_dir, "\n")
 cat("  • party_party_network.rds/graphml\n")
@@ -385,6 +411,7 @@ cat("  • betweenness_centrality.csv\n")
 cat("  • closeness_centrality.csv\n")
 cat("  • eigenvector_centrality.csv\n")
 cat("  • pagerank_centrality.csv\n")
+cat("  • eccentricity.csv\n")
 cat("  • degree_distribution.csv\n\n")
 
 cat("✓ Ready for visualization in Gephi!\n\n")

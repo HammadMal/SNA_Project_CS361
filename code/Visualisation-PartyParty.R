@@ -30,7 +30,7 @@ network_file <- file.path(metrics_dir, "party_party_network.rds")
 centrality_file <- file.path(metrics_dir, "centrality_scores_all.csv")
 
 # Output directory
-output_dir <- file.path(resultpath, "04_visualizations_party_party")
+output_dir <- file.path(resultpath, "visualizations_party_party")
 
 # Create output directory if it doesn't exist
 if(!dir.exists(output_dir)) {
@@ -663,7 +663,54 @@ legend("topright",
        bg = "white")
 
 dev.off()
-cat("✓ Saved: 12_network_pagerank_centrality.pdf\n\n")
+cat("✓ Saved: 12_network_pagerank_centrality.pdf\n")
+
+# --- Plot 6: Eccentricity ---
+pdf(file.path(output_dir, "13_network_eccentricity.pdf"), width = 14, height = 10)
+
+ecc_viz <- eccentricity(g_viz)
+# handle constant-values case to avoid division by zero
+if(max(ecc_viz) == min(ecc_viz)) {
+  ecc_norm <- rep(0, length(ecc_viz))
+} else {
+  ecc_norm <- (ecc_viz - min(ecc_viz)) / (max(ecc_viz) - min(ecc_viz))
+}
+
+# Size by eccentricity (inverse because lower is better)
+# reduced scaling so "low" nodes are not excessively large
+node_size_ecc <- (1 - ecc_norm) * 8 + 2   # range ~ [2, 10] instead of [3,18]
+
+# Color by eccentricity (inverse because lower is better)
+node_colors_ecc <- rgb(1 - ecc_norm, 0, ecc_norm, 0.8)
+
+# Label config: show labels for the most central nodes (lowest eccentricity)
+label_threshold <- 0.30    # fraction (0-1) of nodes to label; adjust as needed
+label_cutoff <- quantile(ecc_viz, probs = label_threshold, na.rm = TRUE)
+vertex_labels <- ifelse(ecc_viz <= label_cutoff, V(g_viz)$name, NA)
+
+plot(g_viz,
+     layout = common_layout,
+     vertex.size = node_size_ecc,
+     vertex.color = node_colors_ecc,
+     vertex.label = vertex_labels,
+     vertex.label.cex = 0.7,   # slightly larger labels than before
+     vertex.label.color = "black",
+     vertex.label.dist = 0,
+     vertex.frame.color = "white",
+     edge.width = 0.3,
+     edge.color = rgb(0, 0, 0, 0.15),
+     main = "Party Network - Eccentricity\n(Size and Color by Eccentricity)")
+
+legend("topright",
+       legend = c("Low Eccentricity (central)", "Medium Eccentricity", "High Eccentricity (peripheral)"),
+       col = c("red", "purple", "blue"),
+       pch = 16,
+       pt.cex = 2,
+       cex = 0.9,
+       bg = "white")
+
+dev.off()
+cat("✓ Saved: 13_network_eccentricity.pdf\n\n")
 
 # ==============================================================================
 # 11. SUMMARY
@@ -679,13 +726,13 @@ cat("  • 02_centrality_comparison.pdf (grouped bar chart)\n")
 cat("  • 03_centrality_individual.pdf (6 plots)\n")
 cat("  • 04_centrality_correlations.pdf (correlation matrix)\n")
 cat("  • 05_centrality_scatterplots.pdf (6 scatter plots)\n")
-cat("  • 06_network_basic.pdf (full network)\n")
 cat("  • 07_network_top_parties.pdf (top 50 parties)\n")
 cat("  • 08_network_degree_centrality.pdf\n")
 cat("  • 09_network_betweenness_centrality.pdf\n")
 cat("  • 10_network_closeness_centrality.pdf\n")
 cat("  • 11_network_eigenvector_centrality.pdf\n")
-cat("  • 12_network_pagerank_centrality.pdf\n\n")
+cat("  • 12_network_pagerank_centrality.pdf\n")
+cat("  • 13_network_eccentricity.pdf\n\n")
 
 cat("✓ All visualizations created successfully!\n\n")
 
