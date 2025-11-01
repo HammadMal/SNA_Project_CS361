@@ -171,13 +171,13 @@ cat("===========================================================================
 cat("CREATING INDIVIDUAL CENTRALITY PLOTS\n")
 cat("================================================================================\n\n")
 
-pdf(file.path(output_dir, "03_centrality_individual.pdf"), width = 14, height = 16)  # Increased height to 16
+pdf(file.path(output_dir, "03_centrality_individual.pdf"), width = 14, height = 16)
 
 # Set up layout with adjusted margins
 par(mfrow = c(2, 3),
-    mar = c(10, 4, 5, 2),    # Increased bottom margin from 8 to 10
-    oma = c(2, 0, 3, 0),     # Added outer margin at bottom
-    mgp = c(3, 1, 0))        # Adjust margin line spacing
+    mar = c(10, 4, 5, 2),
+    oma = c(2, 0, 3, 0),
+    mgp = c(3, 1, 0))
 
 # --- Degree Centrality ---
 top_deg <- head(centrality[order(-centrality$Degree), ], 20)
@@ -187,7 +187,7 @@ barplot(top_deg$Degree,
         ylab = "Degree",
         col = "steelblue",
         las = 2,
-        cex.names = 0.65,    # Slightly smaller text for party names
+        cex.names = 0.65,
         cex.main = 1.0)
 
 # --- Betweenness Centrality ---
@@ -246,9 +246,9 @@ hist(centrality$Degree,
 
 # Reset plotting parameters
 par(mfrow = c(1, 1),
-    mar = c(5, 4, 4, 2),    # Reset to default margins
-    oma = c(0, 0, 0, 0),    # Reset outer margins
-    mgp = c(3, 1, 0))       # Reset margin line spacing
+    mar = c(5, 4, 4, 2),
+    oma = c(0, 0, 0, 0),
+    mgp = c(3, 1, 0))
 dev.off()
 
 cat("✓ Saved: 03_centrality_individual.pdf\n\n")
@@ -366,55 +366,6 @@ dev.off()
 cat("✓ Saved: 05_centrality_scatterplots.pdf\n\n")
 
 # ==============================================================================
-# 8. NETWORK VISUALIZATION (BASIC)
-# ==============================================================================
-
-# cat("================================================================================\n")
-# cat("CREATING BASIC NETWORK VISUALIZATION\n")
-# cat("================================================================================\n\n")
-
-# pdf(file.path(output_dir, "06_network_basic.pdf"), width = 16, height = 12)
-
-# # Set up layout
-# set.seed(123)  # For reproducibility
-# layout <- layout_with_fr(g_party)  # Fruchterman-Reingold layout
-
-# # Size nodes by degree
-# node_size <- degree(g_party)
-# node_size <- (node_size - min(node_size)) / (max(node_size) - min(node_size)) * 10 + 2
-
-# # Color by degree (blue = low, red = high)
-# deg_normalized <- (degree(g_party) - min(degree(g_party))) / 
-#                   (max(degree(g_party)) - min(degree(g_party)))
-# node_colors <- rgb(deg_normalized, 0, 1 - deg_normalized, 0.7)
-
-# plot(g_party,
-#      layout = layout,
-#      vertex.size = node_size,
-#      vertex.color = node_colors,
-#      vertex.label = ifelse(degree(g_party) > quantile(degree(g_party), 0.90), 
-#                           V(g_party)$name, NA),
-#      vertex.label.cex = 0.7,
-#      vertex.label.color = "black",
-#      vertex.frame.color = "white",
-#      edge.width = 0.3,
-#      edge.color = rgb(0, 0, 0, 0.1),
-#      main = "Party-Party Network - Sized by Degree")
-
-# # Add legend
-# legend("topright",
-#        legend = c("High Degree", "Medium Degree", "Low Degree"),
-#        col = c("red", "purple", "blue"),
-#        pch = 16,
-#        pt.cex = 2,
-#        cex = 0.9,
-#        bg = "white")
-
-# dev.off()
-
-# cat("✓ Saved: 06_network_basic.pdf\n\n")
-
-# ==============================================================================
 # 9. NETWORK VISUALIZATION - TOP PARTIES
 # ==============================================================================
 
@@ -477,11 +428,11 @@ cat("===========================================================================
 cat("CREATING NETWORK VISUALIZATIONS BY CENTRALITY\n")
 cat("================================================================================\n\n")
 
-# Use top 50 parties for clearer visualization (less clutter)
+# Use top 50 parties for clearer visualization
 top_50_parties <- head(centrality[order(-centrality$Degree), "Party"], 50)
 g_viz <- induced_subgraph(g_party, V(g_party)$name %in% top_50_parties)
 
-# Common layout for all plots - using graphopt for better spacing
+# Common layout for all plots
 set.seed(123)
 common_layout <- layout_with_graphopt(g_viz, charge = 0.01)
 
@@ -490,11 +441,7 @@ pdf(file.path(output_dir, "08_network_degree_centrality.pdf"), width = 14, heigh
 
 deg_viz <- degree(g_viz)
 deg_norm <- (deg_viz - min(deg_viz)) / (max(deg_viz) - min(deg_viz))
-
-# Size by degree
 node_size_deg <- deg_norm * 15 + 3
-
-# Color by degree
 node_colors_deg <- rgb(deg_norm, 0, 1 - deg_norm, 0.8)
 
 plot(g_viz,
@@ -513,10 +460,7 @@ plot(g_viz,
 legend("topright",
        legend = c("High Degree", "Medium Degree", "Low Degree"),
        col = c("red", "purple", "blue"),
-       pch = 16,
-       pt.cex = 2,
-       cex = 0.9,
-       bg = "white")
+       pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
 
 dev.off()
 cat("✓ Saved: 08_network_degree_centrality.pdf\n")
@@ -526,11 +470,7 @@ pdf(file.path(output_dir, "09_network_betweenness_centrality.pdf"), width = 14, 
 
 betw_viz <- betweenness(g_viz)
 betw_norm <- (betw_viz - min(betw_viz)) / (max(betw_viz) - min(betw_viz))
-
-# Size by betweenness
 node_size_betw <- betw_norm * 15 + 3
-
-# Color by betweenness
 node_colors_betw <- rgb(betw_norm, 0, 1 - betw_norm, 0.8)
 
 plot(g_viz,
@@ -549,10 +489,7 @@ plot(g_viz,
 legend("topright",
        legend = c("High Betweenness", "Medium Betweenness", "Low Betweenness"),
        col = c("red", "purple", "blue"),
-       pch = 16,
-       pt.cex = 2,
-       cex = 0.9,
-       bg = "white")
+       pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
 
 dev.off()
 cat("✓ Saved: 09_network_betweenness_centrality.pdf\n")
@@ -562,11 +499,7 @@ pdf(file.path(output_dir, "10_network_closeness_centrality.pdf"), width = 14, he
 
 clos_viz <- closeness(g_viz, normalized = TRUE)
 clos_norm <- (clos_viz - min(clos_viz)) / (max(clos_viz) - min(clos_viz))
-
-# Size by closeness
 node_size_clos <- clos_norm * 15 + 3
-
-# Color by closeness
 node_colors_clos <- rgb(clos_norm, 0, 1 - clos_norm, 0.8)
 
 plot(g_viz,
@@ -585,10 +518,7 @@ plot(g_viz,
 legend("topright",
        legend = c("High Closeness", "Medium Closeness", "Low Closeness"),
        col = c("red", "purple", "blue"),
-       pch = 16,
-       pt.cex = 2,
-       cex = 0.9,
-       bg = "white")
+       pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
 
 dev.off()
 cat("✓ Saved: 10_network_closeness_centrality.pdf\n")
@@ -598,11 +528,7 @@ pdf(file.path(output_dir, "11_network_eigenvector_centrality.pdf"), width = 14, 
 
 eigen_viz <- eigen_centrality(g_viz)$vector
 eigen_norm <- (eigen_viz - min(eigen_viz)) / (max(eigen_viz) - min(eigen_viz))
-
-# Size by eigenvector
 node_size_eigen <- eigen_norm * 15 + 3
-
-# Color by eigenvector
 node_colors_eigen <- rgb(eigen_norm, 0, 1 - eigen_norm, 0.8)
 
 plot(g_viz,
@@ -621,10 +547,7 @@ plot(g_viz,
 legend("topright",
        legend = c("High Eigenvector", "Medium Eigenvector", "Low Eigenvector"),
        col = c("red", "purple", "blue"),
-       pch = 16,
-       pt.cex = 2,
-       cex = 0.9,
-       bg = "white")
+       pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
 
 dev.off()
 cat("✓ Saved: 11_network_eigenvector_centrality.pdf\n")
@@ -634,11 +557,7 @@ pdf(file.path(output_dir, "12_network_pagerank_centrality.pdf"), width = 14, hei
 
 pr_viz <- page_rank(g_viz)$vector
 pr_norm <- (pr_viz - min(pr_viz)) / (max(pr_viz) - min(pr_viz))
-
-# Size by pagerank
 node_size_pr <- pr_norm * 15 + 3
-
-# Color by pagerank
 node_colors_pr <- rgb(pr_norm, 0, 1 - pr_norm, 0.8)
 
 plot(g_viz,
@@ -657,10 +576,7 @@ plot(g_viz,
 legend("topright",
        legend = c("High PageRank", "Medium PageRank", "Low PageRank"),
        col = c("red", "purple", "blue"),
-       pch = 16,
-       pt.cex = 2,
-       cex = 0.9,
-       bg = "white")
+       pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
 
 dev.off()
 cat("✓ Saved: 12_network_pagerank_centrality.pdf\n")
@@ -669,22 +585,16 @@ cat("✓ Saved: 12_network_pagerank_centrality.pdf\n")
 pdf(file.path(output_dir, "13_network_eccentricity.pdf"), width = 14, height = 10)
 
 ecc_viz <- eccentricity(g_viz)
-# handle constant-values case to avoid division by zero
 if(max(ecc_viz) == min(ecc_viz)) {
   ecc_norm <- rep(0, length(ecc_viz))
 } else {
   ecc_norm <- (ecc_viz - min(ecc_viz)) / (max(ecc_viz) - min(ecc_viz))
 }
 
-# Size by eccentricity (inverse because lower is better)
-# reduced scaling so "low" nodes are not excessively large
-node_size_ecc <- (1 - ecc_norm) * 8 + 2   # range ~ [2, 10] instead of [3,18]
-
-# Color by eccentricity (inverse because lower is better)
+node_size_ecc <- (1 - ecc_norm) * 8 + 2
 node_colors_ecc <- rgb(1 - ecc_norm, 0, ecc_norm, 0.8)
 
-# Label config: show labels for the most central nodes (lowest eccentricity)
-label_threshold <- 0.30    # fraction (0-1) of nodes to label; adjust as needed
+label_threshold <- 0.30
 label_cutoff <- quantile(ecc_viz, probs = label_threshold, na.rm = TRUE)
 vertex_labels <- ifelse(ecc_viz <= label_cutoff, V(g_viz)$name, NA)
 
@@ -693,7 +603,7 @@ plot(g_viz,
      vertex.size = node_size_ecc,
      vertex.color = node_colors_ecc,
      vertex.label = vertex_labels,
-     vertex.label.cex = 0.7,   # slightly larger labels than before
+     vertex.label.cex = 0.7,
      vertex.label.color = "black",
      vertex.label.dist = 0,
      vertex.frame.color = "white",
@@ -704,16 +614,251 @@ plot(g_viz,
 legend("topright",
        legend = c("Low Eccentricity (central)", "Medium Eccentricity", "High Eccentricity (peripheral)"),
        col = c("red", "purple", "blue"),
+       pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
+
+dev.off()
+cat("✓ Saved: 13_network_eccentricity.pdf\n\n")
+
+# ==============================================================================
+# 11. CLUSTERING COEFFICIENT VISUALIZATION
+# ==============================================================================
+
+cat("================================================================================\n")
+cat("CREATING CLUSTERING COEFFICIENT VISUALIZATION\n")
+cat("================================================================================\n\n")
+
+# Calculate local clustering coefficients for full network
+local_clustering_full <- transitivity(g_party, type = "local")
+local_clustering_full[is.nan(local_clustering_full)] <- 0
+
+# Create dataframe for full network
+clustering_df_full <- data.frame(
+  Party = V(g_party)$name,
+  Clustering = local_clustering_full,
+  Degree = degree(g_party),
+  stringsAsFactors = FALSE
+)
+clustering_df_full <- clustering_df_full[!is.na(clustering_df_full$Clustering), ]
+
+# Save clustering coefficient data
+write.csv(clustering_df_full[order(-clustering_df_full$Clustering), ],
+          file.path(output_dir, "clustering_coefficient.csv"),
+          row.names = FALSE)
+cat("✓ Saved: clustering_coefficient.csv\n")
+
+# --- Network Visualization by Clustering Coefficient (Top 50) ---
+pdf(file.path(output_dir, "14_network_clustering_coefficient.pdf"), width = 14, height = 10)
+
+# Use top 50 parties subgraph
+top_50_parties_clust <- head(centrality[order(-centrality$Degree), "Party"], 50)
+g_clust_viz <- induced_subgraph(g_party, V(g_party)$name %in% top_50_parties_clust)
+
+# Calculate clustering for this subgraph
+clust_viz <- transitivity(g_clust_viz, type = "local")
+clust_viz[is.nan(clust_viz)] <- 0
+
+# Normalize clustering for sizing and coloring
+clust_norm <- (clust_viz - min(clust_viz)) / (max(clust_viz) - min(clust_viz))
+
+# Size by clustering
+node_size_clust <- clust_norm * 15 + 3
+
+# Color by clustering
+node_colors_clust <- rgb(clust_norm, 0, 1 - clust_norm, 0.8)
+
+# Use same layout as other centrality plots
+set.seed(123)
+layout_clust <- layout_with_graphopt(g_clust_viz, charge = 0.01)
+
+plot(g_clust_viz,
+     layout = layout_clust,
+     vertex.size = node_size_clust,
+     vertex.color = node_colors_clust,
+     vertex.label = ifelse(clust_viz > quantile(clust_viz, 0.70), V(g_clust_viz)$name, NA),
+     vertex.label.cex = 0.6,
+     vertex.label.color = "black",
+     vertex.label.dist = 0,
+     vertex.frame.color = "white",
+     edge.width = 0.3,
+     edge.color = rgb(0, 0, 0, 0.15),
+     main = "Party Network - Clustering Coefficient\n(Size and Color by Clustering)")
+
+legend("topright",
+       legend = c("High Clustering", "Medium Clustering", "Low Clustering"),
+       col = c("red", "purple", "blue"),
        pch = 16,
        pt.cex = 2,
        cex = 0.9,
        bg = "white")
 
 dev.off()
-cat("✓ Saved: 13_network_eccentricity.pdf\n\n")
+cat("✓ Saved: 14_network_clustering_coefficient.pdf\n\n")
 
 # ==============================================================================
-# 11. SUMMARY
+# 12. COMMUNITY DETECTION - LOUVAIN ALGORITHM
+# ==============================================================================
+
+cat("================================================================================\n")
+cat("COMMUNITY DETECTION - LOUVAIN ALGORITHM\n")
+cat("================================================================================\n\n")
+
+louvain_comm <- cluster_louvain(g_party)
+
+cat(sprintf("Number of communities (Louvain): %d\n", length(louvain_comm)))
+cat(sprintf("Modularity: %.4f\n", modularity(louvain_comm)))
+cat(sprintf("Sizes: %s\n\n", paste(sizes(louvain_comm), collapse = ", ")))
+
+louvain_df <- data.frame(
+  Party = V(g_party)$name,
+  Community = membership(louvain_comm),
+  stringsAsFactors = FALSE
+)
+
+write.csv(louvain_df[order(louvain_df$Community), ],
+          file.path(output_dir, "louvain_communities.csv"),
+          row.names = FALSE)
+cat("✓ Saved: louvain_communities.csv\n")
+
+# Visualize Louvain communities - Top 50 Parties ONLY
+pdf(file.path(output_dir, "15_louvain_communities_top50.pdf"), width = 16, height = 12)
+
+top_50_parties_comm <- head(centrality[order(-centrality$Degree), "Party"], 50)
+g_top_comm <- induced_subgraph(g_party, V(g_party)$name %in% top_50_parties_comm)
+louvain_top <- cluster_louvain(g_top_comm)
+
+set.seed(123)
+layout_top_comm <- layout_with_fr(g_top_comm)
+
+num_communities_top <- length(unique(membership(louvain_top)))
+community_colors_top <- rainbow(num_communities_top, alpha = 0.8)
+node_colors_top_comm <- community_colors_top[membership(louvain_top)]
+
+node_size_top_comm <- degree(g_top_comm)
+node_size_top_comm <- (node_size_top_comm - min(node_size_top_comm)) / 
+                      (max(node_size_top_comm) - min(node_size_top_comm)) * 15 + 3
+
+plot(g_top_comm,
+     layout = layout_top_comm,
+     vertex.size = node_size_top_comm,
+     vertex.color = node_colors_top_comm,
+     vertex.label = V(g_top_comm)$name,
+     vertex.label.cex = 0.6,
+     vertex.label.color = "black",
+     vertex.label.dist = 0,
+     vertex.frame.color = "white",
+     edge.width = 0.5,
+     edge.color = rgb(0, 0, 0, 0.2),
+     main = sprintf("Louvain Communities - Top 50 Parties\n%d communities, Modularity = %.3f",
+                   length(louvain_top), modularity(louvain_top)))
+
+dev.off()
+cat("✓ Saved: 15_louvain_communities_top50.pdf\n\n")
+
+# ==============================================================================
+# 13. COMMUNITY DETECTION - WALKTRAP ALGORITHM
+# ==============================================================================
+
+cat("================================================================================\n")
+cat("COMMUNITY DETECTION - WALKTRAP ALGORITHM\n")
+cat("================================================================================\n\n")
+
+walktrap_comm <- cluster_walktrap(g_party)
+
+cat(sprintf("Number of communities (Walktrap): %d\n", length(walktrap_comm)))
+cat(sprintf("Modularity: %.4f\n", modularity(walktrap_comm)))
+cat(sprintf("Sizes: %s\n\n", paste(sizes(walktrap_comm), collapse = ", ")))
+
+walktrap_df <- data.frame(
+  Party = V(g_party)$name,
+  Community = membership(walktrap_comm),
+  stringsAsFactors = FALSE
+)
+
+write.csv(walktrap_df[order(walktrap_df$Community), ],
+          file.path(output_dir, "walktrap_communities.csv"),
+          row.names = FALSE)
+cat("✓ Saved: walktrap_communities.csv\n")
+
+# Visualize Walktrap communities - Top 50 Parties ONLY
+pdf(file.path(output_dir, "16_walktrap_communities_top50.pdf"), width = 16, height = 12)
+
+walktrap_top <- cluster_walktrap(g_top_comm)
+
+set.seed(123)
+layout_top_wt <- layout_with_fr(g_top_comm)
+
+num_communities_wt_top <- length(unique(membership(walktrap_top)))
+community_colors_wt_top <- rainbow(num_communities_wt_top, alpha = 0.8)
+node_colors_top_wt <- community_colors_wt_top[membership(walktrap_top)]
+
+plot(g_top_comm,
+     layout = layout_top_wt,
+     vertex.size = node_size_top_comm,
+     vertex.color = node_colors_top_wt,
+     vertex.label = V(g_top_comm)$name,
+     vertex.label.cex = 0.6,
+     vertex.label.color = "black",
+     vertex.label.dist = 0,
+     vertex.frame.color = "white",
+     edge.width = 0.5,
+     edge.color = rgb(0, 0, 0, 0.2),
+     main = sprintf("Walktrap Communities - Top 50 Parties\n%d communities, Modularity = %.3f",
+                   length(walktrap_top), modularity(walktrap_top)))
+
+dev.off()
+cat("✓ Saved: 16_walktrap_communities_top50.pdf\n\n")
+
+# ==============================================================================
+# 14. COMMUNITY COMPARISON
+# ==============================================================================
+
+cat("================================================================================\n")
+cat("CREATING COMMUNITY COMPARISON PLOT\n")
+cat("================================================================================\n\n")
+
+pdf(file.path(output_dir, "17_community_comparison.pdf"), width = 14, height = 8)
+
+par(mfrow = c(1, 2))
+
+louvain_sizes <- sort(sizes(louvain_comm), decreasing = TRUE)
+barplot(louvain_sizes,
+        main = sprintf("Louvain Community Sizes\n%d communities, Modularity = %.3f",
+                      length(louvain_comm), modularity(louvain_comm)),
+        xlab = "Community",
+        ylab = "Number of Parties",
+        col = "steelblue",
+        border = "white")
+
+walktrap_sizes <- sort(sizes(walktrap_comm), decreasing = TRUE)
+barplot(walktrap_sizes,
+        main = sprintf("Walktrap Community Sizes\n%d communities, Modularity = %.3f",
+                      length(walktrap_comm), modularity(walktrap_comm)),
+        xlab = "Community",
+        ylab = "Number of Parties",
+        col = "coral",
+        border = "white")
+
+par(mfrow = c(1, 1))
+dev.off()
+
+cat("✓ Saved: 19_community_comparison.pdf\n")
+
+community_summary <- data.frame(
+  Algorithm = c("Louvain", "Walktrap"),
+  Number_of_Communities = c(length(louvain_comm), length(walktrap_comm)),
+  Modularity = c(modularity(louvain_comm), modularity(walktrap_comm)),
+  Largest_Community = c(max(sizes(louvain_comm)), max(sizes(walktrap_comm))),
+  Smallest_Community = c(min(sizes(louvain_comm)), min(sizes(walktrap_comm))),
+  stringsAsFactors = FALSE
+)
+
+write.csv(community_summary,
+          file.path(output_dir, "community_summary.csv"),
+          row.names = FALSE)
+cat("✓ Saved: community_summary.csv\n\n")
+
+# ==============================================================================
+# 15. SUMMARY
 # ==============================================================================
 
 cat("================================================================================\n")
@@ -732,8 +877,19 @@ cat("  • 09_network_betweenness_centrality.pdf\n")
 cat("  • 10_network_closeness_centrality.pdf\n")
 cat("  • 11_network_eigenvector_centrality.pdf\n")
 cat("  • 12_network_pagerank_centrality.pdf\n")
-cat("  • 13_network_eccentricity.pdf\n\n")
+cat("  • 13_network_eccentricity.pdf\n")
+cat("  • 14_network_clustering_coefficient.pdf\n")
+cat("  • 15_louvain_communities_top50.pdf\n")
+cat("  • 16_walktrap_communities_top50.pdf\n")
+cat("  • 17_community_comparison.pdf (2 plots)\n\n")
 
-cat("✓ All visualizations created successfully!\n\n")
+cat("CSV FILES:\n")
+cat("  • clustering_coefficient.csv\n")
+cat("  • louvain_communities.csv\n")
+cat("  • walktrap_communities.csv\n")
+cat("  • community_summary.csv\n\n")
+
+cat("✓ All visualizations created successfully!\n")
+cat("✓ Total: 17 PDFs + 4 CSVs\n\n")
 
 cat("================================================================================\n")
