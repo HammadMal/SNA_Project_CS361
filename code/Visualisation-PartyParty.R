@@ -462,14 +462,13 @@ cat("===========================================================================
 cat("CREATING NETWORK VISUALIZATIONS BY CENTRALITY\n")
 cat("================================================================================\n\n")
 
-# Use the full network or top 50 for clearer visualization
-# Let's use top 100 parties for balance between detail and clarity
-top_100_parties <- head(centrality[order(-centrality$Degree), "Party"], 100)
-g_viz <- induced_subgraph(g_party, V(g_party)$name %in% top_100_parties)
+# Use top 50 parties for clearer visualization (less clutter)
+top_50_parties <- head(centrality[order(-centrality$Degree), "Party"], 50)
+g_viz <- induced_subgraph(g_party, V(g_party)$name %in% top_50_parties)
 
-# Common layout for all plots (for consistency)
+# Common layout for all plots - using graphopt for better spacing
 set.seed(123)
-common_layout <- layout_with_fr(g_viz)
+common_layout <- layout_with_graphopt(g_viz, charge = 0.01)
 
 # --- Plot 1: Degree Centrality ---
 pdf(file.path(output_dir, "08_network_degree_centrality.pdf"), width = 14, height = 10)
@@ -487,7 +486,7 @@ plot(g_viz,
      layout = common_layout,
      vertex.size = node_size_deg,
      vertex.color = node_colors_deg,
-     vertex.label = ifelse(deg_viz > quantile(deg_viz, 0.80), V(g_viz)$name, NA),
+     vertex.label = ifelse(deg_viz > quantile(deg_viz, 0.70), V(g_viz)$name, NA),
      vertex.label.cex = 0.6,
      vertex.label.color = "black",
      vertex.label.dist = 0,
@@ -523,7 +522,7 @@ plot(g_viz,
      layout = common_layout,
      vertex.size = node_size_betw,
      vertex.color = node_colors_betw,
-     vertex.label = ifelse(betw_viz > quantile(betw_viz, 0.80), V(g_viz)$name, NA),
+     vertex.label = ifelse(betw_viz > quantile(betw_viz, 0.70), V(g_viz)$name, NA),
      vertex.label.cex = 0.6,
      vertex.label.color = "black",
      vertex.label.dist = 0,
@@ -559,7 +558,7 @@ plot(g_viz,
      layout = common_layout,
      vertex.size = node_size_clos,
      vertex.color = node_colors_clos,
-     vertex.label = ifelse(clos_viz > quantile(clos_viz, 0.80), V(g_viz)$name, NA),
+     vertex.label = ifelse(clos_viz > quantile(clos_viz, 0.70), V(g_viz)$name, NA),
      vertex.label.cex = 0.6,
      vertex.label.color = "black",
      vertex.label.dist = 0,
@@ -595,7 +594,7 @@ plot(g_viz,
      layout = common_layout,
      vertex.size = node_size_eigen,
      vertex.color = node_colors_eigen,
-     vertex.label = ifelse(eigen_viz > quantile(eigen_viz, 0.80), V(g_viz)$name, NA),
+     vertex.label = ifelse(eigen_viz > quantile(eigen_viz, 0.70), V(g_viz)$name, NA),
      vertex.label.cex = 0.6,
      vertex.label.color = "black",
      vertex.label.dist = 0,
@@ -631,7 +630,7 @@ plot(g_viz,
      layout = common_layout,
      vertex.size = node_size_pr,
      vertex.color = node_colors_pr,
-     vertex.label = ifelse(pr_viz > quantile(pr_viz, 0.80), V(g_viz)$name, NA),
+     vertex.label = ifelse(pr_viz > quantile(pr_viz, 0.70), V(g_viz)$name, NA),
      vertex.label.cex = 0.6,
      vertex.label.color = "black",
      vertex.label.dist = 0,
