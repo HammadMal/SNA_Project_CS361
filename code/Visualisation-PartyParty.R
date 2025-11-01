@@ -10,6 +10,7 @@
 
 # --- Load Required Libraries ---
 install.packages("igraph", dependencies=TRUE)
+
 library(igraph)
 
 # ==============================================================================
@@ -24,7 +25,7 @@ cat("===========================================================================
 resultpath <- "C:/Users/Hammad/Documents/github/SNA_Project_CS361/results"
 
 # Input files
-metrics_dir <- file.path(resultpath, "03_network_metrics_party_party")
+metrics_dir <- file.path(resultpath, "network_metrics_party_party")
 network_file <- file.path(metrics_dir, "party_party_network.rds")
 centrality_file <- file.path(metrics_dir, "centrality_scores_all.csv")
 
@@ -170,70 +171,84 @@ cat("===========================================================================
 cat("CREATING INDIVIDUAL CENTRALITY PLOTS\n")
 cat("================================================================================\n\n")
 
-pdf(file.path(output_dir, "03_centrality_individual.pdf"), width = 14, height = 10)
+pdf(file.path(output_dir, "03_centrality_individual.pdf"), width = 14, height = 16)  # Increased height to 16
 
-par(mfrow = c(2, 3))
+# Set up layout with adjusted margins
+par(mfrow = c(2, 3),
+    mar = c(10, 4, 5, 2),    # Increased bottom margin from 8 to 10
+    oma = c(2, 0, 3, 0),     # Added outer margin at bottom
+    mgp = c(3, 1, 0))        # Adjust margin line spacing
 
 # --- Degree Centrality ---
 top_deg <- head(centrality[order(-centrality$Degree), ], 20)
 barplot(top_deg$Degree,
         names.arg = top_deg$Party,
-        main = "Top 20 Parties by Degree Centrality",
+        main = "Top 20 Parties by\nDegree Centrality",
         ylab = "Degree",
         col = "steelblue",
         las = 2,
-        cex.names = 0.7)
+        cex.names = 0.65,    # Slightly smaller text for party names
+        cex.main = 1.0)
 
 # --- Betweenness Centrality ---
 top_betw <- head(centrality[order(-centrality$Betweenness), ], 20)
 barplot(top_betw$Betweenness,
         names.arg = top_betw$Party,
-        main = "Top 20 Parties by Betweenness Centrality",
+        main = "Top 20 Parties by\nBetweenness Centrality",
         ylab = "Betweenness",
         col = "coral",
         las = 2,
-        cex.names = 0.7)
+        cex.names = 0.65,
+        cex.main = 1.0)
 
 # --- Closeness Centrality ---
 top_clos <- head(centrality[order(-centrality$Closeness), ], 20)
 barplot(top_clos$Closeness,
         names.arg = top_clos$Party,
-        main = "Top 20 Parties by Closeness Centrality",
+        main = "Top 20 Parties by\nCloseness Centrality",
         ylab = "Closeness",
         col = "gold",
         las = 2,
-        cex.names = 0.7)
+        cex.names = 0.65,
+        cex.main = 1.0)
 
 # --- Eigenvector Centrality ---
 top_eigen <- head(centrality[order(-centrality$Eigenvector), ], 20)
 barplot(top_eigen$Eigenvector,
         names.arg = top_eigen$Party,
-        main = "Top 20 Parties by Eigenvector Centrality",
+        main = "Top 20 Parties by\nEigenvector Centrality",
         ylab = "Eigenvector",
         col = "lightgreen",
         las = 2,
-        cex.names = 0.7)
+        cex.names = 0.65,
+        cex.main = 1.0)
 
 # --- PageRank Centrality ---
 top_pr <- head(centrality[order(-centrality$PageRank), ], 20)
 barplot(top_pr$PageRank,
         names.arg = top_pr$Party,
-        main = "Top 20 Parties by PageRank Centrality",
+        main = "Top 20 Parties by\nPageRank Centrality",
         ylab = "PageRank",
         col = "purple",
         las = 2,
-        cex.names = 0.7)
+        cex.names = 0.65,
+        cex.main = 1.0)
 
 # --- Combined Histogram ---
 hist(centrality$Degree,
      breaks = 30,
-     main = "Degree Distribution - All Parties",
+     main = "Degree Distribution\nAll Parties",
      xlab = "Degree",
      ylab = "Frequency",
      col = "lightblue",
-     border = "white")
+     border = "white",
+     cex.main = 1.0)
 
-par(mfrow = c(1, 1))
+# Reset plotting parameters
+par(mfrow = c(1, 1),
+    mar = c(5, 4, 4, 2),    # Reset to default margins
+    oma = c(0, 0, 0, 0),    # Reset outer margins
+    mgp = c(3, 1, 0))       # Reset margin line spacing
 dev.off()
 
 cat("✓ Saved: 03_centrality_individual.pdf\n\n")
@@ -354,50 +369,50 @@ cat("✓ Saved: 05_centrality_scatterplots.pdf\n\n")
 # 8. NETWORK VISUALIZATION (BASIC)
 # ==============================================================================
 
-cat("================================================================================\n")
-cat("CREATING BASIC NETWORK VISUALIZATION\n")
-cat("================================================================================\n\n")
+# cat("================================================================================\n")
+# cat("CREATING BASIC NETWORK VISUALIZATION\n")
+# cat("================================================================================\n\n")
 
-pdf(file.path(output_dir, "06_network_basic.pdf"), width = 16, height = 12)
+# pdf(file.path(output_dir, "06_network_basic.pdf"), width = 16, height = 12)
 
-# Set up layout
-set.seed(123)  # For reproducibility
-layout <- layout_with_fr(g_party)  # Fruchterman-Reingold layout
+# # Set up layout
+# set.seed(123)  # For reproducibility
+# layout <- layout_with_fr(g_party)  # Fruchterman-Reingold layout
 
-# Size nodes by degree
-node_size <- degree(g_party)
-node_size <- (node_size - min(node_size)) / (max(node_size) - min(node_size)) * 10 + 2
+# # Size nodes by degree
+# node_size <- degree(g_party)
+# node_size <- (node_size - min(node_size)) / (max(node_size) - min(node_size)) * 10 + 2
 
-# Color by degree (blue = low, red = high)
-deg_normalized <- (degree(g_party) - min(degree(g_party))) / 
-                  (max(degree(g_party)) - min(degree(g_party)))
-node_colors <- rgb(deg_normalized, 0, 1 - deg_normalized, 0.7)
+# # Color by degree (blue = low, red = high)
+# deg_normalized <- (degree(g_party) - min(degree(g_party))) / 
+#                   (max(degree(g_party)) - min(degree(g_party)))
+# node_colors <- rgb(deg_normalized, 0, 1 - deg_normalized, 0.7)
 
-plot(g_party,
-     layout = layout,
-     vertex.size = node_size,
-     vertex.color = node_colors,
-     vertex.label = ifelse(degree(g_party) > quantile(degree(g_party), 0.90), 
-                          V(g_party)$name, NA),
-     vertex.label.cex = 0.7,
-     vertex.label.color = "black",
-     vertex.frame.color = "white",
-     edge.width = 0.3,
-     edge.color = rgb(0, 0, 0, 0.1),
-     main = "Party-Party Network - Sized by Degree")
+# plot(g_party,
+#      layout = layout,
+#      vertex.size = node_size,
+#      vertex.color = node_colors,
+#      vertex.label = ifelse(degree(g_party) > quantile(degree(g_party), 0.90), 
+#                           V(g_party)$name, NA),
+#      vertex.label.cex = 0.7,
+#      vertex.label.color = "black",
+#      vertex.frame.color = "white",
+#      edge.width = 0.3,
+#      edge.color = rgb(0, 0, 0, 0.1),
+#      main = "Party-Party Network - Sized by Degree")
 
-# Add legend
-legend("topright",
-       legend = c("High Degree", "Medium Degree", "Low Degree"),
-       col = c("red", "purple", "blue"),
-       pch = 16,
-       pt.cex = 2,
-       cex = 0.9,
-       bg = "white")
+# # Add legend
+# legend("topright",
+#        legend = c("High Degree", "Medium Degree", "Low Degree"),
+#        col = c("red", "purple", "blue"),
+#        pch = 16,
+#        pt.cex = 2,
+#        cex = 0.9,
+#        bg = "white")
 
-dev.off()
+# dev.off()
 
-cat("✓ Saved: 06_network_basic.pdf\n\n")
+# cat("✓ Saved: 06_network_basic.pdf\n\n")
 
 # ==============================================================================
 # 9. NETWORK VISUALIZATION - TOP PARTIES
