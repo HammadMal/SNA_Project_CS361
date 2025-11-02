@@ -600,37 +600,84 @@ legend("topright",
 
 dev.off()
 
-# --- Plot 6: Eccentricity ---
+# --- Plot 6: Eccentricity (IMPROVED VERSION) ---
 pdf(file.path(output_dir, "13_network_eccentricity.pdf"), width = 14, height = 10)
 
 top_50_ecc <- centrality$Eccentricity[match(V(g_viz)$name, centrality$Party)]
-# For eccentricity, lower values are better, so we invert the normalization
-ecc_norm <- 1 - (top_50_ecc - min(top_50_ecc)) / (max(top_50_ecc) - min(top_50_ecc))
-node_size_ecc <- ecc_norm * 15 + 2
 
-# Brown color scheme
-node_colors_ecc <- colorRampPalette(c("#FFF5EB", "#D94801", "#7F2704"))(100)[
-                   ceiling(ecc_norm * 99) + 1]
+# Print diagnostic information
+cat("\n=== Eccentricity Distribution in Top 50 ===\n")
+cat(sprintf("Range: %d to %d\n", min(top_50_ecc), max(top_50_ecc)))
+cat("Value counts:\n")
+print(table(top_50_ecc))
+cat("\n")
+
+# Get unique values and create a discrete color scheme
+unique_ecc <- sort(unique(top_50_ecc))
+n_levels <- length(unique_ecc)
+
+# Create a color palette from DARK (for 0) to LIGHT (for max)
+# Using distinct, visible colors
+if (n_levels <= 2) {
+  # If only 2 levels, use very distinct colors
+  color_palette <- c("#7F2704", "#FFF5EB")
+} else if (n_levels <= 5) {
+  # For 3-5 levels, create evenly spaced colors
+  color_palette <- colorRampPalette(c("#7F2704", "#D94801", "#F16913", "#FD8D3C", "#FDBE85", "#FFF5EB"))(n_levels)
+} else {
+  color_palette <- colorRampPalette(c("#7F2704", "#D94801", "#FFF5EB"))(n_levels)
+}
+
+# Map each eccentricity value to its color
+ecc_colors <- color_palette[match(top_50_ecc, unique_ecc)]
+
+# Size nodes: LARGER for LOWER eccentricity (more central)
+# Use inverse scaling so 0 is largest
+max_ecc <- max(top_50_ecc)
+if (max_ecc > 0) {
+  size_scale <- 1 - (top_50_ecc / max_ecc)
+} else {
+  size_scale <- rep(1, length(top_50_ecc))
+}
+node_size_ecc <- size_scale * 15 + 5  # Range from 5 to 20
+
+# Label strategy: Show ALL party names but make them readable
+# Adjust label size based on importance (lower eccentricity = larger label)
+label_sizes <- size_scale * 0.4 + 0.4  # Range from 0.4 to 0.8
 
 plot(g_viz,
      layout = common_layout,
      vertex.size = node_size_ecc,
-     vertex.color = node_colors_ecc,
-     vertex.label = ifelse(top_50_ecc < quantile(top_50_ecc, 0.30), V(g_viz)$name, NA),
-     vertex.label.cex = 0.6,
+     vertex.color = ecc_colors,
+     vertex.label = V(g_viz)$name,  # Show ALL labels
+     vertex.label.cex = label_sizes,  # Variable label sizes
      vertex.label.color = "black",
-     vertex.label.dist = 0,
+     vertex.label.dist = 0,  # Slight offset for readability
      vertex.frame.color = "white",
      edge.width = 0.3,
-     edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Eccentricity\n(Size and Color by Eccentricity)")
+     edge.color = rgb(0, 0, 0, 0.1),  # More transparent edges
+     main = "Party Network - Eccentricity\n(Darker/Larger = Lower Eccentricity = More Central)")
+
+# Create a better legend showing actual values
+legend_labels <- paste0("Ecc = ", unique_ecc)
+if (unique_ecc[1] == 0) {
+  legend_labels[1] <- "Ecc = 0 (Most Central)"
+}
+if (length(unique_ecc) > 1) {
+  legend_labels[length(legend_labels)] <- paste0("Ecc = ", unique_ecc[length(unique_ecc)], " (Peripheral)")
+}
 
 legend("topright",
-       legend = c("Low Eccentricity", "Medium Eccentricity", "High Eccentricity"),
-       col = colorRampPalette(c("#7F2704", "#D94801", "#FFF5EB"))(3),
-       pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
+       legend = legend_labels,
+       col = color_palette,
+       pch = 16,
+       pt.cex = 2.5,
+       cex = 0.9,
+       bg = "white",
+       title = "Eccentricity Values")
 
 dev.off()
+cat("✓ Saved: 13_network_eccentricity.pdf\n")
 
 # ==============================================================================
 # 11. CLUSTERING COEFFICIENT VISUALIZATION
