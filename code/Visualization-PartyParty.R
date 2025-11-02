@@ -201,7 +201,7 @@ barplot(top_betw$Betweenness,
         cex.names = 0.65,
         cex.main = 1.0)
 
-# --- Closeness Centrality ---
+# --- Plot 3: Closeness Centrality ---
 top_clos <- head(centrality[order(-centrality$Closeness), ], 20)
 barplot(top_clos$Closeness,
         names.arg = top_clos$Party,
@@ -468,27 +468,36 @@ cat("✓ Saved: 08_network_degree_centrality.pdf\n")
 # --- Plot 2: Betweenness Centrality ---
 pdf(file.path(output_dir, "09_network_betweenness_centrality.pdf"), width = 14, height = 10)
 
-betw_viz <- betweenness(g_viz)
-betw_norm <- (betw_viz - min(betw_viz)) / (max(betw_viz) - min(betw_viz))
-node_size_betw <- betw_norm * 15 + 3
-node_colors_betw <- rgb(betw_norm, 0, 1 - betw_norm, 0.8)
+# Get betweenness values from full network but only for top 50
+top_50_betw <- centrality$Betweenness[match(V(g_viz)$name, centrality$Party)]
+
+# Log transform the betweenness values to better handle the large range
+betw_log <- log1p(top_50_betw)  # log1p to handle zeros
+betw_norm <- (betw_log - min(betw_log)) / (max(betw_log) - min(betw_log))
+
+# Adjust node sizes to show more variation
+node_size_betw <- betw_norm * 15 + 2  # Range from 2 to 17
+
+# Use orange color scheme with more distinct gradients
+node_colors_betw <- colorRampPalette(c("#FEE6CE", "#FD8D3C", "#990000"))(100)[
+                     ceiling(betw_norm * 99) + 1]
 
 plot(g_viz,
      layout = common_layout,
      vertex.size = node_size_betw,
      vertex.color = node_colors_betw,
-     vertex.label = ifelse(betw_viz > quantile(betw_viz, 0.70), V(g_viz)$name, NA),
+     vertex.label = ifelse(top_50_betw > quantile(top_50_betw, 0.70), V(g_viz)$name, NA),
      vertex.label.cex = 0.6,
      vertex.label.color = "black",
-     vertex.label.dist = 0,
+     vertex.label.dist = 0.5,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Betweenness Centrality\n(Size and Color by Betweenness)")
+     main = "Party Network - Betweenness Centrality\n(Size and Color by Betweenness, Log-scaled)")
 
 legend("topright",
        legend = c("High Betweenness", "Medium Betweenness", "Low Betweenness"),
-       col = c("red", "purple", "blue"),
+       col = colorRampPalette(c("#990000", "#FD8D3C", "#FEE6CE"))(3),
        pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
 
 dev.off()
@@ -497,127 +506,131 @@ cat("✓ Saved: 09_network_betweenness_centrality.pdf\n")
 # --- Plot 3: Closeness Centrality ---
 pdf(file.path(output_dir, "10_network_closeness_centrality.pdf"), width = 14, height = 10)
 
-clos_viz <- closeness(g_viz, normalized = TRUE)
-clos_norm <- (clos_viz - min(clos_viz)) / (max(clos_viz) - min(clos_viz))
-node_size_clos <- clos_norm * 15 + 3
-node_colors_clos <- rgb(clos_norm, 0, 1 - clos_norm, 0.8)
+# Get closeness values from full network
+top_50_clos <- centrality$Closeness[match(V(g_viz)$name, centrality$Party)]
+clos_log <- log1p(top_50_clos)
+clos_norm <- (clos_log - min(clos_log)) / (max(clos_log) - min(clos_log))
+node_size_clos <- clos_norm * 15 + 2
+
+# Green color scheme
+node_colors_clos <- colorRampPalette(c("#E5F5E0", "#74C476", "#006D2C"))(100)[
+                    ceiling(clos_norm * 99) + 1]
 
 plot(g_viz,
      layout = common_layout,
      vertex.size = node_size_clos,
      vertex.color = node_colors_clos,
-     vertex.label = ifelse(clos_viz > quantile(clos_viz, 0.70), V(g_viz)$name, NA),
+     vertex.label = ifelse(top_50_clos > quantile(top_50_clos, 0.70), V(g_viz)$name, NA),
      vertex.label.cex = 0.6,
      vertex.label.color = "black",
-     vertex.label.dist = 0,
+     vertex.label.dist = 0.5,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Closeness Centrality\n(Size and Color by Closeness)")
+     main = "Party Network - Closeness Centrality\n(Size and Color by Closeness, Log-scaled)")
 
 legend("topright",
        legend = c("High Closeness", "Medium Closeness", "Low Closeness"),
-       col = c("red", "purple", "blue"),
+       col = colorRampPalette(c("#006D2C", "#74C476", "#E5F5E0"))(3),
        pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
 
 dev.off()
-cat("✓ Saved: 10_network_closeness_centrality.pdf\n")
 
 # --- Plot 4: Eigenvector Centrality ---
 pdf(file.path(output_dir, "11_network_eigenvector_centrality.pdf"), width = 14, height = 10)
 
-eigen_viz <- eigen_centrality(g_viz)$vector
-eigen_norm <- (eigen_viz - min(eigen_viz)) / (max(eigen_viz) - min(eigen_viz))
-node_size_eigen <- eigen_norm * 15 + 3
-node_colors_eigen <- rgb(eigen_norm, 0, 1 - eigen_norm, 0.8)
+top_50_eigen <- centrality$Eigenvector[match(V(g_viz)$name, centrality$Party)]
+eigen_log <- log1p(top_50_eigen)
+eigen_norm <- (eigen_log - min(eigen_log)) / (max(eigen_log) - min(eigen_log))
+node_size_eigen <- eigen_norm * 15 + 2
+
+# Purple color scheme
+node_colors_eigen <- colorRampPalette(c("#F2F0F7", "#9E9AC8", "#54278F"))(100)[
+                     ceiling(eigen_norm * 99) + 1]
 
 plot(g_viz,
      layout = common_layout,
      vertex.size = node_size_eigen,
      vertex.color = node_colors_eigen,
-     vertex.label = ifelse(eigen_viz > quantile(eigen_viz, 0.70), V(g_viz)$name, NA),
+     vertex.label = ifelse(top_50_eigen > quantile(top_50_eigen, 0.70), V(g_viz)$name, NA),
      vertex.label.cex = 0.6,
      vertex.label.color = "black",
-     vertex.label.dist = 0,
+     vertex.label.dist = 0.5,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Eigenvector Centrality\n(Size and Color by Eigenvector)")
+     main = "Party Network - Eigenvector Centrality\n(Size and Color by Eigenvector, Log-scaled)")
 
 legend("topright",
        legend = c("High Eigenvector", "Medium Eigenvector", "Low Eigenvector"),
-       col = c("red", "purple", "blue"),
+       col = colorRampPalette(c("#54278F", "#9E9AC8", "#F2F0F7"))(3),
        pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
 
 dev.off()
-cat("✓ Saved: 11_network_eigenvector_centrality.pdf\n")
 
-# --- Plot 5: PageRank Centrality ---
+# --- Plot 5: PageRank ---
 pdf(file.path(output_dir, "12_network_pagerank_centrality.pdf"), width = 14, height = 10)
 
-pr_viz <- page_rank(g_viz)$vector
-pr_norm <- (pr_viz - min(pr_viz)) / (max(pr_viz) - min(pr_viz))
-node_size_pr <- pr_norm * 15 + 3
-node_colors_pr <- rgb(pr_norm, 0, 1 - pr_norm, 0.8)
+top_50_pr <- centrality$PageRank[match(V(g_viz)$name, centrality$Party)]
+pr_log <- log1p(top_50_pr)
+pr_norm <- (pr_log - min(pr_log)) / (max(pr_log) - min(pr_log))
+node_size_pr <- pr_norm * 15 + 2
+
+# Red color scheme
+node_colors_pr <- colorRampPalette(c("#FEE5D9", "#FB6A4A", "#A50F15"))(100)[
+                  ceiling(pr_norm * 99) + 1]
 
 plot(g_viz,
      layout = common_layout,
      vertex.size = node_size_pr,
      vertex.color = node_colors_pr,
-     vertex.label = ifelse(pr_viz > quantile(pr_viz, 0.70), V(g_viz)$name, NA),
+     vertex.label = ifelse(top_50_pr > quantile(top_50_pr, 0.70), V(g_viz)$name, NA),
      vertex.label.cex = 0.6,
      vertex.label.color = "black",
-     vertex.label.dist = 0,
+     vertex.label.dist = 0.5,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - PageRank Centrality\n(Size and Color by PageRank)")
+     main = "Party Network - PageRank\n(Size and Color by PageRank, Log-scaled)")
 
 legend("topright",
        legend = c("High PageRank", "Medium PageRank", "Low PageRank"),
-       col = c("red", "purple", "blue"),
+       col = colorRampPalette(c("#A50F15", "#FB6A4A", "#FEE5D9"))(3),
        pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
 
 dev.off()
-cat("✓ Saved: 12_network_pagerank_centrality.pdf\n")
 
 # --- Plot 6: Eccentricity ---
 pdf(file.path(output_dir, "13_network_eccentricity.pdf"), width = 14, height = 10)
 
-ecc_viz <- eccentricity(g_viz)
-if(max(ecc_viz) == min(ecc_viz)) {
-  ecc_norm <- rep(0, length(ecc_viz))
-} else {
-  ecc_norm <- (ecc_viz - min(ecc_viz)) / (max(ecc_viz) - min(ecc_viz))
-}
+top_50_ecc <- centrality$Eccentricity[match(V(g_viz)$name, centrality$Party)]
+# For eccentricity, lower values are better, so we invert the normalization
+ecc_norm <- 1 - (top_50_ecc - min(top_50_ecc)) / (max(top_50_ecc) - min(top_50_ecc))
+node_size_ecc <- ecc_norm * 15 + 2
 
-node_size_ecc <- (1 - ecc_norm) * 8 + 2
-node_colors_ecc <- rgb(1 - ecc_norm, 0, ecc_norm, 0.8)
-
-label_threshold <- 0.30
-label_cutoff <- quantile(ecc_viz, probs = label_threshold, na.rm = TRUE)
-vertex_labels <- ifelse(ecc_viz <= label_cutoff, V(g_viz)$name, NA)
+# Brown color scheme
+node_colors_ecc <- colorRampPalette(c("#FFF5EB", "#D94801", "#7F2704"))(100)[
+                   ceiling(ecc_norm * 99) + 1]
 
 plot(g_viz,
      layout = common_layout,
      vertex.size = node_size_ecc,
      vertex.color = node_colors_ecc,
-     vertex.label = vertex_labels,
-     vertex.label.cex = 0.7,
+     vertex.label = ifelse(top_50_ecc < quantile(top_50_ecc, 0.30), V(g_viz)$name, NA),
+     vertex.label.cex = 0.6,
      vertex.label.color = "black",
-     vertex.label.dist = 0,
+     vertex.label.dist = 0.5,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
      main = "Party Network - Eccentricity\n(Size and Color by Eccentricity)")
 
 legend("topright",
-       legend = c("Low Eccentricity (central)", "Medium Eccentricity", "High Eccentricity (peripheral)"),
-       col = c("red", "purple", "blue"),
+       legend = c("Low Eccentricity", "Medium Eccentricity", "High Eccentricity"),
+       col = colorRampPalette(c("#7F2704", "#D94801", "#FFF5EB"))(3),
        pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
 
 dev.off()
-cat("✓ Saved: 13_network_eccentricity.pdf\n\n")
 
 # ==============================================================================
 # 11. CLUSTERING COEFFICIENT VISUALIZATION
@@ -653,39 +666,36 @@ pdf(file.path(output_dir, "14_network_clustering_coefficient.pdf"), width = 14, 
 top_50_parties_clust <- head(centrality[order(-centrality$Degree), "Party"], 50)
 g_clust_viz <- induced_subgraph(g_party, V(g_party)$name %in% top_50_parties_clust)
 
-# Calculate clustering for this subgraph
-clust_viz <- transitivity(g_clust_viz, type = "local")
-clust_viz[is.nan(clust_viz)] <- 0
+# Get clustering coefficients from full network for the top 50 parties
+top_50_clust <- clustering_df_full$Clustering[match(V(g_clust_viz)$name, clustering_df_full$Party)]
 
 # Normalize clustering for sizing and coloring
-clust_norm <- (clust_viz - min(clust_viz)) / (max(clust_viz) - min(clust_viz))
+clust_norm <- (top_50_clust - min(top_50_clust)) / (max(top_50_clust) - min(top_50_clust))
 
-# Size by clustering
-node_size_clust <- clust_norm * 15 + 3
+# Size by clustering (adjusted range)
+node_size_clust <- clust_norm * 12 + 3  # smaller multiplier for better size range
 
-# Color by clustering
-node_colors_clust <- rgb(clust_norm, 0, 1 - clust_norm, 0.8)
+# Color by clustering using a teal color scheme
+node_colors_clust <- colorRampPalette(c("#EDF8FB", "#66C2A4", "#006D2C"))(100)[
+                     ceiling(clust_norm * 99) + 1]
 
 # Use same layout as other centrality plots
-set.seed(123)
-layout_clust <- layout_with_graphopt(g_clust_viz, charge = 0.01)
-
 plot(g_clust_viz,
-     layout = layout_clust,
+     layout = common_layout,
      vertex.size = node_size_clust,
      vertex.color = node_colors_clust,
-     vertex.label = ifelse(clust_viz > quantile(clust_viz, 0.70), V(g_clust_viz)$name, NA),
+     vertex.label = ifelse(top_50_clust > quantile(top_50_clust, 0.70), V(g_clust_viz)$name, NA),
      vertex.label.cex = 0.6,
      vertex.label.color = "black",
-     vertex.label.dist = 0,
+     vertex.label.dist = 0.5,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Clustering Coefficient\n(Size and Color by Clustering)")
+     main = "Party Network - Clustering Coefficient\n(Size and Color by Local Clustering)")
 
 legend("topright",
        legend = c("High Clustering", "Medium Clustering", "Low Clustering"),
-       col = c("red", "purple", "blue"),
+       col = colorRampPalette(c("#006D2C", "#66C2A4", "#EDF8FB"))(3),
        pch = 16,
        pt.cex = 2,
        cex = 0.9,
