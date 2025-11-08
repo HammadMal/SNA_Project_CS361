@@ -617,15 +617,15 @@ unique_ecc <- sort(unique(top_50_ecc))
 n_levels <- length(unique_ecc)
 
 # Create a color palette from DARK (for 0) to LIGHT (for max)
-# Using distinct, visible colors
+# Using blue-purple gradient for better visibility
 if (n_levels <= 2) {
   # If only 2 levels, use very distinct colors
-  color_palette <- c("#7F2704", "#FFF5EB")
+  color_palette <- c("#08519C", "#C6DBEF")
 } else if (n_levels <= 5) {
   # For 3-5 levels, create evenly spaced colors
-  color_palette <- colorRampPalette(c("#7F2704", "#D94801", "#F16913", "#FD8D3C", "#FDBE85", "#FFF5EB"))(n_levels)
+  color_palette <- colorRampPalette(c("#08519C", "#3182BD", "#6BAED6", "#9ECAE1", "#C6DBEF", "#EFF3FF"))(n_levels)
 } else {
-  color_palette <- colorRampPalette(c("#7F2704", "#D94801", "#FFF5EB"))(n_levels)
+  color_palette <- colorRampPalette(c("#08519C", "#3182BD", "#EFF3FF"))(n_levels)
 }
 
 # Map each eccentricity value to its color

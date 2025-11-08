@@ -1,102 +1,55 @@
 "ID","Name","Type","Num_Parties","Is_Switcher"
-"Mirza_Zulfiqar_Ahmed","Mirza Zulfiqar Ahmed","Candidate",1,FALSE
-"Nawab_Amber_Shahzada","Nawab Amber Shahzada","Candidate",1,FALSE
-"Nawab_Doctor_Amber_Shahzada","Nawab Doctor Amber Shahzada","Candidate",1,FALSE
-"Nawab_Dr__Amber_Shehzada","Nawab Dr. Amber Shehzada","Candidate",1,FALSE
 "Noor_Hussain","Noor Hussain","Candidate",1,FALSE
 "Rashida_Naeem","Rashida Naeem","Candidate",1,FALSE
 "Waqar_Ahmed","Waqar Ahmed","Candidate",1,FALSE
-"Ehsaamuddin","Ehsaamuddin","Candidate",1,FALSE
+"Jawad_Aziz","Jawad Aziz","Candidate",1,FALSE
+"M_iqbal_Haider","M.iqbal Haider","Candidate",1,FALSE
+"Molvi_Iqbal_Haider_Advocate","Molvi Iqbal Haider Advocate","Candidate",1,FALSE
+"Moulvi_Iqbal_Haider","Moulvi Iqbal Haider","Candidate",1,FALSE
+"Tahir_Iqbal","Tahir Iqbal","Candidate",3,TRUE
+"Engineer_Usman_Khan_Tarrakai","Engineer Usman Khan Tarrakai","Candidate",1,FALSE
 "Arslan_Khan_Manj","Arslan Khan Manj","Candidate",1,FALSE
 "Ghulam_Mustafa","Ghulam Mustafa","Candidate",3,TRUE
 "Mirza_Tariq_Mehmood","Mirza Tariq Mehmood","Candidate",1,FALSE
 "Muhammad_Ali_Khan_Yousafzai","Muhammad Ali Khan Yousafzai","Candidate",1,FALSE
 "Muhammad_Amin_Watoo","Muhammad Amin Watoo","Candidate",1,FALSE
 "Muhammad_Kashif","Muhammad Kashif","Candidate",2,TRUE
+"Mahr_Ghulam_Mustafa_Mangan_Advocate","Mahr Ghulam Mustafa Mangan Advocate","Candidate",1,FALSE
+"Mohtarma_Nazish_Aslam_Advocate","Mohtarma Nazish Aslam Advocate","Candidate",1,FALSE
+"Muhammad_Zafar_Iqbal_Gujjar","Muhammad Zafar Iqbal Gujjar","Candidate",1,FALSE
+"Mushtaq_Ahmad_Bhatti","Mushtaq Ahmad Bhatti","Candidate",1,FALSE
+"Qari_Nasir_Mahmood_Mughal","Qari Nasir Mahmood Mughal","Candidate",1,FALSE
+"Rana_Akbar_Abbas","Rana Akbar Abbas","Candidate",1,FALSE
+"Rana_Basharat_Ali","Rana Basharat Ali","Candidate",1,FALSE
+"Sayyeda_Nighat_Ishfaq","Sayyeda Nighat Ishfaq","Candidate",1,FALSE
+"Nawab_Amber_Shahzada","Nawab Amber Shahzada","Candidate",1,FALSE
+"Nawab_Doctor_Amber_Shahzada","Nawab Doctor Amber Shahzada","Candidate",1,FALSE
+"Nawab_Dr__Amber_Shehzada","Nawab Dr. Amber Shehzada","Candidate",1,FALSE
+"Mirza_Zulfiqar_Ahmed","Mirza Zulfiqar Ahmed","Candidate",1,FALSE
 "Syed_Muhammad_Hussain","Syed Muhammad Hussain","Candidate",1,FALSE
 "Sadeed_Anver_Malik_Kashir","Sadeed Anver Malik Kashir","Candidate",1,FALSE
 "Zain_Ul_Abideen","Zain Ul Abideen","Candidate",1,FALSE
-"Rana_Muhammad_Ali","Rana Muhammad Ali","Candidate",1,FALSE
-"Abdul_Majeed","Abdul Majeed","Candidate",2,TRUE
-"Akhtar_Nawaz_Faisal_Daryana","Akhtar Nawaz Faisal Daryana","Candidate",1,FALSE
-"Amoon_Pasha","Amoon Pasha","Candidate",1,FALSE
-"Arshad_Ali","Arshad Ali","Candidate",1,FALSE
-"Asghar_Abbas","Asghar Abbas","Candidate",1,FALSE
-"Ashar_Jahangir","Ashar Jahangir","Candidate",1,FALSE
-"Babar_Ali","Babar Ali","Candidate",2,TRUE
-"Ch__Muhamamd_Ilyas","Ch. Muhamamd Ilyas","Candidate",1,FALSE
-"Ch_Ghulam_Dastageer","Ch Ghulam Dastageer","Candidate",1,FALSE
-"Chaudhary_Tanveer_Ahmed_Advocate","Chaudhary Tanveer Ahmed Advocate","Candidate",1,FALSE
-"Choudhry_Gulzar_Hussain_Gohar_Advocate","Choudhry Gulzar Hussain Gohar Advocate","Candidate",1,FALSE
-"Dilshad_Rind","Dilshad Rind","Candidate",1,FALSE
-"Farid_Ullah_Bazai","Farid Ullah Bazai","Candidate",1,FALSE
-"Ghulam_Haider","Ghulam Haider","Candidate",2,TRUE
-"Ghulam_Qadir_Bajwa","Ghulam Qadir Bajwa","Candidate",1,FALSE
-"Haji_Rashid_Ahmed_Khan_Rana","Haji Rashid Ahmed Khan Rana","Candidate",1,FALSE
-"Hizbullah","Hizbullah","Candidate",2,TRUE
-"Iftikhar_Ud_Din","Iftikhar Ud Din","Candidate",1,FALSE
-"Israr_Ahmad_Chishti_Advocate","Israr Ahmad Chishti Advocate","Candidate",1,FALSE
-"Jawaid_Ahmed_Khan","Jawaid Ahmed Khan","Candidate",1,FALSE
-"Khalid_Ibrar","Khalid Ibrar","Candidate",1,FALSE
-"Makhdeem_Syed_Zahid_Hussain","Makhdeem Syed Zahid Hussain","Candidate",1,FALSE
-"Makhodzada_Syed_Hasan_Raza_Gillini","Makhodzada Syed Hasan Raza Gillini","Candidate",1,FALSE
-"Malik_Azhar_Mehmood","Malik Azhar Mehmood","Candidate",1,FALSE
-"Malik_Fakhar_Iqbal_Wattoo","Malik Fakhar Iqbal Wattoo","Candidate",1,FALSE
-"Malik_Hamid_Mehmood","Malik Hamid Mehmood","Candidate",1,FALSE
-"Malik_Muhammad_Iqbal_Jora","Malik Muhammad Iqbal Jora","Candidate",1,FALSE
-"Malik_Muhammad_Siddique_Advocate","Malik Muhammad Siddique Advocate","Candidate",1,FALSE
-"Malik_Nisar_Ahmad_Thind","Malik Nisar Ahmad Thind","Candidate",1,FALSE
-"Malik_Shamriz_Awan","Malik Shamriz Awan","Candidate",1,FALSE
-"Malik_Zia_Ul_Haque_Tiwana","Malik Zia Ul Haque Tiwana","Candidate",1,FALSE
-"Mashood_Ahsan_Gill","Mashood Ahsan Gill","Candidate",1,FALSE
-"Mian_Nadeem_Ahmed_Saleemi","Mian Nadeem Ahmed Saleemi","Candidate",1,FALSE
-"Mirza_Bilal_Baig","Mirza Bilal Baig","Candidate",1,FALSE
-"Mohammad_Sharif_Rind","Mohammad Sharif Rind","Candidate",1,FALSE
-"Muhammad_Amjad","Muhammad Amjad","Candidate",3,TRUE
-"Muhammad_Asim_Ishtiaq","Muhammad Asim Ishtiaq","Candidate",1,FALSE
-"Muhammad_Ghufran_Rajput","Muhammad Ghufran Rajput","Candidate",1,FALSE
-"Muhammad_Khaliq_Siddique","Muhammad Khaliq Siddique","Candidate",1,FALSE
-"Muhammad_Naseer","Muhammad Naseer","Candidate",1,FALSE
-"Muhammad_Nisar_Butt","Muhammad Nisar Butt","Candidate",1,FALSE
-"Muhammad_Sharif_Noori","Muhammad Sharif Noori","Candidate",1,FALSE
-"Muhammad_Zeb","Muhammad Zeb","Candidate",1,FALSE
-"Mushtaq_Ahmed_Khan_Mughal","Mushtaq Ahmed Khan Mughal","Candidate",1,FALSE
-"Nadir_Khan","Nadir Khan","Candidate",1,FALSE
-"Nasar_Ullah_Khan_Jarral","Nasar Ullah Khan Jarral","Candidate",1,FALSE
-"Paras_Shah","Paras Shah","Candidate",1,FALSE
-"Qaiser_Nawaz_Khan_Babar","Qaiser Nawaz Khan Babar","Candidate",1,FALSE
-"Qasim_Ali","Qasim Ali","Candidate",1,FALSE
-"Raja_Amir_Rasheed","Raja Amir Rasheed","Candidate",1,FALSE
-"Rana_Arshad_Saeed_Khan","Rana Arshad Saeed Khan","Candidate",1,FALSE
-"Riaz_Ahmad","Riaz Ahmad","Candidate",1,FALSE
-"Riaz_Hussain_Sewag","Riaz Hussain Sewag","Candidate",1,FALSE
-"Sahibzada_Ahmed_Raza_Khan_Qasoori","Sahibzada Ahmed Raza Khan Qasoori","Candidate",1,FALSE
-"Saira_Goga_Daughter_of_Goga_Pehalwan","Saira Goga Daughter of Goga Pehalwan","Candidate",1,FALSE
-"Saqlain_Abbas_Bangash","Saqlain Abbas Bangash","Candidate",1,FALSE
-"Saradar_Sikandar_Hayat_Khan_Goopang","Saradar Sikandar Hayat Khan Goopang","Candidate",1,FALSE
-"Sardar_Ghulam_Mustafa","Sardar Ghulam Mustafa","Candidate",1,FALSE
-"Sardar_Ghulam_Mustafa_Khaskheli","Sardar Ghulam Mustafa Khaskheli","Candidate",2,TRUE
-"Sarmir_Khan","Sarmir Khan","Candidate",1,FALSE
-"Shafiur_Rahman","Shafiur Rahman","Candidate",1,FALSE
-"Shaheen_Munawer","Shaheen Munawer","Candidate",1,FALSE
-"Shoaib_Khaskhali","Shoaib Khaskhali","Candidate",1,FALSE
-"Syed_Adnan_Haider_Jafri","Syed Adnan Haider Jafri","Candidate",1,FALSE
-"Syed_Ali_Abbas_Kazmi","Syed Ali Abbas Kazmi","Candidate",1,FALSE
-"Syed_Imran_Sultan","Syed Imran Sultan","Candidate",1,FALSE
-"Syed_Marghoob_Hussain_Abdi","Syed Marghoob Hussain Abdi","Candidate",1,FALSE
-"Syed_Mukhtar_Hussain_Shah","Syed Mukhtar Hussain Shah","Candidate",2,TRUE
-"Syed_Naveed_Ali_Shah","Syed Naveed Ali Shah","Candidate",1,FALSE
-"Syed_Sajjad_Hussain_Shah_Kazmi","Syed Sajjad Hussain Shah Kazmi","Candidate",1,FALSE
-"Syed_Zakir_Shah","Syed Zakir Shah","Candidate",1,FALSE
-"Tayyaba_Zameer","Tayyaba Zameer","Candidate",1,FALSE
-"Waheed_Ahmad","Waheed Ahmad","Candidate",2,TRUE
-"Waheed_Depal","Waheed Depal","Candidate",1,FALSE
-"Waseem_Akhter_Raja","Waseem Akhter Raja","Candidate",1,FALSE
-"Yar_Badshah","Yar Badshah","Candidate",1,FALSE
-"Mian_Saghir_Ahmed_Malvi","Mian Saghir Ahmed Malvi","Candidate",1,FALSE
 "Muhammad_Naseem_Sadiq","Muhammad Naseem Sadiq","Candidate",1,FALSE
+"Abdul_Khaliq_Shamas","Abdul Khaliq Shamas","Candidate",1,FALSE
+"Abdul_Qadir","Abdul Qadir","Candidate",5,TRUE
+"Abdul_Razaque","Abdul Razaque","Candidate",1,FALSE
+"Begum_Shahmeem_Arshad_Minhas","Begum Shahmeem Arshad Minhas","Candidate",1,FALSE
+"Ch_Dilbar_Hussain_Ghaffari","Ch Dilbar Hussain Ghaffari","Candidate",1,FALSE
+"Chaudhary_Muhammad_Iqbal_Gujjar","Chaudhary Muhammad Iqbal Gujjar","Candidate",1,FALSE
+"Gulana_Bibi","Gulana Bibi","Candidate",1,FALSE
+"Kanwar_Aamir_Sami","Kanwar Aamir Sami","Candidate",1,FALSE
+"Mahboob_Aftab_Khan","Mahboob Aftab Khan","Candidate",1,FALSE
+"Malik_Tariq_Mehmood","Malik Tariq Mehmood","Candidate",2,TRUE
+"Muhammad_Nasrullah_Arain","Muhammad Nasrullah Arain","Candidate",1,FALSE
+"Muhammad_Rashid","Muhammad Rashid","Candidate",1,FALSE
+"Muhammad_Usama_Nawaz","Muhammad Usama Nawaz","Candidate",1,FALSE
+"Nawab_Imran_Khan_Khilji","Nawab Imran Khan Khilji","Candidate",1,FALSE
 "Sheikh_Rasheed_Ahmed","Sheikh Rasheed Ahmed","Candidate",2,TRUE
+"Sheikh_Rashid_Ahmed","Sheikh Rashid Ahmed","Candidate",1,FALSE
 "Sheikh_Rashid_Shafiq","Sheikh Rashid Shafiq","Candidate",1,FALSE
+"Syed_Mustafsir_Hussain_Bukhari","Syed Mustafsir Hussain Bukhari","Candidate",1,FALSE
+"Syed_Rehan_Ali","Syed Rehan Ali","Candidate",1,FALSE
+"Zafar_Ahmed_Ghori","Zafar Ahmed Ghori","Candidate",1,FALSE
 "Abdul_Matin_Khan","Abdul Matin Khan","Candidate",1,FALSE
 "Abdul_Qayyum","Abdul Qayyum","Candidate",4,TRUE
 "Abdul_Rasheed_Nasir","Abdul Rasheed Nasir","Candidate",1,FALSE
@@ -246,43 +199,94 @@
 "Waris_Khan","Waris Khan","Candidate",1,FALSE
 "Zain_Umar_Arbab","Zain Umar Arbab","Candidate",1,FALSE
 "Zarbali_Syed","Zarbali Syed","Candidate",1,FALSE
+"Rana_Muhammad_Ali","Rana Muhammad Ali","Candidate",1,FALSE
+"Abdul_Majeed","Abdul Majeed","Candidate",2,TRUE
+"Akhtar_Nawaz_Faisal_Daryana","Akhtar Nawaz Faisal Daryana","Candidate",1,FALSE
+"Amoon_Pasha","Amoon Pasha","Candidate",1,FALSE
+"Arshad_Ali","Arshad Ali","Candidate",1,FALSE
+"Asghar_Abbas","Asghar Abbas","Candidate",1,FALSE
+"Ashar_Jahangir","Ashar Jahangir","Candidate",1,FALSE
+"Babar_Ali","Babar Ali","Candidate",2,TRUE
+"Ch__Muhamamd_Ilyas","Ch. Muhamamd Ilyas","Candidate",1,FALSE
+"Ch_Ghulam_Dastageer","Ch Ghulam Dastageer","Candidate",1,FALSE
+"Chaudhary_Tanveer_Ahmed_Advocate","Chaudhary Tanveer Ahmed Advocate","Candidate",1,FALSE
+"Choudhry_Gulzar_Hussain_Gohar_Advocate","Choudhry Gulzar Hussain Gohar Advocate","Candidate",1,FALSE
+"Dilshad_Rind","Dilshad Rind","Candidate",1,FALSE
+"Farid_Ullah_Bazai","Farid Ullah Bazai","Candidate",1,FALSE
+"Ghulam_Haider","Ghulam Haider","Candidate",2,TRUE
+"Ghulam_Qadir_Bajwa","Ghulam Qadir Bajwa","Candidate",1,FALSE
+"Haji_Rashid_Ahmed_Khan_Rana","Haji Rashid Ahmed Khan Rana","Candidate",1,FALSE
+"Hizbullah","Hizbullah","Candidate",2,TRUE
+"Iftikhar_Ud_Din","Iftikhar Ud Din","Candidate",1,FALSE
+"Israr_Ahmad_Chishti_Advocate","Israr Ahmad Chishti Advocate","Candidate",1,FALSE
+"Jawaid_Ahmed_Khan","Jawaid Ahmed Khan","Candidate",1,FALSE
+"Khalid_Ibrar","Khalid Ibrar","Candidate",1,FALSE
+"Makhdeem_Syed_Zahid_Hussain","Makhdeem Syed Zahid Hussain","Candidate",1,FALSE
+"Makhodzada_Syed_Hasan_Raza_Gillini","Makhodzada Syed Hasan Raza Gillini","Candidate",1,FALSE
+"Malik_Azhar_Mehmood","Malik Azhar Mehmood","Candidate",1,FALSE
+"Malik_Fakhar_Iqbal_Wattoo","Malik Fakhar Iqbal Wattoo","Candidate",1,FALSE
+"Malik_Hamid_Mehmood","Malik Hamid Mehmood","Candidate",1,FALSE
+"Malik_Muhammad_Iqbal_Jora","Malik Muhammad Iqbal Jora","Candidate",1,FALSE
+"Malik_Muhammad_Siddique_Advocate","Malik Muhammad Siddique Advocate","Candidate",1,FALSE
+"Malik_Nisar_Ahmad_Thind","Malik Nisar Ahmad Thind","Candidate",1,FALSE
+"Malik_Shamriz_Awan","Malik Shamriz Awan","Candidate",1,FALSE
+"Malik_Zia_Ul_Haque_Tiwana","Malik Zia Ul Haque Tiwana","Candidate",1,FALSE
+"Mashood_Ahsan_Gill","Mashood Ahsan Gill","Candidate",1,FALSE
+"Mian_Nadeem_Ahmed_Saleemi","Mian Nadeem Ahmed Saleemi","Candidate",1,FALSE
+"Mirza_Bilal_Baig","Mirza Bilal Baig","Candidate",1,FALSE
+"Mohammad_Sharif_Rind","Mohammad Sharif Rind","Candidate",1,FALSE
+"Muhammad_Amjad","Muhammad Amjad","Candidate",3,TRUE
+"Muhammad_Asim_Ishtiaq","Muhammad Asim Ishtiaq","Candidate",1,FALSE
+"Muhammad_Ghufran_Rajput","Muhammad Ghufran Rajput","Candidate",1,FALSE
+"Muhammad_Khaliq_Siddique","Muhammad Khaliq Siddique","Candidate",1,FALSE
+"Muhammad_Naseer","Muhammad Naseer","Candidate",1,FALSE
+"Muhammad_Nisar_Butt","Muhammad Nisar Butt","Candidate",1,FALSE
+"Muhammad_Sharif_Noori","Muhammad Sharif Noori","Candidate",1,FALSE
+"Muhammad_Zeb","Muhammad Zeb","Candidate",1,FALSE
+"Mushtaq_Ahmed_Khan_Mughal","Mushtaq Ahmed Khan Mughal","Candidate",1,FALSE
+"Nadir_Khan","Nadir Khan","Candidate",1,FALSE
+"Nasar_Ullah_Khan_Jarral","Nasar Ullah Khan Jarral","Candidate",1,FALSE
+"Paras_Shah","Paras Shah","Candidate",1,FALSE
+"Qaiser_Nawaz_Khan_Babar","Qaiser Nawaz Khan Babar","Candidate",1,FALSE
+"Qasim_Ali","Qasim Ali","Candidate",1,FALSE
+"Raja_Amir_Rasheed","Raja Amir Rasheed","Candidate",1,FALSE
+"Rana_Arshad_Saeed_Khan","Rana Arshad Saeed Khan","Candidate",1,FALSE
+"Riaz_Ahmad","Riaz Ahmad","Candidate",1,FALSE
+"Riaz_Hussain_Sewag","Riaz Hussain Sewag","Candidate",1,FALSE
+"Sahibzada_Ahmed_Raza_Khan_Qasoori","Sahibzada Ahmed Raza Khan Qasoori","Candidate",1,FALSE
+"Saira_Goga_Daughter_of_Goga_Pehalwan","Saira Goga Daughter of Goga Pehalwan","Candidate",1,FALSE
+"Saqlain_Abbas_Bangash","Saqlain Abbas Bangash","Candidate",1,FALSE
+"Saradar_Sikandar_Hayat_Khan_Goopang","Saradar Sikandar Hayat Khan Goopang","Candidate",1,FALSE
+"Sardar_Ghulam_Mustafa","Sardar Ghulam Mustafa","Candidate",1,FALSE
+"Sardar_Ghulam_Mustafa_Khaskheli","Sardar Ghulam Mustafa Khaskheli","Candidate",2,TRUE
+"Sarmir_Khan","Sarmir Khan","Candidate",1,FALSE
+"Shafiur_Rahman","Shafiur Rahman","Candidate",1,FALSE
+"Shaheen_Munawer","Shaheen Munawer","Candidate",1,FALSE
+"Shoaib_Khaskhali","Shoaib Khaskhali","Candidate",1,FALSE
+"Syed_Adnan_Haider_Jafri","Syed Adnan Haider Jafri","Candidate",1,FALSE
+"Syed_Ali_Abbas_Kazmi","Syed Ali Abbas Kazmi","Candidate",1,FALSE
+"Syed_Imran_Sultan","Syed Imran Sultan","Candidate",1,FALSE
+"Syed_Marghoob_Hussain_Abdi","Syed Marghoob Hussain Abdi","Candidate",1,FALSE
+"Syed_Mukhtar_Hussain_Shah","Syed Mukhtar Hussain Shah","Candidate",2,TRUE
+"Syed_Naveed_Ali_Shah","Syed Naveed Ali Shah","Candidate",1,FALSE
+"Syed_Sajjad_Hussain_Shah_Kazmi","Syed Sajjad Hussain Shah Kazmi","Candidate",1,FALSE
+"Syed_Zakir_Shah","Syed Zakir Shah","Candidate",1,FALSE
+"Tayyaba_Zameer","Tayyaba Zameer","Candidate",1,FALSE
+"Waheed_Ahmad","Waheed Ahmad","Candidate",2,TRUE
+"Waheed_Depal","Waheed Depal","Candidate",1,FALSE
+"Waseem_Akhter_Raja","Waseem Akhter Raja","Candidate",1,FALSE
+"Yar_Badshah","Yar Badshah","Candidate",1,FALSE
 "Shoaib_Amjad_Pervaiz","Shoaib Amjad Pervaiz","Candidate",1,FALSE
+"Gul_Muhammad_Bhatti","Gul Muhammad Bhatti","Candidate",1,FALSE
+"Gull_Muhammad_Bhatti__Retired_","Gull Muhammad Bhatti (Retired)","Candidate",1,FALSE
 "Makhdoom_Muhammad_Ehsan","Makhdoom Muhammad Ehsan","Candidate",1,FALSE
+"Sardar_Sher_Zaman_Khan_Qaisrani","Sardar Sher Zaman Khan Qaisrani","Candidate",1,FALSE
+"Mian_Saghir_Ahmed_Malvi","Mian Saghir Ahmed Malvi","Candidate",1,FALSE
+"Ehsaamuddin","Ehsaamuddin","Candidate",1,FALSE
 "Bashir_Khan","Bashir Khan","Candidate",1,FALSE
 "Malik_Annayat_Ullah_Khokhar","Malik Annayat Ullah Khokhar","Candidate",1,FALSE
 "Rajkumar","Rajkumar","Candidate",1,FALSE
-"Jawad_Aziz","Jawad Aziz","Candidate",1,FALSE
-"M_iqbal_Haider","M.iqbal Haider","Candidate",1,FALSE
-"Molvi_Iqbal_Haider_Advocate","Molvi Iqbal Haider Advocate","Candidate",1,FALSE
-"Moulvi_Iqbal_Haider","Moulvi Iqbal Haider","Candidate",1,FALSE
-"Tahir_Iqbal","Tahir Iqbal","Candidate",3,TRUE
-"Engineer_Usman_Khan_Tarrakai","Engineer Usman Khan Tarrakai","Candidate",1,FALSE
-"Mahr_Ghulam_Mustafa_Mangan_Advocate","Mahr Ghulam Mustafa Mangan Advocate","Candidate",1,FALSE
-"Mohtarma_Nazish_Aslam_Advocate","Mohtarma Nazish Aslam Advocate","Candidate",1,FALSE
-"Muhammad_Zafar_Iqbal_Gujjar","Muhammad Zafar Iqbal Gujjar","Candidate",1,FALSE
-"Mushtaq_Ahmad_Bhatti","Mushtaq Ahmad Bhatti","Candidate",1,FALSE
-"Qari_Nasir_Mahmood_Mughal","Qari Nasir Mahmood Mughal","Candidate",1,FALSE
-"Rana_Akbar_Abbas","Rana Akbar Abbas","Candidate",1,FALSE
-"Rana_Basharat_Ali","Rana Basharat Ali","Candidate",1,FALSE
-"Sayyeda_Nighat_Ishfaq","Sayyeda Nighat Ishfaq","Candidate",1,FALSE
-"Abdul_Khaliq_Shamas","Abdul Khaliq Shamas","Candidate",1,FALSE
-"Abdul_Qadir","Abdul Qadir","Candidate",5,TRUE
-"Abdul_Razaque","Abdul Razaque","Candidate",1,FALSE
-"Begum_Shahmeem_Arshad_Minhas","Begum Shahmeem Arshad Minhas","Candidate",1,FALSE
-"Ch_Dilbar_Hussain_Ghaffari","Ch Dilbar Hussain Ghaffari","Candidate",1,FALSE
-"Chaudhary_Muhammad_Iqbal_Gujjar","Chaudhary Muhammad Iqbal Gujjar","Candidate",1,FALSE
-"Gulana_Bibi","Gulana Bibi","Candidate",1,FALSE
-"Kanwar_Aamir_Sami","Kanwar Aamir Sami","Candidate",1,FALSE
-"Mahboob_Aftab_Khan","Mahboob Aftab Khan","Candidate",1,FALSE
-"Malik_Tariq_Mehmood","Malik Tariq Mehmood","Candidate",2,TRUE
-"Muhammad_Nasrullah_Arain","Muhammad Nasrullah Arain","Candidate",1,FALSE
-"Muhammad_Rashid","Muhammad Rashid","Candidate",1,FALSE
-"Muhammad_Usama_Nawaz","Muhammad Usama Nawaz","Candidate",1,FALSE
-"Nawab_Imran_Khan_Khilji","Nawab Imran Khan Khilji","Candidate",1,FALSE
-"Sheikh_Rashid_Ahmed","Sheikh Rashid Ahmed","Candidate",1,FALSE
-"Syed_Mustafsir_Hussain_Bukhari","Syed Mustafsir Hussain Bukhari","Candidate",1,FALSE
-"Syed_Rehan_Ali","Syed Rehan Ali","Candidate",1,FALSE
-"Zafar_Ahmed_Ghori","Zafar Ahmed Ghori","Candidate",1,FALSE
+"Bahri_Room","Bahri Room","Candidate",1,FALSE
 "Commander__r__Ayoub_Malik","Commander (r) Ayoub Malik","Candidate",1,FALSE
 "Fanoos_Gujar","Fanoos Gujar","Candidate",2,TRUE
 "Ghulam_Abbas","Ghulam Abbas","Candidate",3,TRUE
@@ -293,13 +297,7 @@
 "Mian_Ashiq_Hussain_Kamyana_Advocate","Mian Ashiq Hussain Kamyana Advocate","Candidate",1,FALSE
 "Muhammad_Aslam_Miraj","Muhammad Aslam Miraj","Candidate",1,FALSE
 "Muhammad_Athar_Khan_Advocate","Muhammad Athar Khan Advocate","Candidate",1,FALSE
-"Bahri_Room","Bahri Room","Candidate",1,FALSE
 "Usman_Ghani","Usman Ghani","Candidate",3,TRUE
-"Gul_Muhammad_Bhatti","Gul Muhammad Bhatti","Candidate",1,FALSE
-"Gull_Muhammad_Bhatti__Retired_","Gull Muhammad Bhatti (Retired)","Candidate",1,FALSE
-"Sardar_Sher_Zaman_Khan_Qaisrani","Sardar Sher Zaman Khan Qaisrani","Candidate",1,FALSE
-"Makhdoom_Syed_Sami_Ul_Hassan_Gillani","Makhdoom Syed Sami Ul Hassan Gillani","Candidate",1,FALSE
-"Muhammd_Farooq_Azam_Malik","Muhammd Farooq Azam Malik","Candidate",1,FALSE
 "Bahi_Khan","Bahi Khan","Candidate",1,FALSE
 "Jasim","Jasim","Candidate",1,FALSE
 "Khalid_Hussain_Magsi","Khalid Hussain Magsi","Candidate",1,FALSE
@@ -309,6 +307,8 @@
 "Qadha_Babar","Qadha Babar","Candidate",1,FALSE
 "Rubina_Irfan","Rubina Irfan","Candidate",1,FALSE
 "Syed_Abdul_Karim","Syed Abdul Karim","Candidate",1,FALSE
+"Makhdoom_Syed_Sami_Ul_Hassan_Gillani","Makhdoom Syed Sami Ul Hassan Gillani","Candidate",1,FALSE
+"Muhammd_Farooq_Azam_Malik","Muhammd Farooq Azam Malik","Candidate",1,FALSE
 "Abdul_Ghafoor","Abdul Ghafoor","Candidate",3,TRUE
 "Agha_Hassan_Baloch_Advocate","Agha Hassan Baloch Advocate","Candidate",1,FALSE
 "Gaman_Khan","Gaman Khan","Candidate",1,FALSE
@@ -396,10 +396,10 @@
 "Umair_Naeem","Umair Naeem","Candidate",1,FALSE
 "Asad_Javed_Khan","Asad Javed Khan","Candidate",1,FALSE
 "Abdul_Khaliq_Hazara","Abdul Khaliq Hazara","Candidate",1,FALSE
-"Barkat_Ali_Thamki","Barkat Ali Thamki","Candidate",1,FALSE
-"Muhammad_Raza","Muhammad Raza","Candidate",1,FALSE
 "Aziz_Ullah","Aziz Ullah","Candidate",2,TRUE
+"Barkat_Ali_Thamki","Barkat Ali Thamki","Candidate",1,FALSE
 "Mirza_Hussain","Mirza Hussain","Candidate",1,FALSE
+"Muhammad_Raza","Muhammad Raza","Candidate",1,FALSE
 "Hussain_Baloch","Hussain Baloch","Candidate",1,FALSE
 "Hidayat_Ur_Rehman_Baloch","Hidayat Ur Rehman Baloch","Candidate",1,FALSE
 "Imtiaz_Alam","Imtiaz Alam","Candidate",1,FALSE
@@ -407,7 +407,15 @@
 "Amir_Shehzad","Amir Shehzad","Candidate",1,FALSE
 "Muhammad_Saddiq","Muhammad Saddiq","Candidate",2,TRUE
 "Muhammad_Zia_Khan","Muhammad Zia Khan","Candidate",1,FALSE
+"Mr_zulfiquar_Ali_Khoso__Retired_","Mr.zulfiquar Ali Khoso (Retired)","Candidate",1,FALSE
+"Muhammad_Lateef_Lajpal_Sial","Muhammad Lateef Lajpal Sial","Candidate",1,FALSE
+"Muhammad_Latif","Muhammad Latif","Candidate",2,TRUE
+"Munir_Ahmad_Zafar","Munir Ahmad Zafar","Candidate",1,FALSE
 "Muhammad_Zahid","Muhammad Zahid","Candidate",2,TRUE
+"Muhammad_Hanif_Ullah","Muhammad Hanif Ullah","Candidate",1,FALSE
+"Syed_Manzoor_Gillani","Syed Manzoor Gillani","Candidate",1,FALSE
+"Muhammad_Ashraf_Khan_Niazi","Muhammad Ashraf Khan Niazi","Candidate",1,FALSE
+"Rana_Muhammad_Ashraf_Advocate","Rana Muhammad Ashraf Advocate","Candidate",1,FALSE
 "Abdul_Aleem_Khan","Abdul Aleem Khan","Candidate",3,TRUE
 "Aiman_Javed","Aiman Javed","Candidate",1,FALSE
 "Bukhtiyar_Ali","Bukhtiyar Ali","Candidate",1,FALSE
@@ -435,10 +443,7 @@
 "Syed_Ali_Hussain","Syed Ali Hussain","Candidate",2,TRUE
 "Tariq_Mehmood_Qadri","Tariq Mehmood Qadri","Candidate",1,FALSE
 "Zunaira_Rehman","Zunaira Rehman","Candidate",1,FALSE
-"Mr_zulfiquar_Ali_Khoso__Retired_","Mr.zulfiquar Ali Khoso (Retired)","Candidate",1,FALSE
-"Muhammad_Lateef_Lajpal_Sial","Muhammad Lateef Lajpal Sial","Candidate",1,FALSE
-"Muhammad_Latif","Muhammad Latif","Candidate",2,TRUE
-"Munir_Ahmad_Zafar","Munir Ahmad Zafar","Candidate",1,FALSE
+"Raja_Zafar_Iqbal","Raja Zafar Iqbal","Candidate",1,FALSE
 "Agha_Syed_Sibtian_Haider_Sabzwari","Agha Syed Sibtian Haider Sabzwari","Candidate",1,FALSE
 "Ali_Gohar_Shah__Retired_","Ali Gohar Shah (Retired)","Candidate",1,FALSE
 "Kazim_Ali_Shah","Kazim Ali Shah","Candidate",1,FALSE
@@ -448,102 +453,13 @@
 "Syed_Azizullah_Shah","Syed Azizullah Shah","Candidate",1,FALSE
 "Syed_Gazanfar_Abbas","Syed Gazanfar Abbas","Candidate",1,FALSE
 "Syed_Mujahid_Abbas_Shah","Syed Mujahid Abbas Shah","Candidate",1,FALSE
-"Raja_Zafar_Iqbal","Raja Zafar Iqbal","Candidate",1,FALSE
-"Muhammad_Ashraf_Khan_Niazi","Muhammad Ashraf Khan Niazi","Candidate",1,FALSE
-"Rana_Muhammad_Ashraf_Advocate","Rana Muhammad Ashraf Advocate","Candidate",1,FALSE
-"Muhammad_Hanif_Ullah","Muhammad Hanif Ullah","Candidate",1,FALSE
-"Syed_Manzoor_Gillani","Syed Manzoor Gillani","Candidate",1,FALSE
 "Hafiz_Hasham_Elahi_Zaheer","Hafiz Hasham Elahi Zaheer","Candidate",1,FALSE
 "Ibtesam_Elahi_Zaheer","Ibtesam Elahi Zaheer","Candidate",1,FALSE
 "Ibtisam_Elahi_Zaheer","Ibtisam Elahi Zaheer","Candidate",1,FALSE
 "Mutasim_Elahi_Zaheer","Mutasim Elahi Zaheer","Candidate",1,FALSE
-"Ghulam_Rasool","Ghulam Rasool","Candidate",4,TRUE
-"Gul_Muhammad","Gul Muhammad","Candidate",1,FALSE
-"Muhammad_Farooq_Rajput","Muhammad Farooq Rajput","Candidate",1,FALSE
-"Nawabzada_Shazain_Bugti","Nawabzada Shazain Bugti","Candidate",1,FALSE
-"Nawabzada_Talal_Akbar_Bughti","Nawabzada Talal Akbar Bughti","Candidate",1,FALSE
-"Nawabzada_Talal_Akbar_Bugti","Nawabzada Talal Akbar Bugti","Candidate",1,FALSE
-"Rana_Umar_Nazir_Ahmad_Khan","Rana Umar Nazir Ahmad Khan","Candidate",1,FALSE
-"Sardar_Zia_Ul_Haq","Sardar Zia Ul Haq","Candidate",1,FALSE
-"Shah_Wali","Shah Wali","Candidate",1,FALSE
-"Syed_Faisal_Imam","Syed Faisal Imam","Candidate",2,TRUE
-"Talal_Akbar_Bugti","Talal Akbar Bugti","Candidate",1,FALSE
-"Bakht_Zar","Bakht Zar","Candidate",1,FALSE
-"Muhammad_Asad_Thaniwi_","Muhammad Asad Thaniwi.","Candidate",1,FALSE
-"Muhammad_Tahir_Makhdoom","Muhammad Tahir Makhdoom","Candidate",2,TRUE
-"Rana_Zia_Ahmed_Farooqi_Advocate","Rana Zia Ahmed Farooqi Advocate","Candidate",1,FALSE
-"Zaheer_Ud_Din_Bader","Zaheer Ud Din Bader","Candidate",1,FALSE
-"Dad_Muhammad","Dad Muhammad","Candidate",1,FALSE
-"Ghulam_Hyder_Jakhro","Ghulam Hyder Jakhro","Candidate",1,FALSE
-"Hafiz_Fazal_Muhammad_Barech","Hafiz Fazal Muhammad Barech","Candidate",1,FALSE
-"Haji_Molvi_Muhammad_Hanif","Haji Molvi Muhammad Hanif","Candidate",1,FALSE
-"Malik_Abdul_Qayum_Kakar","Malik Abdul Qayum Kakar","Candidate",1,FALSE
-"Mohammad_Nawaz_Katoher","Mohammad Nawaz Katoher","Candidate",1,FALSE
-"Molana_Abdul_Qadir_Luni","Molana Abdul Qadir Luni","Candidate",1,FALSE
-"Mollana_Mehmood_Ul_Hassan_Qasmi","Mollana Mehmood Ul Hassan Qasmi","Candidate",1,FALSE
-"Moulana_Asmatullah","Moulana Asmatullah","Candidate",1,FALSE
-"Muhammad_Nazeer","Muhammad Nazeer","Candidate",1,FALSE
-"Qari_Nazir_Ahmed","Qari Nazir Ahmed","Candidate",1,FALSE
-"Sardarzada_Mir_Saeed_Ahmed_Langove","Sardarzada Mir Saeed Ahmed Langove","Candidate",1,FALSE
-"Ubaid_Ur_Rehman","Ubaid Ur Rehman","Candidate",1,FALSE
-"Syed_Nadeem_Anjum","Syed Nadeem Anjum","Candidate",1,FALSE
-"Abdul_Jabbar_Khan","Abdul Jabbar Khan","Candidate",3,TRUE
-"Abu_Khair_Muhammad_Zubair","Abu Khair Muhammad Zubair","Candidate",1,FALSE
-"Abul_Khair_Mohammad_Zubair","Abul Khair Mohammad Zubair","Candidate",1,FALSE
-"Akhtar_Hussain_Gil","Akhtar Hussain Gil","Candidate",1,FALSE
-"Allama_Muhammad_Yaqoob","Allama Muhammad Yaqoob","Candidate",1,FALSE
-"Badshah_Muain","Badshah Muain","Candidate",1,FALSE
-"Chaudhary_Tariq_Maqsood_Sahi","Chaudhary Tariq Maqsood Sahi","Candidate",1,FALSE
-"Doctor_Muhammad_Aslam_Javaid_Awan","Doctor Muhammad Aslam Javaid Awan","Candidate",1,FALSE
-"Ghulam_Hussain_Farooqi","Ghulam Hussain Farooqi","Candidate",1,FALSE
-"Hafiz_Ahmed_Ali_Abbasi","Hafiz Ahmed Ali Abbasi","Candidate",1,FALSE
-"Hafiz_Munawar_Hussain","Hafiz Munawar Hussain","Candidate",1,FALSE
-"Hafiz_Saeed_Ahmed","Hafiz Saeed Ahmed","Candidate",1,FALSE
-"Jan_Muhammad_Jat","Jan Muhammad Jat","Candidate",1,FALSE
-"Khalid_Mahmood_Akhtar_Jajja","Khalid Mahmood Akhtar Jajja","Candidate",1,FALSE
-"Malik_Bashir_Ahmad_Nizami","Malik Bashir Ahmad Nizami","Candidate",1,FALSE
-"Mehmood_Ahmad","Mehmood Ahmad","Candidate",1,FALSE
-"Mir_Maqbool_Ahmed_Khosa","Mir Maqbool Ahmed Khosa","Candidate",1,FALSE
-"Mirza_Mukhtar_Ali_Khan","Mirza Mukhtar Ali Khan","Candidate",1,FALSE
-"Mohammad_Jaffar","Mohammad Jaffar","Candidate",1,FALSE
-"Molana_Miraj_Ud_Din_Sirkani","Molana Miraj Ud Din Sirkani","Candidate",1,FALSE
-"Molvi_Muhammad_Qasim","Molvi Muhammad Qasim","Candidate",1,FALSE
-"Mufti_Abdul_Shakoor_Rizvi","Mufti Abdul Shakoor Rizvi","Candidate",1,FALSE
-"Muhammad_Awais_Siddiqi","Muhammad Awais Siddiqi","Candidate",1,FALSE
-"Muhammad_Fayaz","Muhammad Fayaz","Candidate",1,FALSE
-"Muhammad_Owais_Siddiqui","Muhammad Owais Siddiqui","Candidate",2,TRUE
-"Muhammad_Sajjad_Ali_Hamdi","Muhammad Sajjad Ali Hamdi","Candidate",1,FALSE
-"Muhammad_Siddiq_Rathore","Muhammad Siddiq Rathore","Candidate",1,FALSE
-"Muhammad_Tassaduq_Hussain","Muhammad Tassaduq Hussain","Candidate",1,FALSE
-"Muhammad_Younus","Muhammad Younus","Candidate",1,FALSE
-"Niaz_Muhammad_Chandio","Niaz Muhammad Chandio","Candidate",1,FALSE
-"Pir_Muhammad_Saeed_Ahmad_Nuqshbandi","Pir Muhammad Saeed Ahmad Nuqshbandi","Candidate",1,FALSE
-"Pir_Syed","Pir Syed","Candidate",1,FALSE
-"Qari_Hafiz_Muhammad_Zawar_Bahadar","Qari Hafiz Muhammad Zawar Bahadar","Candidate",1,FALSE
-"Qazi_Shehzada_Sultan_Ul_Haq","Qazi Shehzada Sultan Ul Haq","Candidate",1,FALSE
-"Rajab_Ali","Rajab Ali","Candidate",1,FALSE
-"Rao_Azmat_Ullah_Khan","Rao Azmat Ullah Khan","Candidate",1,FALSE
-"Rashid_Imran_Khan","Rashid Imran Khan","Candidate",1,FALSE
-"Saeed_Ur_Rehman","Saeed Ur Rehman","Candidate",2,TRUE
-"Seikh_Muhammad_Akram","Seikh Muhammad Akram","Candidate",1,FALSE
-"Shad_Mohammad_Khan","Shad Mohammad Khan","Candidate",1,FALSE
-"Shah_Muhammad_Owais_Noorani","Shah Muhammad Owais Noorani","Candidate",1,FALSE
-"Syed_Asghar_Ali_Shah","Syed Asghar Ali Shah","Candidate",2,TRUE
-"Tauqeer_Ahmed_Bajwa","Tauqeer Ahmed Bajwa","Candidate",1,FALSE
-"Wahid_Ali_Naqshband","Wahid Ali Naqshband","Candidate",1,FALSE
-"Mir_Abdul_Majid_Abro","Mir Abdul Majid Abro","Candidate",1,FALSE
-"Mir_Abdul_Majid_Abroo","Mir Abdul Majid Abroo","Candidate",1,FALSE
-"Abdul_Hameed","Abdul Hameed","Candidate",4,TRUE
-"Abdul_Nazeer","Abdul Nazeer","Candidate",1,FALSE
-"Aurang_Sher","Aurang Sher","Candidate",1,FALSE
-"Bakhtiar_Ahmed_Maitlo","Bakhtiar Ahmed Maitlo","Candidate",1,FALSE
-"Dr_Babur_Zaheer_Uddin","Dr Babur Zaheer Uddin","Candidate",1,FALSE
-"Muhammad_Farooq_Ali","Muhammad Farooq Ali","Candidate",1,FALSE
-"Muhammad_Sarwar_Bin_Pakistan","Muhammad Sarwar Bin Pakistan","Candidate",1,FALSE
-"Muhammad_Yousuf_Nawaz","Muhammad Yousuf Nawaz","Candidate",1,FALSE
-"Sarfraz_Ahmed_Chandio","Sarfraz Ahmed Chandio","Candidate",1,FALSE
 "Abdul_Akbar_Chitrali","Abdul Akbar Chitrali","Candidate",1,FALSE
 "Abdul_Hameed_Khan","Abdul Hameed Khan","Candidate",2,TRUE
+"Abdul_Jabbar_Khan","Abdul Jabbar Khan","Candidate",3,TRUE
 "Abdul_Jameel_Khan","Abdul Jameel Khan","Candidate",1,FALSE
 "Abdul_Majeed_Pathan_Advocate","Abdul Majeed Pathan Advocate","Candidate",1,FALSE
 "Abdul_Mateen_Akhondzada","Abdul Mateen Akhondzada","Candidate",1,FALSE
@@ -702,6 +618,7 @@
 "Abd_Ur_Rasheed","Abd Ur Rasheed","Candidate",1,FALSE
 "Abdul_Bari","Abdul Bari","Candidate",3,TRUE
 "Abdul_Fatah_Pathan","Abdul Fatah Pathan","Candidate",1,FALSE
+"Abdul_Hameed","Abdul Hameed","Candidate",4,TRUE
 "Abdul_Hameed_Alias_Arfan","Abdul Hameed Alias Arfan","Candidate",1,FALSE
 "Abdul_Jamil_Khan","Abdul Jamil Khan","Candidate",1,FALSE
 "Abdul_Kabeer","Abdul Kabeer","Candidate",1,FALSE
@@ -906,7 +823,17 @@
 "Zubair_Khadim","Zubair Khadim","Candidate",1,FALSE
 "Zulfiqar_Ali_Shah","Zulfiqar Ali Shah","Candidate",2,TRUE
 "Zulifqar_Ali_Ahmad","Zulifqar Ali Ahmad","Candidate",1,FALSE
+"Abdul_Nazeer","Abdul Nazeer","Candidate",1,FALSE
+"Aurang_Sher","Aurang Sher","Candidate",1,FALSE
+"Bakhtiar_Ahmed_Maitlo","Bakhtiar Ahmed Maitlo","Candidate",1,FALSE
+"Dr_Babur_Zaheer_Uddin","Dr Babur Zaheer Uddin","Candidate",1,FALSE
+"Muhammad_Farooq_Ali","Muhammad Farooq Ali","Candidate",1,FALSE
+"Muhammad_Sarwar_Bin_Pakistan","Muhammad Sarwar Bin Pakistan","Candidate",1,FALSE
+"Muhammad_Yousuf_Nawaz","Muhammad Yousuf Nawaz","Candidate",1,FALSE
+"Sarfraz_Ahmed_Chandio","Sarfraz Ahmed Chandio","Candidate",1,FALSE
 "Majida_Abro","Majida Abro","Candidate",1,FALSE
+"Mir_Abdul_Majid_Abro","Mir Abdul Majid Abro","Candidate",1,FALSE
+"Mir_Abdul_Majid_Abroo","Mir Abdul Majid Abroo","Candidate",1,FALSE
 "Muhammad_Faiq","Muhammad Faiq","Candidate",1,FALSE
 "Abdul_Aziz","Abdul Aziz","Candidate",2,TRUE
 "Abdul_Khaliq","Abdul Khaliq","Candidate",4,TRUE
@@ -957,6 +884,7 @@
 "Muhammad_Jan","Muhammad Jan","Candidate",1,FALSE
 "Muhammad_Khalid_Shakir","Muhammad Khalid Shakir","Candidate",1,FALSE
 "Muhammad_Maroof","Muhammad Maroof","Candidate",1,FALSE
+"Muhammad_Owais_Siddiqui","Muhammad Owais Siddiqui","Candidate",2,TRUE
 "Muhammad_Rizwan_Sheikh","Muhammad Rizwan Sheikh","Candidate",1,FALSE
 "Muhammad_Sadiq_Serani","Muhammad Sadiq Serani","Candidate",1,FALSE
 "Muhammad_Wali_Shah","Muhammad Wali Shah","Candidate",2,TRUE
@@ -1184,6 +1112,24 @@
 "Zafarullah_Khan_Gichki","Zafarullah Khan Gichki","Candidate",1,FALSE
 "Zahid_Akram_Durrani","Zahid Akram Durrani","Candidate",1,FALSE
 "Zia_Ur_Rehman_Tamimi","Zia Ur Rehman Tamimi","Candidate",1,FALSE
+"Dad_Muhammad","Dad Muhammad","Candidate",1,FALSE
+"Ghulam_Hyder_Jakhro","Ghulam Hyder Jakhro","Candidate",1,FALSE
+"Hafiz_Fazal_Muhammad_Barech","Hafiz Fazal Muhammad Barech","Candidate",1,FALSE
+"Haji_Molvi_Muhammad_Hanif","Haji Molvi Muhammad Hanif","Candidate",1,FALSE
+"Malik_Abdul_Qayum_Kakar","Malik Abdul Qayum Kakar","Candidate",1,FALSE
+"Mohammad_Nawaz_Katoher","Mohammad Nawaz Katoher","Candidate",1,FALSE
+"Molana_Abdul_Qadir_Luni","Molana Abdul Qadir Luni","Candidate",1,FALSE
+"Mollana_Mehmood_Ul_Hassan_Qasmi","Mollana Mehmood Ul Hassan Qasmi","Candidate",1,FALSE
+"Moulana_Asmatullah","Moulana Asmatullah","Candidate",1,FALSE
+"Muhammad_Nazeer","Muhammad Nazeer","Candidate",1,FALSE
+"Qari_Nazir_Ahmed","Qari Nazir Ahmed","Candidate",1,FALSE
+"Sardarzada_Mir_Saeed_Ahmed_Langove","Sardarzada Mir Saeed Ahmed Langove","Candidate",1,FALSE
+"Ubaid_Ur_Rehman","Ubaid Ur Rehman","Candidate",1,FALSE
+"Bakht_Zar","Bakht Zar","Candidate",1,FALSE
+"Muhammad_Asad_Thaniwi_","Muhammad Asad Thaniwi.","Candidate",1,FALSE
+"Muhammad_Tahir_Makhdoom","Muhammad Tahir Makhdoom","Candidate",2,TRUE
+"Rana_Zia_Ahmed_Farooqi_Advocate","Rana Zia Ahmed Farooqi Advocate","Candidate",1,FALSE
+"Zaheer_Ud_Din_Bader","Zaheer Ud Din Bader","Candidate",1,FALSE
 "Fakhar_Ul_Din","Fakhar Ul Din","Candidate",1,FALSE
 "Fathe_Muhammad","Fathe Muhammad","Candidate",1,FALSE
 "Ghazanfar_Aziz","Ghazanfar Aziz","Candidate",1,FALSE
@@ -1193,65 +1139,274 @@
 "Noor_Alam","Noor Alam","Candidate",1,FALSE
 "Saddam_Ul_Haq","Saddam Ul Haq","Candidate",1,FALSE
 "Zia_Ur_Rehman_Amazai","Zia Ur Rehman Amazai","Candidate",1,FALSE
+"Abu_Khair_Muhammad_Zubair","Abu Khair Muhammad Zubair","Candidate",1,FALSE
+"Abul_Khair_Mohammad_Zubair","Abul Khair Mohammad Zubair","Candidate",1,FALSE
+"Akhtar_Hussain_Gil","Akhtar Hussain Gil","Candidate",1,FALSE
+"Allama_Muhammad_Yaqoob","Allama Muhammad Yaqoob","Candidate",1,FALSE
+"Badshah_Muain","Badshah Muain","Candidate",1,FALSE
+"Chaudhary_Tariq_Maqsood_Sahi","Chaudhary Tariq Maqsood Sahi","Candidate",1,FALSE
+"Doctor_Muhammad_Aslam_Javaid_Awan","Doctor Muhammad Aslam Javaid Awan","Candidate",1,FALSE
+"Ghulam_Hussain_Farooqi","Ghulam Hussain Farooqi","Candidate",1,FALSE
+"Hafiz_Ahmed_Ali_Abbasi","Hafiz Ahmed Ali Abbasi","Candidate",1,FALSE
+"Hafiz_Munawar_Hussain","Hafiz Munawar Hussain","Candidate",1,FALSE
+"Hafiz_Saeed_Ahmed","Hafiz Saeed Ahmed","Candidate",1,FALSE
+"Jan_Muhammad_Jat","Jan Muhammad Jat","Candidate",1,FALSE
+"Khalid_Mahmood_Akhtar_Jajja","Khalid Mahmood Akhtar Jajja","Candidate",1,FALSE
+"Malik_Bashir_Ahmad_Nizami","Malik Bashir Ahmad Nizami","Candidate",1,FALSE
+"Mehmood_Ahmad","Mehmood Ahmad","Candidate",1,FALSE
+"Mir_Maqbool_Ahmed_Khosa","Mir Maqbool Ahmed Khosa","Candidate",1,FALSE
+"Mirza_Mukhtar_Ali_Khan","Mirza Mukhtar Ali Khan","Candidate",1,FALSE
+"Mohammad_Jaffar","Mohammad Jaffar","Candidate",1,FALSE
+"Molana_Miraj_Ud_Din_Sirkani","Molana Miraj Ud Din Sirkani","Candidate",1,FALSE
+"Molvi_Muhammad_Qasim","Molvi Muhammad Qasim","Candidate",1,FALSE
+"Mufti_Abdul_Shakoor_Rizvi","Mufti Abdul Shakoor Rizvi","Candidate",1,FALSE
+"Muhammad_Awais_Siddiqi","Muhammad Awais Siddiqi","Candidate",1,FALSE
+"Muhammad_Fayaz","Muhammad Fayaz","Candidate",1,FALSE
+"Muhammad_Sajjad_Ali_Hamdi","Muhammad Sajjad Ali Hamdi","Candidate",1,FALSE
+"Muhammad_Siddiq_Rathore","Muhammad Siddiq Rathore","Candidate",1,FALSE
+"Muhammad_Tassaduq_Hussain","Muhammad Tassaduq Hussain","Candidate",1,FALSE
+"Muhammad_Younus","Muhammad Younus","Candidate",1,FALSE
+"Niaz_Muhammad_Chandio","Niaz Muhammad Chandio","Candidate",1,FALSE
+"Pir_Muhammad_Saeed_Ahmad_Nuqshbandi","Pir Muhammad Saeed Ahmad Nuqshbandi","Candidate",1,FALSE
+"Pir_Syed","Pir Syed","Candidate",1,FALSE
+"Qari_Hafiz_Muhammad_Zawar_Bahadar","Qari Hafiz Muhammad Zawar Bahadar","Candidate",1,FALSE
+"Qazi_Shehzada_Sultan_Ul_Haq","Qazi Shehzada Sultan Ul Haq","Candidate",1,FALSE
+"Rajab_Ali","Rajab Ali","Candidate",2,TRUE
+"Rao_Azmat_Ullah_Khan","Rao Azmat Ullah Khan","Candidate",1,FALSE
+"Rashid_Imran_Khan","Rashid Imran Khan","Candidate",1,FALSE
+"Saeed_Ur_Rehman","Saeed Ur Rehman","Candidate",2,TRUE
+"Seikh_Muhammad_Akram","Seikh Muhammad Akram","Candidate",1,FALSE
+"Shad_Mohammad_Khan","Shad Mohammad Khan","Candidate",1,FALSE
+"Shah_Muhammad_Owais_Noorani","Shah Muhammad Owais Noorani","Candidate",1,FALSE
+"Syed_Asghar_Ali_Shah","Syed Asghar Ali Shah","Candidate",2,TRUE
+"Tauqeer_Ahmed_Bajwa","Tauqeer Ahmed Bajwa","Candidate",1,FALSE
+"Wahid_Ali_Naqshband","Wahid Ali Naqshband","Candidate",1,FALSE
+"Syed_Nadeem_Anjum","Syed Nadeem Anjum","Candidate",1,FALSE
 "Abdul_Basit","Abdul Basit","Candidate",1,FALSE
+"Ghulam_Rasool","Ghulam Rasool","Candidate",4,TRUE
+"Gul_Muhammad","Gul Muhammad","Candidate",1,FALSE
 "Hazoor_Baksh","Hazoor Baksh","Candidate",1,FALSE
 "Ijaz_Ahmad","Ijaz Ahmad","Candidate",1,FALSE
 "Ikhtiar_Ahmed","Ikhtiar Ahmed","Candidate",1,FALSE
 "Mir_Muhammad_Ali_Reki_Baloch","Mir Muhammad Ali Reki Baloch","Candidate",1,FALSE
+"Muhammad_Farooq_Rajput","Muhammad Farooq Rajput","Candidate",1,FALSE
 "Muhammad_Jawad","Muhammad Jawad","Candidate",1,FALSE
 "Nawab_Zada_Shahzain","Nawab Zada Shahzain","Candidate",1,FALSE
-"Aizaz_Haider","Aizaz Haider","Candidate",1,FALSE
-"Baqa_Muhammad","Baqa Muhammad","Candidate",1,FALSE
+"Nawabzada_Shazain_Bugti","Nawabzada Shazain Bugti","Candidate",1,FALSE
+"Nawabzada_Talal_Akbar_Bughti","Nawabzada Talal Akbar Bughti","Candidate",1,FALSE
+"Nawabzada_Talal_Akbar_Bugti","Nawabzada Talal Akbar Bugti","Candidate",1,FALSE
+"Rana_Umar_Nazir_Ahmad_Khan","Rana Umar Nazir Ahmad Khan","Candidate",1,FALSE
+"Sardar_Zia_Ul_Haq","Sardar Zia Ul Haq","Candidate",1,FALSE
+"Shah_Wali","Shah Wali","Candidate",1,FALSE
+"Syed_Faisal_Imam","Syed Faisal Imam","Candidate",2,TRUE
+"Talal_Akbar_Bugti","Talal Akbar Bugti","Candidate",1,FALSE
 "Khalil_Ur_Rehman","Khalil Ur Rehman","Candidate",2,TRUE
 "Muhammad_Arshad","Muhammad Arshad","Candidate",3,TRUE
+"Aizaz_Haider","Aizaz Haider","Candidate",1,FALSE
+"Baqa_Muhammad","Baqa Muhammad","Candidate",1,FALSE
 "Ahmed_Noonari","Ahmed Noonari","Candidate",1,FALSE
 "Zeeshan","Zeeshan","Candidate",1,FALSE
-"Abdullah_Mangi","Abdullah Mangi","Candidate",1,FALSE
-"Aijaz_Ahmed_Sanjrani","Aijaz Ahmed Sanjrani","Candidate",1,FALSE
-"Allama_Muhammad_Hasnain_Arif","Allama Muhammad Hasnain Arif","Candidate",1,FALSE
-"Asghar_Ali_Mubarik","Asghar Ali Mubarik","Candidate",1,FALSE
-"Darban_Ali_Jaffry","Darban Ali Jaffry","Candidate",1,FALSE
-"Ehsan_Ullah_Khan_Baluch","Ehsan Ullah Khan Baluch","Candidate",1,FALSE
-"Ghulam_Hussain","Ghulam Hussain","Candidate",1,FALSE
-"Hakeem_Muhammad_Tufail","Hakeem Muhammad Tufail","Candidate",1,FALSE
-"Hakeem_Syed_Jaffar_Hussain_Bukhari","Hakeem Syed Jaffar Hussain Bukhari","Candidate",1,FALSE
-"Imran_Ali","Imran Ali","Candidate",2,TRUE
-"Khair_Mohammad","Khair Mohammad","Candidate",1,FALSE
-"Khuwaja_Aftab_Ali_Jaafri","Khuwaja Aftab Ali Jaafri","Candidate",1,FALSE
-"Maqsood_Ali_Domki","Maqsood Ali Domki","Candidate",1,FALSE
-"Molana_Moula_Bux_Murtazai","Molana Moula Bux Murtazai","Candidate",1,FALSE
-"Muhammad_Askari_Ul_Hidayat","Muhammad Askari Ul Hidayat","Candidate",1,FALSE
-"Muhammad_Hussain_Karimi","Muhammad Hussain Karimi","Candidate",1,FALSE
-"Muhammad_Ismail_Jaffery","Muhammad Ismail Jaffery","Candidate",1,FALSE
-"Muhammad_Sarwer","Muhammad Sarwer","Candidate",1,FALSE
-"Mukhtar_Ahmed_Chandio","Mukhtar Ahmed Chandio","Candidate",1,FALSE
-"Rasool_Bux_Shah","Rasool Bux Shah","Candidate",1,FALSE
-"Shumaila_Bibi","Shumaila Bibi","Candidate",1,FALSE
-"Syed_Asghar_Abbas_Zaidi","Syed Asghar Abbas Zaidi","Candidate",1,FALSE
-"Syed_Basheer_Ahmed_Shah_Naqvi","Syed Basheer Ahmed Shah Naqvi","Candidate",1,FALSE
-"Syed_Muhammad_Hassan_Zaidi","Syed Muhammad Hassan Zaidi","Candidate",1,FALSE
-"Zaheer_Abass_Hajano","Zaheer Abass Hajano","Candidate",1,FALSE
+"Muhammad_Tahir_Khan","Muhammad Tahir Khan","Candidate",2,TRUE
+"Meer_Rab_Nawaz_Khan","Meer Rab Nawaz Khan","Candidate",1,FALSE
+"Abdul_Hai_Sheikh_Qari_Sahab","Abdul Hai Sheikh Qari Sahab","Candidate",1,FALSE
+"Abdul_Hakam","Abdul Hakam","Candidate",1,FALSE
+"Abdul_Hanan","Abdul Hanan","Candidate",1,FALSE
+"Abdul_Khaliq_Rehmani","Abdul Khaliq Rehmani","Candidate",2,TRUE
+"Abdul_Rasheed","Abdul Rasheed","Candidate",3,TRUE
+"Amanullah_Usmani","Amanullah Usmani","Candidate",1,FALSE
+"Anus_Bin_Malik","Anus Bin Malik","Candidate",1,FALSE
+"Asghar_Ali_Abbasi","Asghar Ali Abbasi","Candidate",1,FALSE
+"Atta_Ullah","Atta Ullah","Candidate",1,FALSE
+"Bashir_Ahmad","Bashir Ahmad","Candidate",1,FALSE
+"Bilal_Ahmed","Bilal Ahmed","Candidate",1,FALSE
+"Chand_Faisal","Chand Faisal","Candidate",1,FALSE
+"Faridullah","Faridullah","Candidate",1,FALSE
+"Fiaz_Ur_Rehman_Siddiqui","Fiaz Ur Rehman Siddiqui","Candidate",1,FALSE
+"Ghulam_Muhammad","Ghulam Muhammad","Candidate",2,TRUE
+"Gul_Wazir_Shaheen","Gul Wazir Shaheen","Candidate",1,FALSE
+"Habibullah_Mukhtiar","Habibullah Mukhtiar","Candidate",1,FALSE
+"Hafeezullah_Chandio","Hafeezullah Chandio","Candidate",1,FALSE
+"Hafiz_Asim_Makdoom","Hafiz Asim Makdoom","Candidate",1,FALSE
+"Hafiz_Manzoor_Ahmed_Solangi","Hafiz Manzoor Ahmed Solangi","Candidate",1,FALSE
+"Hafiz_Mohammad_Akber","Hafiz Mohammad Akber","Candidate",1,FALSE
+"Hafiz_Muhammad_Hanif_Usmani","Hafiz Muhammad Hanif Usmani","Candidate",1,FALSE
+"Hafiz_Muhammad_Safdar_Qasmi","Hafiz Muhammad Safdar Qasmi","Candidate",1,FALSE
+"Hafiz_Orangzaib","Hafiz Orangzaib","Candidate",1,FALSE
+"Hafiz_Qudratullah_Arif_Khan","Hafiz Qudratullah Arif Khan","Candidate",1,FALSE
+"Hafiz_Rana_Muhammad_Usman_Shakar","Hafiz Rana Muhammad Usman Shakar","Candidate",1,FALSE
+"Hakeem_Jameel_Asghar_Khizri","Hakeem Jameel Asghar Khizri","Candidate",1,FALSE
+"Hakeem_Muhammad_Sadique","Hakeem Muhammad Sadique","Candidate",1,FALSE
+"Imdad_Ali","Imdad Ali","Candidate",2,TRUE
+"Ishtiaq_Ahmad","Ishtiaq Ahmad","Candidate",1,FALSE
+"Khalifa_Abdul_Qayyum","Khalifa Abdul Qayyum","Candidate",1,FALSE
+"Khwaja_Muhammad","Khwaja Muhammad","Candidate",1,FALSE
+"Mahar_Ghulam_Shabir","Mahar Ghulam Shabir","Candidate",1,FALSE
+"Maulana_Rasheed_Ahmad","Maulana Rasheed Ahmad","Candidate",1,FALSE
+"Maulana_Umar_Farooq_Saddiqui","Maulana Umar Farooq Saddiqui","Candidate",1,FALSE
+"Mohammad_Ramzan_Malik_Mdm","Mohammad Ramzan Malik Mdm","Candidate",1,FALSE
+"Mohammad_Tayyab","Mohammad Tayyab","Candidate",1,FALSE
+"Molana_Abdul_Waheed","Molana Abdul Waheed","Candidate",1,FALSE
+"Molana_Hamid_Ul_Haq_Haqqani","Molana Hamid Ul Haq Haqqani","Candidate",1,FALSE
+"Molana_Hidayat_Ullah_Khan_Chishti","Molana Hidayat Ullah Khan Chishti","Candidate",1,FALSE
+"Molana_Iftikhar_Ahmed","Molana Iftikhar Ahmed","Candidate",1,FALSE
+"Molana_Muhammad_Ahmad_Ludhianvi","Molana Muhammad Ahmad Ludhianvi","Candidate",1,FALSE
+"Molana_Muhammad_Bilal_Umer","Molana Muhammad Bilal Umer","Candidate",1,FALSE
+"Molana_Taj_Muhammad_Hanfi","Molana Taj Muhammad Hanfi","Candidate",1,FALSE
+"Mollana_Abdul_Kabeer_Shahkir","Mollana Abdul Kabeer Shahkir","Candidate",1,FALSE
+"Molvi_Abdul_Hai","Molvi Abdul Hai","Candidate",1,FALSE
+"Mr_ayoub_Chandio","Mr.ayoub Chandio","Candidate",1,FALSE
+"Muhammad_Arfan_Siddiquei_Advocate","Muhammad Arfan Siddiquei Advocate","Candidate",1,FALSE
+"Muhammad_Ashiq_Khan","Muhammad Ashiq Khan","Candidate",1,FALSE
+"Muhammad_Aslam_Siddiqui","Muhammad Aslam Siddiqui","Candidate",1,FALSE
+"Muhammad_Basir_Sikhan_Advocate","Muhammad Basir Sikhan Advocate","Candidate",1,FALSE
+"Muhammad_Hayat_Muhammad_Hassani","Muhammad Hayat Muhammad Hassani","Candidate",1,FALSE
+"Muhammad_Ibrahim_Qasmi","Muhammad Ibrahim Qasmi","Candidate",1,FALSE
+"Muhammad_Iqbal_Jutt","Muhammad Iqbal Jutt","Candidate",1,FALSE
+"Muhammad_Muhsan_Rahmani","Muhammad Muhsan Rahmani","Candidate",1,FALSE
+"Muhammad_Naseem_Khan","Muhammad Naseem Khan","Candidate",1,FALSE
+"Muhammad_Sarwar","Muhammad Sarwar","Candidate",1,FALSE
+"Mulana_Muhammad_Asif_Moavia_Sial","Mulana Muhammad Asif Moavia Sial","Candidate",1,FALSE
+"Qari_Abdul_Majeed","Qari Abdul Majeed","Candidate",1,FALSE
+"Qari_Abdul_Majeed_Pitafi","Qari Abdul Majeed Pitafi","Candidate",1,FALSE
+"Qari_Asghar_Ali","Qari Asghar Ali","Candidate",1,FALSE
+"Qari_Faqir_Mohammad_Hazarvi","Qari Faqir Mohammad Hazarvi","Candidate",1,FALSE
+"Qari_Hussain_Ahmad_Shad","Qari Hussain Ahmad Shad","Candidate",1,FALSE
+"Qazi_Naeem_Akhtar","Qazi Naeem Akhtar","Candidate",1,FALSE
+"Qazi_Saif_Ullah_Khan","Qazi Saif Ullah Khan","Candidate",1,FALSE
+"Qudratullah_Rajput","Qudratullah Rajput","Candidate",1,FALSE
+"Raheem_Bukhsh","Raheem Bukhsh","Candidate",1,FALSE
+"Rana_Hafiz_Abdul_Jabbar_Muavia","Rana Hafiz Abdul Jabbar Muavia","Candidate",1,FALSE
+"Rao_Habib_Ur_Rehman","Rao Habib Ur Rehman","Candidate",1,FALSE
+"Rao_Muhammad_Javaid_Iqbal","Rao Muhammad Javaid Iqbal","Candidate",1,FALSE
+"Rehan_Mehmood_Zia","Rehan Mehmood Zia","Candidate",1,FALSE
+"Syed_Bahroon_Shah","Syed Bahroon Shah","Candidate",1,FALSE
+"Syed_Faisal_Hussain_Shah_Gillani","Syed Faisal Hussain Shah Gillani","Candidate",1,FALSE
+"Syed_Muhammad_Subtain_Shah_Naqvi","Syed Muhammad Subtain Shah Naqvi","Candidate",1,FALSE
+"Tahir_Aqeel","Tahir Aqeel","Candidate",1,FALSE
+"Ubaid_Ullah","Ubaid Ullah","Candidate",2,TRUE
+"Zaheer_Uddin_Baber","Zaheer Uddin Baber","Candidate",1,FALSE
+"Zar_Wali_Khan","Zar Wali Khan","Candidate",1,FALSE
+"Ali_Muhammad","Ali Muhammad","Candidate",1,FALSE
+"Masood_Ahmed","Masood Ahmed","Candidate",1,FALSE
+"Zaeem_Ud_Din_Abid","Zaeem Ud Din Abid","Candidate",1,FALSE
 "Dr_Sarfraz_Ahmad_Cheema","Dr Sarfraz Ahmad Cheema","Candidate",1,FALSE
 "Syed_Ghulam_Abul_Hassan_Shah","Syed Ghulam Abul Hassan Shah","Candidate",1,FALSE
 "Wajid_Hussain_Mughal","Wajid Hussain Mughal","Candidate",1,FALSE
 "Syed_Muhammad_Mafooz_Mushadi","Syed Muhammad Mafooz Mushadi","Candidate",1,FALSE
-"Muhammad_Tahir_Khan","Muhammad Tahir Khan","Candidate",2,TRUE
-"Ali_Muhammad","Ali Muhammad","Candidate",1,FALSE
-"Masood_Ahmed","Masood Ahmed","Candidate",1,FALSE
-"Zaeem_Ud_Din_Abid","Zaeem Ud Din Abid","Candidate",1,FALSE
 "Ajab_Khan","Ajab Khan","Candidate",4,TRUE
 "Essa_Khan","Essa Khan","Candidate",1,FALSE
 "Gul_Meer_Khan","Gul Meer Khan","Candidate",1,FALSE
 "Gulab_Khan","Gulab Khan","Candidate",1,FALSE
 "Gull_Meer_Khan","Gull Meer Khan","Candidate",1,FALSE
 "Hakeem_Khan","Hakeem Khan","Candidate",1,FALSE
-"Alhaaj_Choudhry_Zulfiqar_Ali","Alhaaj Choudhry Zulfiqar Ali","Candidate",1,FALSE
-"Muhammad_Asghar","Muhammad Asghar","Candidate",3,TRUE
+"Abdul_Aziz_Baloch","Abdul Aziz Baloch","Candidate",1,FALSE
+"Abdul_Aziz_Khan_Khilji_Advocate","Abdul Aziz Khan Khilji Advocate","Candidate",1,FALSE
+"Abdul_Moeen_Qureshi","Abdul Moeen Qureshi","Candidate",1,FALSE
+"Abdullah_Shaikh","Abdullah Shaikh","Candidate",1,FALSE
+"Allama_Doctor_Muhammad_Anees_Rohani","Allama Doctor Muhammad Anees Rohani","Candidate",1,FALSE
+"Anwar_Ul_Habib","Anwar Ul Habib","Candidate",1,FALSE
+"Aslam_Katchela","Aslam Katchela","Candidate",1,FALSE
+"Attaullah_Khoso","Attaullah Khoso","Candidate",1,FALSE
+"Aziz_Ud_Din","Aziz Ud Din","Candidate",1,FALSE
+"Doctor_Muhammad_Khalid_Raza_Pir_Zakori_Sharif","Doctor Muhammad Khalid Raza Pir Zakori Sharif","Candidate",1,FALSE
+"Dr__Abdul_Rehman_Shakir","Dr. Abdul Rehman Shakir","Candidate",1,FALSE
+"Dr__Abid_Rauf_Orakzai","Dr. Abid Rauf Orakzai","Candidate",1,FALSE
+"Ehsan_Bari_Mian_Doctor_Sahib","Ehsan Bari Mian Doctor Sahib","Candidate",1,FALSE
+"Ghulam_Kibriya_Rizwan__G_k__Rizwan_Advocate_","Ghulam Kibriya Rizwan (G.k. Rizwan Advocate)","Candidate",1,FALSE
+"Hafiz_Abdul_Razaq_Parhyar","Hafiz Abdul Razaq Parhyar","Candidate",1,FALSE
+"Hafiz_Muhammad_Ejaz-Ul-Haq_Ch_","Hafiz Muhammad Ejaz-Ul-Haq Ch.","Candidate",1,FALSE
+"Hafiz_Muhammad_Hanif_Zafar__Advocate_","Hafiz Muhammad Hanif Zafar (Advocate)","Candidate",1,FALSE
+"Hafiz_Muhammad_Ibrahim_Soomro","Hafiz Muhammad Ibrahim Soomro","Candidate",1,FALSE
+"Hafiz_Muhammad_Idrees","Hafiz Muhammad Idrees","Candidate",1,FALSE
+"Hafiz_Muhammad_Nadeem","Hafiz Muhammad Nadeem","Candidate",1,FALSE
+"Hafiz_Saeed_Ahmad","Hafiz Saeed Ahmad","Candidate",1,FALSE
+"Hafiz_Sana_Ullah","Hafiz Sana Ullah","Candidate",1,FALSE
+"Haji_Abdul_Jalil_Jan","Haji Abdul Jalil Jan","Candidate",1,FALSE
+"Haji_Rozuddin","Haji Rozuddin","Candidate",1,FALSE
+"Hidayat-Ur-Rehman","Hidayat-Ur-Rehman","Candidate",1,FALSE
+"Ibrahim_Rais_Advocate","Ibrahim Rais Advocate","Candidate",1,FALSE
+"Iftikhar_Ahmed_Haqani","Iftikhar Ahmed Haqani","Candidate",1,FALSE
+"Iftikhar_Ahmed_Haqqani","Iftikhar Ahmed Haqqani","Candidate",1,FALSE
+"Imdad_Hussain_Pitafi","Imdad Hussain Pitafi","Candidate",1,FALSE
+"Kari_Abdul_Rasheed_Awan__Retired_","Kari Abdul Rasheed Awan (Retired)","Candidate",1,FALSE
+"Khawja_Ghulam_Nizam_Ud_Din","Khawja Ghulam Nizam Ud Din","Candidate",1,FALSE
+"Malik_Faiz_Muhammad_Adovocate","Malik Faiz Muhammad Adovocate","Candidate",1,FALSE
+"Manzoor_Ahmed_Soomro","Manzoor Ahmed Soomro","Candidate",1,FALSE
+"Maulana_Atta-Ul-Haq","Maulana Atta-Ul-Haq","Candidate",1,FALSE
+"Maulana_Malik_Muhammad_Khan_Sherani","Maulana Malik Muhammad Khan Sherani","Candidate",1,FALSE
+"Maulana_Mohammad_Qasim","Maulana Mohammad Qasim","Candidate",1,FALSE
+"Maulana_Nisar_Khan","Maulana Nisar Khan","Candidate",1,FALSE
+"Maulana_Rehmat_Ullah","Maulana Rehmat Ullah","Candidate",1,FALSE
+"Maulana_Sadiq_Ahmad","Maulana Sadiq Ahmad","Candidate",1,FALSE
+"Maulana_Zahoor_Ahmad_Ranjha","Maulana Zahoor Ahmad Ranjha","Candidate",1,FALSE
+"Mir_Wali","Mir Wali","Candidate",1,FALSE
+"Mohammad_Hafizur_Rehman","Mohammad Hafizur Rehman","Candidate",1,FALSE
+"Molana_Abdul_Ghafoor_Hyderi_","Molana Abdul Ghafoor Hyderi.","Candidate",1,FALSE
+"Molana_Abdul_Ghafoor_Qasimi","Molana Abdul Ghafoor Qasimi","Candidate",1,FALSE
+"Molana_Abdul_Hai","Molana Abdul Hai","Candidate",1,FALSE
+"Molana_Fazal_Azim","Molana Fazal Azim","Candidate",1,FALSE
+"Molana_Shujah-Ul-Mulk","Molana Shujah-Ul-Mulk","Candidate",1,FALSE
+"Molvi_Agha_Muhammad","Molvi Agha Muhammad","Candidate",1,FALSE
+"Molvi_Attaullah","Molvi Attaullah","Candidate",1,FALSE
+"Molvi_Faizullah","Molvi Faizullah","Candidate",1,FALSE
+"Molvi_Fateh_Mohammad_Maheri","Molvi Fateh Mohammad Maheri","Candidate",1,FALSE
+"Molvi_Karimdad","Molvi Karimdad","Candidate",1,FALSE
+"Molvi_Muhammad_Idrees_Soomro","Molvi Muhammad Idrees Soomro","Candidate",1,FALSE
+"Molvi_Muhammad_Jehangir_Khan","Molvi Muhammad Jehangir Khan","Candidate",1,FALSE
+"Molvi_Qamar-Ud-Din","Molvi Qamar-Ud-Din","Candidate",1,FALSE
+"Moulana_Abdul_Karim_Abid","Moulana Abdul Karim Abid","Candidate",1,FALSE
+"Moulana_Abdul_Razaque_Abid_Lakho_","Moulana Abdul Razaque Abid Lakho.","Candidate",1,FALSE
+"Moulana_Abdul_Samad_Shahwani___r_","Moulana Abdul Samad Shahwani. (r)","Candidate",1,FALSE
+"Moulana_Muhammad_Zahid_Anwar","Moulana Muhammad Zahid Anwar","Candidate",1,FALSE
+"Moulana_Siddique_Mughari","Moulana Siddique Mughari","Candidate",1,FALSE
+"Moulanataj_Muhammad_Nahiyon","Moulanataj Muhammad Nahiyon","Candidate",1,FALSE
+"Mr__Mufti_Wali_Muhammad","Mr. Mufti Wali Muhammad","Candidate",1,FALSE
+"Mufti_Abdul_Nabi_Langah","Mufti Abdul Nabi Langah","Candidate",1,FALSE
+"Mufti_Ahtisham-Ul-Haq_Asia_Abadi","Mufti Ahtisham-Ul-Haq Asia Abadi","Candidate",1,FALSE
+"Mufti_Ajmal_Khan","Mufti Ajmal Khan","Candidate",1,FALSE
+"Mufti_Ali_Hassan_Buriro_","Mufti Ali Hassan Buriro.","Candidate",1,FALSE
+"Mufti_Fazal-Ur-Rehman_Nasir_","Mufti Fazal-Ur-Rehman Nasir.","Candidate",1,FALSE
+"Mufti_Hafiz_Muhammad_Usman","Mufti Hafiz Muhammad Usman","Candidate",1,FALSE
+"Mufti_Muhammad_Hanif_Khoso","Mufti Muhammad Hanif Khoso","Candidate",1,FALSE
+"Mufti_Muhammad_Sajjad","Mufti Muhammad Sajjad","Candidate",1,FALSE
+"Mufti_Muhammad_Younas","Mufti Muhammad Younas","Candidate",1,FALSE
+"Muhammad_Akram_Abbasi","Muhammad Akram Abbasi","Candidate",1,FALSE
+"Muhammad_Faiz-Ur-Rehman","Muhammad Faiz-Ur-Rehman","Candidate",1,FALSE
+"Muhammad_Idrees_Haqani","Muhammad Idrees Haqani","Candidate",1,FALSE
+"Muhammad_Ilyas_Siddique_Advocate","Muhammad Ilyas Siddique Advocate","Candidate",1,FALSE
+"Muhammad_Rab_Nawaz","Muhammad Rab Nawaz","Candidate",1,FALSE
+"Muhammad_Ramzan_Phulpoto","Muhammad Ramzan Phulpoto","Candidate",1,FALSE
+"Muhammad_Riaz_Noori","Muhammad Riaz Noori","Candidate",1,FALSE
+"Muhammad_Siddique_Rathor","Muhammad Siddique Rathor","Candidate",1,FALSE
+"Muhammad_Zubair_Kayani","Muhammad Zubair Kayani","Candidate",1,FALSE
+"Prof__Abdul_Rehman_Ludhanvi","Prof. Abdul Rehman Ludhanvi","Candidate",1,FALSE
+"Professor_Raja_Aurangzeb_Khan","Professor Raja Aurangzeb Khan","Candidate",1,FALSE
+"Qari_Muhammad_Usman","Qari Muhammad Usman","Candidate",1,FALSE
+"Qari_Muhammad_Yousaf","Qari Muhammad Yousaf","Candidate",1,FALSE
+"Qari_Muhammad_Zawar_Bahadur","Qari Muhammad Zawar Bahadur","Candidate",1,FALSE
+"Qari_Muhammad_Zawar_Bahadur__Retired_","Qari Muhammad Zawar Bahadur (Retired)","Candidate",1,FALSE
+"Qari_Syed_Abdul_Rahim_Shah","Qari Syed Abdul Rahim Shah","Candidate",1,FALSE
+"Qazi_Fazal_Ullah","Qazi Fazal Ullah","Candidate",1,FALSE
+"Qazi_Hameed_Ullah_Khan","Qazi Hameed Ullah Khan","Candidate",1,FALSE
+"Raja_Ishtiaq_Ahmed","Raja Ishtiaq Ahmed","Candidate",1,FALSE
+"Rauy_Bashir_Ahmad","Rauy Bashir Ahmad","Candidate",1,FALSE
+"Rehmatullah_Tunsuwani","Rehmatullah Tunsuwani","Candidate",1,FALSE
+"Sahibzada_Abul_Khair_Muhammad_Zubair","Sahibzada Abul Khair Muhammad Zubair","Candidate",1,FALSE
+"Sahibzada_Khalid_Jan","Sahibzada Khalid Jan","Candidate",1,FALSE
+"Said_Mukhtar_Ahmed","Said Mukhtar Ahmed","Candidate",1,FALSE
+"Saleemullah_Khan_Tarak","Saleemullah Khan Tarak","Candidate",1,FALSE
+"Saqib_Rehman_","Saqib Rehman.","Candidate",1,FALSE
+"Shabbir_Abu_Talib","Shabbir Abu Talib","Candidate",1,FALSE
+"Sibghatullah_Chuadhry","Sibghatullah Chuadhry","Candidate",1,FALSE
+"Syed_Abdul_Salam_Hassan_Raza_Naqvi","Syed Abdul Salam Hassan Raza Naqvi","Candidate",1,FALSE
+"Syed_Muhammad_Ayoub_","Syed Muhammad Ayoub.","Candidate",1,FALSE
 "Badshah_Rawan","Badshah Rawan","Candidate",1,FALSE
 "Mohsin_Faraz","Mohsin Faraz","Candidate",1,FALSE
 "Muhammad_Ebrahim_Ali","Muhammad Ebrahim Ali","Candidate",1,FALSE
 "Muhammad_Sadiq","Muhammad Sadiq","Candidate",3,TRUE
 "Sohail_Wahab","Sohail Wahab","Candidate",1,FALSE
+"Khadam_Hussain","Khadam Hussain","Candidate",1,FALSE
+"Nadeem_Mumtaz_Qureshi","Nadeem Mumtaz Qureshi","Candidate",1,FALSE
 "Aasia_Ishaq","Aasia Ishaq","Candidate",1,FALSE
 "Abdul_Baqi","Abdul Baqi","Candidate",2,TRUE
 "Abdul_Jalil_Bazai","Abdul Jalil Bazai","Candidate",1,FALSE
@@ -1267,7 +1422,7 @@
 "Abdul_Sattar_Jatoi","Abdul Sattar Jatoi","Candidate",1,FALSE
 "Abdul_Waseem","Abdul Waseem","Candidate",1,FALSE
 "Abdul_Waseem_Khan_Ghouri","Abdul Waseem Khan Ghouri","Candidate",1,FALSE
-"Abid_Hussain","Abid Hussain","Candidate",4,TRUE
+"Abid_Hussain","Abid Hussain","Candidate",5,TRUE
 "Adbul_Rashid_Godil","Adbul Rashid Godil","Candidate",1,FALSE
 "Advocate_Sikandar_Ali_Keerio","Advocate Sikandar Ali Keerio","Candidate",1,FALSE
 "Advocate_Zulfiqar_Ali_Qazi","Advocate Zulfiqar Ali Qazi","Candidate",1,FALSE
@@ -1635,302 +1790,76 @@
 "Zameer_Ahmed","Zameer Ahmed","Candidate",1,FALSE
 "Zeeshan_Hasan_Sidhu_Advocate","Zeeshan Hasan Sidhu Advocate","Candidate",1,FALSE
 "Zulfiqar_Ali","Zulfiqar Ali","Candidate",1,FALSE
-"Khadam_Hussain","Khadam Hussain","Candidate",1,FALSE
-"Nadeem_Mumtaz_Qureshi","Nadeem Mumtaz Qureshi","Candidate",1,FALSE
-"Meer_Rab_Nawaz_Khan","Meer Rab Nawaz Khan","Candidate",1,FALSE
-"Abdul_Hai_Sheikh_Qari_Sahab","Abdul Hai Sheikh Qari Sahab","Candidate",1,FALSE
-"Abdul_Hakam","Abdul Hakam","Candidate",1,FALSE
-"Abdul_Hanan","Abdul Hanan","Candidate",1,FALSE
-"Abdul_Khaliq_Rehmani","Abdul Khaliq Rehmani","Candidate",2,TRUE
-"Abdul_Rasheed","Abdul Rasheed","Candidate",3,TRUE
-"Amanullah_Usmani","Amanullah Usmani","Candidate",1,FALSE
-"Anus_Bin_Malik","Anus Bin Malik","Candidate",1,FALSE
-"Asghar_Ali_Abbasi","Asghar Ali Abbasi","Candidate",1,FALSE
-"Atta_Ullah","Atta Ullah","Candidate",1,FALSE
-"Bashir_Ahmad","Bashir Ahmad","Candidate",1,FALSE
-"Bilal_Ahmed","Bilal Ahmed","Candidate",1,FALSE
-"Chand_Faisal","Chand Faisal","Candidate",1,FALSE
-"Faridullah","Faridullah","Candidate",1,FALSE
-"Fiaz_Ur_Rehman_Siddiqui","Fiaz Ur Rehman Siddiqui","Candidate",1,FALSE
-"Ghulam_Muhammad","Ghulam Muhammad","Candidate",2,TRUE
-"Gul_Wazir_Shaheen","Gul Wazir Shaheen","Candidate",1,FALSE
-"Habibullah_Mukhtiar","Habibullah Mukhtiar","Candidate",1,FALSE
-"Hafeezullah_Chandio","Hafeezullah Chandio","Candidate",1,FALSE
-"Hafiz_Asim_Makdoom","Hafiz Asim Makdoom","Candidate",1,FALSE
-"Hafiz_Manzoor_Ahmed_Solangi","Hafiz Manzoor Ahmed Solangi","Candidate",1,FALSE
-"Hafiz_Mohammad_Akber","Hafiz Mohammad Akber","Candidate",1,FALSE
-"Hafiz_Muhammad_Hanif_Usmani","Hafiz Muhammad Hanif Usmani","Candidate",1,FALSE
-"Hafiz_Muhammad_Safdar_Qasmi","Hafiz Muhammad Safdar Qasmi","Candidate",1,FALSE
-"Hafiz_Orangzaib","Hafiz Orangzaib","Candidate",1,FALSE
-"Hafiz_Qudratullah_Arif_Khan","Hafiz Qudratullah Arif Khan","Candidate",1,FALSE
-"Hafiz_Rana_Muhammad_Usman_Shakar","Hafiz Rana Muhammad Usman Shakar","Candidate",1,FALSE
-"Hakeem_Jameel_Asghar_Khizri","Hakeem Jameel Asghar Khizri","Candidate",1,FALSE
-"Hakeem_Muhammad_Sadique","Hakeem Muhammad Sadique","Candidate",1,FALSE
-"Imdad_Ali","Imdad Ali","Candidate",2,TRUE
-"Ishtiaq_Ahmad","Ishtiaq Ahmad","Candidate",1,FALSE
-"Khalifa_Abdul_Qayyum","Khalifa Abdul Qayyum","Candidate",1,FALSE
-"Khwaja_Muhammad","Khwaja Muhammad","Candidate",1,FALSE
-"Mahar_Ghulam_Shabir","Mahar Ghulam Shabir","Candidate",1,FALSE
-"Maulana_Rasheed_Ahmad","Maulana Rasheed Ahmad","Candidate",1,FALSE
-"Maulana_Umar_Farooq_Saddiqui","Maulana Umar Farooq Saddiqui","Candidate",1,FALSE
-"Mohammad_Ramzan_Malik_Mdm","Mohammad Ramzan Malik Mdm","Candidate",1,FALSE
-"Mohammad_Tayyab","Mohammad Tayyab","Candidate",1,FALSE
-"Molana_Abdul_Waheed","Molana Abdul Waheed","Candidate",1,FALSE
-"Molana_Hamid_Ul_Haq_Haqqani","Molana Hamid Ul Haq Haqqani","Candidate",1,FALSE
-"Molana_Hidayat_Ullah_Khan_Chishti","Molana Hidayat Ullah Khan Chishti","Candidate",1,FALSE
-"Molana_Iftikhar_Ahmed","Molana Iftikhar Ahmed","Candidate",1,FALSE
-"Molana_Muhammad_Ahmad_Ludhianvi","Molana Muhammad Ahmad Ludhianvi","Candidate",1,FALSE
-"Molana_Muhammad_Bilal_Umer","Molana Muhammad Bilal Umer","Candidate",1,FALSE
-"Molana_Taj_Muhammad_Hanfi","Molana Taj Muhammad Hanfi","Candidate",1,FALSE
-"Mollana_Abdul_Kabeer_Shahkir","Mollana Abdul Kabeer Shahkir","Candidate",1,FALSE
-"Molvi_Abdul_Hai","Molvi Abdul Hai","Candidate",1,FALSE
-"Mr_ayoub_Chandio","Mr.ayoub Chandio","Candidate",1,FALSE
-"Muhammad_Arfan_Siddiquei_Advocate","Muhammad Arfan Siddiquei Advocate","Candidate",1,FALSE
-"Muhammad_Ashiq_Khan","Muhammad Ashiq Khan","Candidate",1,FALSE
-"Muhammad_Aslam_Siddiqui","Muhammad Aslam Siddiqui","Candidate",1,FALSE
-"Muhammad_Basir_Sikhan_Advocate","Muhammad Basir Sikhan Advocate","Candidate",1,FALSE
-"Muhammad_Hayat_Muhammad_Hassani","Muhammad Hayat Muhammad Hassani","Candidate",1,FALSE
-"Muhammad_Ibrahim_Qasmi","Muhammad Ibrahim Qasmi","Candidate",1,FALSE
-"Muhammad_Iqbal_Jutt","Muhammad Iqbal Jutt","Candidate",1,FALSE
-"Muhammad_Muhsan_Rahmani","Muhammad Muhsan Rahmani","Candidate",1,FALSE
-"Muhammad_Naseem_Khan","Muhammad Naseem Khan","Candidate",1,FALSE
-"Muhammad_Sarwar","Muhammad Sarwar","Candidate",1,FALSE
-"Mulana_Muhammad_Asif_Moavia_Sial","Mulana Muhammad Asif Moavia Sial","Candidate",1,FALSE
-"Qari_Abdul_Majeed","Qari Abdul Majeed","Candidate",1,FALSE
-"Qari_Abdul_Majeed_Pitafi","Qari Abdul Majeed Pitafi","Candidate",1,FALSE
-"Qari_Asghar_Ali","Qari Asghar Ali","Candidate",1,FALSE
-"Qari_Faqir_Mohammad_Hazarvi","Qari Faqir Mohammad Hazarvi","Candidate",1,FALSE
-"Qari_Hussain_Ahmad_Shad","Qari Hussain Ahmad Shad","Candidate",1,FALSE
-"Qazi_Naeem_Akhtar","Qazi Naeem Akhtar","Candidate",1,FALSE
-"Qazi_Saif_Ullah_Khan","Qazi Saif Ullah Khan","Candidate",1,FALSE
-"Qudratullah_Rajput","Qudratullah Rajput","Candidate",1,FALSE
-"Raheem_Bukhsh","Raheem Bukhsh","Candidate",1,FALSE
-"Rana_Hafiz_Abdul_Jabbar_Muavia","Rana Hafiz Abdul Jabbar Muavia","Candidate",1,FALSE
-"Rao_Habib_Ur_Rehman","Rao Habib Ur Rehman","Candidate",1,FALSE
-"Rao_Muhammad_Javaid_Iqbal","Rao Muhammad Javaid Iqbal","Candidate",1,FALSE
-"Rehan_Mehmood_Zia","Rehan Mehmood Zia","Candidate",1,FALSE
-"Syed_Bahroon_Shah","Syed Bahroon Shah","Candidate",1,FALSE
-"Syed_Faisal_Hussain_Shah_Gillani","Syed Faisal Hussain Shah Gillani","Candidate",1,FALSE
-"Syed_Muhammad_Subtain_Shah_Naqvi","Syed Muhammad Subtain Shah Naqvi","Candidate",1,FALSE
-"Tahir_Aqeel","Tahir Aqeel","Candidate",1,FALSE
-"Ubaid_Ullah","Ubaid Ullah","Candidate",2,TRUE
-"Zaheer_Uddin_Baber","Zaheer Uddin Baber","Candidate",1,FALSE
-"Zar_Wali_Khan","Zar Wali Khan","Candidate",1,FALSE
 "Habib_Noor","Habib Noor","Candidate",1,FALSE
 "Malik_Habib_Malak_Orakzai","Malik Habib Malak Orakzai","Candidate",1,FALSE
 "Noor_Jamal_Shah","Noor Jamal Shah","Candidate",1,FALSE
-"Abdul_Aziz_Baloch","Abdul Aziz Baloch","Candidate",1,FALSE
-"Abdul_Aziz_Khan_Khilji_Advocate","Abdul Aziz Khan Khilji Advocate","Candidate",1,FALSE
-"Abdul_Moeen_Qureshi","Abdul Moeen Qureshi","Candidate",1,FALSE
-"Abdullah_Shaikh","Abdullah Shaikh","Candidate",1,FALSE
-"Allama_Doctor_Muhammad_Anees_Rohani","Allama Doctor Muhammad Anees Rohani","Candidate",1,FALSE
-"Anwar_Ul_Habib","Anwar Ul Habib","Candidate",1,FALSE
-"Aslam_Katchela","Aslam Katchela","Candidate",1,FALSE
-"Attaullah_Khoso","Attaullah Khoso","Candidate",1,FALSE
-"Aziz_Ud_Din","Aziz Ud Din","Candidate",1,FALSE
-"Doctor_Muhammad_Khalid_Raza_Pir_Zakori_Sharif","Doctor Muhammad Khalid Raza Pir Zakori Sharif","Candidate",1,FALSE
-"Dr__Abdul_Rehman_Shakir","Dr. Abdul Rehman Shakir","Candidate",1,FALSE
-"Dr__Abid_Rauf_Orakzai","Dr. Abid Rauf Orakzai","Candidate",1,FALSE
-"Ehsan_Bari_Mian_Doctor_Sahib","Ehsan Bari Mian Doctor Sahib","Candidate",1,FALSE
-"Ghulam_Kibriya_Rizwan__G_k__Rizwan_Advocate_","Ghulam Kibriya Rizwan (G.k. Rizwan Advocate)","Candidate",1,FALSE
-"Hafiz_Abdul_Razaq_Parhyar","Hafiz Abdul Razaq Parhyar","Candidate",1,FALSE
-"Hafiz_Muhammad_Ejaz-Ul-Haq_Ch_","Hafiz Muhammad Ejaz-Ul-Haq Ch.","Candidate",1,FALSE
-"Hafiz_Muhammad_Hanif_Zafar__Advocate_","Hafiz Muhammad Hanif Zafar (Advocate)","Candidate",1,FALSE
-"Hafiz_Muhammad_Ibrahim_Soomro","Hafiz Muhammad Ibrahim Soomro","Candidate",1,FALSE
-"Hafiz_Muhammad_Idrees","Hafiz Muhammad Idrees","Candidate",1,FALSE
-"Hafiz_Muhammad_Nadeem","Hafiz Muhammad Nadeem","Candidate",1,FALSE
-"Hafiz_Saeed_Ahmad","Hafiz Saeed Ahmad","Candidate",1,FALSE
-"Hafiz_Sana_Ullah","Hafiz Sana Ullah","Candidate",1,FALSE
-"Haji_Abdul_Jalil_Jan","Haji Abdul Jalil Jan","Candidate",1,FALSE
-"Haji_Rozuddin","Haji Rozuddin","Candidate",1,FALSE
-"Hidayat-Ur-Rehman","Hidayat-Ur-Rehman","Candidate",1,FALSE
-"Ibrahim_Rais_Advocate","Ibrahim Rais Advocate","Candidate",1,FALSE
-"Iftikhar_Ahmed_Haqani","Iftikhar Ahmed Haqani","Candidate",1,FALSE
-"Iftikhar_Ahmed_Haqqani","Iftikhar Ahmed Haqqani","Candidate",1,FALSE
-"Imdad_Hussain_Pitafi","Imdad Hussain Pitafi","Candidate",1,FALSE
-"Kari_Abdul_Rasheed_Awan__Retired_","Kari Abdul Rasheed Awan (Retired)","Candidate",1,FALSE
-"Khawja_Ghulam_Nizam_Ud_Din","Khawja Ghulam Nizam Ud Din","Candidate",1,FALSE
-"Malik_Faiz_Muhammad_Adovocate","Malik Faiz Muhammad Adovocate","Candidate",1,FALSE
-"Manzoor_Ahmed_Soomro","Manzoor Ahmed Soomro","Candidate",1,FALSE
-"Maulana_Atta-Ul-Haq","Maulana Atta-Ul-Haq","Candidate",1,FALSE
-"Maulana_Malik_Muhammad_Khan_Sherani","Maulana Malik Muhammad Khan Sherani","Candidate",1,FALSE
-"Maulana_Mohammad_Qasim","Maulana Mohammad Qasim","Candidate",1,FALSE
-"Maulana_Nisar_Khan","Maulana Nisar Khan","Candidate",1,FALSE
-"Maulana_Rehmat_Ullah","Maulana Rehmat Ullah","Candidate",1,FALSE
-"Maulana_Sadiq_Ahmad","Maulana Sadiq Ahmad","Candidate",1,FALSE
-"Maulana_Zahoor_Ahmad_Ranjha","Maulana Zahoor Ahmad Ranjha","Candidate",1,FALSE
-"Mir_Wali","Mir Wali","Candidate",1,FALSE
-"Mohammad_Hafizur_Rehman","Mohammad Hafizur Rehman","Candidate",1,FALSE
-"Molana_Abdul_Ghafoor_Hyderi_","Molana Abdul Ghafoor Hyderi.","Candidate",1,FALSE
-"Molana_Abdul_Ghafoor_Qasimi","Molana Abdul Ghafoor Qasimi","Candidate",1,FALSE
-"Molana_Abdul_Hai","Molana Abdul Hai","Candidate",1,FALSE
-"Molana_Fazal_Azim","Molana Fazal Azim","Candidate",1,FALSE
-"Molana_Shujah-Ul-Mulk","Molana Shujah-Ul-Mulk","Candidate",1,FALSE
-"Molvi_Agha_Muhammad","Molvi Agha Muhammad","Candidate",1,FALSE
-"Molvi_Attaullah","Molvi Attaullah","Candidate",1,FALSE
-"Molvi_Faizullah","Molvi Faizullah","Candidate",1,FALSE
-"Molvi_Fateh_Mohammad_Maheri","Molvi Fateh Mohammad Maheri","Candidate",1,FALSE
-"Molvi_Karimdad","Molvi Karimdad","Candidate",1,FALSE
-"Molvi_Muhammad_Idrees_Soomro","Molvi Muhammad Idrees Soomro","Candidate",1,FALSE
-"Molvi_Muhammad_Jehangir_Khan","Molvi Muhammad Jehangir Khan","Candidate",1,FALSE
-"Molvi_Qamar-Ud-Din","Molvi Qamar-Ud-Din","Candidate",1,FALSE
-"Moulana_Abdul_Karim_Abid","Moulana Abdul Karim Abid","Candidate",1,FALSE
-"Moulana_Abdul_Razaque_Abid_Lakho_","Moulana Abdul Razaque Abid Lakho.","Candidate",1,FALSE
-"Moulana_Abdul_Samad_Shahwani___r_","Moulana Abdul Samad Shahwani. (r)","Candidate",1,FALSE
-"Moulana_Muhammad_Zahid_Anwar","Moulana Muhammad Zahid Anwar","Candidate",1,FALSE
-"Moulana_Siddique_Mughari","Moulana Siddique Mughari","Candidate",1,FALSE
-"Moulanataj_Muhammad_Nahiyon","Moulanataj Muhammad Nahiyon","Candidate",1,FALSE
-"Mr__Mufti_Wali_Muhammad","Mr. Mufti Wali Muhammad","Candidate",1,FALSE
-"Mufti_Abdul_Nabi_Langah","Mufti Abdul Nabi Langah","Candidate",1,FALSE
-"Mufti_Ahtisham-Ul-Haq_Asia_Abadi","Mufti Ahtisham-Ul-Haq Asia Abadi","Candidate",1,FALSE
-"Mufti_Ajmal_Khan","Mufti Ajmal Khan","Candidate",1,FALSE
-"Mufti_Ali_Hassan_Buriro_","Mufti Ali Hassan Buriro.","Candidate",1,FALSE
-"Mufti_Fazal-Ur-Rehman_Nasir_","Mufti Fazal-Ur-Rehman Nasir.","Candidate",1,FALSE
-"Mufti_Hafiz_Muhammad_Usman","Mufti Hafiz Muhammad Usman","Candidate",1,FALSE
-"Mufti_Muhammad_Hanif_Khoso","Mufti Muhammad Hanif Khoso","Candidate",1,FALSE
-"Mufti_Muhammad_Sajjad","Mufti Muhammad Sajjad","Candidate",1,FALSE
-"Mufti_Muhammad_Younas","Mufti Muhammad Younas","Candidate",1,FALSE
-"Muhammad_Akram_Abbasi","Muhammad Akram Abbasi","Candidate",1,FALSE
-"Muhammad_Faiz-Ur-Rehman","Muhammad Faiz-Ur-Rehman","Candidate",1,FALSE
-"Muhammad_Idrees_Haqani","Muhammad Idrees Haqani","Candidate",1,FALSE
-"Muhammad_Ilyas_Siddique_Advocate","Muhammad Ilyas Siddique Advocate","Candidate",1,FALSE
-"Muhammad_Rab_Nawaz","Muhammad Rab Nawaz","Candidate",1,FALSE
-"Muhammad_Ramzan_Phulpoto","Muhammad Ramzan Phulpoto","Candidate",1,FALSE
-"Muhammad_Riaz_Noori","Muhammad Riaz Noori","Candidate",1,FALSE
-"Muhammad_Siddique_Rathor","Muhammad Siddique Rathor","Candidate",1,FALSE
-"Muhammad_Zubair_Kayani","Muhammad Zubair Kayani","Candidate",1,FALSE
-"Prof__Abdul_Rehman_Ludhanvi","Prof. Abdul Rehman Ludhanvi","Candidate",1,FALSE
-"Professor_Raja_Aurangzeb_Khan","Professor Raja Aurangzeb Khan","Candidate",1,FALSE
-"Qari_Muhammad_Usman","Qari Muhammad Usman","Candidate",1,FALSE
-"Qari_Muhammad_Yousaf","Qari Muhammad Yousaf","Candidate",1,FALSE
-"Qari_Muhammad_Zawar_Bahadur","Qari Muhammad Zawar Bahadur","Candidate",1,FALSE
-"Qari_Muhammad_Zawar_Bahadur__Retired_","Qari Muhammad Zawar Bahadur (Retired)","Candidate",1,FALSE
-"Qari_Syed_Abdul_Rahim_Shah","Qari Syed Abdul Rahim Shah","Candidate",1,FALSE
-"Qazi_Fazal_Ullah","Qazi Fazal Ullah","Candidate",1,FALSE
-"Qazi_Hameed_Ullah_Khan","Qazi Hameed Ullah Khan","Candidate",1,FALSE
-"Raja_Ishtiaq_Ahmed","Raja Ishtiaq Ahmed","Candidate",1,FALSE
-"Rauy_Bashir_Ahmad","Rauy Bashir Ahmad","Candidate",1,FALSE
-"Rehmatullah_Tunsuwani","Rehmatullah Tunsuwani","Candidate",1,FALSE
-"Sahibzada_Abul_Khair_Muhammad_Zubair","Sahibzada Abul Khair Muhammad Zubair","Candidate",1,FALSE
-"Sahibzada_Khalid_Jan","Sahibzada Khalid Jan","Candidate",1,FALSE
-"Said_Mukhtar_Ahmed","Said Mukhtar Ahmed","Candidate",1,FALSE
-"Saleemullah_Khan_Tarak","Saleemullah Khan Tarak","Candidate",1,FALSE
-"Saqib_Rehman_","Saqib Rehman.","Candidate",1,FALSE
-"Shabbir_Abu_Talib","Shabbir Abu Talib","Candidate",1,FALSE
-"Sibghatullah_Chuadhry","Sibghatullah Chuadhry","Candidate",1,FALSE
-"Syed_Abdul_Salam_Hassan_Raza_Naqvi","Syed Abdul Salam Hassan Raza Naqvi","Candidate",1,FALSE
-"Syed_Muhammad_Ayoub_","Syed Muhammad Ayoub.","Candidate",1,FALSE
+"Abdullah_Mangi","Abdullah Mangi","Candidate",1,FALSE
+"Aijaz_Ahmed_Sanjrani","Aijaz Ahmed Sanjrani","Candidate",1,FALSE
+"Allama_Muhammad_Hasnain_Arif","Allama Muhammad Hasnain Arif","Candidate",1,FALSE
 "Arbab_Liaquat_Ali","Arbab Liaquat Ali","Candidate",1,FALSE
+"Asghar_Ali_Mubarik","Asghar Ali Mubarik","Candidate",1,FALSE
+"Darban_Ali_Jaffry","Darban Ali Jaffry","Candidate",1,FALSE
+"Ehsan_Ullah_Khan_Baluch","Ehsan Ullah Khan Baluch","Candidate",1,FALSE
+"Ghulam_Hussain","Ghulam Hussain","Candidate",1,FALSE
+"Hakeem_Muhammad_Tufail","Hakeem Muhammad Tufail","Candidate",1,FALSE
+"Hakeem_Syed_Jaffar_Hussain_Bukhari","Hakeem Syed Jaffar Hussain Bukhari","Candidate",1,FALSE
+"Imran_Ali","Imran Ali","Candidate",2,TRUE
 "Jaffar_Ali","Jaffar Ali","Candidate",1,FALSE
+"Khair_Mohammad","Khair Mohammad","Candidate",1,FALSE
+"Khuwaja_Aftab_Ali_Jaafri","Khuwaja Aftab Ali Jaafri","Candidate",1,FALSE
+"Maqsood_Ali_Domki","Maqsood Ali Domki","Candidate",1,FALSE
 "Mohsin_Sajjad_Utraa","Mohsin Sajjad Utraa","Candidate",1,FALSE
+"Molana_Moula_Bux_Murtazai","Molana Moula Bux Murtazai","Candidate",1,FALSE
+"Muhammad_Askari_Ul_Hidayat","Muhammad Askari Ul Hidayat","Candidate",1,FALSE
+"Muhammad_Hussain_Karimi","Muhammad Hussain Karimi","Candidate",1,FALSE
+"Muhammad_Ismail_Jaffery","Muhammad Ismail Jaffery","Candidate",1,FALSE
+"Muhammad_Sarwer","Muhammad Sarwer","Candidate",1,FALSE
+"Mukhtar_Ahmed_Chandio","Mukhtar Ahmed Chandio","Candidate",1,FALSE
 "Muntazir_Mehdi","Muntazir Mehdi","Candidate",1,FALSE
+"Rasool_Bux_Shah","Rasool Bux Shah","Candidate",1,FALSE
 "Ruqia_Sultana","Ruqia Sultana","Candidate",1,FALSE
+"Shumaila_Bibi","Shumaila Bibi","Candidate",1,FALSE
 "Syed_Arif_Raza_Zaidi","Syed Arif Raza Zaidi","Candidate",1,FALSE
+"Syed_Asghar_Abbas_Zaidi","Syed Asghar Abbas Zaidi","Candidate",1,FALSE
+"Syed_Basheer_Ahmed_Shah_Naqvi","Syed Basheer Ahmed Shah Naqvi","Candidate",1,FALSE
+"Syed_Muhammad_Hassan_Zaidi","Syed Muhammad Hassan Zaidi","Candidate",1,FALSE
 "Syeda_Zainab_Kazmi","Syeda Zainab Kazmi","Candidate",1,FALSE
-"Abdul_Kareem_Khetran","Abdul Kareem Khetran","Candidate",1,FALSE
-"Abdul_Khaliq_Baloch","Abdul Khaliq Baloch","Candidate",1,FALSE
-"Dr_Abdul_Hayee_Baloch","Dr Abdul Hayee Baloch","Candidate",1,FALSE
-"Haji_Musa_Jan_Khilji","Haji Musa Jan Khilji","Candidate",1,FALSE
-"Mir_Muhammad_Ayoub_Jattak","Mir Muhammad Ayoub Jattak","Candidate",1,FALSE
-"Mmad_Yasin_Baloch","Mmad Yasin Baloch","Candidate",1,FALSE
-"Sardar_Kamal_Khan_Bangulzai","Sardar Kamal Khan Bangulzai","Candidate",1,FALSE
-"Sardar_Sanaullah_Zehri_","Sardar Sanaullah Zehri.","Candidate",1,FALSE
-"Shah_Nawaz","Shah Nawaz","Candidate",2,TRUE
-"Yar_Muhammad_Bangulzai","Yar Muhammad Bangulzai","Candidate",1,FALSE
-"Abdul_Mujeeb_Pirzada","Abdul Mujeeb Pirzada","Candidate",1,FALSE
-"Ghulam_Murtaza_Khan_Jatoi","Ghulam Murtaza Khan Jatoi","Candidate",1,FALSE
-"Ghulam_Rasool_Khan_Jatoi","Ghulam Rasool Khan Jatoi","Candidate",1,FALSE
-"Muhammad_Ibrahim_Jatoi","Muhammad Ibrahim Jatoi","Candidate",1,FALSE
-"Rais_Ghulam_Murtaza_Jatoi","Rais Ghulam Murtaza Jatoi","Candidate",1,FALSE
+"Zaheer_Abass_Hajano","Zaheer Abass Hajano","Candidate",1,FALSE
+"Alhaaj_Choudhry_Zulfiqar_Ali","Alhaaj Choudhry Zulfiqar Ali","Candidate",1,FALSE
+"Muhammad_Asghar","Muhammad Asghar","Candidate",3,TRUE
 "Ahmad_Jaan","Ahmad Jaan","Candidate",1,FALSE
 "Aimal_Nasir_Khan","Aimal Nasir Khan","Candidate",1,FALSE
 "Mohsin_Javed","Mohsin Javed","Candidate",1,FALSE
 "Muhammad_Asghar_Khan","Muhammad Asghar Khan","Candidate",1,FALSE
 "Syed_Nadeem_Shah","Syed Nadeem Shah","Candidate",1,FALSE
+"Abdul_Kareem_Khetran","Abdul Kareem Khetran","Candidate",1,FALSE
+"Abdul_Khaliq_Baloch","Abdul Khaliq Baloch","Candidate",1,FALSE
 "Abdul_Khalique","Abdul Khalique","Candidate",1,FALSE
+"Dr_Abdul_Hayee_Baloch","Dr Abdul Hayee Baloch","Candidate",1,FALSE
 "Faiza_Rafique","Faiza Rafique","Candidate",1,FALSE
+"Haji_Musa_Jan_Khilji","Haji Musa Jan Khilji","Candidate",1,FALSE
 "Ijaz_Hussain","Ijaz Hussain","Candidate",1,FALSE
 "m_Naeem","m Naeem","Candidate",1,FALSE
 "Mir_Kabeer_Ahmed","Mir Kabeer Ahmed","Candidate",1,FALSE
+"Mir_Muhammad_Ayoub_Jattak","Mir Muhammad Ayoub Jattak","Candidate",1,FALSE
+"Mmad_Yasin_Baloch","Mmad Yasin Baloch","Candidate",1,FALSE
 "Muhammad_Hussain_Wattoo","Muhammad Hussain Wattoo","Candidate",1,FALSE
 "Phaleen","Phaleen","Candidate",1,FALSE
 "Sabira_Asad","Sabira Asad","Candidate",1,FALSE
+"Sardar_Kamal_Khan_Bangulzai","Sardar Kamal Khan Bangulzai","Candidate",1,FALSE
+"Sardar_Sanaullah_Zehri_","Sardar Sanaullah Zehri.","Candidate",1,FALSE
+"Shah_Nawaz","Shah Nawaz","Candidate",2,TRUE
 "Yar_Muhammad","Yar Muhammad","Candidate",1,FALSE
+"Yar_Muhammad_Bangulzai","Yar Muhammad Bangulzai","Candidate",1,FALSE
 "Yasar_Altaf_Rana","Yasar Altaf Rana","Candidate",1,FALSE
 "Yasmeen_Bibi_Lehri","Yasmeen Bibi Lehri","Candidate",1,FALSE
+"Abdul_Mujeeb_Pirzada","Abdul Mujeeb Pirzada","Candidate",1,FALSE
+"Ghulam_Murtaza_Khan_Jatoi","Ghulam Murtaza Khan Jatoi","Candidate",1,FALSE
+"Ghulam_Rasool_Khan_Jatoi","Ghulam Rasool Khan Jatoi","Candidate",1,FALSE
+"Muhammad_Ibrahim_Jatoi","Muhammad Ibrahim Jatoi","Candidate",1,FALSE
+"Rais_Ghulam_Murtaza_Jatoi","Rais Ghulam Murtaza Jatoi","Candidate",1,FALSE
 "Major_General_Saad_Khattak","Major General Saad Khattak","Candidate",1,FALSE
 "Zulfiqar_Ali_Dasti","Zulfiqar Ali Dasti","Candidate",1,FALSE
-"Saira_Khatoon","Saira Khatoon","Candidate",1,FALSE
-"Sayyed_Khalid_Mehmood_Shah","Sayyed Khalid Mehmood Shah","Candidate",1,FALSE
-"Shahid_Ahmad","Shahid Ahmad","Candidate",1,FALSE
-"Moulana_Abdul_Hafiz","Moulana Abdul Hafiz","Candidate",1,FALSE
-"S_m_Farooq","S.m Farooq","Candidate",1,FALSE
-"Ali_Adrees","Ali Adrees","Candidate",1,FALSE
-"Syed_Zahid_Abbas_Kazmi","Syed Zahid Abbas Kazmi","Candidate",1,FALSE
-"Asia_Chudhary","Asia Chudhary","Candidate",1,FALSE
-"Haji_Muhammad_Gulzar_Awan","Haji Muhammad Gulzar Awan","Candidate",2,TRUE
-"Mirza_Zaheer_Ahmed_Babar","Mirza Zaheer Ahmed Babar","Candidate",1,FALSE
-"Raja_Muhammad_Aftab_Satti","Raja Muhammad Aftab Satti","Candidate",1,FALSE
-"Raziq_Dad","Raziq Dad","Candidate",1,FALSE
-"Abdul_Aziz_Khan","Abdul Aziz Khan","Candidate",1,FALSE
-"Ghulam_Habib_Marwat","Ghulam Habib Marwat","Candidate",1,FALSE
-"Makhdoom_Nasir_Farid_Chishti","Makhdoom Nasir Farid Chishti","Candidate",1,FALSE
-"Rubina_Shaheen_Wattoo","Rubina Shaheen Wattoo","Candidate",1,FALSE
-"Imam_Ali_Brohi","Imam Ali Brohi","Candidate",1,FALSE
-"Danish_Channa","Danish Channa","Candidate",1,FALSE
-"Muhammad_Jaffar_Jatoi","Muhammad Jaffar Jatoi","Candidate",1,FALSE
-"Raheeman","Raheeman","Candidate",1,FALSE
-"Ch_muhammad_Ashraf","Ch.muhammad Ashraf","Candidate",1,FALSE
-"Nawab_Zada_Mansoor_Ahmad_Khan","Nawab Zada Mansoor Ahmad Khan","Candidate",1,FALSE
-"Abdul_Shakoor","Abdul Shakoor","Candidate",2,TRUE
-"Admiral_r_Javaid_Iqbal","Admiral r Javaid Iqbal","Candidate",1,FALSE
-"Admiral_r_Javed_Iqbal","Admiral r Javed Iqbal","Candidate",1,FALSE
-"Ameer_Ahmad_Awan","Ameer Ahmad Awan","Candidate",1,FALSE
-"Asghar_Ali_Javed","Asghar Ali Javed","Candidate",1,FALSE
-"Choudhary_Muhammad_Rafi","Choudhary Muhammad Rafi","Candidate",1,FALSE
-"Hafiz_Muhammad_Abid_Khan_Saeedi","Hafiz Muhammad Abid Khan Saeedi","Candidate",1,FALSE
-"Khalid_Jamal_Siddiqui","Khalid Jamal Siddiqui","Candidate",1,FALSE
-"Muhammad_Salman_Ansari","Muhammad Salman Ansari","Candidate",1,FALSE
-"Nasir_Abbas","Nasir Abbas","Candidate",2,TRUE
-"Nasir_Raheem","Nasir Raheem","Candidate",1,FALSE
-"Nazar_Ali_Mazari","Nazar Ali Mazari","Candidate",1,FALSE
-"Rahmaan_Alli","Rahmaan Alli","Candidate",1,FALSE
-"Syed_Ahmed_Ali","Syed Ahmed Ali","Candidate",1,FALSE
-"Syed_Iqbal_Shah","Syed Iqbal Shah","Candidate",1,FALSE
-"Syed_Rashid_Ali_Gerdazi","Syed Rashid Ali Gerdazi","Candidate",1,FALSE
-"Tariq_Yaseen","Tariq Yaseen","Candidate",1,FALSE
-"Doctor_Muhammad_Rashid_Qammar","Doctor Muhammad Rashid Qammar","Candidate",1,FALSE
-"Muhammad_Arshad_Hussain_Chishti","Muhammad Arshad Hussain Chishti","Candidate",1,FALSE
-"Sardar_Naseer_Ahmed","Sardar Naseer Ahmed","Candidate",1,FALSE
-"Sufi_Muhammad_Ali_Naqshbandi","Sufi Muhammad Ali Naqshbandi","Candidate",1,FALSE
-"Miss_Mehwish_Chaudhary","Miss Mehwish Chaudhary","Candidate",1,FALSE
-"Mrs_Mehwish_Chaudhry_Advocate","Mrs Mehwish Chaudhry Advocate","Candidate",1,FALSE
-"Muhammad_Ali_Sheikh","Muhammad Ali Sheikh","Candidate",1,FALSE
-"Ilhaaj_Muhammad_Hassan_Chaudhry","Ilhaaj Muhammad Hassan Chaudhry","Candidate",1,FALSE
-"Muhammad_Yousuf_Kureshy","Muhammad Yousuf Kureshy","Candidate",1,FALSE
-"Ch_Ijaz_Hussain_Gujjar_Advocate","Ch Ijaz Hussain Gujjar Advocate","Candidate",1,FALSE
-"Ch_Muhammad_Majeed_Gill_Advocate","Ch Muhammad Majeed Gill Advocate","Candidate",1,FALSE
-"Chudhary_Ghulam_Rasool_Mehr","Chudhary Ghulam Rasool Mehr","Candidate",1,FALSE
-"Malik_Mansaf_Awan_Advocate","Malik Mansaf Awan Advocate","Candidate",1,FALSE
-"Malik_Noor_Muhammad_Sarfraz_Awan_Advocate","Malik Noor Muhammad Sarfraz Awan Advocate","Candidate",1,FALSE
-"Mian_Ghulam_Rasool_Advocate","Mian Ghulam Rasool Advocate","Candidate",1,FALSE
-"Muhammad_Arshad_Faqir","Muhammad Arshad Faqir","Candidate",1,FALSE
-"Muhammad_Naeem_Kashif_Adv","Muhammad Naeem Kashif Adv","Candidate",1,FALSE
-"Muhammad_Shakeel_Tahir","Muhammad Shakeel Tahir","Candidate",1,FALSE
-"Qari_Nadeem_Ahmad_Owaisi","Qari Nadeem Ahmad Owaisi","Candidate",1,FALSE
-"Rai_Muhammad_Nawaz_Kharal_Advocate","Rai Muhammad Nawaz Kharal Advocate","Candidate",1,FALSE
-"Zafar_Iqbal_Rajput_Khokhar","Zafar Iqbal Rajput Khokhar","Candidate",1,FALSE
-"Abdul_Ghafoor_Kolachi","Abdul Ghafoor Kolachi","Candidate",1,FALSE
-"Malik_Zulfiqar_Hussain","Malik Zulfiqar Hussain","Candidate",1,FALSE
-"Muhammad_Amir_Wattoo","Muhammad Amir Wattoo","Candidate",1,FALSE
-"Syed_Muhammad_Asad_Shah_Athar","Syed Muhammad Asad Shah Athar","Candidate",1,FALSE
-"Tariq_Iqbal","Tariq Iqbal","Candidate",1,FALSE
-"Abd-Ul-Qadoos_Awan","Abd-Ul-Qadoos Awan","Candidate",1,FALSE
-"Syed_Yousaf_Shah","Syed Yousaf Shah","Candidate",1,FALSE
-"Ch_Muhammad_Yaseen_Cheema","Ch Muhammad Yaseen Cheema","Candidate",1,FALSE
-"Ch_Shoukat_Ali_Cabail","Ch Shoukat Ali Cabail","Candidate",1,FALSE
-"Arslan_Ul_Mulk_Dhariwal","Arslan Ul Mulk Dhariwal","Candidate",1,FALSE
-"Meharban_Saeen_Rana_Abdul_Ghafoor_Mian","Meharban Saeen Rana Abdul Ghafoor Mian","Candidate",1,FALSE
 "Abdul_Rehman_Khan_Jamali","Abdul Rehman Khan Jamali","Candidate",1,FALSE
 "Abdur_Raj_Khan","Abdur Raj Khan","Candidate",1,FALSE
 "Adeeba_Gul_Magsi","Adeeba Gul Magsi","Candidate",1,FALSE
@@ -2170,7 +2099,195 @@
 "Zahid_Nazir","Zahid Nazir","Candidate",1,FALSE
 "Zardali_Khan","Zardali Khan","Candidate",1,FALSE
 "Zargul_Khan","Zargul Khan","Candidate",1,FALSE
-"Inzar_Gul","Inzar Gul","Candidate",1,FALSE
+"Naveed_Akhtar_Khan","Naveed Akhtar Khan","Candidate",1,FALSE
+"Muhammad_Urs_Kherio","Muhammad Urs Kherio","Candidate",1,FALSE
+"Azmat_Ali","Azmat Ali","Candidate",1,FALSE
+"Syed_Mazhar_Ali","Syed Mazhar Ali","Candidate",1,FALSE
+"Kaleem_Ullah","Kaleem Ullah","Candidate",1,FALSE
+"Raziq_Dad","Raziq Dad","Candidate",1,FALSE
+"Sardar_Taimoor","Sardar Taimoor","Candidate",1,FALSE
+"Asia_Chudhary","Asia Chudhary","Candidate",1,FALSE
+"Haji_Muhammad_Gulzar_Awan","Haji Muhammad Gulzar Awan","Candidate",2,TRUE
+"Mirza_Zaheer_Ahmed_Babar","Mirza Zaheer Ahmed Babar","Candidate",1,FALSE
+"Raja_Muhammad_Aftab_Satti","Raja Muhammad Aftab Satti","Candidate",1,FALSE
+"Khaqan_Waheed_Khuwaja","Khaqan Waheed Khuwaja","Candidate",1,FALSE
+"Ahmad_Ikhwan","Ahmad Ikhwan","Candidate",1,FALSE
+"Ali_Hassan","Ali Hassan","Candidate",1,FALSE
+"Aman_Ullah","Aman Ullah","Candidate",2,TRUE
+"Amjad_Arbab_Abbasi","Amjad Arbab Abbasi","Candidate",1,FALSE
+"Asjad_Hussain","Asjad Hussain","Candidate",1,FALSE
+"Fayyaz_Ahmed_Tabassum","Fayyaz Ahmed Tabassum","Candidate",1,FALSE
+"Gul_Hassan","Gul Hassan","Candidate",2,TRUE
+"Haji_Fateh_Din","Haji Fateh Din","Candidate",1,FALSE
+"Latif_Ahmed_Hussain","Latif Ahmed Hussain","Candidate",1,FALSE
+"Mian_Muhammad_Raza","Mian Muhammad Raza","Candidate",1,FALSE
+"Mian_Noor_Ahmad","Mian Noor Ahmad","Candidate",1,FALSE
+"Mubashir_Hussain","Mubashir Hussain","Candidate",1,FALSE
+"Mudassar_Hussain_Shah","Mudassar Hussain Shah","Candidate",1,FALSE
+"Muhammad_Amir_Awan","Muhammad Amir Awan","Candidate",1,FALSE
+"Muhammad_Anwar_Abbasi","Muhammad Anwar Abbasi","Candidate",1,FALSE
+"Muhammad_Asif_Sulehria","Muhammad Asif Sulehria","Candidate",1,FALSE
+"Muhammad_Ayoub_Butt","Muhammad Ayoub Butt","Candidate",1,FALSE
+"Muhammad_Aziz","Muhammad Aziz","Candidate",1,FALSE
+"Muhammad_Ijaz_Arshad","Muhammad Ijaz Arshad","Candidate",1,FALSE
+"Muhammad_Khalil","Muhammad Khalil","Candidate",1,FALSE
+"Muhammad_Nadeem","Muhammad Nadeem","Candidate",1,FALSE
+"Muhammad_Naveed_Akhtar","Muhammad Naveed Akhtar","Candidate",1,FALSE
+"Muhammad_Rafi","Muhammad Rafi","Candidate",1,FALSE
+"Muhammad_Shahzad","Muhammad Shahzad","Candidate",1,FALSE
+"Muhammad_Usman","Muhammad Usman","Candidate",1,FALSE
+"Mujahid_Mahmood","Mujahid Mahmood","Candidate",1,FALSE
+"Naseer_Khan","Naseer Khan","Candidate",1,FALSE
+"Naveed_Akram","Naveed Akram","Candidate",1,FALSE
+"Pervaiz_Iqbal_Virk","Pervaiz Iqbal Virk","Candidate",1,FALSE
+"Salwat_Shahzad_Khan","Salwat Shahzad Khan","Candidate",1,FALSE
+"Sardar_Muhammad_Mansoor_Khan","Sardar Muhammad Mansoor Khan","Candidate",1,FALSE
+"Shafique_Ahmad","Shafique Ahmad","Candidate",1,FALSE
+"Sohail_Babar","Sohail Babar","Candidate",1,FALSE
+"Abdul_Aziz_Khan","Abdul Aziz Khan","Candidate",1,FALSE
+"Ghulam_Habib_Marwat","Ghulam Habib Marwat","Candidate",1,FALSE
+"Makhdoom_Nasir_Farid_Chishti","Makhdoom Nasir Farid Chishti","Candidate",1,FALSE
+"Rubina_Shaheen_Wattoo","Rubina Shaheen Wattoo","Candidate",1,FALSE
+"Imam_Ali_Brohi","Imam Ali Brohi","Candidate",1,FALSE
+"Danish_Channa","Danish Channa","Candidate",1,FALSE
+"Daud_Ahmed_Fakhri","Daud Ahmed Fakhri","Candidate",1,FALSE
+"Farzana_Parveen","Farzana Parveen","Candidate",1,FALSE
+"Jahangir_Hussain_Jafari","Jahangir Hussain Jafari","Candidate",1,FALSE
+"Muhammad_Bilal_Hussain","Muhammad Bilal Hussain","Candidate",1,FALSE
+"Muhammad_Jaffar_Jatoi","Muhammad Jaffar Jatoi","Candidate",1,FALSE
+"Muhammad_Zahid_Bashir","Muhammad Zahid Bashir","Candidate",1,FALSE
+"Raheeman","Raheeman","Candidate",1,FALSE
+"Rizwan_Ahmed_Khan","Rizwan Ahmed Khan","Candidate",1,FALSE
+"Sumbul_Akhtar","Sumbul Akhtar","Candidate",1,FALSE
+"Syed_Muhammad_Ishrat_Ghazali","Syed Muhammad Ishrat Ghazali","Candidate",1,FALSE
+"Ch_muhammad_Ashraf","Ch.muhammad Ashraf","Candidate",1,FALSE
+"Nawab_Zada_Mansoor_Ahmad_Khan","Nawab Zada Mansoor Ahmad Khan","Candidate",1,FALSE
+"Imtiaz_Khan","Imtiaz Khan","Candidate",1,FALSE
+"Mubeen_Malik","Mubeen Malik","Candidate",1,FALSE
+"Shabbir_Ahmed_Anjum","Shabbir Ahmed Anjum","Candidate",1,FALSE
+"Shafaqaat_Ahmad","Shafaqaat Ahmad","Candidate",1,FALSE
+"Taimoor_Ahmad_Yar_Khan","Taimoor Ahmad Yar Khan","Candidate",1,FALSE
+"Tayyaba_Mubarak","Tayyaba Mubarak","Candidate",1,FALSE
+"Muhammad_Syed","Muhammad Syed","Candidate",1,FALSE
+"Anwar_Hussain","Anwar Hussain","Candidate",1,FALSE
+"Doctor_Muhammad_Rashid_Qammar","Doctor Muhammad Rashid Qammar","Candidate",1,FALSE
+"Muhammad_Arshad_Hussain_Chishti","Muhammad Arshad Hussain Chishti","Candidate",1,FALSE
+"Sardar_Naseer_Ahmed","Sardar Naseer Ahmed","Candidate",1,FALSE
+"Shahid_Iqbal","Shahid Iqbal","Candidate",1,FALSE
+"Sufi_Muhammad_Ali_Naqshbandi","Sufi Muhammad Ali Naqshbandi","Candidate",1,FALSE
+"Syed_Rashid_Hussain_Shah","Syed Rashid Hussain Shah","Candidate",1,FALSE
+"Abdul_Shakoor","Abdul Shakoor","Candidate",2,TRUE
+"Admiral_r_Javaid_Iqbal","Admiral r Javaid Iqbal","Candidate",1,FALSE
+"Admiral_r_Javed_Iqbal","Admiral r Javed Iqbal","Candidate",1,FALSE
+"Ameer_Ahmad_Awan","Ameer Ahmad Awan","Candidate",1,FALSE
+"Asghar_Ali_Javed","Asghar Ali Javed","Candidate",1,FALSE
+"Choudhary_Muhammad_Rafi","Choudhary Muhammad Rafi","Candidate",1,FALSE
+"Hafiz_Muhammad_Abid_Khan_Saeedi","Hafiz Muhammad Abid Khan Saeedi","Candidate",1,FALSE
+"Khalid_Jamal_Siddiqui","Khalid Jamal Siddiqui","Candidate",1,FALSE
+"Muhammad_Salman_Ansari","Muhammad Salman Ansari","Candidate",1,FALSE
+"Nasir_Abbas","Nasir Abbas","Candidate",2,TRUE
+"Nasir_Raheem","Nasir Raheem","Candidate",1,FALSE
+"Nazar_Ali_Mazari","Nazar Ali Mazari","Candidate",1,FALSE
+"Rahmaan_Alli","Rahmaan Alli","Candidate",1,FALSE
+"Syed_Ahmed_Ali","Syed Ahmed Ali","Candidate",1,FALSE
+"Syed_Iqbal_Shah","Syed Iqbal Shah","Candidate",1,FALSE
+"Syed_Rashid_Ali_Gerdazi","Syed Rashid Ali Gerdazi","Candidate",1,FALSE
+"Tariq_Yaseen","Tariq Yaseen","Candidate",1,FALSE
+"Miss_Mehwish_Chaudhary","Miss Mehwish Chaudhary","Candidate",1,FALSE
+"Mrs_Mehwish_Chaudhry_Advocate","Mrs Mehwish Chaudhry Advocate","Candidate",1,FALSE
+"Chaudhry_Zahid_Iqram","Chaudhry Zahid Iqram","Candidate",1,FALSE
+"Muhammad_Ali_Sheikh","Muhammad Ali Sheikh","Candidate",1,FALSE
+"Ilhaaj_Muhammad_Hassan_Chaudhry","Ilhaaj Muhammad Hassan Chaudhry","Candidate",1,FALSE
+"Muhammad_Mumtaz","Muhammad Mumtaz","Candidate",1,FALSE
+"Zaffar_Iqbal_Gurmani","Zaffar Iqbal Gurmani","Candidate",1,FALSE
+"Muhammad_Yousuf_Kureshy","Muhammad Yousuf Kureshy","Candidate",1,FALSE
+"Ch_Ijaz_Hussain_Gujjar_Advocate","Ch Ijaz Hussain Gujjar Advocate","Candidate",1,FALSE
+"Ch_Muhammad_Majeed_Gill_Advocate","Ch Muhammad Majeed Gill Advocate","Candidate",1,FALSE
+"Chudhary_Ghulam_Rasool_Mehr","Chudhary Ghulam Rasool Mehr","Candidate",1,FALSE
+"Malik_Mansaf_Awan_Advocate","Malik Mansaf Awan Advocate","Candidate",1,FALSE
+"Malik_Noor_Muhammad_Sarfraz_Awan_Advocate","Malik Noor Muhammad Sarfraz Awan Advocate","Candidate",1,FALSE
+"Mian_Ghulam_Rasool_Advocate","Mian Ghulam Rasool Advocate","Candidate",1,FALSE
+"Muhammad_Arshad_Faqir","Muhammad Arshad Faqir","Candidate",1,FALSE
+"Muhammad_Naeem_Kashif_Adv","Muhammad Naeem Kashif Adv","Candidate",1,FALSE
+"Muhammad_Shakeel_Tahir","Muhammad Shakeel Tahir","Candidate",1,FALSE
+"Qari_Nadeem_Ahmad_Owaisi","Qari Nadeem Ahmad Owaisi","Candidate",1,FALSE
+"Rai_Muhammad_Nawaz_Kharal_Advocate","Rai Muhammad Nawaz Kharal Advocate","Candidate",1,FALSE
+"Zafar_Iqbal_Rajput_Khokhar","Zafar Iqbal Rajput Khokhar","Candidate",1,FALSE
+"Saira_Khatoon","Saira Khatoon","Candidate",1,FALSE
+"Sayyed_Khalid_Mehmood_Shah","Sayyed Khalid Mehmood Shah","Candidate",1,FALSE
+"Shahid_Ahmad","Shahid Ahmad","Candidate",1,FALSE
+"Abdul_Ghafoor_Kolachi","Abdul Ghafoor Kolachi","Candidate",1,FALSE
+"Aijaz_Ali_Khokhar","Aijaz Ali Khokhar","Candidate",1,FALSE
+"Malik_Zulfiqar_Hussain","Malik Zulfiqar Hussain","Candidate",1,FALSE
+"Muhammad_Amir_Wattoo","Muhammad Amir Wattoo","Candidate",1,FALSE
+"Rahim_Bakhsh","Rahim Bakhsh","Candidate",1,FALSE
+"Shahid_Anjum","Shahid Anjum","Candidate",1,FALSE
+"Syed_Muhammad_Asad_Shah_Athar","Syed Muhammad Asad Shah Athar","Candidate",1,FALSE
+"Tariq_Iqbal","Tariq Iqbal","Candidate",1,FALSE
+"Abdul_Qadir_Khan_Wadan","Abdul Qadir Khan Wadan","Candidate",1,FALSE
+"Abdul_Rab","Abdul Rab","Candidate",1,FALSE
+"Abdul_Rahim_Mandokhail","Abdul Rahim Mandokhail","Candidate",1,FALSE
+"Abdul_Razzaq","Abdul Razzaq","Candidate",2,TRUE
+"Abdul_Razzaq_Achakzai","Abdul Razzaq Achakzai","Candidate",1,FALSE
+"Ahmed_Jan_Khan","Ahmed Jan Khan","Candidate",1,FALSE
+"Akhtar_Shah_Kudezai","Akhtar Shah Kudezai","Candidate",1,FALSE
+"Burhan_Ul_Din","Burhan Ul Din","Candidate",1,FALSE
+"Dr__Abdullah_Khan","Dr. Abdullah Khan","Candidate",1,FALSE
+"Haji_Muhammad_Barki","Haji Muhammad Barki","Candidate",1,FALSE
+"Ikram_Ul_Haq_Khan","Ikram Ul Haq Khan","Candidate",1,FALSE
+"Jamal_Khan","Jamal Khan","Candidate",2,TRUE
+"Jan_Dad_Khan","Jan Dad Khan","Candidate",1,FALSE
+"Jehangir_Khan","Jehangir Khan","Candidate",2,TRUE
+"Khurshid_Ali","Khurshid Ali","Candidate",1,FALSE
+"Main_Asmatullah_Shah","Main Asmatullah Shah","Candidate",1,FALSE
+"Malik_Khaliq_Dad","Malik Khaliq Dad","Candidate",1,FALSE
+"Mehmood_Khan_Achakzai","Mehmood Khan Achakzai","Candidate",2,TRUE
+"Mohammad_Nawaz_Khan","Mohammad Nawaz Khan","Candidate",1,FALSE
+"Mohammad_Usman","Mohammad Usman","Candidate",1,FALSE
+"Muhammad_Akram_Tareen","Muhammad Akram Tareen","Candidate",1,FALSE
+"Muhammad_Ashraf","Muhammad Ashraf","Candidate",2,TRUE
+"Muhammad_Bakhsh_Mengal","Muhammad Bakhsh Mengal","Candidate",1,FALSE
+"Muhammad_Essa_Roshan","Muhammad Essa Roshan","Candidate",1,FALSE
+"Muhammad_Mukhtiar","Muhammad Mukhtiar","Candidate",1,FALSE
+"Muhammad_Rahim","Muhammad Rahim","Candidate",1,FALSE
+"Murad_Ali","Murad Ali","Candidate",1,FALSE
+"Nawab_Muhammad_Ayaz_Khan_Jogezai","Nawab Muhammad Ayaz Khan Jogezai","Candidate",1,FALSE
+"Noor_Ullah_Tareen","Noor Ullah Tareen","Candidate",1,FALSE
+"Palwasha_Ramzan","Palwasha Ramzan","Candidate",1,FALSE
+"Rafi_Ullah","Rafi Ullah","Candidate",1,FALSE
+"Raza_Mohammad_Raza","Raza Mohammad Raza","Candidate",1,FALSE
+"Riaz_Mahammad_Yousafzai","Riaz Mahammad Yousafzai","Candidate",1,FALSE
+"Saleem_Khan_Kakar","Saleem Khan Kakar","Candidate",1,FALSE
+"Syed_Muhammad_Yousuf_Agha","Syed Muhammad Yousuf Agha","Candidate",1,FALSE
+"Zameen_Dad_Shah","Zameen Dad Shah","Candidate",1,FALSE
+"Zia_Watan_Dost","Zia Watan Dost","Candidate",1,FALSE
+"Qadeer_Hussain","Qadeer Hussain","Candidate",1,FALSE
+"Abdul_Samad_Khan","Abdul Samad Khan","Candidate",1,FALSE
+"Hazrat_Umar","Hazrat Umar","Candidate",1,FALSE
+"Irfan_Karim","Irfan Karim","Candidate",1,FALSE
+"Moulana_Abdul_Hafiz","Moulana Abdul Hafiz","Candidate",1,FALSE
+"Muhammad_Arif_Khan","Muhammad Arif Khan","Candidate",1,FALSE
+"Muhammad_Jibran","Muhammad Jibran","Candidate",1,FALSE
+"S_m_Farooq","S.m Farooq","Candidate",1,FALSE
+"Sara_Ashfaq","Sara Ashfaq","Candidate",1,FALSE
+"Shahbaz_Ali","Shahbaz Ali","Candidate",1,FALSE
+"Yasir_Ali","Yasir Ali","Candidate",1,FALSE
+"Aneela_Iftikhar","Aneela Iftikhar","Candidate",1,FALSE
+"Arshad_Ahmad_Qamar","Arshad Ahmad Qamar","Candidate",1,FALSE
+"Chaudhry_Salik_Hussain","Chaudhry Salik Hussain","Candidate",1,FALSE
+"Chaudhry_Tariq_Bashir_Cheema","Chaudhry Tariq Bashir Cheema","Candidate",1,FALSE
+"Hussain_Ellahi","Hussain Ellahi","Candidate",1,FALSE
+"Muhammad_Jameel_Ahmed_Khan","Muhammad Jameel Ahmed Khan","Candidate",1,FALSE
+"Muhammad_Tariq_Hassan","Muhammad Tariq Hassan","Candidate",1,FALSE
+"Musa_Elahi","Musa Elahi","Candidate",1,FALSE
+"Riaz_Ahmed_Jan","Riaz Ahmed Jan","Candidate",1,FALSE
+"Shakeel_Ahmed_Roshan","Shakeel Ahmed Roshan","Candidate",1,FALSE
+"Syed_Faizan_Anis","Syed Faizan Anis","Candidate",1,FALSE
+"Muzaffar_Ahmed","Muzaffar Ahmed","Candidate",1,FALSE
+"Gohar_Ali_Khan","Gohar Ali Khan","Candidate",1,FALSE
+"Meher_Muhammad_Jhangir_Advocate","Meher Muhammad Jhangir Advocate","Candidate",1,FALSE
+"Muhammad_Younas","Muhammad Younas","Candidate",3,TRUE
+"Tauseef_Ur_Rehman_Bhatti_Advocate","Tauseef Ur Rehman Bhatti Advocate","Candidate",1,FALSE
 "Ali_Akber_Nizamani","Ali Akber Nizamani","Candidate",1,FALSE
 "Ali_Asghar_Halepoto","Ali Asghar Halepoto","Candidate",1,FALSE
 "Amjad_Hussain","Amjad Hussain","Candidate",1,FALSE
@@ -2222,167 +2339,8 @@
 "Muhammad_Mutahar_Ramzan","Muhammad Mutahar Ramzan","Candidate",1,FALSE
 "Syed_Ghulam_Abbas_Shah","Syed Ghulam Abbas Shah","Candidate",1,FALSE
 "Syed_Safdar_Ali","Syed Safdar Ali","Candidate",1,FALSE
-"Safdar_Zaman","Safdar Zaman","Candidate",1,FALSE
-"Akbar_Dars","Akbar Dars","Candidate",1,FALSE
-"Mohammad_Hussain","Mohammad Hussain","Candidate",1,FALSE
-"Muhammad_Asghar_Dars","Muhammad Asghar Dars","Candidate",1,FALSE
-"Mir_Zarak_Khan_Zehri","Mir Zarak Khan Zehri","Candidate",1,FALSE
-"Naveed_Akhtar_Khan","Naveed Akhtar Khan","Candidate",1,FALSE
-"Gohar_Ali_Khan","Gohar Ali Khan","Candidate",1,FALSE
-"Meher_Muhammad_Jhangir_Advocate","Meher Muhammad Jhangir Advocate","Candidate",1,FALSE
-"Tauseef_Ur_Rehman_Bhatti_Advocate","Tauseef Ur Rehman Bhatti Advocate","Candidate",1,FALSE
-"Mian_Abu_Bakar_Hamza","Mian Abu Bakar Hamza","Candidate",1,FALSE
-"Muhammad_Ijaz_Ul_Haq","Muhammad Ijaz Ul Haq","Candidate",2,TRUE
-"Khurram_Muhammad_Qamar","Khurram Muhammad Qamar","Candidate",1,FALSE
-"Mahmood_Ahmad_Khan_Qalandar_","Mahmood Ahmad Khan Qalandar.","Candidate",1,FALSE
-"Mehmood_Qalandar","Mehmood Qalandar","Candidate",1,FALSE
-"Faqir_Jamshid_Ahmad","Faqir Jamshid Ahmad","Candidate",1,FALSE
-"Farah_Noreen","Farah Noreen","Candidate",1,FALSE
-"Rasheed_Ahmad_Khan_Langha","Rasheed Ahmad Khan Langha","Candidate",1,FALSE
-"Saleem_Abbas","Saleem Abbas","Candidate",2,TRUE
-"Aamir_Rasheed","Aamir Rasheed","Candidate",1,FALSE
-"Afzal_Ahmad_Gondal","Afzal Ahmad Gondal","Candidate",1,FALSE
-"Ali_Akbar_Kalhoro","Ali Akbar Kalhoro","Candidate",1,FALSE
-"Ali_Nawaz_Qasmi","Ali Nawaz Qasmi","Candidate",1,FALSE
-"Allama_Mujhahid_Abdul_Rasool_Khan","Allama Mujhahid Abdul Rasool Khan","Candidate",1,FALSE
-"Allama_Shabbir_Ahmed_Chasti_Nazimi_Off_Sakka","Allama Shabbir Ahmed Chasti Nazimi Off Sakka","Candidate",1,FALSE
-"Arshad_Mehmood","Arshad Mehmood","Candidate",1,FALSE
-"Awal_Jan_Mazari","Awal Jan Mazari","Candidate",1,FALSE
-"Basharat_Ali_Gujjar","Basharat Ali Gujjar","Candidate",1,FALSE
-"Hafiz_Gul_Sher","Hafiz Gul Sher","Candidate",1,FALSE
-"Hafiz_Malik_Muhammad_Bashir","Hafiz Malik Muhammad Bashir","Candidate",1,FALSE
-"Hafiz_Raja_Muhammad_Sana_Ul_Haq","Hafiz Raja Muhammad Sana Ul Haq","Candidate",1,FALSE
-"Imtiaz","Imtiaz","Candidate",1,FALSE
-"Jahangir_Qadri","Jahangir Qadri","Candidate",1,FALSE
-"Jhangir_Qadri","Jhangir Qadri","Candidate",1,FALSE
-"Mahboob_Ali_Sahto","Mahboob Ali Sahto","Candidate",1,FALSE
-"Malik_Matloob_Ali_Awan","Malik Matloob Ali Awan","Candidate",2,TRUE
-"Malik_Muhammad_Iqbal_Khokhar","Malik Muhammad Iqbal Khokhar","Candidate",1,FALSE
-"Matloob_Awan","Matloob Awan","Candidate",1,FALSE
-"Mian_Ghulam_Shabir_Qadri","Mian Ghulam Shabir Qadri","Candidate",1,FALSE
-"Mohammad_Kashif","Mohammad Kashif","Candidate",1,FALSE
-"Mohammad_Younis_Ansari","Mohammad Younis Ansari","Candidate",1,FALSE
-"Mollana_Mohammad_Illyas_Gabool","Mollana Mohammad Illyas Gabool","Candidate",1,FALSE
-"Muhammad_Afzal_Qadri","Muhammad Afzal Qadri","Candidate",1,FALSE
-"Muhammad_Ajmal_Umar","Muhammad Ajmal Umar","Candidate",1,FALSE
-"Muhammad_Arif_Mansoori","Muhammad Arif Mansoori","Candidate",1,FALSE
-"Muhammad_Imran_Javaid","Muhammad Imran Javaid","Candidate",1,FALSE
-"Muhammad_Jamal_Barket","Muhammad Jamal Barket","Candidate",1,FALSE
-"Muhammad_Kaleem","Muhammad Kaleem","Candidate",1,FALSE
-"Muhammad_Murtaza_Rizvi_Wattoo","Muhammad Murtaza Rizvi Wattoo","Candidate",1,FALSE
-"Muhammad_Tahir_Qadri","Muhammad Tahir Qadri","Candidate",1,FALSE
-"Peer_Sayed_Munir_Hussain_Shah_Noori","Peer Sayed Munir Hussain Shah Noori","Candidate",1,FALSE
-"Pir_Syed_Mubashar_Hussain_Shah_Shakreelvy","Pir Syed Mubashar Hussain Shah Shakreelvy","Candidate",1,FALSE
-"Professor_Farooq_Ahmed_Tajra","Professor Farooq Ahmed Tajra","Candidate",1,FALSE
-"Rana_Muhammad_Riaz_Qadri","Rana Muhammad Riaz Qadri","Candidate",1,FALSE
-"Raza_e_Mustafa","Raza e Mustafa","Candidate",1,FALSE
-"Rizwan_Ali","Rizwan Ali","Candidate",1,FALSE
-"Rizwan_Qureshi","Rizwan Qureshi","Candidate",1,FALSE
-"Sajid_Mehmood_Qadri","Sajid Mehmood Qadri","Candidate",1,FALSE
-"Sajjad_Haider","Sajjad Haider","Candidate",1,FALSE
-"Shoukat_Ali_Lehri","Shoukat Ali Lehri","Candidate",1,FALSE
-"Syed_Ahmad_Shah","Syed Ahmad Shah","Candidate",1,FALSE
-"Syed_Tawaqal_Hussain_Shah_Bukhari","Syed Tawaqal Hussain Shah Bukhari","Candidate",1,FALSE
-"Alamgir_Khan","Alamgir Khan","Candidate",1,FALSE
-"Ihsan_Ullah_Khan_Mahsood","Ihsan Ullah Khan Mahsood","Candidate",1,FALSE
-"Muhammad_Sultan","Muhammad Sultan","Candidate",1,FALSE
-"Raja_Muhammad_Ashraf","Raja Muhammad Ashraf","Candidate",1,FALSE
-"Azmat_Ali","Azmat Ali","Candidate",1,FALSE
-"Syed_Mazhar_Ali","Syed Mazhar Ali","Candidate",1,FALSE
-"Kaleem_Ullah","Kaleem Ullah","Candidate",1,FALSE
-"Sardar_Taimoor","Sardar Taimoor","Candidate",1,FALSE
-"Khaqan_Waheed_Khuwaja","Khaqan Waheed Khuwaja","Candidate",1,FALSE
-"Ahmad_Nawaz_Khan","Ahmad Nawaz Khan","Candidate",1,FALSE
-"Prof_javeed_Sandhu","Prof.javeed Sandhu","Candidate",1,FALSE
-"Ahmad_Ikhwan","Ahmad Ikhwan","Candidate",1,FALSE
-"Ali_Hassan","Ali Hassan","Candidate",1,FALSE
-"Aman_Ullah","Aman Ullah","Candidate",2,TRUE
-"Amjad_Arbab_Abbasi","Amjad Arbab Abbasi","Candidate",1,FALSE
-"Asjad_Hussain","Asjad Hussain","Candidate",1,FALSE
-"Fayyaz_Ahmed_Tabassum","Fayyaz Ahmed Tabassum","Candidate",1,FALSE
-"Gul_Hassan","Gul Hassan","Candidate",2,TRUE
-"Haji_Fateh_Din","Haji Fateh Din","Candidate",1,FALSE
-"Latif_Ahmed_Hussain","Latif Ahmed Hussain","Candidate",1,FALSE
-"Mian_Muhammad_Raza","Mian Muhammad Raza","Candidate",1,FALSE
-"Mian_Noor_Ahmad","Mian Noor Ahmad","Candidate",1,FALSE
-"Mubashir_Hussain","Mubashir Hussain","Candidate",1,FALSE
-"Mudassar_Hussain_Shah","Mudassar Hussain Shah","Candidate",1,FALSE
-"Muhammad_Amir_Awan","Muhammad Amir Awan","Candidate",1,FALSE
-"Muhammad_Anwar_Abbasi","Muhammad Anwar Abbasi","Candidate",1,FALSE
-"Muhammad_Asif_Sulehria","Muhammad Asif Sulehria","Candidate",1,FALSE
-"Muhammad_Ayoub_Butt","Muhammad Ayoub Butt","Candidate",1,FALSE
-"Muhammad_Aziz","Muhammad Aziz","Candidate",1,FALSE
-"Muhammad_Ijaz_Arshad","Muhammad Ijaz Arshad","Candidate",1,FALSE
-"Muhammad_Khalil","Muhammad Khalil","Candidate",1,FALSE
-"Muhammad_Nadeem","Muhammad Nadeem","Candidate",1,FALSE
-"Muhammad_Naveed_Akhtar","Muhammad Naveed Akhtar","Candidate",1,FALSE
-"Muhammad_Rafi","Muhammad Rafi","Candidate",1,FALSE
-"Muhammad_Shahzad","Muhammad Shahzad","Candidate",1,FALSE
-"Muhammad_Usman","Muhammad Usman","Candidate",1,FALSE
-"Mujahid_Mahmood","Mujahid Mahmood","Candidate",1,FALSE
-"Naseer_Khan","Naseer Khan","Candidate",1,FALSE
-"Naveed_Akram","Naveed Akram","Candidate",1,FALSE
-"Pervaiz_Iqbal_Virk","Pervaiz Iqbal Virk","Candidate",1,FALSE
-"Salwat_Shahzad_Khan","Salwat Shahzad Khan","Candidate",1,FALSE
-"Sardar_Muhammad_Mansoor_Khan","Sardar Muhammad Mansoor Khan","Candidate",1,FALSE
-"Shafique_Ahmad","Shafique Ahmad","Candidate",1,FALSE
-"Sohail_Babar","Sohail Babar","Candidate",1,FALSE
-"Daud_Ahmed_Fakhri","Daud Ahmed Fakhri","Candidate",1,FALSE
-"Farzana_Parveen","Farzana Parveen","Candidate",1,FALSE
-"Jahangir_Hussain_Jafari","Jahangir Hussain Jafari","Candidate",1,FALSE
-"Muhammad_Bilal_Hussain","Muhammad Bilal Hussain","Candidate",1,FALSE
-"Muhammad_Zahid_Bashir","Muhammad Zahid Bashir","Candidate",1,FALSE
-"Rizwan_Ahmed_Khan","Rizwan Ahmed Khan","Candidate",1,FALSE
-"Sumbul_Akhtar","Sumbul Akhtar","Candidate",1,FALSE
-"Syed_Muhammad_Ishrat_Ghazali","Syed Muhammad Ishrat Ghazali","Candidate",1,FALSE
-"Imtiaz_Khan","Imtiaz Khan","Candidate",1,FALSE
-"Mubeen_Malik","Mubeen Malik","Candidate",1,FALSE
-"Shabbir_Ahmed_Anjum","Shabbir Ahmed Anjum","Candidate",1,FALSE
-"Shafaqaat_Ahmad","Shafaqaat Ahmad","Candidate",1,FALSE
-"Taimoor_Ahmad_Yar_Khan","Taimoor Ahmad Yar Khan","Candidate",1,FALSE
-"Tayyaba_Mubarak","Tayyaba Mubarak","Candidate",1,FALSE
-"Muhammad_Syed","Muhammad Syed","Candidate",1,FALSE
-"Anwar_Hussain","Anwar Hussain","Candidate",1,FALSE
-"Shahid_Iqbal","Shahid Iqbal","Candidate",1,FALSE
-"Syed_Rashid_Hussain_Shah","Syed Rashid Hussain Shah","Candidate",1,FALSE
-"Chaudhry_Zahid_Iqram","Chaudhry Zahid Iqram","Candidate",1,FALSE
-"Muhammad_Mumtaz","Muhammad Mumtaz","Candidate",1,FALSE
-"Zaffar_Iqbal_Gurmani","Zaffar Iqbal Gurmani","Candidate",1,FALSE
-"Aijaz_Ali_Khokhar","Aijaz Ali Khokhar","Candidate",1,FALSE
-"Rahim_Bakhsh","Rahim Bakhsh","Candidate",1,FALSE
-"Shahid_Anjum","Shahid Anjum","Candidate",1,FALSE
-"Abdul_Rab","Abdul Rab","Candidate",1,FALSE
-"Abdul_Razzaq","Abdul Razzaq","Candidate",2,TRUE
-"Jamal_Khan","Jamal Khan","Candidate",2,TRUE
-"Mehmood_Khan_Achakzai","Mehmood Khan Achakzai","Candidate",3,TRUE
-"Muhammad_Akram_Tareen","Muhammad Akram Tareen","Candidate",1,FALSE
-"Muhammad_Ashraf","Muhammad Ashraf","Candidate",2,TRUE
-"Muhammad_Rahim","Muhammad Rahim","Candidate",1,FALSE
-"Nawab_Muhammad_Ayaz_Khan_Jogezai","Nawab Muhammad Ayaz Khan Jogezai","Candidate",1,FALSE
-"Palwasha_Ramzan","Palwasha Ramzan","Candidate",1,FALSE
-"Riaz_Mahammad_Yousafzai","Riaz Mahammad Yousafzai","Candidate",1,FALSE
-"Qadeer_Hussain","Qadeer Hussain","Candidate",1,FALSE
-"Abdul_Samad_Khan","Abdul Samad Khan","Candidate",1,FALSE
-"Hazrat_Umar","Hazrat Umar","Candidate",1,FALSE
-"Irfan_Karim","Irfan Karim","Candidate",1,FALSE
-"Muhammad_Arif_Khan","Muhammad Arif Khan","Candidate",1,FALSE
-"Muhammad_Jibran","Muhammad Jibran","Candidate",1,FALSE
-"Sara_Ashfaq","Sara Ashfaq","Candidate",1,FALSE
-"Shahbaz_Ali","Shahbaz Ali","Candidate",1,FALSE
-"Yasir_Ali","Yasir Ali","Candidate",1,FALSE
-"Aneela_Iftikhar","Aneela Iftikhar","Candidate",1,FALSE
-"Arshad_Ahmad_Qamar","Arshad Ahmad Qamar","Candidate",1,FALSE
-"Chaudhry_Salik_Hussain","Chaudhry Salik Hussain","Candidate",1,FALSE
-"Chaudhry_Tariq_Bashir_Cheema","Chaudhry Tariq Bashir Cheema","Candidate",1,FALSE
-"Hussain_Ellahi","Hussain Ellahi","Candidate",1,FALSE
-"Muhammad_Jameel_Ahmed_Khan","Muhammad Jameel Ahmed Khan","Candidate",1,FALSE
-"Muhammad_Tariq_Hassan","Muhammad Tariq Hassan","Candidate",1,FALSE
-"Musa_Elahi","Musa Elahi","Candidate",1,FALSE
-"Riaz_Ahmed_Jan","Riaz Ahmed Jan","Candidate",1,FALSE
-"Shakeel_Ahmed_Roshan","Shakeel Ahmed Roshan","Candidate",1,FALSE
-"Syed_Faizan_Anis","Syed Faizan Anis","Candidate",1,FALSE
-"Muzaffar_Ahmed","Muzaffar Ahmed","Candidate",1,FALSE
-"Muhammad_Younas","Muhammad Younas","Candidate",3,TRUE
+"Inzar_Gul","Inzar Gul","Candidate",1,FALSE
+"Arslan_Ul_Mulk_Dhariwal","Arslan Ul Mulk Dhariwal","Candidate",1,FALSE
 "Abbas_Khan_Afridi","Abbas Khan Afridi","Candidate",1,FALSE
 "Abdul_Ghaffar_Dogar","Abdul Ghaffar Dogar","Candidate",1,FALSE
 "Abdul_Hakeem_Baloch","Abdul Hakeem Baloch","Candidate",2,TRUE
@@ -2921,6 +2879,13 @@
 "Zobaida_Jalal","Zobaida Jalal","Candidate",1,FALSE
 "Zulifqar_Ali_Bhindar","Zulifqar Ali Bhindar","Candidate",1,FALSE
 "Syed_Faqir_Hussain_Shah_Bukhari","Syed Faqir Hussain Shah Bukhari","Candidate",1,FALSE
+"Safdar_Zaman","Safdar Zaman","Candidate",1,FALSE
+"Akbar_Dars","Akbar Dars","Candidate",1,FALSE
+"Mohammad_Hussain","Mohammad Hussain","Candidate",1,FALSE
+"Muhammad_Asghar_Dars","Muhammad Asghar Dars","Candidate",1,FALSE
+"Mian_Abu_Bakar_Hamza","Mian Abu Bakar Hamza","Candidate",1,FALSE
+"Mir_Zarak_Khan_Zehri","Mir Zarak Khan Zehri","Candidate",1,FALSE
+"Muhammad_Ijaz_Ul_Haq","Muhammad Ijaz Ul Haq","Candidate",2,TRUE
 "Zahid_Parvez","Zahid Parvez","Candidate",1,FALSE
 "Abrar_Hussain","Abrar Hussain","Candidate",2,TRUE
 "Abdul_Rehman_Jameel","Abdul Rehman Jameel","Candidate",1,FALSE
@@ -2999,7 +2964,7 @@
 "Muhammad_Hussain_Amir","Muhammad Hussain Amir","Candidate",1,FALSE
 "Muhammad_Ijaz_Malik","Muhammad Ijaz Malik","Candidate",1,FALSE
 "Muhammad_Imran","Muhammad Imran","Candidate",2,TRUE
-"Muhammad_Iqbal","Muhammad Iqbal","Candidate",4,TRUE
+"Muhammad_Iqbal","Muhammad Iqbal","Candidate",3,TRUE
 "Muhammad_Irfan","Muhammad Irfan","Candidate",2,TRUE
 "Muhammad_Irfan_Ashraf","Muhammad Irfan Ashraf","Candidate",1,FALSE
 "Muhammad_Mansha","Muhammad Mansha","Candidate",1,FALSE
@@ -3054,6 +3019,11 @@
 "Yawar_Aftab","Yawar Aftab","Candidate",1,FALSE
 "Zain_Ullah","Zain Ullah","Candidate",1,FALSE
 "Hafiz_Abdul_Rauf","Hafiz Abdul Rauf","Candidate",1,FALSE
+"Meharban_Saeen_Rana_Abdul_Ghafoor_Mian","Meharban Saeen Rana Abdul Ghafoor Mian","Candidate",1,FALSE
+"Abd-Ul-Qadoos_Awan","Abd-Ul-Qadoos Awan","Candidate",1,FALSE
+"Syed_Yousaf_Shah","Syed Yousaf Shah","Candidate",1,FALSE
+"Ch_Muhammad_Yaseen_Cheema","Ch Muhammad Yaseen Cheema","Candidate",1,FALSE
+"Ch_Shoukat_Ali_Cabail","Ch Shoukat Ali Cabail","Candidate",1,FALSE
 "Asadullah_Khan","Asadullah Khan","Candidate",1,FALSE
 "Khushal_Khan_Kakar","Khushal Khan Kakar","Candidate",1,FALSE
 "Malik_Zada","Malik Zada","Candidate",1,FALSE
@@ -3070,13 +3040,19 @@
 "Fehmeed_Nawaz","Fehmeed Nawaz","Candidate",1,FALSE
 "Hafiz_Allah_Ditta","Hafiz Allah Ditta","Candidate",1,FALSE
 "Khurram_Shehzad","Khurram Shehzad","Candidate",1,FALSE
+"Khuwaja_Tariq_Sarfaraz","Khuwaja Tariq Sarfaraz","Candidate",1,FALSE
 "Luqman_Khan","Luqman Khan","Candidate",1,FALSE
 "Muhammad_Arsalan_Khalid","Muhammad Arsalan Khalid","Candidate",1,FALSE
 "Muhammad_Aslam_Iqbal","Muhammad Aslam Iqbal","Candidate",1,FALSE
 "Muhammad_Muzammal_Nazir","Muhammad Muzammal Nazir","Candidate",1,FALSE
+"Riaz_Shahid_Khan_Punian_Advocate","Riaz Shahid Khan Punian Advocate","Candidate",1,FALSE
 "Rustam_Khan","Rustam Khan","Candidate",1,FALSE
+"Shahid_Naeem_Advocate","Shahid Naeem Advocate","Candidate",1,FALSE
+"Syed_Muhammad_Abbas","Syed Muhammad Abbas","Candidate",1,FALSE
 "Wajid_Kiyani","Wajid Kiyani","Candidate",1,FALSE
 "Waqas_Qudoos","Waqas Qudoos","Candidate",1,FALSE
+"Ahmad_Nawaz_Khan","Ahmad Nawaz Khan","Candidate",1,FALSE
+"Prof_javeed_Sandhu","Prof.javeed Sandhu","Candidate",1,FALSE
 "Waseem_Ahmad","Waseem Ahmad","Candidate",1,FALSE
 "Aarif_Aziz_Sheikh","Aarif Aziz Sheikh","Candidate",1,FALSE
 "Abdul_Akbar_Khan","Abdul Akbar Khan","Candidate",1,FALSE
@@ -3092,7 +3068,7 @@
 "Abdul_Sattar_Bachani","Abdul Sattar Bachani","Candidate",1,FALSE
 "Abdul_Wahab","Abdul Wahab","Candidate",2,TRUE
 "Abdul_Wahab_Barakzai","Abdul Wahab Barakzai","Candidate",1,FALSE
-"Abdul_Waheed","Abdul Waheed","Candidate",1,FALSE
+"Abdul_Waheed","Abdul Waheed","Candidate",2,TRUE
 "Abdullah_Bloch","Abdullah Bloch","Candidate",1,FALSE
 "Abid_Hussain_Sathi","Abid Hussain Sathi","Candidate",1,FALSE
 "Abid_Ullah_Yousafzai","Abid Ullah Yousafzai","Candidate",1,FALSE
@@ -3744,6 +3720,9 @@
 "Zulfiqar_Bachani","Zulfiqar Bachani","Candidate",1,FALSE
 "Zumarad_Khan","Zumarad Khan","Candidate",1,FALSE
 "Zumurrad_Khan","Zumurrad Khan","Candidate",1,FALSE
+"Khurram_Muhammad_Qamar","Khurram Muhammad Qamar","Candidate",1,FALSE
+"Mahmood_Ahmad_Khan_Qalandar_","Mahmood Ahmad Khan Qalandar.","Candidate",1,FALSE
+"Mehmood_Qalandar","Mehmood Qalandar","Candidate",1,FALSE
 "Abdul_Ahad","Abdul Ahad","Candidate",1,FALSE
 "Abdul_Khaliq_s_o_Haji_Fazal_m","Abdul Khaliq s/o Haji Fazal m","Candidate",1,FALSE
 "Abdul_u_Haq_Malik","Abdul u Haq Malik","Candidate",1,FALSE
@@ -3774,6 +3753,53 @@
 "Waqas_Ahmed","Waqas Ahmed","Candidate",1,FALSE
 "Muhammad_Majeed","Muhammad Majeed","Candidate",1,FALSE
 "Abdul_Razaq_Shahid","Abdul Razaq Shahid","Candidate",1,FALSE
+"Faqir_Jamshid_Ahmad","Faqir Jamshid Ahmad","Candidate",1,FALSE
+"Farah_Noreen","Farah Noreen","Candidate",1,FALSE
+"Rasheed_Ahmad_Khan_Langha","Rasheed Ahmad Khan Langha","Candidate",1,FALSE
+"Saleem_Abbas","Saleem Abbas","Candidate",2,TRUE
+"Aamir_Rasheed","Aamir Rasheed","Candidate",1,FALSE
+"Afzal_Ahmad_Gondal","Afzal Ahmad Gondal","Candidate",1,FALSE
+"Ali_Akbar_Kalhoro","Ali Akbar Kalhoro","Candidate",1,FALSE
+"Ali_Nawaz_Qasmi","Ali Nawaz Qasmi","Candidate",1,FALSE
+"Allama_Mujhahid_Abdul_Rasool_Khan","Allama Mujhahid Abdul Rasool Khan","Candidate",1,FALSE
+"Allama_Shabbir_Ahmed_Chasti_Nazimi_Off_Sakka","Allama Shabbir Ahmed Chasti Nazimi Off Sakka","Candidate",1,FALSE
+"Arshad_Mehmood","Arshad Mehmood","Candidate",1,FALSE
+"Awal_Jan_Mazari","Awal Jan Mazari","Candidate",1,FALSE
+"Basharat_Ali_Gujjar","Basharat Ali Gujjar","Candidate",1,FALSE
+"Hafiz_Gul_Sher","Hafiz Gul Sher","Candidate",1,FALSE
+"Hafiz_Malik_Muhammad_Bashir","Hafiz Malik Muhammad Bashir","Candidate",1,FALSE
+"Hafiz_Raja_Muhammad_Sana_Ul_Haq","Hafiz Raja Muhammad Sana Ul Haq","Candidate",1,FALSE
+"Imtiaz","Imtiaz","Candidate",1,FALSE
+"Jahangir_Qadri","Jahangir Qadri","Candidate",1,FALSE
+"Jhangir_Qadri","Jhangir Qadri","Candidate",1,FALSE
+"Mahboob_Ali_Sahto","Mahboob Ali Sahto","Candidate",1,FALSE
+"Malik_Matloob_Ali_Awan","Malik Matloob Ali Awan","Candidate",2,TRUE
+"Malik_Muhammad_Iqbal_Khokhar","Malik Muhammad Iqbal Khokhar","Candidate",1,FALSE
+"Matloob_Awan","Matloob Awan","Candidate",1,FALSE
+"Mian_Ghulam_Shabir_Qadri","Mian Ghulam Shabir Qadri","Candidate",1,FALSE
+"Mohammad_Kashif","Mohammad Kashif","Candidate",1,FALSE
+"Mohammad_Younis_Ansari","Mohammad Younis Ansari","Candidate",1,FALSE
+"Mollana_Mohammad_Illyas_Gabool","Mollana Mohammad Illyas Gabool","Candidate",1,FALSE
+"Muhammad_Afzal_Qadri","Muhammad Afzal Qadri","Candidate",1,FALSE
+"Muhammad_Ajmal_Umar","Muhammad Ajmal Umar","Candidate",1,FALSE
+"Muhammad_Arif_Mansoori","Muhammad Arif Mansoori","Candidate",1,FALSE
+"Muhammad_Imran_Javaid","Muhammad Imran Javaid","Candidate",1,FALSE
+"Muhammad_Jamal_Barket","Muhammad Jamal Barket","Candidate",1,FALSE
+"Muhammad_Kaleem","Muhammad Kaleem","Candidate",1,FALSE
+"Muhammad_Murtaza_Rizvi_Wattoo","Muhammad Murtaza Rizvi Wattoo","Candidate",1,FALSE
+"Muhammad_Tahir_Qadri","Muhammad Tahir Qadri","Candidate",1,FALSE
+"Peer_Sayed_Munir_Hussain_Shah_Noori","Peer Sayed Munir Hussain Shah Noori","Candidate",1,FALSE
+"Pir_Syed_Mubashar_Hussain_Shah_Shakreelvy","Pir Syed Mubashar Hussain Shah Shakreelvy","Candidate",1,FALSE
+"Professor_Farooq_Ahmed_Tajra","Professor Farooq Ahmed Tajra","Candidate",1,FALSE
+"Rana_Muhammad_Riaz_Qadri","Rana Muhammad Riaz Qadri","Candidate",1,FALSE
+"Raza_e_Mustafa","Raza e Mustafa","Candidate",1,FALSE
+"Rizwan_Ali","Rizwan Ali","Candidate",1,FALSE
+"Rizwan_Qureshi","Rizwan Qureshi","Candidate",1,FALSE
+"Sajid_Mehmood_Qadri","Sajid Mehmood Qadri","Candidate",1,FALSE
+"Sajjad_Haider","Sajjad Haider","Candidate",1,FALSE
+"Shoukat_Ali_Lehri","Shoukat Ali Lehri","Candidate",1,FALSE
+"Syed_Ahmad_Shah","Syed Ahmad Shah","Candidate",1,FALSE
+"Syed_Tawaqal_Hussain_Shah_Bukhari","Syed Tawaqal Hussain Shah Bukhari","Candidate",1,FALSE
 "Atif_Atta","Atif Atta","Candidate",1,FALSE
 "Aziz_Ul_Islam","Aziz Ul Islam","Candidate",1,FALSE
 "Javed_Sharif","Javed Sharif","Candidate",1,FALSE
@@ -4219,47 +4245,24 @@
 "Zulfiqar","Zulfiqar","Candidate",1,FALSE
 "Zulfiqar_Ali_Mallah","Zulfiqar Ali Mallah","Candidate",1,FALSE
 "Zulqarnain_Als_Sakhi_Bhutto","Zulqarnain Als Sakhi Bhutto","Candidate",1,FALSE
+"Alamgir_Khan","Alamgir Khan","Candidate",1,FALSE
+"Ihsan_Ullah_Khan_Mahsood","Ihsan Ullah Khan Mahsood","Candidate",1,FALSE
+"Muhammad_Sultan","Muhammad Sultan","Candidate",1,FALSE
+"Raja_Muhammad_Ashraf","Raja Muhammad Ashraf","Candidate",1,FALSE
 "Muhammad_Hanif_Mughal","Muhammad Hanif Mughal","Candidate",1,FALSE
 "Maazullah_Khan","Maazullah Khan","Candidate",1,FALSE
 "Muhammad_Sherwan_Amirzada","Muhammad Sherwan Amirzada","Candidate",1,FALSE
-"Abdul_Qadir_Khan_Wadan","Abdul Qadir Khan Wadan","Candidate",1,FALSE
-"Abdul_Rahim_Mandokhail","Abdul Rahim Mandokhail","Candidate",1,FALSE
-"Abdul_Razzaq_Achakzai","Abdul Razzaq Achakzai","Candidate",1,FALSE
-"Ahmed_Jan_Khan","Ahmed Jan Khan","Candidate",1,FALSE
-"Akhtar_Shah_Kudezai","Akhtar Shah Kudezai","Candidate",1,FALSE
-"Burhan_Ul_Din","Burhan Ul Din","Candidate",1,FALSE
-"Dr__Abdullah_Khan","Dr. Abdullah Khan","Candidate",1,FALSE
-"Haji_Muhammad_Barki","Haji Muhammad Barki","Candidate",1,FALSE
-"Ikram_Ul_Haq_Khan","Ikram Ul Haq Khan","Candidate",1,FALSE
-"Jan_Dad_Khan","Jan Dad Khan","Candidate",1,FALSE
-"Jehangir_Khan","Jehangir Khan","Candidate",2,TRUE
-"Khurshid_Ali","Khurshid Ali","Candidate",1,FALSE
-"Main_Asmatullah_Shah","Main Asmatullah Shah","Candidate",1,FALSE
-"Malik_Khaliq_Dad","Malik Khaliq Dad","Candidate",1,FALSE
-"Mohammad_Nawaz_Khan","Mohammad Nawaz Khan","Candidate",1,FALSE
-"Mohammad_Usman","Mohammad Usman","Candidate",1,FALSE
-"Muhammad_Bakhsh_Mengal","Muhammad Bakhsh Mengal","Candidate",1,FALSE
-"Muhammad_Essa_Roshan","Muhammad Essa Roshan","Candidate",1,FALSE
-"Muhammad_Mukhtiar","Muhammad Mukhtiar","Candidate",1,FALSE
-"Murad_Ali","Murad Ali","Candidate",1,FALSE
-"Noor_Ullah_Tareen","Noor Ullah Tareen","Candidate",1,FALSE
-"Rafi_Ullah","Rafi Ullah","Candidate",1,FALSE
-"Raza_Mohammad_Raza","Raza Mohammad Raza","Candidate",1,FALSE
-"Saleem_Khan_Kakar","Saleem Khan Kakar","Candidate",1,FALSE
-"Syed_Muhammad_Yousuf_Agha","Syed Muhammad Yousuf Agha","Candidate",1,FALSE
-"Zameen_Dad_Shah","Zameen Dad Shah","Candidate",1,FALSE
-"Zia_Watan_Dost","Zia Watan Dost","Candidate",1,FALSE
-"Khuwaja_Tariq_Sarfaraz","Khuwaja Tariq Sarfaraz","Candidate",1,FALSE
-"Riaz_Shahid_Khan_Punian_Advocate","Riaz Shahid Khan Punian Advocate","Candidate",1,FALSE
-"Shahid_Naeem_Advocate","Shahid Naeem Advocate","Candidate",1,FALSE
-"Syed_Muhammad_Abbas","Syed Muhammad Abbas","Candidate",1,FALSE
+"Ali_Adrees","Ali Adrees","Candidate",1,FALSE
 "Muhammad_Yaqub_Alvi","Muhammad Yaqub Alvi","Candidate",1,FALSE
+"Syed_Zahid_Abbas_Kazmi","Syed Zahid Abbas Kazmi","Candidate",1,FALSE
+"Hajiani","Hajiani","Candidate",1,FALSE
 "Ibtsaam_Illahi_Zahir","Ibtsaam Illahi Zahir","Candidate",1,FALSE
 "Sardar_Rafiq_Ar_Sanjrani","Sardar Rafiq Ar Sanjrani","Candidate",1,FALSE
 "Abdul_Ghaffar_Khan_Mohmand","Abdul Ghaffar Khan Mohmand","Candidate",1,FALSE
 "Ahmad_Raza","Ahmad Raza","Candidate",1,FALSE
 "Akbar_Khan","Akbar Khan","Candidate",1,FALSE
 "Dr_Siraj_Ud_Din","Dr Siraj Ud Din","Candidate",1,FALSE
+"Faiza_Bibi_Rasheed","Faiza Bibi Rasheed","Candidate",1,FALSE
 "Farooq_Ahmad","Farooq Ahmad","Candidate",1,FALSE
 "Haji_Muhammad_Umar","Haji Muhammad Umar","Candidate",1,FALSE
 "Irshad_Alam_Khan","Irshad Alam Khan","Candidate",1,FALSE
@@ -4267,6 +4270,7 @@
 "Masood_Ahmed_Saeed","Masood Ahmed Saeed","Candidate",1,FALSE
 "Muhamamd_Ibrar","Muhamamd Ibrar","Candidate",1,FALSE
 "Muhammad_Khan","Muhammad Khan","Candidate",2,TRUE
+"Naseeb_Zaman","Naseeb Zaman","Candidate",1,FALSE
 "Nasir_Mahmood_Chaudhry","Nasir Mahmood Chaudhry","Candidate",1,FALSE
 "Sami_Ullah_Luni","Sami Ullah Luni","Candidate",1,FALSE
 "Amjad_Ali","Amjad Ali","Candidate",1,FALSE
@@ -4277,21 +4281,9 @@
 "Najeebullah_Durrani","Najeebullah Durrani","Candidate",1,FALSE
 "Sher_Wali","Sher Wali","Candidate",1,FALSE
 "Sikandar_Hayat_Khan","Sikandar Hayat Khan","Candidate",1,FALSE
-"Hajiani","Hajiani","Candidate",1,FALSE
-"Faiza_Bibi_Rasheed","Faiza Bibi Rasheed","Candidate",1,FALSE
-"Naseeb_Zaman","Naseeb Zaman","Candidate",1,FALSE
 "Ameer_Ali_Pate_Wale","Ameer Ali Pate Wale","Candidate",1,FALSE
 "Muhammad_Aslam_Khan","Muhammad Aslam Khan","Candidate",1,FALSE
-"Ghulam_Fareed_Koreja","Ghulam Fareed Koreja","Candidate",1,FALSE
-"Khawja_Ghulam_Fareed_Koreja","Khawja Ghulam Fareed Koreja","Candidate",1,FALSE
-"Muhammad_Wazeer_Khan_Dundam_Advocate","Muhammad Wazeer Khan Dundam Advocate","Candidate",1,FALSE
 "Khalil_Ahmed","Khalil Ahmed","Candidate",1,FALSE
-"Ahmad_Kamran_Thaeem_Ansari","Ahmad Kamran Thaeem Ansari","Candidate",1,FALSE
-"Allah_Nawaz","Allah Nawaz","Candidate",1,FALSE
-"Muhammad_Sardar_Bahadur_Khan","Muhammad Sardar Bahadur Khan","Candidate",1,FALSE
-"Abul_Salam","Abul Salam","Candidate",1,FALSE
-"Eid_Muhammad","Eid Muhammad","Candidate",1,FALSE
-"Zia_Ul_Haq","Zia Ul Haq","Candidate",1,FALSE
 "Allah_Rakha_Waseem","Allah Rakha Waseem","Candidate",1,FALSE
 "Basharat_Ali_Khan_Advocate","Basharat Ali Khan Advocate","Candidate",1,FALSE
 "Haji_Rana_Sharafat_Ali_Qadri","Haji Rana Sharafat Ali Qadri","Candidate",1,FALSE
@@ -4300,12 +4292,43 @@
 "Mofti_Mohammad_Hayat_Qadri","Mofti Mohammad Hayat Qadri","Candidate",1,FALSE
 "Muhammad_Anwar_Ali","Muhammad Anwar Ali","Candidate",1,FALSE
 "Muhammad_Haseeb","Muhammad Haseeb","Candidate",1,FALSE
+"Muhammad_Sardar_Bahadur_Khan","Muhammad Sardar Bahadur Khan","Candidate",1,FALSE
 "Muhammad_Sarfraz_Akbar","Muhammad Sarfraz Akbar","Candidate",1,FALSE
 "Qari_Fateh_Khan","Qari Fateh Khan","Candidate",1,FALSE
 "Rana_Muhammad_Irfan","Rana Muhammad Irfan","Candidate",1,FALSE
 "Saeed_Ahmed_Zafar","Saeed Ahmed Zafar","Candidate",1,FALSE
 "Sardar_Mulana_Muhammad_Wazeer_Ul_Qadri","Sardar Mulana Muhammad Wazeer Ul Qadri","Candidate",1,FALSE
 "Tariq_Mehboob","Tariq Mehboob","Candidate",1,FALSE
+"Dr_Ahmed_Noonari","Dr Ahmed Noonari","Candidate",1,FALSE
+"Gomoon_Mal","Gomoon Mal","Candidate",1,FALSE
+"Gulzar_Ahmad_Soomro","Gulzar Ahmad Soomro","Candidate",1,FALSE
+"Nisar_Ali_Keerio","Nisar Ali Keerio","Candidate",1,FALSE
+"Nusrat","Nusrat","Candidate",1,FALSE
+"Shafqat_Hussain_Bhayo","Shafqat Hussain Bhayo","Candidate",1,FALSE
+"Syed_Athar_Hussain_Shah","Syed Athar Hussain Shah","Candidate",1,FALSE
+"Abdul_Latif_Junejo","Abdul Latif Junejo","Candidate",1,FALSE
+"Abdul_Wahab_Baloch_Advocate","Abdul Wahab Baloch Advocate","Candidate",1,FALSE
+"Abdul_Wahab_Shar","Abdul Wahab Shar","Candidate",1,FALSE
+"Ameer_Ali_Thebo","Ameer Ali Thebo","Candidate",1,FALSE
+"Asgher_Shah_Rashdi","Asgher Shah Rashdi","Candidate",1,FALSE
+"Basheer_Ahmed_Shah","Basheer Ahmed Shah","Candidate",1,FALSE
+"Doolah_Darya_Khan_Mughal","Doolah Darya Khan Mughal","Candidate",1,FALSE
+"Mr__Asghar_Shah_Rashidi","Mr. Asghar Shah Rashidi","Candidate",1,FALSE
+"Muhammad_Channa","Muhammad Channa","Candidate",1,FALSE
+"Muhammad_Dino","Muhammad Dino","Candidate",1,FALSE
+"Naveed_Ahmed_Soomro","Naveed Ahmed Soomro","Candidate",1,FALSE
+"Sardar_Mir_Yakoob_Ali_Shah_","Sardar Mir Yakoob Ali Shah.","Candidate",1,FALSE
+"Sarfraz_Ahmed","Sarfraz Ahmed","Candidate",1,FALSE
+"Syed_Jalal_Mehmood_Shah","Syed Jalal Mehmood Shah","Candidate",1,FALSE
+"Zulfiqar_Ali_Soomro","Zulfiqar Ali Soomro","Candidate",1,FALSE
+"Abul_Salam","Abul Salam","Candidate",1,FALSE
+"Eid_Muhammad","Eid Muhammad","Candidate",1,FALSE
+"Zia_Ul_Haq","Zia Ul Haq","Candidate",1,FALSE
+"Ghulam_Fareed_Koreja","Ghulam Fareed Koreja","Candidate",1,FALSE
+"Khawja_Ghulam_Fareed_Koreja","Khawja Ghulam Fareed Koreja","Candidate",1,FALSE
+"Muhammad_Wazeer_Khan_Dundam_Advocate","Muhammad Wazeer Khan Dundam Advocate","Candidate",1,FALSE
+"Ahmad_Kamran_Thaeem_Ansari","Ahmad Kamran Thaeem Ansari","Candidate",1,FALSE
+"Allah_Nawaz","Allah Nawaz","Candidate",1,FALSE
 "Allama_Haider_Alvi","Allama Haider Alvi","Candidate",1,FALSE
 "Hamid_Idrees","Hamid Idrees","Candidate",1,FALSE
 "Mian_Muhammad_Asif_Raza_","Mian Muhammad Asif Raza.","Candidate",1,FALSE
@@ -4321,63 +4344,6 @@
 "Syed_Ali_Raza","Syed Ali Raza","Candidate",1,FALSE
 "Zawar_Hussain","Zawar Hussain","Candidate",1,FALSE
 "Himmat_Ali","Himmat Ali","Candidate",1,FALSE
-"Ali_Afsar_Tanoli","Ali Afsar Tanoli","Candidate",1,FALSE
-"Fakhar_e_Alam_Urf_Hazrat","Fakhar e Alam Urf Hazrat","Candidate",1,FALSE
-"Fida_Hussain","Fida Hussain","Candidate",1,FALSE
-"Major_Rtd_Jameel_Ehsan_Kiyani","Major Rtd Jameel Ehsan Kiyani","Candidate",1,FALSE
-"Mohammad_Ashfaque","Mohammad Ashfaque","Candidate",1,FALSE
-"Sardar_Haider_Zaman","Sardar Haider Zaman","Candidate",1,FALSE
-"Sardar_Muhammad_Iqbal_Khan","Sardar Muhammad Iqbal Khan","Candidate",1,FALSE
-"Abdul_Ali","Abdul Ali","Candidate",1,FALSE
-"Abdul_Qayyum_Bajwa","Abdul Qayyum Bajwa","Candidate",1,FALSE
-"Adeel_Ahmad","Adeel Ahmad","Candidate",1,FALSE
-"Aman_Ullah_Khan","Aman Ullah Khan","Candidate",1,FALSE
-"Amir_Hamza_Dogar_Advocate","Amir Hamza Dogar Advocate","Candidate",1,FALSE
-"Amir_Muhammad","Amir Muhammad","Candidate",1,FALSE
-"Amjid_Pervaiz","Amjid Pervaiz","Candidate",1,FALSE
-"Aqeel_Shahzad","Aqeel Shahzad","Candidate",1,FALSE
-"Asif_Iqbal","Asif Iqbal","Candidate",1,FALSE
-"Ch_Tanveer_Ahmad_Kambo","Ch Tanveer Ahmad Kambo","Candidate",1,FALSE
-"Doctor_Abdul_Rashid","Doctor Abdul Rashid","Candidate",1,FALSE
-"Doctor_Nasir_Razzaq","Doctor Nasir Razzaq","Candidate",1,FALSE
-"Dr__Rafique_Ahmed_Ghuncha","Dr. Rafique Ahmed Ghuncha","Candidate",1,FALSE
-"Ghulam_Abbass","Ghulam Abbass","Candidate",1,FALSE
-"Iftikhar_Ali","Iftikhar Ali","Candidate",1,FALSE
-"Kamal_Azfar","Kamal Azfar","Candidate",1,FALSE
-"Khizar_Hayat","Khizar Hayat","Candidate",1,FALSE
-"Maki_Muhammad","Maki Muhammad","Candidate",1,FALSE
-"Malik_Gul_Zali_Khan_Zakheli","Malik Gul Zali Khan Zakheli","Candidate",1,FALSE
-"Malik_Nazar_Fareed_Khokhar","Malik Nazar Fareed Khokhar","Candidate",1,FALSE
-"Malik_Zafar_Iqbal_Rajput_Panwar","Malik Zafar Iqbal Rajput Panwar","Candidate",1,FALSE
-"Mian_Abdul_Waheed","Mian Abdul Waheed","Candidate",1,FALSE
-"Moin_Ud_Din","Moin Ud Din","Candidate",1,FALSE
-"Mr_mumtaz_Ali","Mr.mumtaz Ali","Candidate",1,FALSE
-"Muhammad_Abu_Bakar_Watto","Muhammad Abu Bakar Watto","Candidate",1,FALSE
-"Muhammad_Ahmad_Chaudhary","Muhammad Ahmad Chaudhary","Candidate",1,FALSE
-"Muhammad_Arshad_Taqi","Muhammad Arshad Taqi","Candidate",1,FALSE
-"Muhammad_Irfan_Ud_Din","Muhammad Irfan Ud Din","Candidate",1,FALSE
-"Muhammad_Muzzammil","Muhammad Muzzammil","Candidate",1,FALSE
-"Muhammad_Nawaz_Cheema","Muhammad Nawaz Cheema","Candidate",1,FALSE
-"Muhammad_Rafique_Advocate","Muhammad Rafique Advocate","Candidate",1,FALSE
-"Muhammad_Sharif","Muhammad Sharif","Candidate",1,FALSE
-"Naseer_Ahmed_Chandio","Naseer Ahmed Chandio","Candidate",1,FALSE
-"Nek_Daraz_Khan","Nek Daraz Khan","Candidate",1,FALSE
-"Peer_Abdul_Shakoor_Naqsh_Bandi","Peer Abdul Shakoor Naqsh Bandi","Candidate",1,FALSE
-"Qazi_Aslam_Khan","Qazi Aslam Khan","Candidate",1,FALSE
-"Rahimullah_Khan","Rahimullah Khan","Candidate",1,FALSE
-"Raja_Izat_Ali","Raja Izat Ali","Candidate",1,FALSE
-"Rana_Muhammad_Saeed_Khan","Rana Muhammad Saeed Khan","Candidate",1,FALSE
-"Rana_Muhammad_Sharif","Rana Muhammad Sharif","Candidate",1,FALSE
-"Rao_Muhammad_Akbar_Khan_Mayyo","Rao Muhammad Akbar Khan Mayyo","Candidate",1,FALSE
-"Rao_Wajid_Ali_Khan","Rao Wajid Ali Khan","Candidate",1,FALSE
-"Saghir_Hussain","Saghir Hussain","Candidate",1,FALSE
-"Sahahbaz_Yasir_Ali","Sahahbaz Yasir Ali","Candidate",1,FALSE
-"Shamim_Khan","Shamim Khan","Candidate",1,FALSE
-"Waheed_Ahmad_Khan","Waheed Ahmad Khan","Candidate",1,FALSE
-"Zaheer_Ahmad_Zia_Warraich","Zaheer Ahmad Zia Warraich","Candidate",1,FALSE
-"Zahid_Sadique_Ansari","Zahid Sadique Ansari","Candidate",1,FALSE
-"Zaib_Ali","Zaib Ali","Candidate",1,FALSE
-"Manzoor_Ali_Bhatti","Manzoor Ali Bhatti","Candidate",1,FALSE
 "Aftab_Khurram","Aftab Khurram","Candidate",1,FALSE
 "Malik_Abdul_Rasheed","Malik Abdul Rasheed","Candidate",1,FALSE
 "Malik_Jahanzaib_Waran","Malik Jahanzaib Waran","Candidate",1,FALSE
@@ -4566,6 +4532,63 @@
 "Zahir_Shah","Zahir Shah","Candidate",1,FALSE
 "Zameer_Hussain","Zameer Hussain","Candidate",1,FALSE
 "Zamurd_Abbas_Khan","Zamurd Abbas Khan","Candidate",1,FALSE
+"Ali_Afsar_Tanoli","Ali Afsar Tanoli","Candidate",1,FALSE
+"Fakhar_e_Alam_Urf_Hazrat","Fakhar e Alam Urf Hazrat","Candidate",1,FALSE
+"Fida_Hussain","Fida Hussain","Candidate",1,FALSE
+"Major_Rtd_Jameel_Ehsan_Kiyani","Major Rtd Jameel Ehsan Kiyani","Candidate",1,FALSE
+"Mohammad_Ashfaque","Mohammad Ashfaque","Candidate",1,FALSE
+"Sardar_Haider_Zaman","Sardar Haider Zaman","Candidate",1,FALSE
+"Sardar_Muhammad_Iqbal_Khan","Sardar Muhammad Iqbal Khan","Candidate",1,FALSE
 "Farrukh_Bashir","Farrukh Bashir","Candidate",1,FALSE
+"Abdul_Ali","Abdul Ali","Candidate",1,FALSE
+"Abdul_Qayyum_Bajwa","Abdul Qayyum Bajwa","Candidate",1,FALSE
+"Adeel_Ahmad","Adeel Ahmad","Candidate",1,FALSE
+"Aman_Ullah_Khan","Aman Ullah Khan","Candidate",1,FALSE
+"Amir_Hamza_Dogar_Advocate","Amir Hamza Dogar Advocate","Candidate",1,FALSE
+"Amir_Muhammad","Amir Muhammad","Candidate",1,FALSE
+"Amjid_Pervaiz","Amjid Pervaiz","Candidate",1,FALSE
+"Aqeel_Shahzad","Aqeel Shahzad","Candidate",1,FALSE
+"Asif_Iqbal","Asif Iqbal","Candidate",1,FALSE
+"Ch_Tanveer_Ahmad_Kambo","Ch Tanveer Ahmad Kambo","Candidate",1,FALSE
+"Doctor_Abdul_Rashid","Doctor Abdul Rashid","Candidate",1,FALSE
+"Doctor_Nasir_Razzaq","Doctor Nasir Razzaq","Candidate",1,FALSE
+"Dr__Rafique_Ahmed_Ghuncha","Dr. Rafique Ahmed Ghuncha","Candidate",1,FALSE
+"Ghulam_Abbass","Ghulam Abbass","Candidate",1,FALSE
+"Iftikhar_Ali","Iftikhar Ali","Candidate",1,FALSE
+"Kamal_Azfar","Kamal Azfar","Candidate",1,FALSE
+"Khizar_Hayat","Khizar Hayat","Candidate",1,FALSE
+"Maki_Muhammad","Maki Muhammad","Candidate",1,FALSE
+"Malik_Gul_Zali_Khan_Zakheli","Malik Gul Zali Khan Zakheli","Candidate",1,FALSE
+"Malik_Nazar_Fareed_Khokhar","Malik Nazar Fareed Khokhar","Candidate",1,FALSE
+"Malik_Zafar_Iqbal_Rajput_Panwar","Malik Zafar Iqbal Rajput Panwar","Candidate",1,FALSE
+"Mian_Abdul_Waheed","Mian Abdul Waheed","Candidate",1,FALSE
+"Moin_Ud_Din","Moin Ud Din","Candidate",1,FALSE
+"Mr_mumtaz_Ali","Mr.mumtaz Ali","Candidate",1,FALSE
+"Muhammad_Abu_Bakar_Watto","Muhammad Abu Bakar Watto","Candidate",1,FALSE
+"Muhammad_Ahmad_Chaudhary","Muhammad Ahmad Chaudhary","Candidate",1,FALSE
+"Muhammad_Arshad_Taqi","Muhammad Arshad Taqi","Candidate",1,FALSE
+"Muhammad_Irfan_Ud_Din","Muhammad Irfan Ud Din","Candidate",1,FALSE
 "Muhammad_Jahangir_Malik","Muhammad Jahangir Malik","Candidate",1,FALSE
+"Muhammad_Muzzammil","Muhammad Muzzammil","Candidate",1,FALSE
+"Muhammad_Nawaz_Cheema","Muhammad Nawaz Cheema","Candidate",1,FALSE
+"Muhammad_Rafique_Advocate","Muhammad Rafique Advocate","Candidate",1,FALSE
+"Muhammad_Sharif","Muhammad Sharif","Candidate",1,FALSE
+"Naseer_Ahmed_Chandio","Naseer Ahmed Chandio","Candidate",1,FALSE
+"Nek_Daraz_Khan","Nek Daraz Khan","Candidate",1,FALSE
+"Peer_Abdul_Shakoor_Naqsh_Bandi","Peer Abdul Shakoor Naqsh Bandi","Candidate",1,FALSE
+"Qazi_Aslam_Khan","Qazi Aslam Khan","Candidate",1,FALSE
+"Rahimullah_Khan","Rahimullah Khan","Candidate",1,FALSE
+"Raja_Izat_Ali","Raja Izat Ali","Candidate",1,FALSE
+"Rana_Muhammad_Saeed_Khan","Rana Muhammad Saeed Khan","Candidate",1,FALSE
+"Rana_Muhammad_Sharif","Rana Muhammad Sharif","Candidate",1,FALSE
+"Rao_Muhammad_Akbar_Khan_Mayyo","Rao Muhammad Akbar Khan Mayyo","Candidate",1,FALSE
+"Rao_Wajid_Ali_Khan","Rao Wajid Ali Khan","Candidate",1,FALSE
+"Saghir_Hussain","Saghir Hussain","Candidate",1,FALSE
+"Sahahbaz_Yasir_Ali","Sahahbaz Yasir Ali","Candidate",1,FALSE
 "Shah_Zia_Udin_Khan","Shah Zia Udin Khan","Candidate",1,FALSE
+"Shamim_Khan","Shamim Khan","Candidate",1,FALSE
+"Waheed_Ahmad_Khan","Waheed Ahmad Khan","Candidate",1,FALSE
+"Zaheer_Ahmad_Zia_Warraich","Zaheer Ahmad Zia Warraich","Candidate",1,FALSE
+"Zahid_Sadique_Ansari","Zahid Sadique Ansari","Candidate",1,FALSE
+"Zaib_Ali","Zaib Ali","Candidate",1,FALSE
+"Manzoor_Ali_Bhatti","Manzoor Ali Bhatti","Candidate",1,FALSE

@@ -942,14 +942,180 @@ dev.off()
 cat("✓ Saved: 10_centrality_comparison_comprehensive.pdf\n\n")
 
 # ==============================================================================
-# 12. SUMMARY
+# 12. TOP 5 PARTIES TABLE FOR ALL CENTRALITY MEASURES
+# ==============================================================================
+
+cat("================================================================================\n")
+cat("CREATING TOP 5 PARTIES TABLE FOR ALL CENTRALITY MEASURES\n")
+cat("================================================================================\n\n")
+
+# Create a comprehensive table showing top 5 parties for each centrality measure
+top5_list <- list()
+
+# Degree Centrality
+top5_degree <- head(centrality[order(-centrality$Degree), c("Party", "Degree")], 5)
+top5_degree$Rank <- 1:5
+top5_degree$Measure <- "Degree"
+top5_list[["Degree"]] <- top5_degree
+
+# Betweenness Centrality
+top5_betweenness <- head(centrality[order(-centrality$Betweenness), c("Party", "Betweenness")], 5)
+top5_betweenness$Rank <- 1:5
+top5_betweenness$Measure <- "Betweenness"
+top5_list[["Betweenness"]] <- top5_betweenness
+
+# Closeness Centrality
+top5_closeness <- head(centrality[order(-centrality$Closeness), c("Party", "Closeness")], 5)
+top5_closeness$Rank <- 1:5
+top5_closeness$Measure <- "Closeness"
+top5_list[["Closeness"]] <- top5_closeness
+
+# Eigenvector Centrality
+top5_eigenvector <- head(centrality[order(-centrality$Eigenvector), c("Party", "Eigenvector")], 5)
+top5_eigenvector$Rank <- 1:5
+top5_eigenvector$Measure <- "Eigenvector"
+top5_list[["Eigenvector"]] <- top5_eigenvector
+
+# Eccentricity (Lowest = Most Central)
+top5_eccentricity <- head(centrality[order(centrality$Eccentricity), c("Party", "Eccentricity")], 5)
+top5_eccentricity$Rank <- 1:5
+top5_eccentricity$Measure <- "Eccentricity (Low=Central)"
+top5_list[["Eccentricity"]] <- top5_eccentricity
+
+# Save individual CSV files for each measure
+for (measure_name in names(top5_list)) {
+  filename <- file.path(output_dir, paste0("top5_", tolower(gsub(" ", "_", measure_name)), ".csv"))
+  write.csv(top5_list[[measure_name]], filename, row.names = FALSE)
+  cat(sprintf("✓ Saved: top5_%s.csv\n", tolower(gsub(" ", "_", measure_name))))
+}
+
+# Create a combined summary table
+cat("\nCreating combined top 5 summary table...\n")
+
+# Create visual PDF table
+pdf(file.path(output_dir, "11_top5_all_centralities.pdf"), width = 16, height = 11)
+
+par(mar = c(1, 1, 3, 1))
+plot.new()
+
+# Title
+text(0.5, 0.97, "Top 5 Parties by Centrality Measures",
+     cex = 2.2, font = 2, pos = 1)
+
+# Define column positions
+col_positions <- seq(0.08, 0.92, length.out = 5)
+row_height <- 0.14
+start_y <- 0.87
+
+# Colors for headers
+header_colors <- c("steelblue", "coral", "gold", "lightgreen", "skyblue")
+
+# Draw each centrality measure column
+measures <- c("Degree", "Betweenness", "Closeness", "Eigenvector", "Eccentricity")
+measure_labels <- c("Degree", "Betweenness", "Closeness", "Eigenvector", "Eccentricity\n(Low=Central)")
+
+for (i in 1:5) {
+  x_pos <- col_positions[i]
+
+  # Header
+  rect(x_pos - 0.08, start_y, x_pos + 0.08, start_y + 0.06,
+       col = header_colors[i], border = "white", lwd = 2)
+  text(x_pos, start_y + 0.03, measure_labels[i],
+       cex = 1.2, font = 2, col = "white")
+
+  # Get top 5 data
+  top5_data <- top5_list[[measures[i]]]
+
+  # Draw rows
+  for (j in 1:5) {
+    y_pos <- start_y - (j * row_height)
+
+    # Alternating row colors
+    bg_col <- if(j %% 2 == 0) "#F0F0F0" else "white"
+    rect(x_pos - 0.08, y_pos - row_height + 0.01,
+         x_pos + 0.08, y_pos + 0.01,
+         col = bg_col, border = "gray80", lwd = 0.5)
+
+    # Rank number (small circle)
+    points(x_pos - 0.07, y_pos - row_height/2, pch = 21,
+           bg = header_colors[i], col = "white", cex = 2.2)
+    text(x_pos - 0.07, y_pos - row_height/2, j,
+         cex = 0.9, font = 2, col = "white")
+
+    # Party name
+    party_name <- as.character(top5_data$Party[j])
+    text(x_pos, y_pos - row_height/2 + 0.015, party_name,
+         cex = 0.9, font = 1, pos = 4, offset = -0.35)
+
+    # Value
+    value <- top5_data[j, 2]  # Second column is the measure value
+    value_text <- sprintf("%.4f", value)
+    text(x_pos, y_pos - row_height/2 - 0.015, value_text,
+         cex = 0.8, font = 1, col = "gray30", pos = 4, offset = -0.35)
+  }
+}
+
+# Add footer with notes
+text(0.5, 0.03,
+     "Note: Eccentricity shows parties with lowest values (most central). All other measures show highest values.",
+     cex = 0.9, col = "gray30", font = 3)
+
+dev.off()
+cat("✓ Saved: 11_top5_all_centralities.pdf\n\n")
+
+# Also create a consolidated CSV file
+cat("Creating consolidated CSV file...\n")
+
+# Prepare data frame with all measures side by side
+top5_consolidated <- data.frame(
+  Rank = 1:5,
+
+  Degree_Party = top5_list[["Degree"]]$Party,
+  Degree_Value = round(top5_list[["Degree"]]$Degree, 4),
+
+  Betweenness_Party = top5_list[["Betweenness"]]$Party,
+  Betweenness_Value = round(top5_list[["Betweenness"]]$Betweenness, 4),
+
+  Closeness_Party = top5_list[["Closeness"]]$Party,
+  Closeness_Value = round(top5_list[["Closeness"]]$Closeness, 4),
+
+  Eigenvector_Party = top5_list[["Eigenvector"]]$Party,
+  Eigenvector_Value = round(top5_list[["Eigenvector"]]$Eigenvector, 4),
+
+  Eccentricity_Party = top5_list[["Eccentricity"]]$Party,
+  Eccentricity_Value = round(top5_list[["Eccentricity"]]$Eccentricity, 4),
+
+  stringsAsFactors = FALSE
+)
+
+write.csv(top5_consolidated,
+          file.path(output_dir, "top5_all_centralities_consolidated.csv"),
+          row.names = FALSE)
+cat("✓ Saved: top5_all_centralities_consolidated.csv\n\n")
+
+cat("================================================================================\n")
+cat("TOP 5 SUMMARY:\n")
+cat("================================================================================\n")
+for (measure_name in names(top5_list)) {
+  cat(sprintf("\n%s:\n", measure_name))
+  top5_data <- top5_list[[measure_name]]
+  for (i in 1:5) {
+    cat(sprintf("  %d. %s (%.4f)\n", i, top5_data$Party[i], top5_data[i, 2]))
+  }
+}
+cat("\n")
+
+# ==============================================================================
+# 13. SUMMARY
 # ==============================================================================
 
 cat("================================================================================\n")
 cat("NETWORK METRICS VISUALIZATIONS COMPLETE!\n")
 cat("================================================================================\n\n")
 
-cat("FILES SAVED TO:", output_dir, "\n")
+cat("FILES SAVED TO:", output_dir, "\n\n")
+
+cat("PDF VISUALIZATIONS:\n")
 cat("  • 01_degree_centrality_plots.pdf (4 plots)\n")
 cat("  • 02_betweenness_centrality_plots.pdf (4 plots)\n")
 cat("  • 03_closeness_centrality_plots.pdf (4 plots)\n")
@@ -959,7 +1125,16 @@ cat("  • 06_eccentricity_plots.pdf (4 plots)\n")
 cat("  • 07_clustering_coefficient_plots.pdf (4 plots)\n")
 cat("  • 08_basic_network_metrics.pdf (6 plots)\n")
 cat("  • 09_network_metrics_table.pdf (summary table)\n")
-cat("  • 10_centrality_comparison_comprehensive.pdf (1 plot)\n\n")
+cat("  • 10_centrality_comparison_comprehensive.pdf (1 plot)\n")
+cat("  • 11_top5_all_centralities.pdf (visual table)\n\n")
+
+cat("CSV DATA FILES:\n")
+cat("  • top5_degree.csv\n")
+cat("  • top5_betweenness.csv\n")
+cat("  • top5_closeness.csv\n")
+cat("  • top5_eigenvector.csv\n")
+cat("  • top5_eccentricity.csv\n")
+cat("  • top5_all_centralities_consolidated.csv (all measures in one file)\n\n")
 
 cat("CENTRALITY PLOTS (01-07) EACH CONTAIN:\n")
 cat("  1. Top 30 parties bar chart (NO OVERLAP)\n")
@@ -976,9 +1151,17 @@ cat("  • Component analysis\n")
 cat("  • Component size distribution\n")
 cat("  • Professional summary table\n\n")
 
-cat("✓ Total: 10 PDFs with 36 total plots\n")
+cat("TOP 5 TABLE (11) CONTAINS:\n")
+cat("  • Visual table showing top 5 parties for 5 centrality measures\n")
+cat("  • Measures: Degree, Betweenness, Closeness, Eigenvector, Eccentricity\n")
+cat("  • Color-coded by measure type\n")
+cat("  • Ranked lists with values\n")
+cat("  • Individual CSV files for each measure\n")
+cat("  • Consolidated CSV with all measures side-by-side\n\n")
+
+cat("✓ Total: 11 PDFs with 37 total plots + 6 CSV files\n")
 cat("✓ All labels clearly visible with no overlap\n")
 cat("✓ Larger fonts for better readability\n")
-cat("✓ Includes all basic network metrics from your summary\n\n")
+cat("✓ Includes comprehensive top 5 rankings for all centrality measures\n\n")
 
 cat("================================================================================\n")

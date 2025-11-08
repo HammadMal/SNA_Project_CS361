@@ -1,10 +1,10 @@
 "Metric","Value"
-"Number of Parties",195
+"Number of Parties",175
 "Number of Edges",292
-"Network Density",0.0154374834787206
-"Average Path Length",2.9726507713885
-"Network Diameter",7
-"Global Clustering Coefficient",0.326807922616306
-"Average Local Clustering Coefficient",0.653633286022493
-"Number of Components",103
-"Largest Component Size",93
+"Network Density",0.0191789819376026
+"Average Path Length",2.86153434910452
+"Network Diameter",6
+"Global Clustering Coefficient",0.348317144793314
+"Average Local Clustering Coefficient",0.674105505189901
+"Number of Components",89
+"Largest Component Size",87

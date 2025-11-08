@@ -74,20 +74,85 @@ All three selected election years (2008, 2013, 2024) contain complete candidate 
 - Changed `NA.` to `NA_Code` (to avoid conflict with R's NA keyword)
 - Renamed `Candidate.Name` to `Candidate_Name_Raw`
 
-### 5.2 Party Name Standardization
+### 5.2 Party Name Standardization and Abbreviations
 
-**Before:** ~280 unique parties  
+**Before:** ~280 unique parties
 **After:** ~250 unique parties
 
-Key standardizations:
+**Rationale:** Many party names in the original dataset are very long (e.g., "Pakistan Sunni Tehreek", "Muttahidda Majlis-e-Amal Pakistan", "Awami Himayat Tehreek Pakistan"), making them difficult to display clearly in network visualizations. To improve readability, we implemented a comprehensive abbreviation system while preserving original names for reference.
+
+#### 5.2.1 Major Party Standardizations
 
 - `PML-N`, `PMLN` → `PML-N`
 - `PML-Q`, `PMLQ` → `PML-Q`
 - `PTI`, `Pakistan Tehreek` → `PTI`
-- `IND`, `Independent` → `IND`
 - `MQM` (all variations) → `MQM`
 - `JUI-F` → `JUI-F`
 - `PPP`, `Pakistan Peoples Party` → `PPP`
+- `ANP` → `ANP`
+
+#### 5.2.2 Long Party Name Abbreviations
+
+To enhance visualization clarity, we created abbreviations for 80+ parties with long names:
+
+**Religious/Islamic Parties:**
+- `Muttahidda Majlis-e-Amal Pakistan` → `MMA`
+- `Pakistan Sunni Tehreek` → `PST`
+- `Sunni Ittehad Council` → `SIC`
+- `Sunni Tehreek` → `ST`
+- `Jamiat Ulma-e-Pakistan (Noorani)` → `JUP-N`
+- `Jamiat Ulma-e-Pakistan (Niazi)` → `JUP-NZ`
+- `Jamiat Ulama-e-Islam (S)` → `JUI-S`
+- `Jamiat Ulama-e-Islam Nazryati Pakistan` → `JUI-NP`
+- `Markazi Jamiat Ulema-e-Pakistan (FK)` → `MJUP-FK`
+- `Majlis-e-Wahdat-e-Muslimeen Pakistan` → `MWMP`
+
+**PML Factions:**
+- `Pakistan Muslim League (J)` → `PML-J`
+- `Pakistan Muslim League (F)` → `PML-F`
+- `Pakistan Muslim League(Z)` → `PML-Z`
+- `Pakistan Muslim League (Safdar)` → `PML-S`
+- `Pakistan Muslim League-Muttahida` → `PML-M`
+- `Pakistan Muslim League (Zehri Group)` → `PML-Z`
+- `Pakistan Muslim League "H" Haqiqi` → `PML-H`
+- `Pakistan Muslim League Council` → `PML-C`
+- `All Pakistan Muslim League` → `APML`
+
+**Regional/Ethnic Parties:**
+- `Awami Himayat Tehreek Pakistan` → `AHTP`
+- `Pukhtoonkhwa Milli Awami Party` → `PKMAP`
+- `Qaumi Watan Party (Sherpao)` → `QWP-S`
+- `Qaumi Watan Party` → `QWP`
+- `Bahawalpur National Awami Party` → `BNAP`
+- `Mutahida Baloch Movement Pakistan` → `MBMP`
+- `Seraiki Sooba Movement Pakistan` → `SSMP`
+
+**Tehreek/Movement Parties:**
+- `Tehreek-e-Tahaffuze Pakistan` → `TTP`
+- `Tehreek-e-Istehkaam Pakistan` → `TIP`
+- `Istehkaam-e-Pakistan Movement` → `IPM`
+- `Pakistan Tehrek-e-Inqalab` → `PTI-I`
+- `Tehreek-e-Suba Hazara` → `TSH`
+- `Tehreek Tabdili Nizam Pakistan` → `TTNP`
+
+**Other Parties:**
+- `National Peoples Party` → `NPP`
+- `National Party` → `NP`
+- `Jamhoori Wattan Party` → `JWP`
+- `Pakistan Conservative Party` → `PCP`
+- `Communist Party of Pakistan` → `CPP`
+- `Christian Progressive Movement` → `CPM`
+- And 50+ additional parties...
+
+**Complete List:** Over 80 parties have been abbreviated for improved visualization. The full mapping is available in the data cleaning script (`Datacleaning.R`, lines 165-278).
+
+#### 5.2.3 Preservation of Original Names
+
+All original party names are preserved in the `Party_Original` column, ensuring:
+- Traceability back to source data
+- Ability to verify abbreviation accuracy
+- Option to use full names in text descriptions
+- Data integrity and transparency
 
 ### 5.3 Candidate Name Standardization
 
@@ -105,7 +170,21 @@ Example: `Muhammad_Ali_Khan`
 
 Note: Constituency codes are not included in the identifier to allow tracking candidates across different constituencies over time.
 
-### 5.5 Duplicate Removal
+### 5.5 Removal of Independent (IND) Candidates
+
+**Rationale:** Independent candidates were removed from the dataset to focus the network analysis on party-based political structures and affiliations.
+
+- **Action:** Filtered out all records where `Party == "IND"`
+- **Impact:** Removed a significant portion of candidates, as independents represent a large share of contestants in Pakistani elections
+- **Justification:**
+  - **Network Focus:** The primary goal of this analysis is to study party-party networks and candidate-party affiliations
+  - **Analytical Clarity:** Independent candidates have no party affiliation, making them less relevant for party network analysis
+  - **Visualization Quality:** Removing independents reduces network complexity and improves interpretability
+  - **Party Dynamics:** Focus on party-affiliated candidates enables clearer analysis of party strength, evolution, and inter-party relationships
+
+**Note:** While independents play an important role in Pakistani politics (especially in 2024), their inclusion would not contribute meaningfully to a party-centric network analysis. For studies focused on independent candidates or electoral competition, the original dataset retains this information in the `Party_Original` column before this filtering step.
+
+### 5.6 Duplicate Removal
 
 - **Duplicates found:** ~75-80 records
 - **Action:** Removed duplicate candidate-party-constituency-year combinations
@@ -116,17 +195,20 @@ Note: Constituency codes are not included in the identifier to allow tracking ca
 
 | Metric | Value |
 |--------|-------|
-| **Total Records** | ~12,800-13,000 |
+| **Total Records** | ~8,000-9,000 (after removing independents) |
 | **Columns** | 22 |
-| **Records Removed** | <1% |
+| **Independent Candidates Removed** | ~4,000-5,000 records |
+| **Other Records Removed** | <1% (duplicates, missing data) |
 
 ### 6.1 Records by Year
 
-| Year | Description | Expected Records |
-|------|-------------|------------------|
-| 2008 | Post-Musharraf transition | ~3,500-4,000 |
-| 2013 | First democratic transfer | ~4,400-4,500 |
-| 2024 | Most recent election | ~5,000-5,100 |
+| Year | Description | Expected Records (Party-Affiliated Only) |
+|------|-------------|------------------------------------------|
+| 2008 | Post-Musharraf transition | ~2,500-3,000 |
+| 2013 | First democratic transfer | ~3,000-3,500 |
+| 2024 | Most recent election | ~2,500-3,000 |
+
+**Note:** Record counts reflect only party-affiliated candidates after removal of independents.
 
 ### 6.2 Records by Province
 
@@ -140,8 +222,7 @@ Note: Constituency codes are not included in the identifier to allow tracking ca
 
 ### 6.3 Top Parties by Candidate Count
 
-Expected major parties across all three years:
-- **IND** (Independents) - Highest count
+Expected major parties across all three years (after removing independents):
 - **PPP** - Major presence in all years
 - **PML-N** - Strong in Punjab
 - **PTI** - Growing presence (minimal in 2008, major by 2024)
@@ -149,8 +230,10 @@ Expected major parties across all three years:
 - **ANP** - Presence in KPK
 - **JUI-F** - Religious party
 - **PML-Q** - Significant in 2008, declining by 2024
+- **MMA** - Religious alliance
+- **Various smaller parties** - Regional and ideological representation
 
-**Note:** The distribution will show interesting temporal patterns, particularly PTI's rise from marginal presence in 2008 to major party status by 2013 and 2024.
+**Note:** The distribution will show interesting temporal patterns, particularly PTI's rise from marginal presence in 2008 to major party status by 2013 and 2024. Independent candidates (previously the largest category) have been excluded from this analysis to focus on party-based networks.
 
 ---
 
@@ -162,10 +245,17 @@ Expected major parties across all three years:
    - TRUE for all records in 2008, 2013, and 2024
    - This field is maintained for consistency but will be TRUE for all selected years
 
-2. **Party_Original**: Preserved original party name before standardization
-3. **Candidate_Original**: Preserved original candidate name
-4. **Candidate_Name**: Cleaned and standardized candidate name
-5. **Candidate_ID**: Unique identifier for each candidate
+2. **Party_Original**: Preserved original party name before standardization and abbreviation
+   - Enables verification of abbreviation accuracy
+   - Maintains data traceability
+
+3. **Party**: Standardized and abbreviated party name
+   - Used for all visualizations and network analysis
+   - Significantly improves readability in network diagrams
+
+4. **Candidate_Original**: Preserved original candidate name
+5. **Candidate_Name**: Cleaned and standardized candidate name
+6. **Candidate_ID**: Unique identifier for each candidate
 
 ---
 
@@ -175,6 +265,8 @@ Expected major parties across all three years:
 
 - Complete coverage of all three target election years
 - **Complete candidate names for all years** - enables full individual-level analysis
+- **Party-focused dataset** - removal of independents sharpens focus on party networks and affiliations
+- **Abbreviated party names** - dramatically improves visualization readability while preserving original data
 - Standardized party names enable accurate affiliation tracking
 - Unique candidate IDs support tracking candidates across constituencies and elections
 - 16-year span (2008-2024) captures major political transitions:
@@ -182,6 +274,8 @@ Expected major parties across all three years:
   - First democratic transfer (2013)
   - Recent political landscape (2024)
 - Simplified identifier system allows comprehensive mobility analysis
+- Original party names preserved for reference and verification
+- Cleaner network structure by focusing exclusively on party-affiliated candidates
 
 ### 8.2 Advantages Over Previous Selection
 
@@ -194,13 +288,15 @@ Expected major parties across all three years:
 
 For network construction:
 
-- **Complete Bipartite Network (All Years):** Full candidate-party network with named individuals across 2008, 2013, and 2024
-- **Temporal Comparison:** 
+- **Party-Party Network:** Focus on connections between parties through shared constituencies and electoral competition
+- **Candidate-Party Bipartite Network:** Full candidate-party network with named party-affiliated individuals across 2008, 2013, and 2024
+- **Temporal Comparison:**
   - 2008 vs 2013: Early democratic transition patterns
   - 2013 vs 2024: Modern political evolution
   - 2008 vs 2024: Long-term transformation
-- **Party Evolution Analysis:** Track party strength changes across 16 years
-- **Candidate Loyalty Analysis:** Identify stable vs mobile candidates across three elections
+- **Party Evolution Analysis:** Track party strength changes across 16 years (excluding independent fluctuations)
+- **Candidate Loyalty Analysis:** Identify stable vs mobile candidates across three elections within the party system
+- **Inter-Party Competition:** Analyze party-to-party relationships without the noise of independent candidates
 
 ---
 
@@ -208,9 +304,11 @@ For network construction:
 
 | File | Description |
 |------|-------------|
-| `cleaned_elections_2008_2013_2024.csv` | Main cleaned dataset (~12,800-13,000 rows) |
+| `cleaned_elections_2008_2013_2024.csv` | Main cleaned dataset (~8,000-9,000 rows, party-affiliated only) |
 | `data_summary.rds` | R object with summary statistics |
-| `01_data_cleaning_2008_2013_2024.R` | Complete R script for reproducibility |
+| `Datacleaning.R` | Complete R script for reproducibility |
+
+**Important Note:** The cleaned dataset contains only party-affiliated candidates. Independent candidates have been removed to focus the analysis on party-based political structures.
 
 ---
 
@@ -249,15 +347,20 @@ For network construction:
 
 ## 12. Quality Assurance
 
-✅ All three target years (2008, 2013, 2024) present in final dataset  
-✅ **Complete candidate names for all selected years**  
-✅ Party names standardized to reduce duplicates  
-✅ Unique identifiers created for all records  
-✅ Duplicates removed  
-✅ Original data preserved in separate columns  
-✅ Data quality flags added for transparency  
-✅ **No missing candidate data issues** (resolved by excluding 2018)  
+✅ All three target years (2008, 2013, 2024) present in final dataset
+✅ **Complete candidate names for all selected years**
+✅ **Independent (IND) candidates removed to focus on party networks**
+✅ Party names standardized to reduce duplicates
+✅ **80+ long party names abbreviated for visualization clarity**
+✅ **Original party names preserved in `Party_Original` column**
+✅ Unique identifiers created for all records
+✅ Duplicates removed
+✅ Original data preserved in separate columns
+✅ Data quality flags added for transparency
+✅ **No missing candidate data issues** (resolved by excluding 2018)
 ✅ 16-year time span enables comprehensive longitudinal analysis
+✅ Abbreviation system enhances network visualization readability
+✅ Dataset optimized for party-centric network analysis
 
 ---
 

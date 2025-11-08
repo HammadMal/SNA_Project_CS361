@@ -152,8 +152,8 @@ cat(sprintf("   Removed %d rows (%.1f%%)\n",
             before_rows - after_rows, 
             100 * (before_rows - after_rows) / before_rows))
 
-# Step 2: Standardize party names
-cat("\n2. Standardizing party names...\n")
+# Step 2: Standardize party names and apply abbreviations
+cat("\n2. Standardizing party names and applying abbreviations...\n")
 
 # Store original party names
 elections_clean$Party_Original <- elections_clean$Party
@@ -162,41 +162,160 @@ elections_clean$Party_Original <- elections_clean$Party
 unique_before <- length(unique(elections_clean$Party))
 cat(sprintf("   Unique parties before: %d\n", unique_before))
 
-# Standardize party names
+# Create abbreviation mapping for long party names
+party_abbreviations <- list(
+  # Major parties (already abbreviated)
+  "PML-N" = "PML-N",
+  "PML-Q" = "PML-Q",
+  "PML-F" = "PML-F",
+  "PML" = "PML",
+  "PPP" = "PPP",
+  "PTI" = "PTI",
+  "MQM" = "MQM",
+  "JUI-F" = "JUI-F",
+  "ANP" = "ANP",
+
+  # Long party names that need abbreviations
+  "Muttahidda Majlis-e-Amal Pakistan" = "MMA",
+  "Pakistan Sunni Tehreek" = "PST",
+  "Awami Himayat Tehreek Pakistan" = "AHTP",
+  "Markazi Jamiat Ulema-e-Pakistan (FK)" = "MJUP-FK",
+  "Jamiat Ulma-e-Pakistan (Noorani)" = "JUP-N",
+  "Jamiat Ulma-e-Pakistan (Niazi)" = "JUP-NZ",
+  "Jamiat Ulama-e-Islam (S)" = "JUI-S",
+  "Pakistan Muslim League (J)" = "PML-J",
+  "Pakistan Muslim League (F)" = "PML-F",
+  "Pakistan Muslim League(Z)" = "PML-Z",
+  "Pakistan Muslim League (Safdar)" = "PML-S",
+  "Pakistan Muslim League-Muttahida" = "PML-M",
+  "Pakistan Muslim League (Zehri Group)" = "PML-Z",
+  "Pakistan Muslim League \"H\" Haqiqi" = "PML-H",
+  "Pakistan Muslim League (Sher-e-Bangal) A.K. Fazal-Ul-" = "PML-SB",
+  "All Pakistan Muslim League" = "APML",
+  "Pakistan Muslim League Council" = "PML-C",
+  "Qaumi Watan Party (Sherpao)" = "QWP-S",
+  "Qaumi Watan Party" = "QWP",
+  "Awami Muslim League Pakistan" = "AMLP",
+  "Pukhtoonkhwa Milli Awami Party" = "PKMAP",
+  "National Peoples Party" = "NPP",
+  "National Party" = "NP",
+  "Jamhoori Wattan Party" = "JWP",
+  "Bahawalpur National Awami Party" = "BNAP",
+  "Sunni Ittehad Council" = "SIC",
+  "Sunni Tehreek" = "ST",
+  "Tehreek-e-Tahaffuze Pakistan" = "TTP",
+  "Tehreek-e-Istehkaam Pakistan" = "TIP",
+  "Istehkaam-e-Pakistan Movement" = "IPM",
+  "Pakistan Tehrek-e-Inqalab" = "PTI-I",
+  "Majlis-e-Wahdat-e-Muslimeen Pakistan" = "MWMP",
+  "Jamait Ahle-Hadith Pakistan (Elahi Zaheer)" = "JAHP-EZ",
+  "Jamiat Ulama-e-Islam Nazryati Pakistan" = "JUI-NP",
+  "Tehreek-e-Ittehad Ummat Pakistan" = "TIUP",
+  "Markazi Jamiat Mushaikh Pakistan" = "MJMP",
+  "All Pakistan Youth Working Party" = "APYWP",
+  "Seraiki Sooba Movement Pakistan" = "SSMP",
+  "Aalay Kalam Ullah Farman Rasool" = "AKUFR",
+  "Tehreek Tabdili Nizam Pakistan" = "TTNP",
+  "Christian Progressive Movement" = "CPM",
+  "Awami Jamhuri Ittehad Pakistan" = "AJIP",
+  "Afgan Qomi Movement (Pakistan)" = "AQM-P",
+  "Pakistan Islami Justice Party" = "PIJP",
+  "Hazara Awami Ittehad Pakistan" = "HAIP",
+  "Tehreek-e-Suba Hazara" = "TSH",
+  "Pakistan Muhafiz Watan Party" = "PMWP",
+  "Pakistan Insani Haqook Party" = "PIHP",
+  "Awami Justice Party Pakistan" = "AJPP",
+  "All Pakistan Bayrozgar Party" = "APBP",
+  "Pakistan Human Rights Party" = "PHRP",
+  "Pakistan Conservative Party" = "PCP",
+  "Communist Party of Pakistan" = "CPP",
+  "Pakistan Democratic party" = "PDP",
+  "Pakistan Citizen Movement" = "PCM",
+  "Tehreek-e-Wafaq Pakistan" = "TWP",
+  "Sairkistan Qaumi Ittehad" = "SQI",
+  "Pakistan Muhammadi Party" = "PMP",
+  "Pakistan Ittehad Tehreek" = "PIT",
+  "Karwan-i-Millat Pakistan" = "KMP",
+  "Islamic Republican Party" = "IRP",
+  "Pakistan Muhajir League" = "PML-MJ",
+  "Pakistan Kissan Ittehad" = "PKI",
+  "Islami Tehreek Pakistan" = "ITP",
+  "Hazara Democratic Party" = "HDP",
+  "Pakistan Saraiki Party" = "PSP",
+  "Pakistan Muhafiz Party" = "PMP-M",
+  "Pakistan Justice Party" = "PJP",
+  "Pakistan Freedom Party" = "PFP",
+  "Aap Janab Sarkar Party" = "AJSP",
+  "Punjab National Party" = "PNP",
+  "Pakistan Qaumi League" = "PQL",
+  "Pakistan Gharib Party" = "PGP",
+  "Pakistan Bachao Party" = "PBP",
+  "Mutahidda Qabil Party" = "MQP",
+  "Jannat Pakistan Party" = "JPP",
+  "Jamote Qaumi Movement" = "JQM",
+  "Qaumi Tahaffaz party" = "QTP",
+  "Pakistan Qaumi Party" = "PQP",
+  "Pakistan Falah Party" = "PFP-F",
+  "Pakistan Brohi Party" = "PBP-B",
+  "Pakistan Awami Party" = "PAP",
+  "MUTAHIDA DEENI MAHAZ" = "MDM",
+  "Islami Inqalab Party" = "IIP",
+  "Pakistan Aman Party" = "PAP-A",
+  "Pak Muslim Alliance" = "PMA",
+  "Azad Pakistan Party" = "APP",
+  "Awami Workers Party" = "AWP",
+  "Qomi Awami Tehreek" = "QAT",
+  "Mustaqbil Pakistan" = "MP",
+  "Tehrik-e-Masawaat" = "TEM",
+  "Pak Justice Party" = "PJP-J",
+  "Pak Wattan Party" = "PWP",
+  "Pasban Pakistan" = "PP",
+  "Istiqlal Party" = "IP",
+  "Mutahida Baloch Movement Pakistan" = "MBMP",
+  "Roshan Pakistan Muhaibban Wattan Party" = "RPMWP",
+  "Menecracy Action Party of Pakistan" = "MAPP",
+  "Mohib-e-Wattan Nowjawan Inqilabion Ki Anjuman" = "MWNIKA"
+)
+
+# Standardize party names with abbreviations
 elections_clean$Party <- sapply(elections_clean$Party, function(x) {
   x <- trimws(x)
-  
-  # PML variations
+
+  # First check if exact match in abbreviation list
+  if(x %in% names(party_abbreviations)) {
+    return(party_abbreviations[[x]])
+  }
+
+  # PML variations (case-insensitive matching)
   if(grepl("PML-N|PMLN", x, ignore.case = TRUE)) return("PML-N")
   if(grepl("PML-Q|PMLQ", x, ignore.case = TRUE)) return("PML-Q")
   if(grepl("PML-F|PMLF", x, ignore.case = TRUE)) return("PML-F")
   if(grepl("^PML$", x, ignore.case = TRUE)) return("PML")
-  
+
   # PPP variations
   if(grepl("PPP|Pakistan Peoples Party", x, ignore.case = TRUE)) return("PPP")
-  
+
   # PTI variations
-  if(grepl("PTI|Pakistan Tehreek", x, ignore.case = TRUE)) return("PTI")
-  
+  if(grepl("PTI|Pakistan Tehreek", x, ignore.case = TRUE) &&
+     !grepl("Inqalab", x, ignore.case = TRUE)) return("PTI")
+
   # MQM variations
   if(grepl("MQM", x, ignore.case = TRUE)) return("MQM")
-  
+
   # JUI variations
   if(grepl("JUI-F", x, ignore.case = TRUE)) return("JUI-F")
-  if(grepl("JUI", x, ignore.case = TRUE)) return("JUI")
-  
+  if(grepl("JUI", x, ignore.case = TRUE) && !grepl("Nazryati", x, ignore.case = TRUE)) return("JUI")
+
   # ANP
   if(grepl("ANP", x, ignore.case = TRUE)) return("ANP")
-  
-  #  ependent candidates
-  if(grepl("IND|Independent", x, ignore.case = TRUE)) return("IND")
-  
+
   # Return original if no match
   return(x)
 })
 
 unique_after <- length(unique(elections_clean$Party))
 cat(sprintf("   Unique parties after: %d\n", unique_after))
+cat("   Applied abbreviations for long party names\n")
 
 # Step 3: Standardize candidate names
 cat("\n3. Standardizing candidate names...\n")
