@@ -188,7 +188,7 @@ elections_clean$Party <- sapply(elections_clean$Party, function(x) {
   # ANP
   if(grepl("ANP", x, ignore.case = TRUE)) return("ANP")
   
-  # Independent candidates
+  #  ependent candidates
   if(grepl("IND|Independent", x, ignore.case = TRUE)) return("IND")
   
   # Return original if no match
@@ -219,8 +219,24 @@ cat("\n4. Creating unique candidate identifiers...\n")
 
 elections_clean$Candidate_ID <- gsub("[^A-Za-z0-9_-]", "_", elections_clean$Candidate_Name)
 
-# Step 5: Handle duplicate entries
-cat("\n5. Checking for duplicate entries...\n")
+# Step 5: Remove Independent (IND) candidates
+cat("\n5. Removing Independent (IND) candidates...\n")
+before_ind <- nrow(elections_clean)
+ind_count <- sum(elections_clean$Party == "IND")
+
+cat(sprintf("   Independent candidates found: %d (%.1f%%)\n",
+            ind_count,
+            100 * ind_count / before_ind))
+
+# Filter out IND candidates
+elections_clean <- elections_clean[elections_clean$Party != "IND", ]
+
+after_ind <- nrow(elections_clean)
+cat(sprintf("   Removed %d IND records\n", before_ind - after_ind))
+cat(sprintf("   Records remaining: %d\n", after_ind))
+
+# Step 6: Handle duplicate entries
+cat("\n6. Checking for duplicate entries...\n")
 
 # Create a composite key
 elections_clean$dup_key <- paste(
@@ -235,7 +251,7 @@ elections_clean$dup_key <- paste(
 duplicated_rows <- duplicated(elections_clean$dup_key)
 n_duplicates <- sum(duplicated_rows)
 
-cat(sprintf("   Found %d duplicate candidate-party-constituency-year combinations\n", 
+cat(sprintf("   Found %d duplicate candidate-party-constituency-year combinations\n",
             n_duplicates))
 
 if(n_duplicates > 0) {

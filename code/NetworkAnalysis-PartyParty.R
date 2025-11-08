@@ -25,7 +25,7 @@ datapath <- "C:/Users/Hammad/Documents/github/SNA_Project_CS361/dataset"
 resultpath <- "C:/Users/Hammad/Documents/github/SNA_Project_CS361/results"
 
 # Input file (from Bipartition.R output)
-bipartite_dir <- file.path(resultpath, "Bipartition.R output")
+bipartite_dir <- file.path(resultpath, "Bipartition-Party_Party.R output")
 input_file <- file.path(bipartite_dir, "bipartite_network_full.rds")
 
 # Output directory

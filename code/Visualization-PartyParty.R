@@ -915,7 +915,71 @@ write.csv(community_summary,
 cat("✓ Saved: community_summary.csv\n\n")
 
 # ==============================================================================
-# 15. SUMMARY
+# 15. COMPLETE UNIPARTITE NETWORK VISUALIZATION
+# ==============================================================================
+
+cat("================================================================================\n")
+cat("CREATING COMPLETE UNIPARTITE PARTY-PARTY NETWORK VISUALIZATION\n")
+cat("================================================================================\n\n")
+
+pdf(file.path(output_dir, "06_complete_unipartite_network.pdf"), width = 20, height = 20)
+
+# Use the complete party-party network (all nodes)
+cat(sprintf("Visualizing complete network: %d nodes, %d edges\n",
+            vcount(g_party), ecount(g_party)))
+
+# Calculate layout for complete network with better spacing
+set.seed(123)
+cat("Calculating layout (this may take a moment)...\n")
+# Use graphopt layout for better spacing and fewer overlaps
+complete_layout <- layout_with_graphopt(g_party,
+                                        niter = 1000,
+                                        charge = 0.02,
+                                        mass = 30,
+                                        spring.length = 1.5,
+                                        spring.constant = 1)
+
+cat("Creating visualization...\n")
+plot(g_party,
+     layout = complete_layout,
+     vertex.size = 3,
+     vertex.color = "lightblue",
+     vertex.label = V(g_party)$name,
+     vertex.label.cex = 0.5,
+     vertex.label.color = "black",
+     vertex.label.dist = 0,
+     vertex.label.font = 1,
+     vertex.frame.color = "gray30",
+     vertex.frame.width = 0.5,
+     edge.width = 0.4,
+     edge.color = rgb(0.3, 0.3, 0.3, 0.3),
+     edge.curved = 0.1,
+     main = sprintf("Complete Party-Party Unipartite Network\n%d Parties, %d Connections",
+                   vcount(g_party), ecount(g_party)))
+
+# Add network statistics
+legend("topright",
+       legend = c(
+         "Network Statistics:",
+         sprintf("Nodes: %d", vcount(g_party)),
+         sprintf("Edges: %d", ecount(g_party)),
+         sprintf("Density: %.4f", edge_density(g_party)),
+         sprintf("Avg Degree: %.2f", mean(degree(g_party))),
+         sprintf("Components: %d", components(g_party)$no),
+         sprintf("Avg Path Length: %.2f", mean_distance(g_party)),
+         sprintf("Clustering Coef: %.4f", transitivity(g_party, type = "global"))
+       ),
+       bty = "o",
+       bg = "white",
+       cex = 0.7,
+       box.col = "gray50")
+
+dev.off()
+
+cat("✓ Saved: 06_complete_unipartite_network.pdf\n\n")
+
+# ==============================================================================
+# 16. SUMMARY
 # ==============================================================================
 
 cat("================================================================================\n")
@@ -928,6 +992,7 @@ cat("  • 02_centrality_comparison.pdf (grouped bar chart)\n")
 cat("  • 03_centrality_individual.pdf (6 plots)\n")
 cat("  • 04_centrality_correlations.pdf (correlation matrix)\n")
 cat("  • 05_centrality_scatterplots.pdf (6 scatter plots)\n")
+cat("  • 06_complete_unipartite_network.pdf (ALL NODES & EDGES)\n")
 cat("  • 07_network_top_parties.pdf (top 50 parties)\n")
 cat("  • 08_network_degree_centrality.pdf\n")
 cat("  • 09_network_betweenness_centrality.pdf\n")
@@ -947,6 +1012,6 @@ cat("  • walktrap_communities.csv\n")
 cat("  • community_summary.csv\n\n")
 
 cat("✓ All visualizations created successfully!\n")
-cat("✓ Total: 17 PDFs + 4 CSVs\n\n")
+cat("✓ Total: 18 PDFs + 4 CSVs\n\n")
 
 cat("================================================================================\n")

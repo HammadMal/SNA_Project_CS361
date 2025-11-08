@@ -1,118 +1,100 @@
 "Party","Degree"
-"IND",98
-"TLP",34
-"MQM",32
-"JI-P",29
-"PMML",29
-"PPP",29
-"JUI-F",27
-"PTI",25
-"JI",23
-"PML-N",23
-"JUI",20
-"MUTAHIDA DEENI MAHAZ",17
-"PRHP",16
-"ANP",15
-"Tehreek-e-Tahaffuze Pakistan",14
-"Pakistan Muslim League",13
-"Pakistan Sunni Tehreek",13
-"PAT",11
-"PKMAP",10
-"IPP",9
-"Jamiat Ulma-e-Pakistan (Noorani)",9
-"MKQM",9
-"All Pakistan Muslim League",8
-"BNP",7
-"BNP-A",7
-"GDA",7
-"KIAP",7
-"Menecracy Action Party of Pakistan",7
-"MOTP",7
-"Pakistan Muslim League (F)",7
-"PML",7
-"PTE",7
-"Qaumi Watan Party (Sherpao)",7
-"Awami Muslim League Pakistan",6
-"National Party",6
-"Pakistan Justice Party",6
-"Pukhtoonkhwa Milli Awami Party",6
-"Sunni Tehreek",6
-"Jamhoori Wattan Party",5
-"Muttahidda Majlis-e-Amal Pakistan",5
-"SKQM",5
-"Awami Workers Party",4
-"Jannat Pakistan Party",4
-"NP",4
-"Pakistan Citizen Movement",4
-"QWP",4
-"SDP",4
-"Sunni Ittehad Council",4
-"SUP",4
-"Tehreek Tabdili Nizam Pakistan",4
-"TTNP",4
-"AJP",3
-"Awami Himayat Tehreek Pakistan",3
-"BAP",3
-"Majlis-e-Wahdat-e-Muslimeen Pakistan",3
-"MJAHP",3
-"Mohib-e-Wattan Nowjawan Inqilabion Ki Anjuman",3
-"Pakistan Falah Party",3
-"Pakistan Freedom Party",3
-"Pakistan Human Rights Party",3
-"Pakistan Muslim League (J)",3
-"PAL",3
-"PMP",3
-"PNAP",3
-"Punjab National Party",3
-"Qaumi Watan Party",3
-"TNP",3
-"TTP",3
-"AJP-P",2
+"TLP",33
+"MQM",31
+"JI-P",28
+"PMML",28
+"PPP",28
+"JUI-F",26
+"PTI",24
+"JI",22
+"PML-N",22
+"JUI",19
+"MUTAHIDA DEENI MAHAZ",16
+"PRHP",15
+"ANP",14
+"Tehreek-e-Tahaffuze Pakistan",13
+"Pakistan Muslim League",12
+"Pakistan Sunni Tehreek",12
+"PAT",10
+"PKMAP",9
+"IPP",8
+"Jamiat Ulma-e-Pakistan (Noorani)",8
+"MKQM",8
+"All Pakistan Muslim League",7
+"BNP",6
+"BNP-A",6
+"GDA",6
+"KIAP",6
+"Menecracy Action Party of Pakistan",6
+"MOTP",6
+"Pakistan Muslim League (F)",6
+"PML",6
+"PTE",6
+"Qaumi Watan Party (Sherpao)",6
+"Awami Muslim League Pakistan",5
+"National Party",5
+"Pakistan Justice Party",5
+"Pukhtoonkhwa Milli Awami Party",5
+"Sunni Tehreek",5
+"Jamhoori Wattan Party",4
+"Muttahidda Majlis-e-Amal Pakistan",4
+"SKQM",4
+"Awami Workers Party",3
+"Jannat Pakistan Party",3
+"NP",3
+"Pakistan Citizen Movement",3
+"QWP",3
+"SDP",3
+"Sunni Ittehad Council",3
+"SUP",3
+"Tehreek Tabdili Nizam Pakistan",3
+"TTNP",3
+"AJP",2
+"Awami Himayat Tehreek Pakistan",2
 "AWP",2
-"GDP",2
-"HQM",2
-"IJI",2
-"Islami Inqalab Party",2
-"JUP",2
-"MWMP",2
-"NDM",2
+"BAP",2
+"Majlis-e-Wahdat-e-Muslimeen Pakistan",2
+"MJAHP",2
+"Mohib-e-Wattan Nowjawan Inqilabion Ki Anjuman",2
+"Pakistan Falah Party",2
+"Pakistan Freedom Party",2
+"Pakistan Human Rights Party",2
+"Pakistan Muslim League (J)",2
 "Pakistan Muslim League(Z)",2
+"PAL",2
 "PML-C",2
-"PMLO",2
-"TDP",2
-"Tehreek-e-Ittehad Ummat Pakistan",2
-"TIPM",2
+"PMP",2
+"PNAP",2
+"Punjab National Party",2
+"Qaumi Watan Party",2
 "TJP",2
-"Aap Janab Sarkar Party",1
-"AATP",1
+"TNP",2
+"TTP",2
+"AJP-P",1
 "AMLP",1
-"Christian Progressive Movement",1
-"Hazara Democratic Party",1
+"GDP",1
 "HDP",1
-"Islami Tehreek Pakistan",1
+"HQM",1
+"IJI",1
+"Islami Inqalab Party",1
 "Jamiat Ulama-e-Islam (S)",1
-"Jamiat Ulama-e-Islam Nazryati Pakistan",1
-"JWP",1
+"JUP",1
+"MWMP",1
 "National Peoples Party",1
+"NDM",1
 "Pakistan Aman Party",1
 "Pakistan Awami Party",1
 "Pakistan Saraiki Party",1
-"Pakistan Tehrek-e-Inqalab",1
-"PAP",1
-"Pasban Pakistan",1
-"PCP",1
-"PDQM",1
-"PFP",1
 "PIRP",1
-"PMA",1
+"PMLO",1
 "PMLZ",1
-"PNP",1
-"Roshan Pakistan Muhaibban Wattan Party",1
-"TAP",1
-"Tehreek-e-Istehkaam Pakistan",1
+"TDP",1
+"Tehreek-e-Ittehad Ummat Pakistan",1
 "Tehrik-e-Masawaat",1
-"TLI",1
+"TIPM",1
 "Aalay Kalam Ullah Farman Rasool",0
+"Aap Janab Sarkar Party",0
+"AATP",0
 "Afgan Qomi Movement (Pakistan)",0
 "AL",0
 "ALI",0
@@ -127,19 +109,24 @@
 "Azad Pakistan Party",0
 "Bahawalpur National Awami Party",0
 "BPP",0
+"Christian Progressive Movement",0
 "Communist Party of Pakistan",0
 "GAP",0
 "Hazara Awami Ittehad Pakistan",0
+"Hazara Democratic Party",0
 "HDTB",0
 "HDTP",0
 "HKP",0
+"Islami Tehreek Pakistan",0
 "Islamic Republican Party",0
 "Istehkaam-e-Pakistan Movement",0
 "Istiqlal Party",0
 "Jamait Ahle-Hadith Pakistan (Elahi Zaheer)",0
+"Jamiat Ulama-e-Islam Nazryati Pakistan",0
 "Jamiat Ulma-e-Pakistan (Niazi)",0
 "Jamote Qaumi Movement",0
 "JQM",0
+"JWP",0
 "Karwan-i-Millat Pakistan",0
 "KS",0
 "Markazi Jamiat Mushaikh Pakistan",0
@@ -172,15 +159,23 @@
 "Pakistan Muslim League Council",0
 "Pakistan Qaumi League",0
 "Pakistan Qaumi Party",0
+"Pakistan Tehrek-e-Inqalab",0
+"PAP",0
 "PAQ",0
+"Pasban Pakistan",0
+"PCP",0
+"PDQM",0
 "PFM",0
+"PFP",0
 "PI-P",0
 "PKI",0
 "PL",0
+"PMA",0
 "PML-AKFH",0
 "PML-Q",0
 "PMLKQK",0
 "PMNL",0
+"PNP",0
 "PPAP",0
 "PSDP",0
 "PSP",0
@@ -189,9 +184,13 @@
 "PWP",0
 "Qaumi Tahaffaz party",0
 "Qomi Awami Tehreek",0
+"Roshan Pakistan Muhaibban Wattan Party",0
 "Sairkistan Qaumi Ittehad",0
 "Seraiki Sooba Movement Pakistan",0
 "SIC",0
+"TAP",0
+"Tehreek-e-Istehkaam Pakistan",0
 "Tehreek-e-Suba Hazara",0
 "Tehreek-e-Wafaq Pakistan",0
+"TLI",0
 "TTK",0
