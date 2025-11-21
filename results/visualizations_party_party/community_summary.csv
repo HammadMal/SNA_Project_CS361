@@ -1,3 +1,3 @@
 "Algorithm","Number_of_Communities","Modularity","Largest_Community","Smallest_Community"
-"Louvain",93,0.240991501195144,26,1
-"Walktrap",124,0.169888218844225,18,1
+"Louvain",5,0.241042275305035,27,10
+"Walktrap",36,0.169888218844225,18,1

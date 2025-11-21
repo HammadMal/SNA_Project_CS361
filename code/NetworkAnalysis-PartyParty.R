@@ -78,16 +78,35 @@ if(proj1_nodes < proj2_nodes) {
   g_party <- projection$proj2
 }
 
-cat(sprintf("\n✓ Party-party network: %d nodes, %d edges\n", 
+cat(sprintf("\n✓ Party-party network: %d nodes, %d edges\n",
             vcount(g_party), ecount(g_party)))
 
 # Check if weights were created
 if("weight" %in% edge_attr_names(g_party)) {
-  cat(sprintf("✓ Edge weights present (range: %d to %d)\n", 
+  cat(sprintf("✓ Edge weights present (range: %d to %d)\n",
               min(E(g_party)$weight), max(E(g_party)$weight)))
 } else {
   cat("⚠ No edge weights found - setting all weights to 1\n")
   E(g_party)$weight <- 1
+}
+
+cat("\n")
+
+# ==============================================================================
+# FILTER: REMOVE NODES WITH ZERO DEGREE
+# ==============================================================================
+
+cat("--- Filtering Zero-Degree Nodes ---\n")
+deg_initial <- degree(g_party)
+nodes_to_remove <- which(deg_initial == 0)
+
+if(length(nodes_to_remove) > 0) {
+  cat(sprintf("⚠ Found %d nodes with degree 0\n", length(nodes_to_remove)))
+  cat("  → Removing isolated nodes (as per instructor feedback)...\n")
+  g_party <- delete_vertices(g_party, nodes_to_remove)
+  cat(sprintf("✓ Filtered network: %d nodes, %d edges\n", vcount(g_party), ecount(g_party)))
+} else {
+  cat("✓ No zero-degree nodes found - proceeding with full network\n")
 }
 
 cat("\n")

@@ -130,7 +130,7 @@ cat("===========================================================================
 cat("CREATING CENTRALITY COMPARISON PLOTS\n")
 cat("================================================================================\n\n")
 
-pdf(file.path(output_dir, "02_centrality_comparison.pdf"), width = 14, height = 10)
+pdf(file.path(output_dir, "02_centrality_comparison.pdf"), width = 16, height = 12)
 
 # Get top 15 parties by degree
 top_parties <- head(centrality[order(-centrality$Degree), ], 15)
@@ -142,11 +142,14 @@ top_parties$Closeness_norm <- top_parties$Closeness / max(centrality$Closeness)
 top_parties$Eigenvector_norm <- top_parties$Eigenvector / max(centrality$Eigenvector)
 top_parties$PageRank_norm <- top_parties$PageRank / max(centrality$PageRank)
 
-# --- Plot 1: Grouped Bar Chart ---
-cent_matrix <- as.matrix(top_parties[, c("Degree_norm", "Betweenness_norm", 
-                                          "Closeness_norm", "Eigenvector_norm", 
+# --- Plot 1: Grouped Bar Chart with better spacing ---
+cent_matrix <- as.matrix(top_parties[, c("Degree_norm", "Betweenness_norm",
+                                          "Closeness_norm", "Eigenvector_norm",
                                           "PageRank_norm")])
 rownames(cent_matrix) <- top_parties$Party
+
+# Set margins: bottom, left, top, right (extra space on bottom and top)
+par(mar = c(11, 5, 6, 2))
 
 barplot(t(cent_matrix),
         beside = TRUE,
@@ -154,10 +157,22 @@ barplot(t(cent_matrix),
         xlab = "",
         ylab = "Normalized Centrality (0-1)",
         col = c("steelblue", "coral", "gold", "lightgreen", "purple"),
-        legend.text = c("Degree", "Betweenness", "Closeness", "Eigenvector", "PageRank"),
-        args.legend = list(x = "topright", cex = 0.9),
         las = 2,
-        cex.names = 0.8)
+        cex.names = 0.75,
+        cex.axis = 1.0,
+        cex.lab = 1.1,
+        ylim = c(0, 1.15))
+
+# Add legend in top margin area
+par(xpd = TRUE)
+legend(x = "top",
+       inset = c(0, -0.12),
+       legend = c("Degree", "Betweenness", "Closeness", "Eigenvector", "PageRank"),
+       fill = c("steelblue", "coral", "gold", "lightgreen", "purple"),
+       horiz = TRUE,
+       cex = 0.85,
+       bty = "n")
+par(xpd = FALSE)
 
 dev.off()
 
@@ -444,14 +459,20 @@ deg_norm <- (deg_viz - min(deg_viz)) / (max(deg_viz) - min(deg_viz))
 node_size_deg <- deg_norm * 15 + 3
 node_colors_deg <- rgb(deg_norm, 0, 1 - deg_norm, 0.8)
 
+# Variable label distance: only very small nodes get more distance
+# Large/medium nodes stay close (0.1), only very small nodes get pushed out
+label_dist_deg <- ifelse(deg_norm > 0.3,  # If node is medium or large
+                         0,              # Keep label close
+                         (1 - deg_norm) * 0.9)  # Otherwise push out (range 0.56-0.8)
+
 plot(g_viz,
      layout = common_layout,
      vertex.size = node_size_deg,
      vertex.color = node_colors_deg,
-     vertex.label = ifelse(deg_viz > quantile(deg_viz, 0.70), V(g_viz)$name, NA),
-     vertex.label.cex = 0.6,
+     vertex.label = V(g_viz)$name,      # Show ALL labels
+     vertex.label.cex = 0.5,             # Smaller font for readability
      vertex.label.color = "black",
-     vertex.label.dist = 0,
+     vertex.label.dist = label_dist_deg, # Variable distance based on node size
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
@@ -776,7 +797,7 @@ write.csv(louvain_df[order(louvain_df$Community), ],
           row.names = FALSE)
 cat("✓ Saved: louvain_communities.csv\n")
 
-# Visualize Louvain communities - Top 50 Parties ONLY
+# Visualize Louvain communities - Top 50 Parties with IMPROVED LAYOUT
 pdf(file.path(output_dir, "15_louvain_communities_top50.pdf"), width = 16, height = 12)
 
 top_50_parties_comm <- head(centrality[order(-centrality$Degree), "Party"], 50)
@@ -784,32 +805,78 @@ g_top_comm <- induced_subgraph(g_party, V(g_party)$name %in% top_50_parties_comm
 louvain_top <- cluster_louvain(g_top_comm)
 
 set.seed(123)
-layout_top_comm <- layout_with_fr(g_top_comm)
 
-num_communities_top <- length(unique(membership(louvain_top)))
+# IMPROVED LAYOUT: Place each community in separate circles
+# Get community memberships
+memberships <- membership(louvain_top)
+num_communities_top <- length(unique(memberships))
 community_colors_top <- rainbow(num_communities_top, alpha = 0.8)
-node_colors_top_comm <- community_colors_top[membership(louvain_top)]
+
+# Create custom layout with communities in separate circles
+layout_top_comm <- matrix(0, nrow = vcount(g_top_comm), ncol = 2)
+
+# Arrange communities in a circle of circles
+outer_radius <- 3  # Radius of the big circle that holds all community circles
+
+for (comm_id in 1:num_communities_top) {
+  # Get nodes in this community
+  nodes_in_comm <- which(memberships == comm_id)
+  n_nodes <- length(nodes_in_comm)
+
+  # Position for this community's center on the outer circle
+  angle_outer <- 2 * pi * (comm_id - 1) / num_communities_top
+  center_x <- outer_radius * cos(angle_outer)
+  center_y <- outer_radius * sin(angle_outer)
+
+  # Inner radius for nodes within this community (scaled by community size)
+  inner_radius <- 0.8 + (n_nodes / 50) * 0.5
+
+  # Arrange nodes in this community in a circle around the community center
+  for (i in 1:n_nodes) {
+    angle_inner <- 2 * pi * (i - 1) / n_nodes
+    layout_top_comm[nodes_in_comm[i], 1] <- center_x + inner_radius * cos(angle_inner)
+    layout_top_comm[nodes_in_comm[i], 2] <- center_y + inner_radius * sin(angle_inner)
+  }
+}
+
+node_colors_top_comm <- community_colors_top[memberships]
 
 node_size_top_comm <- degree(g_top_comm)
-node_size_top_comm <- (node_size_top_comm - min(node_size_top_comm)) / 
-                      (max(node_size_top_comm) - min(node_size_top_comm)) * 15 + 3
+node_size_top_comm <- (node_size_top_comm - min(node_size_top_comm)) /
+                      (max(node_size_top_comm) - min(node_size_top_comm)) * 12 + 4
+
+# Shorten long party name for better visualization
+labels_louvain <- V(g_top_comm)$name
+labels_louvain[labels_louvain == "Sindh Dost Ittehad (SDI) Party"] <- "SDI"
 
 plot(g_top_comm,
      layout = layout_top_comm,
      vertex.size = node_size_top_comm,
      vertex.color = node_colors_top_comm,
-     vertex.label = V(g_top_comm)$name,
-     vertex.label.cex = 0.6,
+     vertex.label = labels_louvain,
+     vertex.label.cex = 0.55,
      vertex.label.color = "black",
-     vertex.label.dist = 0,
+     vertex.label.dist = 0.1,
      vertex.frame.color = "white",
      edge.width = 0.5,
-     edge.color = rgb(0, 0, 0, 0.2),
-     main = sprintf("Louvain Communities - Top 50 Parties\n%d communities, Modularity = %.3f",
+     edge.color = rgb(0, 0, 0, 0.15),
+     main = sprintf("Louvain Communities - Top 50 Parties (Circular Layout)\n%d communities, Modularity = %.3f",
                    length(louvain_top), modularity(louvain_top)))
 
+# Add legend with community sizes
+comm_sizes <- table(memberships)
+legend_text <- paste0("Community ", 1:num_communities_top, " (n=", comm_sizes, ")")
+legend("bottomright",
+       legend = legend_text,
+       col = community_colors_top,
+       pch = 16,
+       pt.cex = 1.5,
+       cex = 0.7,
+       bg = "white",
+       title = "Communities")
+
 dev.off()
-cat("✓ Saved: 15_louvain_communities_top50.pdf\n\n")
+cat("✓ Saved: 15_louvain_communities_top50.pdf (with circular community layout)\n\n")
 
 # ==============================================================================
 # 13. COMMUNITY DETECTION - WALKTRAP ALGORITHM
@@ -836,34 +903,76 @@ write.csv(walktrap_df[order(walktrap_df$Community), ],
           row.names = FALSE)
 cat("✓ Saved: walktrap_communities.csv\n")
 
-# Visualize Walktrap communities - Top 50 Parties ONLY
+# Visualize Walktrap communities - Top 50 Parties with IMPROVED LAYOUT
 pdf(file.path(output_dir, "16_walktrap_communities_top50.pdf"), width = 16, height = 12)
 
 walktrap_top <- cluster_walktrap(g_top_comm)
 
-set.seed(123)
-layout_top_wt <- layout_with_fr(g_top_comm)
+set.seed(456)
 
-num_communities_wt_top <- length(unique(membership(walktrap_top)))
+# IMPROVED LAYOUT: Place each community in separate circles
+# Get community memberships for walktrap
+memberships_wt <- membership(walktrap_top)
+num_communities_wt_top <- length(unique(memberships_wt))
 community_colors_wt_top <- rainbow(num_communities_wt_top, alpha = 0.8)
-node_colors_top_wt <- community_colors_wt_top[membership(walktrap_top)]
+
+# Create custom layout with communities in separate circles
+layout_top_wt <- matrix(0, nrow = vcount(g_top_comm), ncol = 2)
+
+# Arrange communities in a circle of circles
+outer_radius_wt <- 3
+
+for (comm_id in 1:num_communities_wt_top) {
+  # Get nodes in this community
+  nodes_in_comm <- which(memberships_wt == comm_id)
+  n_nodes <- length(nodes_in_comm)
+
+  # Position for this community's center on the outer circle
+  angle_outer <- 2 * pi * (comm_id - 1) / num_communities_wt_top
+  center_x <- outer_radius_wt * cos(angle_outer)
+  center_y <- outer_radius_wt * sin(angle_outer)
+
+  # Inner radius for nodes within this community (scaled by community size)
+  inner_radius <- 0.5 + (n_nodes / 50) * 0.5
+
+  # Arrange nodes in this community in a circle around the community center
+  for (i in 1:n_nodes) {
+    angle_inner <- 2 * pi * (i - 1) / n_nodes
+    layout_top_wt[nodes_in_comm[i], 1] <- center_x + inner_radius * cos(angle_inner)
+    layout_top_wt[nodes_in_comm[i], 2] <- center_y + inner_radius * sin(angle_inner)
+  }
+}
+
+node_colors_top_wt <- community_colors_wt_top[memberships_wt]
 
 plot(g_top_comm,
      layout = layout_top_wt,
      vertex.size = node_size_top_comm,
      vertex.color = node_colors_top_wt,
      vertex.label = V(g_top_comm)$name,
-     vertex.label.cex = 0.6,
+     vertex.label.cex = 0.55,
      vertex.label.color = "black",
-     vertex.label.dist = 0,
+     vertex.label.dist = 0.2,
      vertex.frame.color = "white",
      edge.width = 0.5,
-     edge.color = rgb(0, 0, 0, 0.2),
-     main = sprintf("Walktrap Communities - Top 50 Parties\n%d communities, Modularity = %.3f",
+     edge.color = rgb(0, 0, 0, 0.15),
+     main = sprintf("Walktrap Communities - Top 50 Parties (Circular Layout)\n%d communities, Modularity = %.3f",
                    length(walktrap_top), modularity(walktrap_top)))
 
+# Add legend with community sizes
+comm_sizes_wt <- table(memberships_wt)
+legend_text_wt <- paste0("Community ", 1:num_communities_wt_top, " (n=", comm_sizes_wt, ")")
+legend("bottomright",
+       legend = legend_text_wt,
+       col = community_colors_wt_top,
+       pch = 16,
+       pt.cex = 1.5,
+       cex = 0.7,
+       bg = "white",
+       title = "Communities")
+
 dev.off()
-cat("✓ Saved: 16_walktrap_communities_top50.pdf\n\n")
+cat("✓ Saved: 16_walktrap_communities_top50.pdf (with circular community layout)\n\n")
 
 # ==============================================================================
 # 14. COMMUNITY COMPARISON
