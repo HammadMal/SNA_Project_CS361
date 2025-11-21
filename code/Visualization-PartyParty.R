@@ -743,19 +743,25 @@ clust_norm <- (top_50_clust - min(top_50_clust)) / (max(top_50_clust) - min(top_
 # Size by clustering (adjusted range)
 node_size_clust <- clust_norm * 12 + 3  # smaller multiplier for better size range
 
-# Color by clustering using a teal color scheme
-node_colors_clust <- colorRampPalette(c("#EDF8FB", "#66C2A4", "#006D2C"))(100)[
+# Color by clustering using a light blue to lavender color scheme
+node_colors_clust <- colorRampPalette(c("#E3F2FD", "#90CAF9", "#64B5F6"))(100)[
                      ceiling(clust_norm * 99) + 1]
+
+# Variable label distance: only very small nodes get more distance
+# Large/medium nodes stay close (0.1), only very small nodes get pushed out
+label_dist_clust <- ifelse(clust_norm > 0.3,  # If node is medium or large
+                           0.1,                # Keep label close
+                           (1 - clust_norm) * 0.8)  # Otherwise push out
 
 # Use same layout as other centrality plots
 plot(g_clust_viz,
      layout = common_layout,
      vertex.size = node_size_clust,
      vertex.color = node_colors_clust,
-     vertex.label = ifelse(top_50_clust > quantile(top_50_clust, 0.70), V(g_clust_viz)$name, NA),
-     vertex.label.cex = 0.6,
+     vertex.label = V(g_clust_viz)$name,        # Show ALL labels
+     vertex.label.cex = 0.5,                     # Smaller font for readability
      vertex.label.color = "black",
-     vertex.label.dist = 0,
+     vertex.label.dist = label_dist_clust,      # Variable distance based on node size
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
@@ -763,7 +769,7 @@ plot(g_clust_viz,
 
 legend("topright",
        legend = c("High Clustering", "Medium Clustering", "Low Clustering"),
-       col = colorRampPalette(c("#006D2C", "#66C2A4", "#EDF8FB"))(3),
+       col = colorRampPalette(c("#64B5F6", "#90CAF9", "#E3F2FD"))(3),
        pch = 16,
        pt.cex = 2,
        cex = 0.9,

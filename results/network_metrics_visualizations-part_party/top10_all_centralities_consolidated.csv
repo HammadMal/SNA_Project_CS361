@@ -1,0 +1,11 @@
+"Rank","Degree_Party","Degree_Value","Betweenness_Party","Betweenness_Value","Closeness_Party","Closeness_Value","Eigenvector_Party","Eigenvector_Value","Eccentricity_Party","Eccentricity_Value"
+1,"TLP",33,"TLP",672.7277,"PMML",0.4699,"PPP",1,"TTP",3
+2,"MQM",31,"MQM",517.1715,"JI",0.4674,"MQM",0.993,"APML",4
+3,"PPP",29,"PTI",448.4605,"PRHP",0.4526,"TLP",0.9783,"AWP",4
+4,"JI-P",28,"JUI-F",442.2298,"MDM",0.4503,"PMML",0.9733,"BNP",4
+5,"PMML",27,"JI-P",419.4778,"TTP",0.4503,"JI-P",0.9405,"BNP-A",4
+6,"JUI-F",26,"PPP",396.6092,"PST",0.4479,"JUI-F",0.8807,"GDA",4
+7,"PTI",24,"PML-N",391.697,"TLP",0.4456,"JI",0.8802,"IPP",4
+8,"JI",22,"PMML",352.2746,"PTI",0.441,"PTI",0.8585,"JI",4
+9,"PML-N",22,"Pakistan Muslim League",267.5613,"PKMAP",0.4388,"JUI",0.8117,"JI-P",4
+10,"JUI",19,"PKMAP",201.2135,"MQM",0.4365,"PML-N",0.7753,"JPP",4
