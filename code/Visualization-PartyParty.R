@@ -9,9 +9,9 @@
 # ==============================================================================
 
 # --- Load Required Libraries ---
-install.packages("igraph", dependencies=TRUE)
+# install.packages("igraph", dependencies=TRUE)
 
-library(igraph)
+# library(igraph)
 
 # ==============================================================================
 # 1. CONFIGURATION
@@ -803,86 +803,85 @@ write.csv(louvain_df[order(louvain_df$Community), ],
           row.names = FALSE)
 cat("✓ Saved: louvain_communities.csv\n")
 
-# Visualize Louvain communities - Top 50 Parties with IMPROVED LAYOUT
-pdf(file.path(output_dir, "15_louvain_communities_top50.pdf"), width = 16, height = 12)
+# Visualize Louvain communities - ALL Parties with IMPROVED LAYOUT
+pdf(file.path(output_dir, "15_louvain_communities_all.pdf"), width = 20, height = 16)
 
-top_50_parties_comm <- head(centrality[order(-centrality$Degree), "Party"], 50)
-g_top_comm <- induced_subgraph(g_party, V(g_party)$name %in% top_50_parties_comm)
-louvain_top <- cluster_louvain(g_top_comm)
-
+# Use the full network Louvain communities
 set.seed(123)
 
 # IMPROVED LAYOUT: Place each community in separate circles
-# Get community memberships
-memberships <- membership(louvain_top)
-num_communities_top <- length(unique(memberships))
-community_colors_top <- rainbow(num_communities_top, alpha = 0.8)
+# Get community memberships from full network
+memberships <- membership(louvain_comm)
+num_communities <- length(unique(memberships))
+community_colors <- rainbow(num_communities, alpha = 0.8)
 
 # Create custom layout with communities in separate circles
-layout_top_comm <- matrix(0, nrow = vcount(g_top_comm), ncol = 2)
+layout_louvain <- matrix(0, nrow = vcount(g_party), ncol = 2)
 
 # Arrange communities in a circle of circles
-outer_radius <- 3  # Radius of the big circle that holds all community circles
+outer_radius <- 4  # Radius of the big circle that holds all community circles
 
-for (comm_id in 1:num_communities_top) {
+for (comm_id in 1:num_communities) {
   # Get nodes in this community
   nodes_in_comm <- which(memberships == comm_id)
   n_nodes <- length(nodes_in_comm)
 
   # Position for this community's center on the outer circle
-  angle_outer <- 2 * pi * (comm_id - 1) / num_communities_top
+  angle_outer <- 2 * pi * (comm_id - 1) / num_communities
   center_x <- outer_radius * cos(angle_outer)
   center_y <- outer_radius * sin(angle_outer)
 
   # Inner radius for nodes within this community (scaled by community size)
-  inner_radius <- 0.8 + (n_nodes / 50) * 0.5
+  inner_radius <- 0.5 + (n_nodes / max(table(memberships))) * 1.5
 
   # Arrange nodes in this community in a circle around the community center
   for (i in 1:n_nodes) {
     angle_inner <- 2 * pi * (i - 1) / n_nodes
-    layout_top_comm[nodes_in_comm[i], 1] <- center_x + inner_radius * cos(angle_inner)
-    layout_top_comm[nodes_in_comm[i], 2] <- center_y + inner_radius * sin(angle_inner)
+    layout_louvain[nodes_in_comm[i], 1] <- center_x + inner_radius * cos(angle_inner)
+    layout_louvain[nodes_in_comm[i], 2] <- center_y + inner_radius * sin(angle_inner)
   }
 }
 
-node_colors_top_comm <- community_colors_top[memberships]
+node_colors_louvain <- community_colors[memberships]
 
-node_size_top_comm <- degree(g_top_comm)
-node_size_top_comm <- (node_size_top_comm - min(node_size_top_comm)) /
-                      (max(node_size_top_comm) - min(node_size_top_comm)) * 12 + 4
+node_size_louvain <- degree(g_party)
+node_size_louvain <- (node_size_louvain - min(node_size_louvain)) /
+                     (max(node_size_louvain) - min(node_size_louvain)) * 10 + 3
 
 # Shorten long party name for better visualization
-labels_louvain <- V(g_top_comm)$name
+labels_louvain <- V(g_party)$name
+labels_louvain[labels_louvain == "Sindh Taraqi Passand Party (STP)"] <- "STP" 
 labels_louvain[labels_louvain == "Sindh Dost Ittehad (SDI) Party"] <- "SDI"
 
-plot(g_top_comm,
-     layout = layout_top_comm,
-     vertex.size = node_size_top_comm,
-     vertex.color = node_colors_top_comm,
+plot(g_party,
+     layout = layout_louvain,
+     vertex.size = node_size_louvain,
+     vertex.color = node_colors_louvain,
      vertex.label = labels_louvain,
-     vertex.label.cex = 0.55,
+     vertex.label.cex = 0.8,
      vertex.label.color = "black",
      vertex.label.dist = 0.1,
      vertex.frame.color = "white",
-     edge.width = 0.5,
-     edge.color = rgb(0, 0, 0, 0.15),
-     main = sprintf("Louvain Communities - Top 50 Parties (Circular Layout)\n%d communities, Modularity = %.3f",
-                   length(louvain_top), modularity(louvain_top)))
+     edge.width = 0.3,
+     edge.color = rgb(0, 0, 0, 0.1),
+     main = sprintf("Louvain Communities - All Parties (Circular Layout)\n%d communities, Modularity = %.3f",
+                   length(louvain_comm), modularity(louvain_comm)))
 
 # Add legend with community sizes
 comm_sizes <- table(memberships)
-legend_text <- paste0("Community ", 1:num_communities_top, " (n=", comm_sizes, ")")
+legend_text <- paste0("Community ", 1:num_communities, " (n=", comm_sizes, ")")
 legend("bottomright",
        legend = legend_text,
-       col = community_colors_top,
+       col = community_colors,
        pch = 16,
        pt.cex = 1.5,
-       cex = 0.7,
+       cex = 0.6,
        bg = "white",
-       title = "Communities")
+       title = "Communities",
+       ncol = 2)
 
 dev.off()
-cat("✓ Saved: 15_louvain_communities_top50.pdf (with circular community layout)\n\n")
+cat("✓ Saved: 15_louvain_communities_all.pdf (with circular community layout for all parties)\n\n")
 
 # ==============================================================================
 # 13. COMMUNITY DETECTION - WALKTRAP ALGORITHM
