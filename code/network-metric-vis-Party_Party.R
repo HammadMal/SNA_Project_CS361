@@ -9,7 +9,7 @@
 # ==============================================================================
 
 # --- Load Required Libraries ---
-library(igraph)
+# library(igraph)
 
 # ==============================================================================
 # 1. CONFIGURATION
@@ -942,70 +942,70 @@ dev.off()
 cat("✓ Saved: 10_centrality_comparison_comprehensive.pdf\n\n")
 
 # ==============================================================================
-# 12. TOP 10 PARTIES TABLE FOR ALL CENTRALITY MEASURES
+# 12. TOP 5 PARTIES TABLE FOR ALL CENTRALITY MEASURES
 # ==============================================================================
 
 cat("================================================================================\n")
-cat("CREATING TOP 10 PARTIES TABLE FOR ALL CENTRALITY MEASURES\n")
+cat("CREATING TOP 5 PARTIES TABLE FOR ALL CENTRALITY MEASURES\n")
 cat("================================================================================\n\n")
 
-# Create a comprehensive table showing top 10 parties for each centrality measure
-top10_list <- list()
+# Create a comprehensive table showing top 5 parties for each centrality measure
+top5_list <- list()
 
 # Degree Centrality
-top10_degree <- head(centrality[order(-centrality$Degree), c("Party", "Degree")], 10)
-top10_degree$Rank <- 1:10
-top10_degree$Measure <- "Degree"
-top10_list[["Degree"]] <- top10_degree
+top5_degree <- head(centrality[order(-centrality$Degree), c("Party", "Degree")], 5)
+top5_degree$Rank <- 1:5
+top5_degree$Measure <- "Degree"
+top5_list[["Degree"]] <- top5_degree
 
 # Betweenness Centrality
-top10_betweenness <- head(centrality[order(-centrality$Betweenness), c("Party", "Betweenness")], 10)
-top10_betweenness$Rank <- 1:10
-top10_betweenness$Measure <- "Betweenness"
-top10_list[["Betweenness"]] <- top10_betweenness
+top5_betweenness <- head(centrality[order(-centrality$Betweenness), c("Party", "Betweenness")], 5)
+top5_betweenness$Rank <- 1:5
+top5_betweenness$Measure <- "Betweenness"
+top5_list[["Betweenness"]] <- top5_betweenness
 
 # Closeness Centrality
-top10_closeness <- head(centrality[order(-centrality$Closeness), c("Party", "Closeness")], 10)
-top10_closeness$Rank <- 1:10
-top10_closeness$Measure <- "Closeness"
-top10_list[["Closeness"]] <- top10_closeness
+top5_closeness <- head(centrality[order(-centrality$Closeness), c("Party", "Closeness")], 5)
+top5_closeness$Rank <- 1:5
+top5_closeness$Measure <- "Closeness"
+top5_list[["Closeness"]] <- top5_closeness
 
 # Eigenvector Centrality
-top10_eigenvector <- head(centrality[order(-centrality$Eigenvector), c("Party", "Eigenvector")], 10)
-top10_eigenvector$Rank <- 1:10
-top10_eigenvector$Measure <- "Eigenvector"
-top10_list[["Eigenvector"]] <- top10_eigenvector
+top5_eigenvector <- head(centrality[order(-centrality$Eigenvector), c("Party", "Eigenvector")], 5)
+top5_eigenvector$Rank <- 1:5
+top5_eigenvector$Measure <- "Eigenvector"
+top5_list[["Eigenvector"]] <- top5_eigenvector
 
 # Eccentricity (Lowest = Most Central)
-top10_eccentricity <- head(centrality[order(centrality$Eccentricity), c("Party", "Eccentricity")], 10)
-top10_eccentricity$Rank <- 1:10
-top10_eccentricity$Measure <- "Eccentricity (Low=Central)"
-top10_list[["Eccentricity"]] <- top10_eccentricity
+top5_eccentricity <- head(centrality[order(centrality$Eccentricity), c("Party", "Eccentricity")], 5)
+top5_eccentricity$Rank <- 1:5
+top5_eccentricity$Measure <- "Eccentricity (Low=Central)"
+top5_list[["Eccentricity"]] <- top5_eccentricity
 
 # Save individual CSV files for each measure
-for (measure_name in names(top10_list)) {
-  filename <- file.path(output_dir, paste0("top10_", tolower(gsub(" ", "_", measure_name)), ".csv"))
-  write.csv(top10_list[[measure_name]], filename, row.names = FALSE)
-  cat(sprintf("✓ Saved: top10_%s.csv\n", tolower(gsub(" ", "_", measure_name))))
+for (measure_name in names(top5_list)) {
+  filename <- file.path(output_dir, paste0("top5_", tolower(gsub(" ", "_", measure_name)), ".csv"))
+  write.csv(top5_list[[measure_name]], filename, row.names = FALSE)
+  cat(sprintf("✓ Saved: top5_%s.csv\n", tolower(gsub(" ", "_", measure_name))))
 }
 
 # Create a combined summary table
-cat("\nCreating combined top 10 summary table...\n")
+cat("\nCreating combined top 5 summary table...\n")
 
 # Create visual PDF table
-pdf(file.path(output_dir, "11_top10_all_centralities.pdf"), width = 16, height = 14)
+pdf(file.path(output_dir, "11_top5_all_centralities.pdf"), width = 18, height = 10)
 
-par(mar = c(1, 1, 3, 1))
+par(mar = c(2, 1, 4, 1))
 plot.new()
 
 # Title
-text(0.5, 0.97, "Top 10 Parties by Centrality Measures",
-     cex = 2.2, font = 2, pos = 1)
+text(0.5, 0.95, "Top 5 Parties by Centrality Measures",
+     cex = 2.5, font = 2)
 
-# Define column positions
-col_positions <- seq(0.08, 0.92, length.out = 5)
-row_height <- 0.08  # Reduced from 0.14 to fit 10 rows
-start_y <- 0.87
+# Define column positions with better spacing
+col_positions <- seq(0.10, 0.90, length.out = 5)
+row_height <- 0.14  # More spacing for 5 rows
+start_y <- 0.80
 
 # Colors for headers
 header_colors <- c("steelblue", "coral", "gold", "lightgreen", "skyblue")
@@ -1018,89 +1018,89 @@ for (i in 1:5) {
   x_pos <- col_positions[i]
 
   # Header
-  rect(x_pos - 0.08, start_y, x_pos + 0.08, start_y + 0.06,
+  rect(x_pos - 0.075, start_y, x_pos + 0.075, start_y + 0.08,
        col = header_colors[i], border = "white", lwd = 2)
-  text(x_pos, start_y + 0.03, measure_labels[i],
-       cex = 1.2, font = 2, col = "white")
+  text(x_pos, start_y + 0.04, measure_labels[i],
+       cex = 1.3, font = 2, col = "white")
 
-  # Get top 10 data
-  top10_data <- top10_list[[measures[i]]]
+  # Get top 5 data
+  top5_data <- top5_list[[measures[i]]]
 
   # Draw rows
-  for (j in 1:10) {
+  for (j in 1:5) {
     y_pos <- start_y - (j * row_height)
 
     # Alternating row colors
-    bg_col <- if(j %% 2 == 0) "#F0F0F0" else "white"
-    rect(x_pos - 0.08, y_pos - row_height + 0.01,
-         x_pos + 0.08, y_pos + 0.01,
-         col = bg_col, border = "gray80", lwd = 0.5)
+    bg_col <- if(j %% 2 == 0) "#F5F5F5" else "white"
+    rect(x_pos - 0.075, y_pos - row_height + 0.01,
+         x_pos + 0.075, y_pos + 0.01,
+         col = bg_col, border = "gray70", lwd = 0.8)
 
     # Rank number (small circle)
-    points(x_pos - 0.07, y_pos - row_height/2, pch = 21,
-           bg = header_colors[i], col = "white", cex = 1.8)
-    text(x_pos - 0.07, y_pos - row_height/2, j,
-         cex = 0.7, font = 2, col = "white")
+    points(x_pos - 0.065, y_pos - row_height/2, pch = 21,
+           bg = header_colors[i], col = "white", cex = 2.2)
+    text(x_pos - 0.065, y_pos - row_height/2, j,
+         cex = 0.85, font = 2, col = "white")
 
     # Party name
-    party_name <- as.character(top10_data$Party[j])
-    text(x_pos, y_pos - row_height/2 + 0.008, party_name,
-         cex = 0.7, font = 1, pos = 4, offset = -0.35)
+    party_name <- as.character(top5_data$Party[j])
+    text(x_pos, y_pos - row_height/2 + 0.015, party_name,
+         cex = 0.85, font = 2, pos = 4, offset = -0.35)
 
-    # Value
-    value <- top10_data[j, 2]  # Second column is the measure value
+    # Value with decimal places
+    value <- top5_data[j, 2]  # Second column is the measure value
     value_text <- sprintf("%.4f", value)
-    text(x_pos, y_pos - row_height/2 - 0.008, value_text,
-         cex = 0.65, font = 1, col = "gray30", pos = 4, offset = -0.35)
+    text(x_pos, y_pos - row_height/2 - 0.015, value_text,
+         cex = 0.80, font = 1, col = "gray20", pos = 4, offset = -0.35)
   }
 }
 
-# Add footer with notes - moved lower to avoid clash
-# text(0.5, 0.01,
+# # Add footer with notes
+# text(0.5, 0.03,
 #      "Note: Eccentricity shows parties with lowest values (most central). All other measures show highest values.",
-#      cex = 0.85, col = "gray30", font = 3)
+#      cex = 0.95, col = "gray30", font = 3)
 
 dev.off()
-cat("✓ Saved: 11_top10_all_centralities.pdf\n\n")
+cat("✓ Saved: 11_top5_all_centralities.pdf\n\n")
 
 # Also create a consolidated CSV file
 cat("Creating consolidated CSV file...\n")
 
 # Prepare data frame with all measures side by side
-top10_consolidated <- data.frame(
-  Rank = 1:10,
+top5_consolidated <- data.frame(
+  Rank = 1:5,
 
-  Degree_Party = top10_list[["Degree"]]$Party,
-  Degree_Value = round(top10_list[["Degree"]]$Degree, 4),
+  Degree_Party = top5_list[["Degree"]]$Party,
+  Degree_Value = round(top5_list[["Degree"]]$Degree, 4),
 
-  Betweenness_Party = top10_list[["Betweenness"]]$Party,
-  Betweenness_Value = round(top10_list[["Betweenness"]]$Betweenness, 4),
+  Betweenness_Party = top5_list[["Betweenness"]]$Party,
+  Betweenness_Value = round(top5_list[["Betweenness"]]$Betweenness, 4),
 
-  Closeness_Party = top10_list[["Closeness"]]$Party,
-  Closeness_Value = round(top10_list[["Closeness"]]$Closeness, 4),
+  Closeness_Party = top5_list[["Closeness"]]$Party,
+  Closeness_Value = round(top5_list[["Closeness"]]$Closeness, 4),
 
-  Eigenvector_Party = top10_list[["Eigenvector"]]$Party,
-  Eigenvector_Value = round(top10_list[["Eigenvector"]]$Eigenvector, 4),
+  Eigenvector_Party = top5_list[["Eigenvector"]]$Party,
+  Eigenvector_Value = round(top5_list[["Eigenvector"]]$Eigenvector, 4),
 
-  Eccentricity_Party = top10_list[["Eccentricity"]]$Party,
-  Eccentricity_Value = round(top10_list[["Eccentricity"]]$Eccentricity, 4),
+  Eccentricity_Party = top5_list[["Eccentricity"]]$Party,
+  Eccentricity_Value = round(top5_list[["Eccentricity"]]$Eccentricity, 4),
 
   stringsAsFactors = FALSE
 )
 
-write.csv(top10_consolidated,
-          file.path(output_dir, "top10_all_centralities_consolidated.csv"),
+write.csv(top5_consolidated,
+          file.path(output_dir, "top5_all_centralities_consolidated.csv"),
           row.names = FALSE)
-cat("✓ Saved: top10_all_centralities_consolidated.csv\n\n")
+cat("✓ Saved: top5_all_centralities_consolidated.csv\n\n")
 
 cat("================================================================================\n")
-cat("TOP 10 SUMMARY:\n")
+cat("TOP 5 SUMMARY:\n")
 cat("================================================================================\n")
-for (measure_name in names(top10_list)) {
+for (measure_name in names(top5_list)) {
   cat(sprintf("\n%s:\n", measure_name))
-  top10_data <- top10_list[[measure_name]]
-  for (i in 1:10) {
-    cat(sprintf("  %d. %s (%.4f)\n", i, top10_data$Party[i], top10_data[i, 2]))
+  top5_data <- top5_list[[measure_name]]
+  for (i in 1:5) {
+    cat(sprintf("  %d. %s (%.4f)\n", i, top5_data$Party[i], top5_data[i, 2]))
   }
 }
 cat("\n")
@@ -1126,15 +1126,15 @@ cat("  • 07_clustering_coefficient_plots.pdf (4 plots)\n")
 cat("  • 08_basic_network_metrics.pdf (6 plots)\n")
 cat("  • 09_network_metrics_table.pdf (summary table)\n")
 cat("  • 10_centrality_comparison_comprehensive.pdf (1 plot)\n")
-cat("  • 11_top10_all_centralities.pdf (visual table)\n\n")
+cat("  • 11_top5_all_centralities.pdf (visual table)\n\n")
 
 cat("CSV DATA FILES:\n")
-cat("  • top10_degree.csv\n")
-cat("  • top10_betweenness.csv\n")
-cat("  • top10_closeness.csv\n")
-cat("  • top10_eigenvector.csv\n")
-cat("  • top10_eccentricity.csv\n")
-cat("  • top10_all_centralities_consolidated.csv (all measures in one file)\n\n")
+cat("  • top5_degree.csv\n")
+cat("  • top5_betweenness.csv\n")
+cat("  • top5_closeness.csv\n")
+cat("  • top5_eigenvector.csv\n")
+cat("  • top5_eccentricity.csv\n")
+cat("  • top5_all_centralities_consolidated.csv (all measures in one file)\n\n")
 
 cat("CENTRALITY PLOTS (01-07) EACH CONTAIN:\n")
 cat("  1. Top 30 parties bar chart (NO OVERLAP)\n")
