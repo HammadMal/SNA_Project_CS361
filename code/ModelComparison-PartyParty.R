@@ -180,53 +180,33 @@ cat("===========================================================================
 cat("CREATING COMPARISON TABLE\n")
 cat("================================================================================\n\n")
 
-# Combine all metrics
+# Combine all metrics - only key metrics
 comparison_df <- data.frame(
-  Metric = c("Nodes", "Edges", "Average Degree", "Max Degree",
-             "Average Path Length", "Clustering Coefficient",
-             "Network Diameter", "Power-Law Exponent"),
+  Metric = c("Average Path Length",
+             "Avg Clustering Coefficient",
+             "Power Law Coefficient"),
 
   Party_Party = c(
-    metrics_actual$Nodes,
-    metrics_actual$Edges,
-    round(metrics_actual$AvgDegree, 2),
-    metrics_actual$MaxDegree,
     round(metrics_actual$AvgPathLength, 3),
     round(metrics_actual$ClusteringCoef, 3),
-    metrics_actual$Diameter,
     round(metrics_actual$PowerLawExp, 3)
   ),
 
   Random_ER = c(
-    metrics_random$Nodes,
-    metrics_random$Edges,
-    round(metrics_random$AvgDegree, 2),
-    metrics_random$MaxDegree,
     round(metrics_random$AvgPathLength, 3),
     round(metrics_random$ClusteringCoef, 3),
-    metrics_random$Diameter,
     round(metrics_random$PowerLawExp, 3)
   ),
 
   SmallWorld_WS = c(
-    metrics_smallworld$Nodes,
-    metrics_smallworld$Edges,
-    round(metrics_smallworld$AvgDegree, 2),
-    metrics_smallworld$MaxDegree,
     round(metrics_smallworld$AvgPathLength, 3),
     round(metrics_smallworld$ClusteringCoef, 3),
-    metrics_smallworld$Diameter,
     round(metrics_smallworld$PowerLawExp, 3)
   ),
 
   ScaleFree_BA = c(
-    metrics_scalefree$Nodes,
-    metrics_scalefree$Edges,
-    round(metrics_scalefree$AvgDegree, 2),
-    metrics_scalefree$MaxDegree,
     round(metrics_scalefree$AvgPathLength, 3),
     round(metrics_scalefree$ClusteringCoef, 3),
-    metrics_scalefree$Diameter,
     round(metrics_scalefree$PowerLawExp, 3)
   ),
 
@@ -249,7 +229,7 @@ cat("✓ Saved: model_comparison_table.csv\n\n")
 
 cat("Creating visual comparison table...\n")
 
-pdf(file.path(output_dir, "model_comparison_visual.pdf"), width = 14, height = 10)
+pdf(file.path(output_dir, "model_comparison_visual.pdf"), width = 14, height = 7)
 
 par(mar = c(1, 1, 3, 1))
 plot.new()
@@ -263,23 +243,23 @@ n_rows <- nrow(comparison_df)
 n_cols <- ncol(comparison_df)
 
 col_width <- 0.18
-row_height <- 0.08
+row_height <- 0.12
 start_x <- 0.1
-start_y <- 0.85
+start_y <- 0.75
 
-# Header colors
-header_colors <- c("gray30", "steelblue", "coral", "gold", "lightgreen")
+# Header color - single color for all columns
+header_color <- "steelblue"
 
 # Draw headers
 for(j in 1:n_cols) {
   x_pos <- start_x + (j - 1) * col_width
 
   rect(x_pos, start_y, x_pos + col_width, start_y + row_height,
-       col = header_colors[j], border = "white", lwd = 2)
+       col = header_color, border = "white", lwd = 2)
 
   text(x_pos + col_width/2, start_y + row_height/2,
        colnames(comparison_df)[j],
-       cex = 1.0, font = 2, col = "white")
+       cex = 1.1, font = 2, col = "white")
 }
 
 # Draw data rows
@@ -296,24 +276,32 @@ for(i in 1:n_rows) {
 
     # Cell text
     cell_value <- as.character(comparison_df[i, j])
-    text(x_pos + col_width/2, y_pos + row_height/2,
-         cell_value,
-         cex = 0.85, font = if(j == 1) 2 else 1)
+    if(j == 1) {
+      # Left-align metric names with padding
+      text(x_pos + 0.01, y_pos + row_height/2,
+           cell_value,
+           cex = 0.95, font = 2, adj = 0)
+    } else {
+      # Center-align values
+      text(x_pos + col_width/2, y_pos + row_height/2,
+           cell_value,
+           cex = 1.0, font = 1)
+    }
   }
 }
 
 # Add interpretation notes
-text(0.5, 0.08,
+text(0.5, 0.12,
      "Interpretation:",
-     cex = 1.2, font = 2, pos = 1)
+     cex = 1.3, font = 2, pos = 1)
+
+text(0.5, 0.07,
+     "• Low Path Length + High Clustering → Small-World characteristics",
+     cex = 1.0, pos = 1, col = "gray30")
 
 text(0.5, 0.04,
-     "• Low Path Length + High Clustering → Small-World characteristics",
-     cex = 0.9, pos = 1, col = "gray30")
-
-text(0.5, 0.02,
-     "• Power-Law Exponent ~2-3 → Scale-Free characteristics (hub-dominated)",
-     cex = 0.9, pos = 1, col = "gray30")
+     "• Power Law Coefficient ~2-3 → Scale-Free characteristics (hub-dominated)",
+     cex = 1.0, pos = 1, col = "gray30")
 
 dev.off()
 

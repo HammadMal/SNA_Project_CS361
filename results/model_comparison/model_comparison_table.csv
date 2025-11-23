@@ -1,9 +1,4 @@
 "Metric","Party_Party","Random_ER","SmallWorld_WS","ScaleFree_BA"
-"Nodes",87,87,87,87
-"Edges",292,292,261,255
-"Average Degree",6.71,6.71,6,5.86
-"Max Degree",33,12,8,33
 "Average Path Length",2.862,2.547,3.073,2.531
-"Clustering Coefficient",0.348,0.064,0.314,0.11
-"Network Diameter",6,4,6,5
-"Power-Law Exponent",0.914,0.081,2.561,1.536
+"Avg Clustering Coefficient",0.348,0.064,0.314,0.11
+"Power Law Coefficient",0.914,0.081,2.561,1.536
