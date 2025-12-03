@@ -131,21 +131,30 @@ calculate_metrics <- function(g, network_name) {
   max_deg <- max(deg)
 
   # Check for power-law (scale-free property)
-  # Fit power-law: P(k) ~ k^(-gamma)
-  # We'll use a simple log-log regression as approximation
-  deg_table <- table(deg)
-  deg_counts <- as.numeric(deg_table)
-  deg_values <- as.numeric(names(deg_table))
+  # Fit power-law using CCDF (Complementary Cumulative Distribution Function)
+  # This is the proper method: P(X >= k) ~ k^(-gamma+1)
+  deg_sorted <- sort(deg, decreasing = TRUE)
+  unique_deg <- sort(unique(deg))
 
-  # Remove zeros for log
-  valid_idx <- deg_values > 0 & deg_counts > 0
-  if(sum(valid_idx) > 3) {
-    log_deg <- log(deg_values[valid_idx])
-    log_count <- log(deg_counts[valid_idx])
+  if(length(unique_deg) > 3 && max(unique_deg) > 0) {
+    # Calculate CCDF: proportion of nodes with degree >= k
+    ccdf <- sapply(unique_deg, function(k) sum(deg >= k) / length(deg))
 
-    # Linear regression on log-log
-    fit <- lm(log_count ~ log_deg)
-    power_law_exp <- abs(coef(fit)[2])  # Slope = -gamma
+    # Remove zeros and small values for log (use only k >= 1)
+    valid_idx <- unique_deg >= 1 & ccdf > 0
+
+    if(sum(valid_idx) > 3) {
+      log_deg <- log(unique_deg[valid_idx])
+      log_ccdf <- log(ccdf[valid_idx])
+
+      # Linear regression on log-log CCDF
+      # For CCDF: P(X >= k) ~ k^(-(gamma-1))
+      # So slope = -(gamma-1), therefore gamma = -slope + 1
+      fit <- lm(log_ccdf ~ log_deg)
+      power_law_exp <- -coef(fit)[2] + 1  # gamma = -slope + 1
+    } else {
+      power_law_exp <- NA
+    }
   } else {
     power_law_exp <- NA
   }
@@ -317,21 +326,22 @@ pdf(file.path(output_dir, "degree_distribution_comparison.pdf"), width = 16, hei
 
 par(mfrow = c(2, 2), mar = c(5, 5, 4, 2))
 
-# Function to plot degree distribution
+# Function to plot degree distribution using CCDF
 plot_degree_dist <- function(g, title, col) {
   deg <- degree(g)
-  deg_table <- table(deg)
-  deg_counts <- as.numeric(deg_table)
-  deg_values <- as.numeric(names(deg_table))
+  unique_deg <- sort(unique(deg))
 
-  # Remove zeros
-  valid_idx <- deg_values > 0 & deg_counts > 0
+  # Calculate CCDF
+  ccdf <- sapply(unique_deg, function(k) sum(deg >= k) / length(deg))
 
-  plot(deg_values[valid_idx], deg_counts[valid_idx],
+  # Remove zeros for log
+  valid_idx <- unique_deg >= 1 & ccdf > 0
+
+  plot(unique_deg[valid_idx], ccdf[valid_idx],
        log = "xy",
        main = title,
-       xlab = "Degree (log scale)",
-       ylab = "Frequency (log scale)",
+       xlab = "Degree k (log scale)",
+       ylab = "P(X ≥ k) - CCDF (log scale)",
        pch = 16,
        col = col,
        cex = 1.5,
@@ -339,19 +349,22 @@ plot_degree_dist <- function(g, title, col) {
        cex.lab = 1.3,
        cex.axis = 1.2)
 
-  # Add power-law fit line
+  # Add power-law fit line using CCDF
   if(sum(valid_idx) > 3) {
-    log_deg <- log(deg_values[valid_idx])
-    log_count <- log(deg_counts[valid_idx])
-    fit <- lm(log_count ~ log_deg)
+    log_deg <- log(unique_deg[valid_idx])
+    log_ccdf <- log(ccdf[valid_idx])
+    fit <- lm(log_ccdf ~ log_deg)
 
-    lines(deg_values[valid_idx],
+    lines(unique_deg[valid_idx],
           exp(predict(fit)),
-          col = "red", lwd = 2, lty = 2)
+          col = "red", lwd = 3, lty = 2)
+
+    # Calculate gamma from CCDF slope
+    gamma <- -coef(fit)[2] + 1
 
     legend("topright",
-           legend = sprintf("γ = %.2f", abs(coef(fit)[2])),
-           col = "red", lty = 2, lwd = 2,
+           legend = sprintf("γ = %.2f", gamma),
+           col = "red", lty = 2, lwd = 3,
            cex = 1.2,
            bg = "white")
   }
