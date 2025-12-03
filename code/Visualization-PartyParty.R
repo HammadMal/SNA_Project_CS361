@@ -9,9 +9,9 @@
 # ==============================================================================
 
 # --- Load Required Libraries ---
-# install.packages("igraph", dependencies=TRUE)
+install.packages("igraph", dependencies=TRUE)
 
-# library(igraph)
+library(igraph)
 
 # ==============================================================================
 # 1. CONFIGURATION
@@ -457,7 +457,10 @@ pdf(file.path(output_dir, "08_network_degree_centrality.pdf"), width = 14, heigh
 deg_viz <- degree(g_viz)
 deg_norm <- (deg_viz - min(deg_viz)) / (max(deg_viz) - min(deg_viz))
 node_size_deg <- deg_norm * 15 + 3
-node_colors_deg <- rgb(deg_norm, 0, 1 - deg_norm, 0.8)
+
+# Color by degree using light pink → light lavender → light blue gradient (same as clustering)
+node_colors_deg <- colorRampPalette(c("#FFC0CB", "#E6E6FA", "#B0E0E6"), alpha = TRUE)(100)[
+                   ceiling(deg_norm * 99) + 1]
 
 # Variable label distance: only very small nodes get more distance
 # Large/medium nodes stay close (0.1), only very small nodes get pushed out
@@ -467,12 +470,12 @@ label_dist_deg <- ifelse(deg_norm > 0.3,  # If node is medium or large
 
 plot(g_viz,
      layout = common_layout,
-     vertex.size = node_size_deg,
+     vertex.size = 10,
      vertex.color = node_colors_deg,
      vertex.label = V(g_viz)$name,      # Show ALL labels
      vertex.label.cex = 0.5,             # Smaller font for readability
      vertex.label.color = "black",
-     vertex.label.dist = label_dist_deg, # Variable distance based on node size
+     vertex.label.dist = 0, # Variable distance based on node size
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
@@ -480,7 +483,7 @@ plot(g_viz,
 
 legend("topright",
        legend = c("High Degree", "Medium Degree", "Low Degree"),
-       col = c("red", "purple", "blue"),
+       col = colorRampPalette(c("#B0E0E6", "#E6E6FA", "#FFC0CB"), alpha = TRUE)(3),
        pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
 
 dev.off()
@@ -499,15 +502,15 @@ betw_norm <- (betw_log - min(betw_log)) / (max(betw_log) - min(betw_log))
 # Adjust node sizes to show more variation
 node_size_betw <- betw_norm * 15 + 2  # Range from 2 to 17
 
-# Use orange color scheme with more distinct gradients
-node_colors_betw <- colorRampPalette(c("#FEE6CE", "#FD8D3C", "#990000"))(100)[
+# Use same color scheme as clustering coefficient (light pink → lavender → light blue)
+node_colors_betw <- colorRampPalette(c("#FFC0CB", "#E6E6FA", "#B0E0E6"), alpha = TRUE)(100)[
                      ceiling(betw_norm * 99) + 1]
 
 plot(g_viz,
      layout = common_layout,
-     vertex.size = node_size_betw,
+     vertex.size = 10,
      vertex.color = node_colors_betw,
-     vertex.label = ifelse(top_50_betw > quantile(top_50_betw, 0.70), V(g_viz)$name, NA),
+     vertex.label = V(g_viz)$name,  # Show ALL labels
      vertex.label.cex = 0.6,
      vertex.label.color = "black",
      vertex.label.dist = 0,
@@ -518,7 +521,7 @@ plot(g_viz,
 
 legend("topright",
        legend = c("High Betweenness", "Medium Betweenness", "Low Betweenness"),
-       col = colorRampPalette(c("#990000", "#FD8D3C", "#FEE6CE"))(3),
+       col = colorRampPalette(c("#B0E0E6", "#E6E6FA", "#FFC0CB"), alpha = TRUE)(3),
        pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
 
 dev.off()
@@ -756,12 +759,12 @@ label_dist_clust <- ifelse(clust_norm > 0.3,  # If node is medium or large
 # Use same layout as other centrality plots
 plot(g_clust_viz,
      layout = common_layout,
-     vertex.size = node_size_clust,
+     vertex.size = 10,
      vertex.color = node_colors_clust,
      vertex.label = V(g_clust_viz)$name,        # Show ALL labels
      vertex.label.cex = 0.5,                     # Smaller font for readability
      vertex.label.color = "black",
-     vertex.label.dist = label_dist_clust,      # Variable distance based on node size
+     vertex.label.dist = 0,      # Variable distance based on node size
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
@@ -850,8 +853,17 @@ node_size_louvain <- (node_size_louvain - min(node_size_louvain)) /
 
 # Shorten long party name for better visualization
 labels_louvain <- V(g_party)$name
-labels_louvain[labels_louvain == "Sindh Taraqi Passand Party (STP)"] <- "STP" 
+labels_louvain[labels_louvain == "Sindh Taraqi Passand Party (STP)"] <- "STP"
 labels_louvain[labels_louvain == "Sindh Dost Ittehad (SDI) Party"] <- "SDI"
+
+# Get edge weights and normalize for edge thickness
+edge_weights <- E(g_party)$weight
+if(is.null(edge_weights)) {
+  edge_weights <- rep(1, ecount(g_party))
+}
+# Normalize weights to more visible edge widths (0.1 to 4)
+edge_widths <- (edge_weights - min(edge_weights)) / (max(edge_weights) - min(edge_weights))
+edge_widths <- edge_widths * 3.9 + 0.1
 
 plot(g_party,
      layout = layout_louvain,
@@ -862,8 +874,8 @@ plot(g_party,
      vertex.label.color = "black",
      vertex.label.dist = 0.1,
      vertex.frame.color = "white",
-     edge.width = 0.3,
-     edge.color = rgb(0, 0, 0, 0.1),
+     edge.width = edge_widths,
+     edge.color = rgb(0, 0, 0, 0.15),
      main = sprintf("Louvain Communities - All Parties (Circular Layout)\n%d communities, Modularity = %.3f",
                    length(louvain_comm), modularity(louvain_comm)))
 
@@ -874,11 +886,19 @@ legend("bottomright",
        legend = legend_text,
        col = community_colors,
        pch = 16,
-       pt.cex = 1.5,
-       cex = 0.6,
+       pt.cex = 2,
+       cex = 1.0,
        bg = "white",
        title = "Communities",
        ncol = 2)
+
+# Add note about edge thickness
+text(x = par("usr")[1], y = par("usr")[3],
+     labels = "Note: Edge thickness represents connection weight (number of shared candidates)",
+     adj = c(0, -0.5),
+     cex = 0.9,
+     col = "black",
+     font = 3)
 
 dev.off()
 cat("✓ Saved: 15_louvain_communities_all.pdf (with circular community layout for all parties)\n\n")
