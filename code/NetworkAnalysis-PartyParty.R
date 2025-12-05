@@ -203,7 +203,7 @@ cat(sprintf("Min Degree: %d\n\n", min(deg)))
 cat("--- BETWEENNESS CENTRALITY ---\n")
 cat("How often a party lies on shortest paths between other parties\n\n")
 
-betw <- betweenness(g_party, directed = FALSE, weights = NA)
+betw <- betweenness(g_party, directed = FALSE, weights = NA, normalized = TRUE)
 betw_df <- data.frame(
   Party = party_names,
   Betweenness = betw,

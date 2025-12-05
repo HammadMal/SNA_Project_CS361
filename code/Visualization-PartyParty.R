@@ -495,9 +495,8 @@ pdf(file.path(output_dir, "09_network_betweenness_centrality.pdf"), width = 14, 
 # Get betweenness values from full network but only for top 50
 top_50_betw <- centrality$Betweenness[match(V(g_viz)$name, centrality$Party)]
 
-# Log transform the betweenness values to better handle the large range
-betw_log <- log1p(top_50_betw)  # log1p to handle zeros
-betw_norm <- (betw_log - min(betw_log)) / (max(betw_log) - min(betw_log))
+# Betweenness is already normalized (0-1), so no log transform needed
+betw_norm <- (top_50_betw - min(top_50_betw)) / (max(top_50_betw) - min(top_50_betw))
 
 # Adjust node sizes to show more variation
 node_size_betw <- betw_norm * 15 + 2  # Range from 2 to 17
@@ -517,7 +516,7 @@ plot(g_viz,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Betweenness Centrality\n(Size and Color by Betweenness, Log-scaled)")
+     main = "Party Network - Betweenness Centrality\n(Size and Color by Normalized Betweenness)")
 
 legend("topright",
        legend = c("High Betweenness", "Medium Betweenness", "Low Betweenness"),

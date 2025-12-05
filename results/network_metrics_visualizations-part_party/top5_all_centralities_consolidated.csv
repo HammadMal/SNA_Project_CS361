@@ -1,6 +1,6 @@
 "Rank","Degree_Party","Degree_Value","Betweenness_Party","Betweenness_Value","Closeness_Party","Closeness_Value","Eigenvector_Party","Eigenvector_Value","Eccentricity_Party","Eccentricity_Value"
-1,"TLP",33,"TLP",672.7277,"PMML",0.4699,"PPP",1,"TTP",3
-2,"MQM",31,"MQM",517.1715,"JI",0.4674,"MQM",0.993,"APML",4
-3,"PPP",29,"PTI",448.4605,"PRHP",0.4526,"TLP",0.9783,"AWP",4
-4,"JI-P",28,"JUI-F",442.2298,"MDM",0.4503,"PMML",0.9733,"BNP",4
-5,"PMML",27,"JI-P",419.4778,"TTP",0.4503,"JI-P",0.9405,"BNP-A",4
+1,"TLP",33,"TLP",0.1841,"PMML",0.4699,"PPP",1,"TTP",3
+2,"MQM",31,"MQM",0.1415,"JI",0.4674,"MQM",0.993,"APML",4
+3,"PPP",29,"PTI",0.1227,"PRHP",0.4526,"TLP",0.9783,"AWP",4
+4,"JI-P",28,"JUI-F",0.121,"MDM",0.4503,"PMML",0.9733,"BNP",4
+5,"PMML",27,"JI-P",0.1148,"TTP",0.4503,"JI-P",0.9405,"BNP-A",4
