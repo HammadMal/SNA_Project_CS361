@@ -148,8 +148,7 @@ cent_matrix <- as.matrix(top_parties[, c("Degree_norm", "Betweenness_norm",
                                           "PageRank_norm")])
 rownames(cent_matrix) <- top_parties$Party
 
-# Set margins: bottom, left, top, right (extra space on bottom and top)
-par(mar = c(11, 5, 6, 2))
+# Set margins: bottom, left, top, right (extra space on bottom and tor = c(11, 5, 6, 2))
 
 barplot(t(cent_matrix),
         beside = TRUE,
@@ -479,7 +478,7 @@ plot(g_viz,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Degree Centrality\n(Size and Color by Degree)")
+     main = "Party Network - Degree Centrality\n(Color by Degree)")
 
 legend("topright",
        legend = c("High Degree", "Medium Degree", "Low Degree"),
@@ -516,7 +515,7 @@ plot(g_viz,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Betweenness Centrality\n(Size and Color by Normalized Betweenness)")
+     main = "Party Network - Betweenness Centrality\n(Color by Betweenness)")
 
 legend("topright",
        legend = c("High Betweenness", "Medium Betweenness", "Low Betweenness"),
@@ -550,7 +549,7 @@ plot(g_viz,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Closeness Centrality\n(Size and Color by Closeness, Log-scaled)")
+     main = "Party Network - Closeness Centrality\n(Size and Color ess, Log-scaled)")
 
 legend("topright",
        legend = c("High Closeness", "Medium Closeness", "Low Closeness"),
@@ -582,7 +581,7 @@ plot(g_viz,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Eigenvector Centrality\n(Size and Color by Eigenvector, Log-scaled)")
+     main = "Party Network - Eigenvector Centrality\n(Size and Color bytor, Log-scaled)")
 
 legend("topright",
        legend = c("High Eigenvector", "Medium Eigenvector", "Low Eigenvector"),
@@ -614,7 +613,7 @@ plot(g_viz,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - PageRank\n(Size and Color by PageRank, Log-scaled)")
+     main = "Party Network - PageRank\n(Size and Colorank, Log-scaled)")
 
 legend("topright",
        legend = c("High PageRank", "Medium PageRank", "Low PageRank"),
@@ -635,8 +634,7 @@ cat("Value counts:\n")
 print(table(top_50_ecc))
 cat("\n")
 
-# Get unique values and create a discrete color scheme
-unique_ecc <- sort(unique(top_50_ecc))
+# Get unique values and create a discrete color scue_ecc <- sort(unique(top_50_ecc))
 n_levels <- length(unique_ecc)
 
 # Create a color palette from DARK (for 0) to LIGHT (for max)
@@ -740,7 +738,7 @@ g_clust_viz <- induced_subgraph(g_party, V(g_party)$name %in% top_50_parties_clu
 top_50_clust <- clustering_df_full$Clustering[match(V(g_clust_viz)$name, clustering_df_full$Party)]
 
 # Normalize clustering for sizing and coloring
-clust_norm <- (top_50_clust - min(top_50_clust)) / (max(top_50_clust) - min(top_50_clust))
+clust_nor_50_clust - min(top_50_clust)) / (max(top_50_clust) - min(top_50_clust))
 
 # Size by clustering (adjusted range)
 node_size_clust <- clust_norm * 12 + 3  # smaller multiplier for better size range
@@ -767,7 +765,7 @@ plot(g_clust_viz,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Clustering Coefficient\n(Size and Color by Local Clustering)")
+     main = "Party Network - Clustering Coefficient\n(Color by Clustering)")
 
 legend("topright",
        legend = c("High Clustering", "Medium Clustering", "Low Clustering"),
@@ -855,8 +853,7 @@ labels_louvain <- V(g_party)$name
 labels_louvain[labels_louvain == "Sindh Taraqi Passand Party (STP)"] <- "STP"
 labels_louvain[labels_louvain == "Sindh Dost Ittehad (SDI) Party"] <- "SDI"
 
-# Get edge weights and normalize for edge thickness
-edge_weights <- E(g_party)$weight
+# Get edge weights and normalize for edge thice_weights <- E(g_party)$weight
 if(is.null(edge_weights)) {
   edge_weights <- rep(1, ecount(g_party))
 }
@@ -1065,7 +1062,7 @@ cat(sprintf("Visualizing complete network: %d nodes, %d edges\n",
 set.seed(123)
 cat("Calculating layout (this may take a moment)...\n")
 # Use graphopt layout for better spacing and fewer overlaps
-complete_layout <- layout_with_graphopt(g_party,
+complete_layout _with_graphopt(g_party,
                                         niter = 1000,
                                         charge = 0.02,
                                         mass = 30,
@@ -1267,7 +1264,7 @@ cat("  • 14_network_clustering_coefficient.pdf\n")
 cat("  • 15_louvain_communities_all.pdf\n")
 cat("  • 16_walktrap_communities_top50.pdf\n")
 cat("  • 17_community_comparison.pdf (2 plots)\n")
-cat("  • 18_pti_ego_network.pdf (PTI and direct connections)\n\n")
+cat("  • 18_pti_ego_network.pdf (PTI anconnections)\n\n")
 
 cat("CSV FILES:\n")
 cat("  • clustering_coefficient.csv\n")
