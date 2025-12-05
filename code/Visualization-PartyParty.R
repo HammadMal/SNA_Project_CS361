@@ -515,7 +515,7 @@ plot(g_viz,
      vertex.frame.color = "white",
      edge.width = 0.3,
      edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Betweenness Centrality\n(Color by Betweenness)")
+     main = "Party Network - Betweenness Centrality\n(Color by Normalized Betweenness)")
 
 legend("topright",
        legend = c("High Betweenness", "Medium Betweenness", "Low Betweenness"),
