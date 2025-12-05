@@ -8,10 +8,10 @@
 # Network Type: Party-Party Unipartite Projection (Weighted)
 # ==============================================================================
 
-# --- Load Required Libraries ---
-install.packages("igraph", dependencies=TRUE)
+# # --- Load Required Libraries ---
+# install.packages("igraph", dependencies=TRUE)
 
-library(igraph)
+# library(igraph)
 
 # ==============================================================================
 # 1. CONFIGURATION
@@ -1112,7 +1112,137 @@ dev.off()
 cat("✓ Saved: 06_complete_unipartite_network.pdf\n\n")
 
 # ==============================================================================
-# 16. SUMMARY
+# 16. EGO NETWORK VISUALIZATION - PTI
+# ==============================================================================
+
+cat("================================================================================\n")
+cat("CREATING EGO NETWORK VISUALIZATION FOR PTI\n")
+cat("================================================================================\n\n")
+
+# Find PTI in the network
+pti_pattern <- "Pakistan Tehreek-e-Insaf|PTI"
+pti_match <- grep(pti_pattern, V(g_party)$name, ignore.case = TRUE)
+
+if(length(pti_match) == 0) {
+  cat("⚠ PTI not found in network. Searching for similar names...\n")
+  cat("Available parties containing 'Pakistan':\n")
+  print(grep("Pakistan", V(g_party)$name, value = TRUE, ignore.case = TRUE))
+} else {
+  pti_name <- V(g_party)$name[pti_match[1]]
+  cat(sprintf("✓ Found: %s\n", pti_name))
+
+  # Create ego network (order = 1 means direct neighbors only)
+  ego_net <- make_ego_graph(g_party, order = 1, nodes = pti_match[1])[[1]]
+
+  cat(sprintf("✓ PTI ego network: %d nodes (PTI + %d neighbors), %d edges\n",
+              vcount(ego_net), vcount(ego_net) - 1, ecount(ego_net)))
+
+  # Get centrality measures for ego network nodes
+  ego_nodes <- V(ego_net)$name
+  ego_centrality <- centrality[centrality$Party %in% ego_nodes, ]
+
+  # Create visualization
+  pdf(file.path(output_dir, "18_pti_ego_network.pdf"), width = 16, height = 12)
+
+  # Identify PTI node
+  pti_node_idx <- which(V(ego_net)$name == pti_name)
+
+  # Create star layout with PTI at center
+  set.seed(123)
+  ego_layout <- layout_as_star(ego_net, center = pti_node_idx)
+
+  # All nodes same size, PTI larger
+  node_sizes <- rep(10, vcount(ego_net))
+  node_sizes[pti_node_idx] <- 25
+
+  # All nodes same color (light blue), PTI in red
+  node_colors <- rep("#90CAF9", vcount(ego_net))
+  node_colors[pti_node_idx] <- "#D32F2F"
+
+  # Edge weights for visualization
+  edge_weights <- E(ego_net)$weight
+  if(is.null(edge_weights)) {
+    edge_weights <- rep(1, ecount(ego_net))
+  }
+  edge_widths <- (edge_weights - min(edge_weights)) /
+                 (max(edge_weights) - min(edge_weights)) * 4 + 0.5
+
+  # Identify edges connected to PTI
+  pti_edges <- incident(ego_net, pti_node_idx)
+  edge_colors <- rep(rgb(0, 0, 0, 0.2), ecount(ego_net))
+  edge_colors[pti_edges] <- rgb(0.8, 0, 0, 0.6)  # Red for PTI connections
+
+  plot(ego_net,
+       layout = ego_layout,
+       vertex.size = node_sizes,
+       vertex.color = node_colors,
+       vertex.label = V(ego_net)$name,
+       vertex.label.cex = 0.7,
+       vertex.label.color = "black",
+       vertex.label.dist = 0.2,
+       vertex.label.font = 2,
+       vertex.frame.color = "white",
+       edge.width = edge_widths,
+       edge.color = edge_colors,
+       main = sprintf("Ego Network: %s\n%d Direct Connections",
+                     pti_name, vcount(ego_net) - 1))
+
+  # Add legend
+  legend("topright",
+         legend = c(
+           pti_name,
+           "Connected Parties",
+           "",
+           "Edge thickness = Weight",
+           "Red edges = PTI connections"
+         ),
+         col = c("#D32F2F", "#90CAF9", NA, NA, NA),
+         pch = c(16, 16, NA, NA, NA),
+         pt.cex = c(2.5, 2, NA, NA, NA),
+         cex = 0.9,
+         bg = "white",
+         box.col = "gray50")
+
+  dev.off()
+
+  cat("✓ Saved: 18_pti_ego_network.pdf\n")
+
+  # Save ego network data
+  ego_network_df <- data.frame(
+    Party = V(ego_net)$name,
+    Degree_in_Ego = degree(ego_net),
+    Degree_in_Full = ego_centrality$Degree[match(V(ego_net)$name, ego_centrality$Party)],
+    Betweenness = ego_centrality$Betweenness[match(V(ego_net)$name, ego_centrality$Party)],
+    Closeness = ego_centrality$Closeness[match(V(ego_net)$name, ego_centrality$Party)],
+    Is_PTI = ifelse(V(ego_net)$name == pti_name, "Yes", "No"),
+    stringsAsFactors = FALSE
+  )
+
+  write.csv(ego_network_df[order(-ego_network_df$Degree_in_Ego), ],
+            file.path(output_dir, "pti_ego_network.csv"),
+            row.names = FALSE)
+  cat("✓ Saved: pti_ego_network.csv\n\n")
+
+  # Print top connected parties to PTI
+  cat("Top 10 Parties Connected to PTI (by connection weight):\n")
+  pti_neighbors <- neighbors(g_party, pti_match[1])
+  pti_neighbor_names <- V(g_party)$name[pti_neighbors]
+  pti_edge_weights <- E(g_party)[from(pti_match[1])]$weight
+  if(is.null(pti_edge_weights)) {
+    pti_edge_weights <- rep(1, length(pti_neighbors))
+  }
+  pti_connections <- data.frame(
+    Party = pti_neighbor_names,
+    Connection_Weight = pti_edge_weights,
+    stringsAsFactors = FALSE
+  )
+  pti_connections <- pti_connections[order(-pti_connections$Connection_Weight), ]
+  print(head(pti_connections, 10), row.names = FALSE)
+  cat("\n")
+}
+
+# ==============================================================================
+# 17. SUMMARY
 # ==============================================================================
 
 cat("================================================================================\n")
@@ -1134,17 +1264,19 @@ cat("  • 11_network_eigenvector_centrality.pdf\n")
 cat("  • 12_network_pagerank_centrality.pdf\n")
 cat("  • 13_network_eccentricity.pdf\n")
 cat("  • 14_network_clustering_coefficient.pdf\n")
-cat("  • 15_louvain_communities_top50.pdf\n")
+cat("  • 15_louvain_communities_all.pdf\n")
 cat("  • 16_walktrap_communities_top50.pdf\n")
-cat("  • 17_community_comparison.pdf (2 plots)\n\n")
+cat("  • 17_community_comparison.pdf (2 plots)\n")
+cat("  • 18_pti_ego_network.pdf (PTI and direct connections)\n\n")
 
 cat("CSV FILES:\n")
 cat("  • clustering_coefficient.csv\n")
 cat("  • louvain_communities.csv\n")
 cat("  • walktrap_communities.csv\n")
-cat("  • community_summary.csv\n\n")
+cat("  • community_summary.csv\n")
+cat("  • pti_ego_network.csv\n\n")
 
 cat("✓ All visualizations created successfully!\n")
-cat("✓ Total: 18 PDFs + 4 CSVs\n\n")
+cat("✓ Total: 19 PDFs + 5 CSVs\n\n")
 
 cat("================================================================================\n")
