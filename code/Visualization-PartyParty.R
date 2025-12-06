@@ -505,23 +505,28 @@ node_size_betw <- betw_norm * 15 + 2  # Range from 2 to 17
 node_colors_betw <- colorRampPalette(c("#FFC0CB", "#E6E6FA", "#B0E0E6"), alpha = TRUE)(100)[
                      ceiling(betw_norm * 99) + 1]
 
+# Shorten long party names for better visualization
+labels_betw <- V(g_viz)$name
+labels_betw[labels_betw == "Sindh Dost Ittehad (SDI) Party"] <- "SDI"
+
 plot(g_viz,
      layout = common_layout,
-     vertex.size = 10,
+     vertex.size = 15,
      vertex.color = node_colors_betw,
-     vertex.label = V(g_viz)$name,  # Show ALL labels
-     vertex.label.cex = 0.6,
+     vertex.label = labels_betw,  # Show ALL labels
+     vertex.label.cex = 2,
      vertex.label.color = "black",
      vertex.label.dist = 0,
      vertex.frame.color = "white",
-     edge.width = 0.3,
-     edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Betweenness Centrality\n(Color by Normalized Betweenness)")
+     edge.width = 0.5,
+     edge.color = rgb(0, 0, 0, 0.2),
+     main = "Party Network - Betweenness Centrality\n(Color by Normalized Betweenness)",
+     cex.main = 4)
 
 legend("topright",
        legend = c("High Betweenness", "Medium Betweenness", "Low Betweenness"),
        col = colorRampPalette(c("#B0E0E6", "#E6E6FA", "#FFC0CB"), alpha = TRUE)(3),
-       pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
+       pch = 16, pt.cex = 6, cex = 2, bg = "white")
 
 dev.off()
 cat("✓ Saved: 09_network_betweenness_centrality.pdf\n")
@@ -761,21 +766,21 @@ plot(g_clust_viz,
      vertex.size = 15,
      vertex.color = node_colors_clust,
      vertex.label = V(g_clust_viz)$name,        # Show ALL labels
-     vertex.label.cex = 0.8,                     # Larger font for poster
+     vertex.label.cex = 2,                     # Larger font for poster
      vertex.label.color = "black",
      vertex.label.dist = 0,      # Variable distance based on node size
      vertex.frame.color = "white",
      edge.width = 0.5,
      edge.color = rgb(0, 0, 0, 0.2),
      main = "Party Network - Clustering Coefficient\n(Color by Clustering)",
-     cex.main = 2)
+     cex.main = 4)
 
 legend("topright",
        legend = c("High Clustering", "Medium Clustering", "Low Clustering"),
        col = colorRampPalette(c("#B0E0E6", "#E6E6FA", "#FFC0CB"), alpha = TRUE)(3),
        pch = 16,
-       pt.cex = 3,
-       cex = 1.5,
+       pt.cex = 8,
+       cex = 3,
        bg = "white")
 
 dev.off()
@@ -867,7 +872,7 @@ edge_widths <- edge_widths * 3.9 + 0.1
 
 plot(g_party,
      layout = layout_louvain,
-     vertex.size = node_size_louvain * 1.3,
+     vertex.size = node_size_louvain ,
      vertex.color = node_colors_louvain,
      vertex.label = labels_louvain,
      vertex.label.cex = 1.0,
