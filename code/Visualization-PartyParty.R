@@ -1076,13 +1076,16 @@ cat(sprintf("Visualizing complete network: %d nodes, %d edges\n",
 # Calculate layout for complete network with better spacing
 set.seed(123)
 cat("Calculating layout (this may take a moment)...\n")
-# Use graphopt layout for better spacing and fewer overlaps
-complete_layout <- layout_with_graphopt(g_party,
-                                        niter = 1000,
-                                        charge = 0.02,
-                                        mass = 30,
-                                        spring.length = 1.5,
-                                        spring.constant = 1)
+# Use Kamada-Kawai layout for better visualization
+complete_layout <- layout_with_kk(g_party)
+
+# Manually adjust MWNIKA node position to avoid clashing
+mwnika_idx <- which(V(g_party)$name == "MWNIKA")
+if(length(mwnika_idx) > 0) {
+  # Move MWNIKA node left and down a bit
+  complete_layout[mwnika_idx, 1] <- complete_layout[mwnika_idx, 1] - 2  # Move left
+  complete_layout[mwnika_idx, 2] <- complete_layout[mwnika_idx, 2] - 1  # Move down
+}
 
 cat("Creating visualization...\n")
 
@@ -1101,6 +1104,13 @@ if(is.null(edge_weights_uni)) {
 edge_widths_uni <- (edge_weights_uni - min(edge_weights_uni)) / (max(edge_weights_uni) - min(edge_weights_uni))
 edge_widths_uni <- edge_widths_uni * 3.9 + 0.1
 
+# Adjust label position for MWNIKA to avoid clashing
+label_dist_uni <- rep(0, vcount(g_party))
+label_dist_uni[labels_unipartite == "MWNIKA"] <- 1.2
+
+label_degree_uni <- rep(-pi/4, vcount(g_party))  # Default slight angle
+label_degree_uni[labels_unipartite == "MWNIKA"] <- pi  # Left
+
 plot(g_party,
      layout = complete_layout,
      vertex.size = 10,
@@ -1108,7 +1118,8 @@ plot(g_party,
      vertex.label = labels_unipartite,
      vertex.label.cex = 2,
      vertex.label.color = "black",
-     vertex.label.dist = 0,
+     vertex.label.dist = label_dist_uni,
+     vertex.label.degree = label_degree_uni,
      vertex.label.font = 1,
      vertex.frame.color = "gray30",
      vertex.frame.width = 0.5,
