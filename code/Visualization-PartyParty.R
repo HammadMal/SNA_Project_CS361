@@ -451,7 +451,7 @@ set.seed(123)
 common_layout <- layout_with_graphopt(g_viz, charge = 0.01)
 
 # --- Plot 1: Degree Centrality ---
-pdf(file.path(output_dir, "08_network_degree_centrality.pdf"), width = 20, height = 16)
+pdf(file.path(output_dir, "08_network_degree_centrality.pdf"), width = 30, height = 30)
 
 deg_viz <- degree(g_viz)
 deg_norm <- (deg_viz - min(deg_viz)) / (max(deg_viz) - min(deg_viz))
@@ -472,19 +472,19 @@ plot(g_viz,
      vertex.size = 15,
      vertex.color = node_colors_deg,
      vertex.label = V(g_viz)$name,      # Show ALL labels
-     vertex.label.cex = 0.8,             # Larger font for poster
+     vertex.label.cex = 2,             # Larger font for poster
      vertex.label.color = "black",
      vertex.label.dist = 0, # Variable distance based on node size
      vertex.frame.color = "white",
      edge.width = 0.5,
      edge.color = rgb(0, 0, 0, 0.2),
      main = "Party Network - Degree Centrality\n(Color by Degree)",
-     cex.main = 2)
+     cex.main = 4)
 
 legend("topright",
        legend = c("High Degree", "Medium Degree", "Low Degree"),
        col = colorRampPalette(c("#B0E0E6", "#E6E6FA", "#FFC0CB"), alpha = TRUE)(3),
-       pch = 16, pt.cex = 3, cex = 1.5, bg = "white")
+       pch = 16, pt.cex = 8, cex = 3, bg = "white")
 
 dev.off()
 cat("✓ Saved: 08_network_degree_centrality.pdf\n")
