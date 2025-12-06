@@ -451,7 +451,7 @@ set.seed(123)
 common_layout <- layout_with_graphopt(g_viz, charge = 0.01)
 
 # --- Plot 1: Degree Centrality ---
-pdf(file.path(output_dir, "08_network_degree_centrality.pdf"), width = 14, height = 10)
+pdf(file.path(output_dir, "08_network_degree_centrality.pdf"), width = 20, height = 16)
 
 deg_viz <- degree(g_viz)
 deg_norm <- (deg_viz - min(deg_viz)) / (max(deg_viz) - min(deg_viz))
@@ -469,27 +469,28 @@ label_dist_deg <- ifelse(deg_norm > 0.3,  # If node is medium or large
 
 plot(g_viz,
      layout = common_layout,
-     vertex.size = 10,
+     vertex.size = 15,
      vertex.color = node_colors_deg,
      vertex.label = V(g_viz)$name,      # Show ALL labels
-     vertex.label.cex = 0.5,             # Smaller font for readability
+     vertex.label.cex = 0.8,             # Larger font for poster
      vertex.label.color = "black",
      vertex.label.dist = 0, # Variable distance based on node size
      vertex.frame.color = "white",
-     edge.width = 0.3,
-     edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Degree Centrality\n(Color by Degree)")
+     edge.width = 0.5,
+     edge.color = rgb(0, 0, 0, 0.2),
+     main = "Party Network - Degree Centrality\n(Color by Degree)",
+     cex.main = 2)
 
 legend("topright",
        legend = c("High Degree", "Medium Degree", "Low Degree"),
        col = colorRampPalette(c("#B0E0E6", "#E6E6FA", "#FFC0CB"), alpha = TRUE)(3),
-       pch = 16, pt.cex = 2, cex = 0.9, bg = "white")
+       pch = 16, pt.cex = 3, cex = 1.5, bg = "white")
 
 dev.off()
 cat("✓ Saved: 08_network_degree_centrality.pdf\n")
 
 # --- Plot 2: Betweenness Centrality ---
-pdf(file.path(output_dir, "09_network_betweenness_centrality.pdf"), width = 14, height = 10)
+pdf(file.path(output_dir, "09_network_betweenness_centrality.pdf"), width = 20, height = 16)
 
 # Get betweenness values from full network but only for top 50
 top_50_betw <- centrality$Betweenness[match(V(g_viz)$name, centrality$Party)]
@@ -634,7 +635,8 @@ cat("Value counts:\n")
 print(table(top_50_ecc))
 cat("\n")
 
-# Get unique values and create a discrete color scue_ecc <- sort(unique(top_50_ecc))
+# Get unique values and create a discrete color scheme
+unique_ecc <- sort(unique(top_50_ecc))
 n_levels <- length(unique_ecc)
 
 # Create a color palette from DARK (for 0) to LIGHT (for max)
@@ -728,7 +730,7 @@ write.csv(clustering_df_full[order(-clustering_df_full$Clustering), ],
 cat("✓ Saved: clustering_coefficient.csv\n")
 
 # --- Network Visualization by Clustering Coefficient (Top 50) ---
-pdf(file.path(output_dir, "14_network_clustering_coefficient.pdf"), width = 14, height = 10)
+pdf(file.path(output_dir, "14_network_clustering_coefficient.pdf"), width = 20, height = 16)
 
 # Use top 50 parties subgraph
 top_50_parties_clust <- head(centrality[order(-centrality$Degree), "Party"], 50)
@@ -738,7 +740,7 @@ g_clust_viz <- induced_subgraph(g_party, V(g_party)$name %in% top_50_parties_clu
 top_50_clust <- clustering_df_full$Clustering[match(V(g_clust_viz)$name, clustering_df_full$Party)]
 
 # Normalize clustering for sizing and coloring
-clust_nor_50_clust - min(top_50_clust)) / (max(top_50_clust) - min(top_50_clust))
+clust_norm <- (top_50_clust - min(top_50_clust)) / (max(top_50_clust) - min(top_50_clust))
 
 # Size by clustering (adjusted range)
 node_size_clust <- clust_norm * 12 + 3  # smaller multiplier for better size range
@@ -756,23 +758,24 @@ label_dist_clust <- ifelse(clust_norm > 0.3,  # If node is medium or large
 # Use same layout as other centrality plots
 plot(g_clust_viz,
      layout = common_layout,
-     vertex.size = 10,
+     vertex.size = 15,
      vertex.color = node_colors_clust,
      vertex.label = V(g_clust_viz)$name,        # Show ALL labels
-     vertex.label.cex = 0.5,                     # Smaller font for readability
+     vertex.label.cex = 0.8,                     # Larger font for poster
      vertex.label.color = "black",
      vertex.label.dist = 0,      # Variable distance based on node size
      vertex.frame.color = "white",
-     edge.width = 0.3,
-     edge.color = rgb(0, 0, 0, 0.15),
-     main = "Party Network - Clustering Coefficient\n(Color by Clustering)")
+     edge.width = 0.5,
+     edge.color = rgb(0, 0, 0, 0.2),
+     main = "Party Network - Clustering Coefficient\n(Color by Clustering)",
+     cex.main = 2)
 
 legend("topright",
        legend = c("High Clustering", "Medium Clustering", "Low Clustering"),
        col = colorRampPalette(c("#B0E0E6", "#E6E6FA", "#FFC0CB"), alpha = TRUE)(3),
        pch = 16,
-       pt.cex = 2,
-       cex = 0.9,
+       pt.cex = 3,
+       cex = 1.5,
        bg = "white")
 
 dev.off()
@@ -804,7 +807,7 @@ write.csv(louvain_df[order(louvain_df$Community), ],
 cat("✓ Saved: louvain_communities.csv\n")
 
 # Visualize Louvain communities - ALL Parties with IMPROVED LAYOUT
-pdf(file.path(output_dir, "15_louvain_communities_all.pdf"), width = 20, height = 16)
+pdf(file.path(output_dir, "15_louvain_communities_all.pdf"), width = 24, height = 20)
 
 # Use the full network Louvain communities
 set.seed(123)
@@ -853,7 +856,8 @@ labels_louvain <- V(g_party)$name
 labels_louvain[labels_louvain == "Sindh Taraqi Passand Party (STP)"] <- "STP"
 labels_louvain[labels_louvain == "Sindh Dost Ittehad (SDI) Party"] <- "SDI"
 
-# Get edge weights and normalize for edge thice_weights <- E(g_party)$weight
+# Get edge weights and normalize for edge thickness
+edge_weights <- E(g_party)$weight
 if(is.null(edge_weights)) {
   edge_weights <- rep(1, ecount(g_party))
 }
@@ -863,17 +867,18 @@ edge_widths <- edge_widths * 3.9 + 0.1
 
 plot(g_party,
      layout = layout_louvain,
-     vertex.size = node_size_louvain,
+     vertex.size = node_size_louvain * 1.3,
      vertex.color = node_colors_louvain,
      vertex.label = labels_louvain,
-     vertex.label.cex = 0.8,
+     vertex.label.cex = 1.0,
      vertex.label.color = "black",
-     vertex.label.dist = 0.1,
+     vertex.label.dist = 0.15,
      vertex.frame.color = "white",
      edge.width = edge_widths,
      edge.color = rgb(0, 0, 0, 0.15),
      main = sprintf("Louvain Communities - All Parties (Circular Layout)\n%d communities, Modularity = %.3f",
-                   length(louvain_comm), modularity(louvain_comm)))
+                   length(louvain_comm), modularity(louvain_comm)),
+     cex.main = 2.2)
 
 # Add legend with community sizes
 comm_sizes <- table(memberships)
@@ -882,8 +887,8 @@ legend("bottomright",
        legend = legend_text,
        col = community_colors,
        pch = 16,
-       pt.cex = 2,
-       cex = 1.0,
+       pt.cex = 2.5,
+       cex = 1.3,
        bg = "white",
        title = "Communities",
        ncol = 2)
@@ -892,7 +897,7 @@ legend("bottomright",
 text(x = par("usr")[1], y = par("usr")[3],
      labels = "Note: Edge thickness represents connection weight (number of shared candidates)",
      adj = c(0, -0.5),
-     cex = 0.9,
+     cex = 1.2,
      col = "black",
      font = 3)
 
@@ -1062,7 +1067,7 @@ cat(sprintf("Visualizing complete network: %d nodes, %d edges\n",
 set.seed(123)
 cat("Calculating layout (this may take a moment)...\n")
 # Use graphopt layout for better spacing and fewer overlaps
-complete_layout _with_graphopt(g_party,
+complete_layout <- layout_with_graphopt(g_party,
                                         niter = 1000,
                                         charge = 0.02,
                                         mass = 30,
