@@ -779,9 +779,14 @@ legend("topright",
        legend = c("High Clustering", "Medium Clustering", "Low Clustering"),
        col = colorRampPalette(c("#B0E0E6", "#E6E6FA", "#FFC0CB"), alpha = TRUE)(3),
        pch = 16,
-       pt.cex = 8,
-       cex = 3,
+       pt.cex = 6,
+       cex = 2,
        bg = "white")
+
+# legend("topright",
+#        legend = c("High Degree", "Medium Degree", "Low Degree"),
+#        col = colorRampPalette(c("#B0E0E6", "#E6E6FA", "#FFC0CB"), alpha = TRUE)(3),
+#        pch = 16, pt.cex = 8, cex = 3, bg = "white")
 
 dev.off()
 cat("✓ Saved: 14_network_clustering_coefficient.pdf\n\n")
@@ -1062,7 +1067,7 @@ cat("===========================================================================
 cat("CREATING COMPLETE UNIPARTITE PARTY-PARTY NETWORK VISUALIZATION\n")
 cat("================================================================================\n\n")
 
-pdf(file.path(output_dir, "06_complete_unipartite_network.pdf"), width = 20, height = 20)
+pdf(file.path(output_dir, "06_complete_unipartite_network.pdf"), width = 30, height = 20)
 
 # Use the complete party-party network (all nodes)
 cat(sprintf("Visualizing complete network: %d nodes, %d edges\n",
@@ -1080,19 +1085,26 @@ complete_layout <- layout_with_graphopt(g_party,
                                         spring.constant = 1)
 
 cat("Creating visualization...\n")
+
+# Shorten long party names for better visualization
+labels_unipartite <- V(g_party)$name
+labels_unipartite[labels_unipartite == "Sindh Taraqi Passand Party (STP)"] <- "STP"
+labels_unipartite[labels_unipartite == "Sindh Dost Ittehad (SDI) Party"] <- "SDI"
+labels_unipartite[labels_unipartite == "Pakistan Muslim League"] <- "PML"
+
 plot(g_party,
      layout = complete_layout,
-     vertex.size = 3,
+     vertex.size = 10,
      vertex.color = "lightblue",
-     vertex.label = V(g_party)$name,
-     vertex.label.cex = 0.5,
+     vertex.label = labels_unipartite,
+     vertex.label.cex = 2,
      vertex.label.color = "black",
      vertex.label.dist = 0,
      vertex.label.font = 1,
      vertex.frame.color = "gray30",
      vertex.frame.width = 0.5,
      edge.width = 0.4,
-     edge.color = rgb(0.3, 0.3, 0.3, 0.3),
+     edge.color = rgb(0.3, 0.3, 0.3, 0.5),
      edge.curved = 0.1,
      main = sprintf("Complete Party-Party Unipartite Network\n%d Parties, %d Connections",
                    vcount(g_party), ecount(g_party)))
@@ -1111,7 +1123,7 @@ legend("topright",
        ),
        bty = "o",
        bg = "white",
-       cex = 0.7,
+       cex = 1.5,
        box.col = "gray50")
 
 dev.off()
