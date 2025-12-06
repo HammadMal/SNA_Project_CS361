@@ -1092,6 +1092,15 @@ labels_unipartite[labels_unipartite == "Sindh Taraqi Passand Party (STP)"] <- "S
 labels_unipartite[labels_unipartite == "Sindh Dost Ittehad (SDI) Party"] <- "SDI"
 labels_unipartite[labels_unipartite == "Pakistan Muslim League"] <- "PML"
 
+# Get edge weights and normalize for edge thickness
+edge_weights_uni <- E(g_party)$weight
+if(is.null(edge_weights_uni)) {
+  edge_weights_uni <- rep(1, ecount(g_party))
+}
+# Normalize weights to much more visible edge widths (0.1 to 4)
+edge_widths_uni <- (edge_weights_uni - min(edge_weights_uni)) / (max(edge_weights_uni) - min(edge_weights_uni))
+edge_widths_uni <- edge_widths_uni * 3.9 + 0.1
+
 plot(g_party,
      layout = complete_layout,
      vertex.size = 10,
@@ -1103,7 +1112,7 @@ plot(g_party,
      vertex.label.font = 1,
      vertex.frame.color = "gray30",
      vertex.frame.width = 0.5,
-     edge.width = 0.4,
+     edge.width = edge_widths_uni,
      edge.color = rgb(0.3, 0.3, 0.3, 0.5),
      edge.curved = 0.1,
      main = sprintf("Complete Party-Party Unipartite Network\n%d Parties, %d Connections",
