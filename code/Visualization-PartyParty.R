@@ -1079,14 +1079,6 @@ cat("Calculating layout (this may take a moment)...\n")
 # Use Kamada-Kawai layout for better visualization
 complete_layout <- layout_with_kk(g_party)
 
-# Manually adjust MWNIKA node position to avoid clashing
-mwnika_idx <- which(V(g_party)$name == "MWNIKA")
-if(length(mwnika_idx) > 0) {
-  # Move MWNIKA node left and down a bit
-  complete_layout[mwnika_idx, 1] <- complete_layout[mwnika_idx, 1] - 2  # Move left
-  complete_layout[mwnika_idx, 2] <- complete_layout[mwnika_idx, 2] - 1  # Move down
-}
-
 cat("Creating visualization...\n")
 
 # Shorten long party names for better visualization
